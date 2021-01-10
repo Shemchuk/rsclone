@@ -1,0 +1,85 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0 auto;
+  width: 99vw;
+  background-color: $color-black;
+
+  .table2-container {
+    position: relative;
+    padding: 10px;
+    width: 20vw;
+    height: 71vh;
+    margin-bottom: 7rem;
+    & .button-fullscreen {
+      @extend %button-fullscreen;
+      top: 5rem;
+    }
+    @include media-tablet {
+      order: 2;
+      width: 100%;
+      margin: 0 auto 10rem;
+    }
+  }
+  .map-container {
+    width: 50vw;
+    height: 100%;
+    @include media-tablet {
+      order: 1;
+      width: 100vw;
+    }
+  }
+  .second-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: start;
+    // width: 30vw;
+    // height: 90vh;
+    margin-bottom: 8rem;
+    .table1-container {
+      height: 74vh;
+      position: relative;
+
+      & .button-fullscreen {
+        @extend %button-fullscreen;
+      }
+      @include media-tablet {
+        width: 100%;
+      }
+    }
+
+    .graph-container {
+      height: 40%;
+      width: 100%;
+      @include media-tablet {
+        margin-top: 7rem;
+        width: 90vw;
+      }
+    }
+
+    @include media-tablet {
+      margin: 0 auto 0 auto;
+      order: 3;
+      width: 100%;
+    }
+  }
+
+  @include media-tablet {
+    flex-wrap: wrap;
+    width: 90vw;
+    margin-bottom: 10rem;
+  }
+
+  .hide-container {
+    display: none;
+  }
+
+  .fullscreen-container,
+  .second-container .fullscreen-container {
+    height: 80vh;
+    width: 90vw;
+  }
+}

@@ -1,0 +1,44 @@
+.footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.8rem;
+  height: $footer-height;
+  clear: both;
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  .footer__link {
+    text-decoration: none;
+    display: block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    color: $color-dark-s;
+
+    width: 5rem;
+    height: 5rem;
+    margin: 0 2rem;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      opacity: 0.5;
+      transition: all 0.2s ease-in-out;
+      transform: scale(1.1);
+    }
+  }
+
+  .footer__text {
+    color: $color-primary;
+  }
+
+  .github-logo {
+    background-image: url('../icons/github-logo.svg');
+    margin: 0 2rem;
+  }
+
+  .school-logo {
+    background-image: url('../icons/rs_school_js.svg');
+    width: 10rem;
+  }
+}
