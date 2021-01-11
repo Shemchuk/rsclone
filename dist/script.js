@@ -67,13 +67,110 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_game_gameContainer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/game/gameContainer */ "./src/modules/game/gameContainer.js");
 /* eslint-disable no-console */
 // import CONST from './modules/Constants';
+
+
 window.onload = function () {
   console.log('Project starts');
 };
+
+(0,_modules_game_gameContainer__WEBPACK_IMPORTED_MODULE_0__.default)();
+
+/***/ }),
+
+/***/ "./src/modules/cards.js":
+/*!******************************!*\
+  !*** ./src/modules/cards.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+var cards = {
+  forAdults: [{
+    nameEng: '',
+    nameRus: ''
+  }, {
+    nameEng: '',
+    nameRus: ''
+  }],
+  main: [{
+    nameEng: 'Bus',
+    nameRus: 'Автобус'
+  }, {
+    nameEng: '',
+    nameRus: ''
+  }]
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cards);
+
+/***/ }),
+
+/***/ "./src/modules/game/card.js":
+/*!**********************************!*\
+  !*** ./src/modules/game/card.js ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cards */ "./src/modules/cards.js");
+ // Card
+
+function generateCard() {
+  document.querySelector('.card__word').innerHTML = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0].nameRus;
+}
+
+console.log(_cards__WEBPACK_IMPORTED_MODULE_0__.default);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (generateCard);
+
+/***/ }),
+
+/***/ "./src/modules/game/gameContainer.js":
+/*!*******************************************!*\
+  !*** ./src/modules/game/gameContainer.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ game
+/* harmony export */ });
+/* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/modules/game/card.js");
+
+function game() {
+  // Game container
+  var generateGameContainer = function generateGameContainer() {
+    var template = '';
+    var gameContainer = document.createElement('div');
+    gameContainer.className = 'game-container';
+    template += '<div class="card game-container__card">';
+    template += "<div class=\"card__word\"></div>";
+    template += "</div>";
+    template += "<div class=\"game-container__buttons\">";
+    template += '<button class="button game-container__button_skip">Пропустить</button>';
+    template += '<button class="button game-container__button_ready">Готово</button>';
+    template += "</div>";
+    gameContainer.innerHTML = template;
+    return gameContainer;
+  };
+
+  document.querySelector('.main').appendChild(generateGameContainer());
+  (0,_card__WEBPACK_IMPORTED_MODULE_0__.default)();
+}
 
 /***/ }),
 
@@ -9930,6 +10027,23 @@ try {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -9946,8 +10060,8 @@ try {
 /******/ 	// Load entry module
 /******/ 	__webpack_require__("./node_modules/@babel/polyfill/lib/index.js");
 /******/ 	__webpack_require__("./src/index.js");
-/******/ 	__webpack_require__("./src/assets/sass/style.scss");
 /******/ 	// This entry module used 'exports' so it can't be inlined
+/******/ 	__webpack_require__("./src/assets/sass/style.scss");
 /******/ })()
 ;
 //# sourceMappingURL=script.js.map
