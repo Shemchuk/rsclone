@@ -108,7 +108,352 @@ var cards = {
     nameRus: 'Автобус'
   }, {
     nameEng: '',
-    nameRus: ''
+    nameRus: 'Дом'
+  }, {
+    nameEng: '',
+    nameRus: 'Мост'
+  }, {
+    nameEng: '',
+    nameRus: 'Лупа'
+  }, {
+    nameEng: '',
+    nameRus: 'Перец'
+  }, {
+    nameEng: '',
+    nameRus: 'Город'
+  }, {
+    nameEng: '',
+    nameRus: 'Морж'
+  }, {
+    nameEng: '',
+    nameRus: 'Пират'
+  }, {
+    nameEng: '',
+    nameRus: 'Море'
+  }, {
+    nameEng: '',
+    nameRus: 'Яблоко'
+  }, {
+    nameEng: '',
+    nameRus: 'Акула'
+  }, {
+    nameEng: '',
+    nameRus: 'Солнце'
+  }, {
+    nameEng: '',
+    nameRus: 'Шарик'
+  }, {
+    nameEng: '',
+    nameRus: 'Пластилин'
+  }, {
+    nameEng: '',
+    nameRus: 'Ведро'
+  }, {
+    nameEng: '',
+    nameRus: 'Начальник'
+  }, {
+    nameEng: '',
+    nameRus: 'Пылесос'
+  }, {
+    nameEng: '',
+    nameRus: 'Аквариум'
+  }, {
+    nameEng: '',
+    nameRus: 'Монитор'
+  }, {
+    nameEng: '',
+    nameRus: 'Чеснок'
+  }, {
+    nameEng: '',
+    nameRus: 'Страус'
+  }, {
+    nameEng: '',
+    nameRus: 'Расстояние'
+  }, {
+    nameEng: '',
+    nameRus: 'Лень'
+  }, {
+    nameEng: '',
+    nameRus: 'Дым'
+  }, {
+    nameEng: '',
+    nameRus: 'Укус'
+  }, {
+    nameEng: '',
+    nameRus: 'Комар'
+  }, {
+    nameEng: '',
+    nameRus: 'Спортсмен'
+  }, {
+    nameEng: '',
+    nameRus: 'Провод'
+  }, {
+    nameEng: '',
+    nameRus: 'Мотор'
+  }, {
+    nameEng: '',
+    nameRus: 'Жена'
+  }, {
+    nameEng: '',
+    nameRus: 'Сок'
+  }, {
+    nameEng: '',
+    nameRus: 'Береза'
+  }, {
+    nameEng: '',
+    nameRus: 'Ваза'
+  }, {
+    nameEng: '',
+    nameRus: 'Рыба'
+  }, {
+    nameEng: '',
+    nameRus: 'Соловей'
+  }, {
+    nameEng: '',
+    nameRus: 'Озеро'
+  }, {
+    nameEng: '',
+    nameRus: 'Кошелек'
+  }, {
+    nameEng: '',
+    nameRus: 'Луна'
+  }, {
+    nameEng: '',
+    nameRus: 'Дед'
+  }, {
+    nameEng: '',
+    nameRus: 'Календарь'
+  }, {
+    nameEng: '',
+    nameRus: 'Лопата'
+  }, {
+    nameEng: '',
+    nameRus: 'Качели'
+  }, {
+    nameEng: '',
+    nameRus: 'Страх'
+  }, {
+    nameEng: '',
+    nameRus: 'Сумка'
+  }, {
+    nameEng: '',
+    nameRus: 'Окно'
+  }, {
+    nameEng: '',
+    nameRus: 'Собака'
+  }, {
+    nameEng: '',
+    nameRus: 'Друзья'
+  }, {
+    nameEng: '',
+    nameRus: 'Ребенок'
+  }, {
+    nameEng: '',
+    nameRus: 'Месяц'
+  }, {
+    nameEng: '',
+    nameRus: 'Котенок'
+  }, {
+    nameEng: '',
+    nameRus: 'Конфета'
+  }, {
+    nameEng: '',
+    nameRus: 'Праздник'
+  }, {
+    nameEng: '',
+    nameRus: 'Сон'
+  }, {
+    nameEng: '',
+    nameRus: 'Скелет'
+  }, {
+    nameEng: '',
+    nameRus: 'Лодка'
+  }, {
+    nameEng: '',
+    nameRus: 'Остров'
+  }, {
+    nameEng: '',
+    nameRus: 'Браслет'
+  }, {
+    nameEng: '',
+    nameRus: 'Хлеб'
+  }, {
+    nameEng: '',
+    nameRus: 'Курица'
+  }, {
+    nameEng: '',
+    nameRus: 'Крыша'
+  }, {
+    nameEng: '',
+    nameRus: 'Жилет'
+  }, {
+    nameEng: '',
+    nameRus: 'Дневник'
+  }, {
+    nameEng: '',
+    nameRus: 'Мусор'
+  }, {
+    nameEng: '',
+    nameRus: 'Автомобиль'
+  }, {
+    nameEng: '',
+    nameRus: 'Девочка'
+  }, {
+    nameEng: '',
+    nameRus: 'Туфли'
+  }, {
+    nameEng: '',
+    nameRus: 'Вафли'
+  }, {
+    nameEng: '',
+    nameRus: 'Донор'
+  }, {
+    nameEng: '',
+    nameRus: 'Семечки'
+  }, {
+    nameEng: '',
+    nameRus: 'Телефон'
+  }, {
+    nameEng: '',
+    nameRus: 'Гроза'
+  }, {
+    nameEng: '',
+    nameRus: 'Скрепка'
+  }, {
+    nameEng: '',
+    nameRus: 'Радость'
+  }, {
+    nameEng: '',
+    nameRus: 'Мел'
+  }, {
+    nameEng: '',
+    nameRus: 'Бумага'
+  }, {
+    nameEng: '',
+    nameRus: 'Мышка'
+  }, {
+    nameEng: '',
+    nameRus: 'Зубы'
+  }, {
+    nameEng: '',
+    nameRus: 'Нос'
+  }, {
+    nameEng: '',
+    nameRus: 'Трава'
+  }, {
+    nameEng: '',
+    nameRus: 'Варежки'
+  }, {
+    nameEng: '',
+    nameRus: 'Швабра'
+  }, {
+    nameEng: '',
+    nameRus: 'Парик'
+  }, {
+    nameEng: '',
+    nameRus: 'Карандаш'
+  }, {
+    nameEng: '',
+    nameRus: 'Лекарство'
+  }, {
+    nameEng: '',
+    nameRus: 'Юбка'
+  }, {
+    nameEng: '',
+    nameRus: 'Лев'
+  }, {
+    nameEng: '',
+    nameRus: 'Град'
+  }, {
+    nameEng: '',
+    nameRus: 'База'
+  }, {
+    nameEng: '',
+    nameRus: 'Ноты'
+  }, {
+    nameEng: '',
+    nameRus: 'Радиация'
+  }, {
+    nameEng: '',
+    nameRus: 'Посуда'
+  }, {
+    nameEng: '',
+    nameRus: 'Кондиционер'
+  }, {
+    nameEng: '',
+    nameRus: 'Парад'
+  }, {
+    nameEng: '',
+    nameRus: 'Чашка'
+  }, {
+    nameEng: '',
+    nameRus: 'Порошок'
+  }, {
+    nameEng: '',
+    nameRus: 'Список'
+  }, {
+    nameEng: '',
+    nameRus: 'Фотограф'
+  }, {
+    nameEng: '',
+    nameRus: 'Черепаха'
+  }, {
+    nameEng: '',
+    nameRus: 'Звезда'
+  }, {
+    nameEng: '',
+    nameRus: 'Колпак'
+  }, {
+    nameEng: '',
+    nameRus: 'Барабан'
+  }, {
+    nameEng: '',
+    nameRus: 'Брюки'
+  }, {
+    nameEng: '',
+    nameRus: 'Тётя'
+  }, {
+    nameEng: '',
+    nameRus: 'Брошка'
+  }, {
+    nameEng: '',
+    nameRus: 'Улыбка'
+  }, {
+    nameEng: '',
+    nameRus: 'Палка'
+  }, {
+    nameEng: '',
+    nameRus: 'Блоднинка'
+  }, {
+    nameEng: '',
+    nameRus: 'Пост'
+  }, {
+    nameEng: '',
+    nameRus: 'Букет'
+  }, {
+    nameEng: '',
+    nameRus: 'Штраф'
+  }, {
+    nameEng: '',
+    nameRus: 'Смех'
+  }, {
+    nameEng: '',
+    nameRus: 'Цирк'
+  }, {
+    nameEng: '',
+    nameRus: 'Маркер'
+  }, {
+    nameEng: '',
+    nameRus: 'Хорек'
+  }, {
+    nameEng: '',
+    nameRus: 'Клетка'
+  }, {
+    nameEng: '',
+    nameRus: 'Письмо'
+  }, {
+    nameEng: '',
+    nameRus: 'Кнопка'
   }]
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cards);
@@ -124,17 +469,49 @@ var cards = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */   "generateCard": () => /* binding */ generateCard,
+/* harmony export */   "shuffleCards": () => /* binding */ shuffleCards,
+/* harmony export */   "buttonsClickHandler": () => /* binding */ buttonsClickHandler
 /* harmony export */ });
 /* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cards */ "./src/modules/cards.js");
- // Card
+/* eslint-disable no-unreachable */
+
+/* eslint-disable no-console */
+ // Generate random cards
+
+function shuffleCards(arr) {
+  return arr.main.sort(function () {
+    return Math.round(Math.random() * 100) - 50;
+  });
+} // Card
+
 
 function generateCard() {
   document.querySelector('.card__word').innerHTML = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0].nameRus;
+} // Buttons clickhandler
+
+
+var i = 1;
+
+function clickContainerButtons(e) {
+  var clickReady = e.target.closest('.game-container__button_ready');
+  var clickSkip = e.target.closest('.game-container__button_skip');
+
+  if (clickReady) {
+    document.querySelector('.card__word').innerHTML = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0 + i].nameRus;
+  } else if (clickSkip) {
+    document.querySelector('.card__word').innerHTML = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0 + i].nameRus;
+  }
+
+  i += 1;
 }
 
-console.log(_cards__WEBPACK_IMPORTED_MODULE_0__.default);
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (generateCard);
+function buttonsClickHandler() {
+  var buttonsContainer = document.querySelector('.game-container__buttons');
+  buttonsContainer.addEventListener('click', clickContainerButtons);
+}
+
+
 
 /***/ }),
 
@@ -150,6 +527,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => /* binding */ game
 /* harmony export */ });
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/modules/game/card.js");
+/* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../cards */ "./src/modules/cards.js");
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./timer */ "./src/modules/game/timer.js");
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_timer__WEBPACK_IMPORTED_MODULE_2__);
+/* eslint-disable import/named */
+
+
 
 function game() {
   // Game container
@@ -157,6 +540,9 @@ function game() {
     var template = '';
     var gameContainer = document.createElement('div');
     gameContainer.className = 'game-container';
+    template += "<div class=\"timer-container\">";
+    template += "<button class=\"button timer-container__button\">start</button>";
+    template += "</div>";
     template += '<div class="card game-container__card">';
     template += "<div class=\"card__word\"></div>";
     template += "</div>";
@@ -169,8 +555,54 @@ function game() {
   };
 
   document.querySelector('.main').appendChild(generateGameContainer());
-  (0,_card__WEBPACK_IMPORTED_MODULE_0__.default)();
+  (0,_card__WEBPACK_IMPORTED_MODULE_0__.buttonsClickHandler)();
+  (0,_card__WEBPACK_IMPORTED_MODULE_0__.shuffleCards)(_cards__WEBPACK_IMPORTED_MODULE_1__.default);
+  (0,_card__WEBPACK_IMPORTED_MODULE_0__.generateCard)();
+  _timer__WEBPACK_IMPORTED_MODULE_2___default()();
 }
+
+/***/ }),
+
+/***/ "./src/modules/game/timer.js":
+/*!***********************************!*\
+  !*** ./src/modules/game/timer.js ***!
+  \***********************************/
+/***/ (() => {
+
+// /* eslint-disable no-console */
+// /* eslint-disable prefer-const */
+// // const timerInput = document.getElementById("time"); // Берём строку
+// // const buttonRun = document.querySelector('.button .timer-container__button'); // Берём кнопку запуска
+// console.log(1234);
+// function setTimer() {
+//   const timeValue = 60;
+//   let timeMinut;
+//   const timerShow = document.querySelector('.timer-container');
+//   document.querySelector('.timer-container__button').addEventListener('click', () => {
+//     // eslint-disable-next-line radix
+//     timeMinut = parseInt(timeValue);
+//   });
+//   // eslint-disable-next-line func-names
+//   let timer = setInterval(function () {
+//     let seconds = timeMinut % 60; // Получаем секунды
+//     let minutes = (timeMinut / 60) % 60; // Получаем минуты
+//     let hour = (timeMinut / 60 / 60) % 60; // Получаем часы
+//     // Условие если время закончилось то...
+//     if (timeMinut <= 0) {
+//       // Таймер удаляется
+//       clearInterval(timer);
+//       // Выводит сообщение что время закончилось
+//       document.querySelector('.timer-container').innerHTML = 'Время вышло!';
+//     } else {
+//       // Создаём строку с выводом времени
+//       let strTimer = `${Math.trunc(hour)}:${Math.trunc(minutes)}:${seconds}`;
+//       // Выводим строку в блок для показа таймера
+//       timerShow.innerHTML = strTimer;
+//     }
+//     --timeMinut; // Уменьшаем таймер
+//   }, 1000);
+// }
+// export default setTimer;
 
 /***/ }),
 
@@ -10027,6 +10459,18 @@ try {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => module['default'] :
+/******/ 				() => module;
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
