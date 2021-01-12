@@ -471,13 +471,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "generateCard": () => /* binding */ generateCard,
 /* harmony export */   "shuffleCards": () => /* binding */ shuffleCards,
-/* harmony export */   "buttonsClickHandler": () => /* binding */ buttonsClickHandler
+/* harmony export */   "buttonsClickHandler": () => /* binding */ buttonsClickHandler,
+/* harmony export */   "arrConfirmed": () => /* binding */ arrConfirmed,
+/* harmony export */   "arrSkiped": () => /* binding */ arrSkiped
 /* harmony export */ });
 /* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cards */ "./src/modules/cards.js");
 /* eslint-disable no-unreachable */
 
 /* eslint-disable no-console */
- // Generate random cards
+ // import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
+// Cash arrays for statistics
+
+var arrConfirmed = [];
+var arrSkiped = []; // Generate random cards
 
 function shuffleCards(arr) {
   return arr.main.sort(function () {
@@ -499,8 +505,10 @@ function clickContainerButtons(e) {
 
   if (clickReady) {
     document.querySelector('.card__word').innerHTML = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0 + i].nameRus;
+    arrConfirmed.push(_cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0 + i]);
   } else if (clickSkip) {
     document.querySelector('.card__word').innerHTML = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0 + i].nameRus;
+    arrSkiped.push(_cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0 + i]);
   }
 
   i += 1;
@@ -529,8 +537,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/modules/game/card.js");
 /* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../cards */ "./src/modules/cards.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./timer */ "./src/modules/game/timer.js");
-/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_timer__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _gameStatistics__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./gameStatistics */ "./src/modules/game/gameStatistics.js");
 /* eslint-disable import/named */
+
 
 
 
@@ -541,7 +550,7 @@ function game() {
     var gameContainer = document.createElement('div');
     gameContainer.className = 'game-container';
     template += "<div class=\"timer-container\">";
-    template += "<button class=\"button timer-container__button\">start</button>";
+    template += "<div class=\"timer-container__display\"></div>";
     template += "</div>";
     template += '<div class="card game-container__card">';
     template += "<div class=\"card__word\"></div>";
@@ -555,11 +564,67 @@ function game() {
   };
 
   document.querySelector('.main').appendChild(generateGameContainer());
+  document.querySelector('.main').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_3__.generateRoundStatisticsModal)());
   (0,_card__WEBPACK_IMPORTED_MODULE_0__.buttonsClickHandler)();
   (0,_card__WEBPACK_IMPORTED_MODULE_0__.shuffleCards)(_cards__WEBPACK_IMPORTED_MODULE_1__.default);
   (0,_card__WEBPACK_IMPORTED_MODULE_0__.generateCard)();
-  _timer__WEBPACK_IMPORTED_MODULE_2___default()();
+  (0,_timer__WEBPACK_IMPORTED_MODULE_2__.default)();
 }
+
+/***/ }),
+
+/***/ "./src/modules/game/gameStatistics.js":
+/*!********************************************!*\
+  !*** ./src/modules/game/gameStatistics.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "generateConfirmedStatisticsCell": () => /* binding */ generateConfirmedStatisticsCell,
+/* harmony export */   "generateRoundStatisticsModal": () => /* binding */ generateRoundStatisticsModal,
+/* harmony export */   "generateSkipedStatisticsCell": () => /* binding */ generateSkipedStatisticsCell
+/* harmony export */ });
+// Statistics modal window after round
+// import {arrConfirmed, arrSkiped}
+var generateRoundStatisticsModal = function generateRoundStatisticsModal() {
+  var template = '';
+  var roundStatModal = document.createElement('div');
+  roundStatModal.className = 'round-stat-modal hidden';
+  template += "<div class=\"round-stat-modal__title\">\u0418\u043C\u044F \u043A\u043E\u043C\u0430\u043D\u0434\u044B</div>";
+  template += "<div class=\"round-stat-modal__container\">";
+  template += "<div class=\"round-stat-confirmed\">";
+  template += "<div class=\"round-stat-confirmed__title\">\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E</div>";
+  template += "<div class=\"round-stat-confirmed__container\"></div>";
+  template += "</div>";
+  template += "<div class=\"round-stat-skiped\">";
+  template += "<div class=\"round-stat-skiped__title\">\u041F\u0440\u043E\u043F\u0443\u0449\u0435\u043D\u043E</div>";
+  template += "<div class=\"round-stat-skiped__container\"></div>";
+  template += "</div>";
+  template += "</div>";
+  template += '<button class="button round-stat-modal__button">Следующий раунд</button>';
+  roundStatModal.innerHTML = template;
+  return roundStatModal;
+}; // Confirmed statistics cell
+
+
+var generateConfirmedStatisticsCell = function generateConfirmedStatisticsCell(data) {
+  var confirmedCell = document.createElement('div');
+  confirmedCell.className = 'round-stat-confirmed__cell';
+  confirmedCell.innerHTML = "".concat(data.nameRus);
+  return confirmedCell;
+}; // Ckiped statistics cell
+
+
+var generateSkipedStatisticsCell = function generateSkipedStatisticsCell(data) {
+  var skipedCell = document.createElement('div');
+  skipedCell.className = 'round-stat-skiped__cell';
+  skipedCell.innerHTML = "".concat(data.nameRus);
+  return skipedCell;
+};
+
+
 
 /***/ }),
 
@@ -567,42 +632,45 @@ function game() {
 /*!***********************************!*\
   !*** ./src/modules/game/timer.js ***!
   \***********************************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-// /* eslint-disable no-console */
-// /* eslint-disable prefer-const */
-// // const timerInput = document.getElementById("time"); // Берём строку
-// // const buttonRun = document.querySelector('.button .timer-container__button'); // Берём кнопку запуска
-// console.log(1234);
-// function setTimer() {
-//   const timeValue = 60;
-//   let timeMinut;
-//   const timerShow = document.querySelector('.timer-container');
-//   document.querySelector('.timer-container__button').addEventListener('click', () => {
-//     // eslint-disable-next-line radix
-//     timeMinut = parseInt(timeValue);
-//   });
-//   // eslint-disable-next-line func-names
-//   let timer = setInterval(function () {
-//     let seconds = timeMinut % 60; // Получаем секунды
-//     let minutes = (timeMinut / 60) % 60; // Получаем минуты
-//     let hour = (timeMinut / 60 / 60) % 60; // Получаем часы
-//     // Условие если время закончилось то...
-//     if (timeMinut <= 0) {
-//       // Таймер удаляется
-//       clearInterval(timer);
-//       // Выводит сообщение что время закончилось
-//       document.querySelector('.timer-container').innerHTML = 'Время вышло!';
-//     } else {
-//       // Создаём строку с выводом времени
-//       let strTimer = `${Math.trunc(hour)}:${Math.trunc(minutes)}:${seconds}`;
-//       // Выводим строку в блок для показа таймера
-//       timerShow.innerHTML = strTimer;
-//     }
-//     --timeMinut; // Уменьшаем таймер
-//   }, 1000);
-// }
-// export default setTimer;
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+/* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/modules/game/card.js");
+/* harmony import */ var _gameStatistics__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gameStatistics */ "./src/modules/game/gameStatistics.js");
+/* eslint-disable no-console */
+
+/* eslint-disable prefer-const */
+// import generateRoundStatisticsModal from './gameStatistics';
+
+
+var timer;
+var time = 5;
+
+function countdown() {
+  document.querySelector('.timer-container__display').innerHTML = time;
+  time--;
+
+  if (time <= 0) {
+    clearTimeout(timer);
+    document.querySelector('.round-stat-modal').style.display = 'block';
+    document.querySelector('.timer-container__display').innerHTML = 'Время вышло!';
+    console.log(_card__WEBPACK_IMPORTED_MODULE_0__.arrConfirmed);
+    _card__WEBPACK_IMPORTED_MODULE_0__.arrConfirmed.forEach(function (el) {
+      return document.querySelector('.round-stat-confirmed__container').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_1__.generateConfirmedStatisticsCell)(el));
+    });
+    _card__WEBPACK_IMPORTED_MODULE_0__.arrSkiped.forEach(function (el) {
+      return document.querySelector('.round-stat-skiped__container').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_1__.generateSkipedStatisticsCell)(el));
+    });
+  } else {
+    timer = setTimeout(countdown, 1000);
+  }
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (countdown);
 
 /***/ }),
 
@@ -10459,18 +10527,6 @@ try {
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => module['default'] :
-/******/ 				() => module;
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports

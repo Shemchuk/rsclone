@@ -1,7 +1,8 @@
 /* eslint-disable import/named */
 import { generateCard, shuffleCards, buttonsClickHandler } from './card';
 import cards from '../cards';
-import setTimer from './timer';
+import countdown from './timer';
+import { generateRoundStatisticsModal } from './gameStatistics';
 
 export default function game() {
   // Game container
@@ -10,7 +11,7 @@ export default function game() {
     const gameContainer = document.createElement('div');
     gameContainer.className = 'game-container';
     template += `<div class="timer-container">`;
-    template += `<button class="button timer-container__button">start</button>`;
+    template += `<div class="timer-container__display"></div>`;
     template += `</div>`;
     template += '<div class="card game-container__card">';
     template += `<div class="card__word"></div>`;
@@ -23,8 +24,9 @@ export default function game() {
     return gameContainer;
   };
   document.querySelector('.main').appendChild(generateGameContainer());
+  document.querySelector('.main').appendChild(generateRoundStatisticsModal());
   buttonsClickHandler();
   shuffleCards(cards);
   generateCard();
-  setTimer();
+  countdown();
 }
