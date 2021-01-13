@@ -1,5 +1,6 @@
 // Statistics modal window after round
 // import {arrConfirmed, arrSkiped}
+// import game from './gameContainer';
 
 const generateRoundStatisticsModal = () => {
   let template = '';

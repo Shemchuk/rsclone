@@ -6,14 +6,14 @@ import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from '.
 
 let timer;
 let time = 5;
-
 function countdown() {
-  document.querySelector('.timer-container__display').innerHTML = time;
+  document.querySelector('.team-container__timer').innerHTML = time;
   time--;
   if (time <= 0) {
+    time = 5;
     clearTimeout(timer);
     document.querySelector('.round-stat-modal').style.display = 'block';
-    document.querySelector('.timer-container__display').innerHTML = 'Время вышло!';
+    document.querySelector('.team-container__timer').innerHTML = 'Время вышло!';
     console.log(arrConfirmed);
     arrConfirmed.forEach((el) =>
       document
