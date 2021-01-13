@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable no-console */
 /* eslint-disable prefer-const */
 // import generateRoundStatisticsModal from './gameStatistics';
@@ -14,7 +15,7 @@ function countdown() {
     clearTimeout(timer);
     document.querySelector('.round-stat-modal').style.display = 'block';
     document.querySelector('.team-container__timer').innerHTML = 'Время вышло!';
-    console.log(arrConfirmed);
+    // console.log(arrConfirmed);
     arrConfirmed.forEach((el) =>
       document
         .querySelector('.round-stat-confirmed__container')

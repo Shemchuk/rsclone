@@ -1,17 +1,19 @@
+/* eslint-disable import/no-mutable-exports */
+/* eslint-disable import/no-cycle */
+/* eslint-disable no-use-before-define */
 /* eslint-disable import/named */
-import { generateCard, buttonsClickHandler } from './card';
-
+import { generateCard, buttonsClickHandler, teamFlag } from './card';
 import countdown from './timer';
 import { generateRoundStatisticsModal } from './gameStatistics';
-import { teamPoints } from './card';
+// import { teamPoints } from './card';
 // Game container
 export const generateGameContainer = () => {
   let template = '';
   const gameContainer = document.createElement('div');
   gameContainer.className = 'game-container';
   template += `<div class="team-container">`;
-  template += `<div class="team-container__team-name">${teamNames[TeamFlag]}</div>`;
-  template += `<div class="team-container__team-points">${teamPoints[TeamFlag]}</div>`;
+  template += `<div class="team-container__team-name">${teams[teamFlag].name}</div>`;
+  template += `<div class="team-container__team-points">${teams[teamFlag].points}</div>`;
   template += `<div class="team-container__timer"></div>`;
   template += `</div>`;
   template += '<div class="card game-container__card">';
@@ -25,7 +27,7 @@ export const generateGameContainer = () => {
   return gameContainer;
 };
 
-export default function game() {
+export function game() {
   document.querySelector('.main').appendChild(generateGameContainer());
   document.querySelector('.main').appendChild(generateRoundStatisticsModal());
   buttonsClickHandler();
@@ -34,7 +36,9 @@ export default function game() {
 }
 
 // ___________________________________Temporary data______________________________________________
-export const teamNames = ['Team 1', 'Team 2'];
-export const teamPoints = ['0','0']
-
-export let TeamFlag = 0;
+// export const teamNames = ['Team 1', 'Team 2'];
+// export const teamPoints = [0,0];
+export const teams = [
+  { name: 'Team1', points: 0, answers: { confirmed: [], skiped: [] } },
+  { name: 'Team2', points: 0, answers: { confirmed: [], skiped: [] } },
+];
