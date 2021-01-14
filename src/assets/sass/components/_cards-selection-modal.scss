@@ -1,0 +1,26 @@
+.cards-selection-container{
+    width: 350px;
+    height: 250px;
+    background-color: aquamarine;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    
+}
+
+.cards-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.cards-container__cards{
+    width: 100px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: blueviolet;
+}

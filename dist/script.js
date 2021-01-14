@@ -98,10 +98,202 @@ __webpack_require__.r(__webpack_exports__);
 var cards = {
   forAdults: [{
     nameEng: '',
-    nameRus: ''
+    nameRus: 'Клитор'
   }, {
     nameEng: '',
-    nameRus: ''
+    nameRus: 'Фаллос'
+  }, {
+    nameEng: '',
+    nameRus: 'Член'
+  }, {
+    nameEng: '',
+    nameRus: 'Вибратор'
+  }, {
+    nameEng: '',
+    nameRus: 'Матка'
+  }, {
+    nameEng: '',
+    nameRus: 'Спермотозоид'
+  }, {
+    nameEng: '',
+    nameRus: 'Сперма'
+  }, {
+    nameEng: '',
+    nameRus: 'Кончить'
+  }, {
+    nameEng: '',
+    nameRus: 'Эрекция'
+  }, {
+    nameEng: '',
+    nameRus: 'Минет'
+  }, {
+    nameEng: '',
+    nameRus: 'Вагина'
+  }, {
+    nameEng: '',
+    nameRus: 'Резиновый член'
+  }, {
+    nameEng: '',
+    nameRus: 'Гендер'
+  }, {
+    nameEng: '',
+    nameRus: 'Гермафродит'
+  }, {
+    nameEng: '',
+    nameRus: 'Гейша'
+  }, {
+    nameEng: '',
+    nameRus: 'Романтика'
+  }, {
+    nameEng: '',
+    nameRus: 'Женственность'
+  }, {
+    nameEng: '',
+    nameRus: 'Причиндалы'
+  }, {
+    nameEng: '',
+    nameRus: 'Менструация'
+  }, {
+    nameEng: '',
+    nameRus: 'поза 69'
+  }, {
+    nameEng: '',
+    nameRus: 'Влюбленность'
+  }, {
+    nameEng: '',
+    nameRus: 'Девственник'
+  }, {
+    nameEng: '',
+    nameRus: 'Наложница'
+  }, {
+    nameEng: '',
+    nameRus: 'Семейная ссора'
+  }, {
+    nameEng: '',
+    nameRus: 'Свидание'
+  }, {
+    nameEng: '',
+    nameRus: 'Трансгендер'
+  }, {
+    nameEng: '',
+    nameRus: 'Запретный плод'
+  }, {
+    nameEng: '',
+    nameRus: 'Животный инстинкт'
+  }, {
+    nameEng: '',
+    nameRus: 'Девиация'
+  }, {
+    nameEng: '',
+    nameRus: 'Гиперсексуальность'
+  }, {
+    nameEng: '',
+    nameRus: 'Любовница'
+  }, {
+    nameEng: '',
+    nameRus: 'Сексуальная энергия'
+  }, {
+    nameEng: '',
+    nameRus: 'Анилингус'
+  }, {
+    nameEng: '',
+    nameRus: 'Девичник'
+  }, {
+    nameEng: '',
+    nameRus: 'Совокупляться'
+  }, {
+    nameEng: '',
+    nameRus: 'Секс-шоп'
+  }, {
+    nameEng: '',
+    nameRus: 'Бой-френд'
+  }, {
+    nameEng: '',
+    nameRus: 'Женский оргазм'
+  }, {
+    nameEng: '',
+    nameRus: 'Клиторный оргазм'
+  }, {
+    nameEng: '',
+    nameRus: 'Горячая брюнетка'
+  }, {
+    nameEng: '',
+    nameRus: 'Мужское достоинство'
+  }, {
+    nameEng: '',
+    nameRus: 'Совокупление'
+  }, {
+    nameEng: '',
+    nameRus: 'Зона бикини'
+  }, {
+    nameEng: '',
+    nameRus: 'ПМС'
+  }, {
+    nameEng: '',
+    nameRus: 'Либидо'
+  }, {
+    nameEng: '',
+    nameRus: 'Влагалище'
+  }, {
+    nameEng: '',
+    nameRus: 'Флирт'
+  }, {
+    nameEng: '',
+    nameRus: 'Обручение'
+  }, {
+    nameEng: '',
+    nameRus: 'Оголенный торс'
+  }, {
+    nameEng: '',
+    nameRus: 'Романтик'
+  }, {
+    nameEng: '',
+    nameRus: 'Оральные ласки'
+  }, {
+    nameEng: '',
+    nameRus: 'Секс-машина'
+  }, {
+    nameEng: '',
+    nameRus: 'Анальная пробка'
+  }, {
+    nameEng: '',
+    nameRus: 'Наездница'
+  }, {
+    nameEng: '',
+    nameRus: 'Соблазнение'
+  }, {
+    nameEng: '',
+    nameRus: 'Феромоны'
+  }, {
+    nameEng: '',
+    nameRus: 'Насиловать'
+  }, {
+    nameEng: '',
+    nameRus: 'Гей-парад'
+  }, {
+    nameEng: '',
+    nameRus: 'Лезбийская любовь'
+  }, {
+    nameEng: '',
+    nameRus: 'Эксгибиционист'
+  }, {
+    nameEng: '',
+    nameRus: 'Полигамный партнер'
+  }, {
+    nameEng: '',
+    nameRus: 'День святого Валентина'
+  }, {
+    nameEng: '',
+    nameRus: 'Ревнивый'
+  }, {
+    nameEng: '',
+    nameRus: 'Беременность'
+  }, {
+    nameEng: '',
+    nameRus: 'Вагинальный оргазм'
+  }, {
+    nameEng: '',
+    nameRus: 'Семейный очаг'
   }],
   main: [{
     nameEng: 'Bus',
@@ -478,6 +670,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _cards__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../cards */ "./src/modules/cards.js");
 /* harmony import */ var _gameContainer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gameContainer */ "./src/modules/game/gameContainer.js");
+/* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./timer */ "./src/modules/game/timer.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -502,23 +695,24 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
  // eslint-disable-next-line import/no-cycle
 
 
+
 var teamFlag = 0; // import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
 // Cash arrays for statistics
 
 var arrConfirmed = [];
-var arrSkiped = []; // const arrAnException = [];
+var arrSkiped = [];
+var currentCardsStack; // const arrAnException = [];
 // Generate random cards
 
-function shuffleCards(arr) {
-  return arr.main.sort(function () {
+function shuffleCards() {
+  return currentCardsStack.sort(function () {
     return Math.round(Math.random() * 100) - 50;
   });
-}
+} // Card
 
-shuffleCards(_cards__WEBPACK_IMPORTED_MODULE_0__.default); // Card
 
 function generateCard() {
-  document.querySelector('.card__word').innerHTML = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0].nameRus;
+  document.querySelector('.card__word').innerHTML = currentCardsStack[0].nameRus;
 } // Next round function
 
 
@@ -529,18 +723,16 @@ function nextRound() {
   addGlobalStatisticsTeam(teamFlag, arrConfirmed, arrSkiped);
   arrConfirmed.length = 0;
   arrSkiped.length = 0;
-  (0,_gameContainer__WEBPACK_IMPORTED_MODULE_1__.game)();
+  (0,_gameContainer__WEBPACK_IMPORTED_MODULE_1__.mainGamePlay)();
 } // Add statistics teams in global array-stat
 
 
 function addGlobalStatisticsTeam(teamIndex, confirmedArr, skipedArr) {
   var _teams$teamIndex$answ, _teams$teamIndex$answ2;
 
-  console.log(_gameContainer__WEBPACK_IMPORTED_MODULE_1__.teams[teamIndex].answers.confirmed);
+  (_teams$teamIndex$answ = _timer__WEBPACK_IMPORTED_MODULE_2__.teams[teamIndex].answers.confirmed).push.apply(_teams$teamIndex$answ, _toConsumableArray(confirmedArr.slice()));
 
-  (_teams$teamIndex$answ = _gameContainer__WEBPACK_IMPORTED_MODULE_1__.teams[teamIndex].answers.confirmed).push.apply(_teams$teamIndex$answ, _toConsumableArray(confirmedArr.slice()));
-
-  (_teams$teamIndex$answ2 = _gameContainer__WEBPACK_IMPORTED_MODULE_1__.teams[teamIndex].answers.skiped).push.apply(_teams$teamIndex$answ2, _toConsumableArray(skipedArr.slice()));
+  (_teams$teamIndex$answ2 = _timer__WEBPACK_IMPORTED_MODULE_2__.teams[teamIndex].answers.skiped).push.apply(_teams$teamIndex$answ2, _toConsumableArray(skipedArr.slice()));
 } // Buttons clickhandler
 
 
@@ -550,18 +742,30 @@ function clickContainerButtons(e) {
   var clickReady = e.target.closest('.game-container__button_ready');
   var clickSkip = e.target.closest('.game-container__button_skip');
   var clickNextRound = e.target.closest('.round-stat-modal__button');
+  var clickCardsForAdults = e.target.closest('.cards__for-adults');
+  var clickCardsGeneral = e.target.closest('.cards__general');
 
   if (clickReady) {
-    _gameContainer__WEBPACK_IMPORTED_MODULE_1__.teams[teamFlag].points += 1;
-    document.querySelector('.card__word').innerHTML = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0 + i].nameRus;
-    arrConfirmed.push(_cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0 + i]);
-    document.querySelector('.team-container__team-points').innerHTML = _gameContainer__WEBPACK_IMPORTED_MODULE_1__.teams[teamFlag].points;
+    _timer__WEBPACK_IMPORTED_MODULE_2__.teams[teamFlag].points += 1;
+    document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i].nameRus;
+    arrConfirmed.push(currentCardsStack[0 + i]);
+    document.querySelector('.team-container__team-points').innerHTML = _timer__WEBPACK_IMPORTED_MODULE_2__.teams[teamFlag].points;
   } else if (clickSkip) {
-    document.querySelector('.card__word').innerHTML = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0 + i].nameRus;
-    arrSkiped.push(_cards__WEBPACK_IMPORTED_MODULE_0__.default.main[0 + i]);
+    document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i].nameRus;
+    arrSkiped.push(currentCardsStack[0 + i]);
   } else if (clickNextRound) {
     teamFlag = teamFlag ? 0 : 1;
     nextRound();
+  } else if (clickCardsForAdults) {
+    currentCardsStack = _cards__WEBPACK_IMPORTED_MODULE_0__.default.forAdults;
+    shuffleCards();
+    document.querySelector('.cards-selection-container').style.display = 'none';
+    (0,_gameContainer__WEBPACK_IMPORTED_MODULE_1__.mainGamePlay)();
+  } else if (clickCardsGeneral) {
+    currentCardsStack = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main;
+    shuffleCards();
+    document.querySelector('.cards-selection-container').style.display = 'none';
+    (0,_gameContainer__WEBPACK_IMPORTED_MODULE_1__.mainGamePlay)();
   }
 
   i += 1;
@@ -585,9 +789,11 @@ function buttonsClickHandler() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "generateCardsSeletionContainer": () => /* binding */ generateCardsSeletionContainer,
 /* harmony export */   "generateGameContainer": () => /* binding */ generateGameContainer,
+/* harmony export */   "generateFinishGameModal": () => /* binding */ generateFinishGameModal,
 /* harmony export */   "game": () => /* binding */ game,
-/* harmony export */   "teams": () => /* binding */ teams
+/* harmony export */   "mainGamePlay": () => /* binding */ mainGamePlay
 /* harmony export */ });
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/modules/game/card.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./timer */ "./src/modules/game/timer.js");
@@ -601,7 +807,29 @@ __webpack_require__.r(__webpack_exports__);
 /* eslint-disable import/named */
 
 
- // import { teamPoints } from './card';
+ // Cards selection container
+
+var generateCardsSeletionContainer = function generateCardsSeletionContainer() {
+  var template = '';
+  var cardsSelectionContainer = document.createElement('div');
+  cardsSelectionContainer.className = 'cards-selection-container';
+  template += "<div class=\"cards-selection-container__title\">\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043D\u0430\u0431\u043E\u0440 \u043A\u0430\u0440\u0442</div>";
+  template += "<div class=\"cards-container\">";
+  template += "<div class=\"cards__for-adults cards-container__cards\">\u041A\u043E\u043B\u043E\u0434\u0430 \u0434\u043B\u044F \u0432\u0437\u0440\u043E\u0441\u043B\u044B\u0445</div>";
+  template += "<div class=\"cards__general cards-container__cards\">\u041A\u043E\u043B\u043E\u0434\u0430 \u043E\u0431\u0449\u0430\u044F</div>";
+  template += "</div>";
+  cardsSelectionContainer.innerHTML = template;
+  return cardsSelectionContainer;
+}; // Cards cell for Cards container
+// export const generateCardsContainerCell = () => {
+//   let template = '';
+//   const cardsContainerCell = document.createElement('div');
+//   cardsContainerCell.className = 'cards-container__cell';
+//   template += `<div class="cards-selection-container__title">${}</div>`;
+//   template += `<div class="cards-container">`;
+//   cardsContainerCell.innerHTML = template;
+//   return cardsContainerCell;
+// };
 // Game container
 
 var generateGameContainer = function generateGameContainer() {
@@ -609,8 +837,8 @@ var generateGameContainer = function generateGameContainer() {
   var gameContainer = document.createElement('div');
   gameContainer.className = 'game-container';
   template += "<div class=\"team-container\">";
-  template += "<div class=\"team-container__team-name\">".concat(teams[_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag].name, "</div>");
-  template += "<div class=\"team-container__team-points\">".concat(teams[_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag].points, "</div>");
+  template += "<div class=\"team-container__team-name\">".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag].name, "</div>");
+  template += "<div class=\"team-container__team-points\">".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag].points, "</div>");
   template += "<div class=\"team-container__timer\"></div>";
   template += "</div>";
   template += '<div class="card game-container__card">';
@@ -623,31 +851,27 @@ var generateGameContainer = function generateGameContainer() {
   gameContainer.innerHTML = template;
   return gameContainer;
 };
+var generateFinishGameModal = function generateFinishGameModal() {
+  var template = '';
+  var finishGameModal = document.createElement('div');
+  finishGameModal.className = 'finish-game-modal';
+  template += "<div class=\"finish-game-modal__title\">\u0418\u0433\u0440\u0430 \u043E\u043A\u043E\u043D\u0447\u0435\u043D\u0430!</div>";
+  template += "<div class=\"finish-game-modal__1st-place_name\">\u041F\u043E\u0431\u0435\u0434\u0438\u043B\u0430 \u043A\u043E\u043C\u0430\u043D\u0434\u0430 ".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[0].name, "</div>");
+  template += "<div class=\"finish-game-modal__1st-place_points\">".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[0].points, " \u043E\u0447\u043A\u043E\u0432</div>");
+  template += "<button class=\"button finish-game-modal__button\">\u041D\u0430\u0437\u0430\u0434 \u0432 \u043C\u0435\u043D\u044E</button>";
+  finishGameModal.innerHTML = template;
+  return finishGameModal;
+};
 function game() {
+  document.querySelector('.main').appendChild(generateCardsSeletionContainer());
+  (0,_card__WEBPACK_IMPORTED_MODULE_0__.buttonsClickHandler)();
+}
+function mainGamePlay() {
   document.querySelector('.main').appendChild(generateGameContainer());
   document.querySelector('.main').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_2__.generateRoundStatisticsModal)());
-  (0,_card__WEBPACK_IMPORTED_MODULE_0__.buttonsClickHandler)();
   (0,_card__WEBPACK_IMPORTED_MODULE_0__.generateCard)();
   (0,_timer__WEBPACK_IMPORTED_MODULE_1__.default)();
-} // ___________________________________Temporary data______________________________________________
-// export const teamNames = ['Team 1', 'Team 2'];
-// export const teamPoints = [0,0];
-
-var teams = [{
-  name: 'Team1',
-  points: 0,
-  answers: {
-    confirmed: [],
-    skiped: []
-  }
-}, {
-  name: 'Team2',
-  points: 0,
-  answers: {
-    confirmed: [],
-    skiped: []
-  }
-}];
+}
 
 /***/ }),
 
@@ -716,10 +940,12 @@ var generateSkipedStatisticsCell = function generateSkipedStatisticsCell(data) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "teams": () => /* binding */ teams,
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/modules/game/card.js");
 /* harmony import */ var _gameStatistics__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gameStatistics */ "./src/modules/game/gameStatistics.js");
+/* harmony import */ var _gameContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gameContainer */ "./src/modules/game/gameContainer.js");
 /* eslint-disable import/no-cycle */
 
 /* eslint-disable no-console */
@@ -728,25 +954,54 @@ __webpack_require__.r(__webpack_exports__);
 // import generateRoundStatisticsModal from './gameStatistics';
 
 
+ // ___________________________________Temporary data______________________________________________
+// export const teamNames = ['Team 1', 'Team 2'];
+// export const teamPoints = [0,0];
+
+var teams = [{
+  name: 'Team1',
+  points: 0,
+  answers: {
+    confirmed: [],
+    skiped: []
+  }
+}, {
+  name: 'Team2',
+  points: 0,
+  answers: {
+    confirmed: [],
+    skiped: []
+  }
+}];
 var timer;
 var time = 5;
+var finishGamePoints = 10;
 
 function countdown() {
   document.querySelector('.team-container__timer').innerHTML = time;
   time--;
 
   if (time <= 0) {
-    time = 5;
-    clearTimeout(timer);
-    document.querySelector('.round-stat-modal').style.display = 'block';
-    document.querySelector('.team-container__timer').innerHTML = 'Время вышло!'; // console.log(arrConfirmed);
+    if (!teams.some(function (el) {
+      return el.points >= finishGamePoints;
+    }) || !(_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag === teams.length - 1)) {
+      time = 5;
+      clearTimeout(timer);
+      document.querySelector('.hidden').style.display = 'flex';
+      document.querySelector('.team-container__timer').innerHTML = 'Время вышло!'; // console.log(arrConfirmed);
 
-    _card__WEBPACK_IMPORTED_MODULE_0__.arrConfirmed.forEach(function (el) {
-      return document.querySelector('.round-stat-confirmed__container').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_1__.generateConfirmedStatisticsCell)(el));
-    });
-    _card__WEBPACK_IMPORTED_MODULE_0__.arrSkiped.forEach(function (el) {
-      return document.querySelector('.round-stat-skiped__container').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_1__.generateSkipedStatisticsCell)(el));
-    });
+      _card__WEBPACK_IMPORTED_MODULE_0__.arrConfirmed.forEach(function (el) {
+        return document.querySelector('.round-stat-confirmed__container').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_1__.generateConfirmedStatisticsCell)(el));
+      });
+      _card__WEBPACK_IMPORTED_MODULE_0__.arrSkiped.forEach(function (el) {
+        return document.querySelector('.round-stat-skiped__container').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_1__.generateSkipedStatisticsCell)(el));
+      });
+    } else {
+      teams.sort(function (el1, el2) {
+        return el2.points - el1.points;
+      });
+      document.querySelector('.main').appendChild((0,_gameContainer__WEBPACK_IMPORTED_MODULE_2__.generateFinishGameModal)());
+    }
   } else {
     timer = setTimeout(countdown, 1000);
   }
