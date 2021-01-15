@@ -5,6 +5,7 @@
 import { teamFlag, arrConfirmed, arrSkiped } from './card';
 import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
 import { generateFinishGameModal } from './gameContainer';
+import { set } from '../utils/storage';
 
 // ___________________________________Temporary data______________________________________________
 // export const teamNames = ['Team 1', 'Team 2'];
@@ -40,6 +41,9 @@ function countdown() {
     } else {
       teams.sort((el1, el2) => el2.points - el1.points);
       document.querySelector('.main').appendChild(generateFinishGameModal());
+      let name = new Date();
+      console.log(name);
+      set(name, teams);
     }
   } else {
     timer = setTimeout(countdown, 1000);

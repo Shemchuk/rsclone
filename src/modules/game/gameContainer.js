@@ -11,14 +11,31 @@ export const generateCardsSeletionContainer = () => {
   const cardsSelectionContainer = document.createElement('div');
   cardsSelectionContainer.className = 'cards-selection-container';
   template += `<div class="cards-selection-container__title">Выберите набор карт</div>`;
-  template += `<div class="cards-container">`;
-  template += `<div class="cards__for-adults cards-container__cards">Колода для взрослых</div>`;
-  template += `<div class="cards__general cards-container__cards">Колода общая</div>`;
+  template += `<div class="cards-container1"></div>`;
+  template += `<div class="cards-container2"></div>`;
   template += `</div>`;
   cardsSelectionContainer.innerHTML = template;
   return cardsSelectionContainer;
 };
+export const generateCardsForSelection = () => {
+  const cardsForSelection = document.querySelector('.cards-container1');
+  let template = '';
+  for (let i = 0; i < 25; i++) {
+    template += `<div class="cards__for-adults cards-container__cards">Колода для взрослых</div>`;
+  }
+  cardsForSelection.innerHTML = template;
+  return cardsForSelection;
+};
 
+export const generateCardsForSelection2 = () => {
+  const cardsForSelection = document.querySelector('.cards-container2');
+  let template = '';
+  for (let i = 0; i < 25; i++) {
+    template += `<div class="cards__main cards-container__cards2">Разное</div>`;
+  }
+  cardsForSelection.innerHTML = template;
+  return cardsForSelection;
+};
 // Cards cell for Cards container
 // export const generateCardsContainerCell = () => {
 //   let template = '';
@@ -63,6 +80,24 @@ export const generateFinishGameModal = () => {
 };
 export function game() {
   document.querySelector('.main').appendChild(generateCardsSeletionContainer());
+  generateCardsForSelection();
+  generateCardsForSelection2();
+  gsap.from('.cards-container__cards', {
+    duration: 1.5,
+    opacity: 1,
+    y: -850,
+    x: -1150,
+    stagger: 0.1,
+    ease: 'back.in',
+  });
+  gsap.from('.cards-container__cards2', {
+    duration: 1.5,
+    opacity: 1,
+    y: -850,
+    x: -1150,
+    stagger: 0.1,
+    ease: 'back.in',
+  });
 
   buttonsClickHandler();
 }

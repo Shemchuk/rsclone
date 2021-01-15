@@ -790,6 +790,8 @@ function buttonsClickHandler() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "generateCardsSeletionContainer": () => /* binding */ generateCardsSeletionContainer,
+/* harmony export */   "generateCardsForSelection": () => /* binding */ generateCardsForSelection,
+/* harmony export */   "generateCardsForSelection2": () => /* binding */ generateCardsForSelection2,
 /* harmony export */   "generateGameContainer": () => /* binding */ generateGameContainer,
 /* harmony export */   "generateFinishGameModal": () => /* binding */ generateFinishGameModal,
 /* harmony export */   "game": () => /* binding */ game,
@@ -814,12 +816,33 @@ var generateCardsSeletionContainer = function generateCardsSeletionContainer() {
   var cardsSelectionContainer = document.createElement('div');
   cardsSelectionContainer.className = 'cards-selection-container';
   template += "<div class=\"cards-selection-container__title\">\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043D\u0430\u0431\u043E\u0440 \u043A\u0430\u0440\u0442</div>";
-  template += "<div class=\"cards-container\">";
-  template += "<div class=\"cards__for-adults cards-container__cards\">\u041A\u043E\u043B\u043E\u0434\u0430 \u0434\u043B\u044F \u0432\u0437\u0440\u043E\u0441\u043B\u044B\u0445</div>";
-  template += "<div class=\"cards__general cards-container__cards\">\u041A\u043E\u043B\u043E\u0434\u0430 \u043E\u0431\u0449\u0430\u044F</div>";
+  template += "<div class=\"cards-container1\"></div>";
+  template += "<div class=\"cards-container2\"></div>";
   template += "</div>";
   cardsSelectionContainer.innerHTML = template;
   return cardsSelectionContainer;
+};
+var generateCardsForSelection = function generateCardsForSelection() {
+  var cardsForSelection = document.querySelector('.cards-container1');
+  var template = '';
+
+  for (var i = 0; i < 25; i++) {
+    template += "<div class=\"cards__for-adults cards-container__cards\">\u041A\u043E\u043B\u043E\u0434\u0430 \u0434\u043B\u044F \u0432\u0437\u0440\u043E\u0441\u043B\u044B\u0445</div>";
+  }
+
+  cardsForSelection.innerHTML = template;
+  return cardsForSelection;
+};
+var generateCardsForSelection2 = function generateCardsForSelection2() {
+  var cardsForSelection = document.querySelector('.cards-container2');
+  var template = '';
+
+  for (var i = 0; i < 25; i++) {
+    template += "<div class=\"cards__main cards-container__cards2\">\u0420\u0430\u0437\u043D\u043E\u0435</div>";
+  }
+
+  cardsForSelection.innerHTML = template;
+  return cardsForSelection;
 }; // Cards cell for Cards container
 // export const generateCardsContainerCell = () => {
 //   let template = '';
@@ -864,6 +887,24 @@ var generateFinishGameModal = function generateFinishGameModal() {
 };
 function game() {
   document.querySelector('.main').appendChild(generateCardsSeletionContainer());
+  generateCardsForSelection();
+  generateCardsForSelection2();
+  gsap.from('.cards-container__cards', {
+    duration: 1.5,
+    opacity: 1,
+    y: -850,
+    x: -1150,
+    stagger: 0.1,
+    ease: 'back.in'
+  });
+  gsap.from('.cards-container__cards2', {
+    duration: 1.5,
+    opacity: 1,
+    y: -850,
+    x: -1150,
+    stagger: 0.1,
+    ease: 'back.in'
+  });
   (0,_card__WEBPACK_IMPORTED_MODULE_0__.buttonsClickHandler)();
 }
 function mainGamePlay() {
@@ -946,12 +987,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/modules/game/card.js");
 /* harmony import */ var _gameStatistics__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gameStatistics */ "./src/modules/game/gameStatistics.js");
 /* harmony import */ var _gameContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gameContainer */ "./src/modules/game/gameContainer.js");
+/* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/storage */ "./src/modules/utils/storage.js");
 /* eslint-disable import/no-cycle */
 
 /* eslint-disable no-console */
 
 /* eslint-disable prefer-const */
 // import generateRoundStatisticsModal from './gameStatistics';
+
 
 
  // ___________________________________Temporary data______________________________________________
@@ -1001,6 +1044,9 @@ function countdown() {
         return el2.points - el1.points;
       });
       document.querySelector('.main').appendChild((0,_gameContainer__WEBPACK_IMPORTED_MODULE_2__.generateFinishGameModal)());
+      var name = new Date();
+      console.log(name);
+      (0,_utils_storage__WEBPACK_IMPORTED_MODULE_3__.set)(name, teams);
     }
   } else {
     timer = setTimeout(countdown, 1000);
@@ -1008,6 +1054,32 @@ function countdown() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (countdown);
+
+/***/ }),
+
+/***/ "./src/modules/utils/storage.js":
+/*!**************************************!*\
+  !*** ./src/modules/utils/storage.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "set": () => /* binding */ set,
+/* harmony export */   "get": () => /* binding */ get,
+/* harmony export */   "del": () => /* binding */ del
+/* harmony export */ });
+function set(name, value) {
+  window.localStorage.setItem(name, JSON.stringify(value));
+}
+function get(name) {
+  var subst = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  return JSON.parse(window.localStorage.getItem(name) || subst);
+}
+function del(name) {
+  localStorage.removeItem(name);
+}
 
 /***/ }),
 

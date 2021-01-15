@@ -63,6 +63,7 @@ function clickContainerButtons(e) {
   } else if (clickCardsForAdults) {
     currentCardsStack = cards.forAdults;
     shuffleCards();
+
     document.querySelector('.cards-selection-container').style.display = 'none';
     mainGamePlay();
   } else if (clickCardsGeneral) {
