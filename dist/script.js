@@ -67,13 +67,142 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_commands__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/commands */ "./src/modules/commands.js");
+/* harmony import */ var _modules_createCommands__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/createCommands */ "./src/modules/createCommands.js");
 /* eslint-disable no-console */
 // import CONST from './modules/Constants';
+
+
+
 window.onload = function () {
   console.log('Project starts');
+  var createCommands = new _modules_createCommands__WEBPACK_IMPORTED_MODULE_1__.default();
+  createCommands.init();
+  var commands = new _modules_commands__WEBPACK_IMPORTED_MODULE_0__.default();
+  commands.init();
 };
+
+/***/ }),
+
+/***/ "./src/modules/commands.js":
+/*!*********************************!*\
+  !*** ./src/modules/commands.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ Commands
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Commands = /*#__PURE__*/function () {
+  function Commands() {
+    _classCallCheck(this, Commands);
+
+    this.addTeams = document.querySelector('.add-teams');
+    this.teamsList = document.querySelector('.teams');
+    this.items = JSON.parse(localStorage.getItem('items')) || [];
+  }
+
+  _createClass(Commands, [{
+    key: "init",
+    value: function init() {
+      this.addTeams.addEventListener('submit', this.addItem.bind(this));
+      this.teamsList.addEventListener('click', this.deleteItem.bind(this));
+      this.populateList(this.items, this.teamsList);
+    }
+  }, {
+    key: "addItem",
+    value: function addItem(e) {
+      e.preventDefault();
+      var text = this.addTeams.querySelector('[name=item]').value;
+      var item = {
+        text: text,
+        win: false
+      };
+      this.items.push(item);
+      this.populateList(this.items, this.teamsList);
+      localStorage.removeItem('items');
+      localStorage.setItem('items', JSON.stringify(this.items));
+      this.addTeams.reset();
+    }
+  }, {
+    key: "populateList",
+    value: function populateList() {
+      this.teamsList.innerHTML = this.items.map(function (el, i) {
+        return "\n        <li class=\"item".concat(i, "\" data-index=").concat(i, ">").concat(el.text, "\n        </li>\n      ");
+      }).join('');
+    }
+  }, {
+    key: "deleteItem",
+    value: function deleteItem(e) {
+      var element = e.target;
+      var index = element.dataset.index;
+      this.items.splice(index, 1);
+      localStorage.removeItem('items');
+      localStorage.setItem('items', JSON.stringify(this.items));
+      this.populateList(this.items, this.teamsList);
+    }
+  }]);
+
+  return Commands;
+}();
+
+
+
+/***/ }),
+
+/***/ "./src/modules/createCommands.js":
+/*!***************************************!*\
+  !*** ./src/modules/createCommands.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ CreateCommands
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CreateCommands = /*#__PURE__*/function () {
+  function CreateCommands() {
+    _classCallCheck(this, CreateCommands);
+
+    this.main = document.querySelector('main');
+  }
+
+  _createClass(CreateCommands, [{
+    key: "init",
+    value: function init() {
+      var template = '';
+      var commandsContainer = document.createElement('div');
+      commandsContainer.className = 'command-wrapper';
+      template = "<h2>ALL TEAMS</h2>\n    <ul class=\"teams\">\n      <li>Loading Teams...</li>\n    </ul>\n    <form class=\"add-teams\">\n      <input type=\"text\" name=\"item\" placeholder=\"Team name\" required>\n      <input type=\"submit\" value=\"add Team\">\n    </form>";
+      commandsContainer.innerHTML = template;
+      this.main.appendChild(commandsContainer);
+      return this.main;
+    }
+  }]);
+
+  return CreateCommands;
+}();
+
+
 
 /***/ }),
 
@@ -9930,6 +10059,23 @@ try {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -9946,8 +10092,8 @@ try {
 /******/ 	// Load entry module
 /******/ 	__webpack_require__("./node_modules/@babel/polyfill/lib/index.js");
 /******/ 	__webpack_require__("./src/index.js");
-/******/ 	__webpack_require__("./src/assets/sass/style.scss");
 /******/ 	// This entry module used 'exports' so it can't be inlined
+/******/ 	__webpack_require__("./src/assets/sass/style.scss");
 /******/ })()
 ;
 //# sourceMappingURL=script.js.map
