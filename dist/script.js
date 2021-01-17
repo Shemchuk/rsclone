@@ -97,555 +97,2638 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 var cards = {
   forAdults: [{
-    nameEng: '',
+    nameEng: 'Clitoris',
     nameRus: 'Клитор'
   }, {
-    nameEng: '',
+    nameEng: 'Phallus',
     nameRus: 'Фаллос'
   }, {
-    nameEng: '',
+    nameEng: 'Dick',
     nameRus: 'Член'
   }, {
-    nameEng: '',
+    nameEng: 'Vibrator',
     nameRus: 'Вибратор'
   }, {
-    nameEng: '',
+    nameEng: 'Uterus',
     nameRus: 'Матка'
   }, {
-    nameEng: '',
+    nameEng: 'Sperm',
     nameRus: 'Спермотозоид'
   }, {
-    nameEng: '',
+    nameEng: 'Sperm',
     nameRus: 'Сперма'
   }, {
-    nameEng: '',
+    nameEng: 'Cum',
     nameRus: 'Кончить'
   }, {
-    nameEng: '',
+    nameEng: 'Erection',
     nameRus: 'Эрекция'
   }, {
-    nameEng: '',
+    nameEng: 'Blowjob',
     nameRus: 'Минет'
   }, {
-    nameEng: '',
+    nameEng: 'Vagina',
     nameRus: 'Вагина'
   }, {
-    nameEng: '',
+    nameEng: 'Rubber dick',
     nameRus: 'Резиновый член'
   }, {
-    nameEng: '',
+    nameEng: 'Gender',
     nameRus: 'Гендер'
   }, {
-    nameEng: '',
+    nameEng: 'Hermaphrodite',
     nameRus: 'Гермафродит'
   }, {
-    nameEng: '',
+    nameEng: 'Geisha',
     nameRus: 'Гейша'
   }, {
-    nameEng: '',
+    nameEng: 'Romance',
     nameRus: 'Романтика'
   }, {
-    nameEng: '',
+    nameEng: 'Feminity',
     nameRus: 'Женственность'
   }, {
-    nameEng: '',
+    nameEng: 'Prichindaly',
     nameRus: 'Причиндалы'
   }, {
-    nameEng: '',
+    nameEng: 'Menstruation',
     nameRus: 'Менструация'
   }, {
-    nameEng: '',
-    nameRus: 'поза 69'
+    nameEng: 'Pose 69',
+    nameRus: 'Поза 69'
   }, {
-    nameEng: '',
+    nameEng: 'Falling in love',
     nameRus: 'Влюбленность'
   }, {
-    nameEng: '',
+    nameEng: 'Virgin',
     nameRus: 'Девственник'
   }, {
-    nameEng: '',
+    nameEng: 'Concubine',
     nameRus: 'Наложница'
   }, {
-    nameEng: '',
+    nameEng: 'Family quarrel',
     nameRus: 'Семейная ссора'
   }, {
-    nameEng: '',
+    nameEng: 'Date',
     nameRus: 'Свидание'
   }, {
-    nameEng: '',
+    nameEng: 'Transgender',
     nameRus: 'Трансгендер'
   }, {
-    nameEng: '',
+    nameEng: 'Forbidden fruit',
     nameRus: 'Запретный плод'
   }, {
-    nameEng: '',
+    nameEng: 'Animal instinct',
     nameRus: 'Животный инстинкт'
   }, {
-    nameEng: '',
+    nameEng: 'Deviation',
     nameRus: 'Девиация'
   }, {
-    nameEng: '',
+    nameEng: 'Hypersexuality',
     nameRus: 'Гиперсексуальность'
   }, {
-    nameEng: '',
+    nameEng: 'Mistress',
     nameRus: 'Любовница'
   }, {
-    nameEng: '',
+    nameEng: 'Sexual energy',
     nameRus: 'Сексуальная энергия'
   }, {
-    nameEng: '',
+    nameEng: 'Anilingus',
     nameRus: 'Анилингус'
   }, {
-    nameEng: '',
+    nameEng: 'Bachelorette party',
     nameRus: 'Девичник'
   }, {
-    nameEng: '',
+    nameEng: 'Copulate',
     nameRus: 'Совокупляться'
   }, {
-    nameEng: '',
+    nameEng: 'Sex shop',
     nameRus: 'Секс-шоп'
   }, {
-    nameEng: '',
+    nameEng: 'Boyfriend',
     nameRus: 'Бой-френд'
   }, {
-    nameEng: '',
+    nameEng: 'Female orgasm',
     nameRus: 'Женский оргазм'
   }, {
-    nameEng: '',
+    nameEng: 'Clit orgasm',
     nameRus: 'Клиторный оргазм'
   }, {
-    nameEng: '',
+    nameEng: 'Hot brunette',
     nameRus: 'Горячая брюнетка'
   }, {
-    nameEng: '',
+    nameEng: 'Manhood',
     nameRus: 'Мужское достоинство'
   }, {
-    nameEng: '',
+    nameEng: 'Copulation',
     nameRus: 'Совокупление'
   }, {
-    nameEng: '',
+    nameEng: 'Bikini area',
     nameRus: 'Зона бикини'
   }, {
-    nameEng: '',
+    nameEng: 'PMS',
     nameRus: 'ПМС'
   }, {
-    nameEng: '',
+    nameEng: 'Libido',
     nameRus: 'Либидо'
   }, {
-    nameEng: '',
+    nameEng: 'Vagina',
     nameRus: 'Влагалище'
   }, {
-    nameEng: '',
+    nameEng: 'Flirt',
     nameRus: 'Флирт'
   }, {
-    nameEng: '',
+    nameEng: 'Engagement',
     nameRus: 'Обручение'
   }, {
-    nameEng: '',
+    nameEng: 'Bare torso',
     nameRus: 'Оголенный торс'
   }, {
-    nameEng: '',
+    nameEng: 'Romantic',
     nameRus: 'Романтик'
   }, {
-    nameEng: '',
+    nameEng: 'Oral sex',
     nameRus: 'Оральные ласки'
   }, {
-    nameEng: '',
+    nameEng: 'Sex machine',
     nameRus: 'Секс-машина'
   }, {
-    nameEng: '',
+    nameEng: 'Butt plug',
     nameRus: 'Анальная пробка'
   }, {
-    nameEng: '',
+    nameEng: 'Horsewoman',
     nameRus: 'Наездница'
   }, {
-    nameEng: '',
+    nameEng: 'Seduction',
     nameRus: 'Соблазнение'
   }, {
-    nameEng: '',
+    nameEng: 'Pheromones',
     nameRus: 'Феромоны'
   }, {
-    nameEng: '',
+    nameEng: 'Rape',
     nameRus: 'Насиловать'
   }, {
-    nameEng: '',
+    nameEng: 'Gay pride',
     nameRus: 'Гей-парад'
   }, {
-    nameEng: '',
+    nameEng: 'Lesbian love',
     nameRus: 'Лезбийская любовь'
   }, {
-    nameEng: '',
+    nameEng: 'Exhibitionist',
     nameRus: 'Эксгибиционист'
   }, {
-    nameEng: '',
+    nameEng: 'Polygamous partner',
     nameRus: 'Полигамный партнер'
   }, {
-    nameEng: '',
+    nameEng: "Valentine's Day",
     nameRus: 'День святого Валентина'
   }, {
-    nameEng: '',
+    nameEng: 'Jealous',
     nameRus: 'Ревнивый'
   }, {
-    nameEng: '',
+    nameEng: 'Pregnancy',
     nameRus: 'Беременность'
   }, {
-    nameEng: '',
+    nameEng: 'Vaginal orgasm',
     nameRus: 'Вагинальный оргазм'
   }, {
-    nameEng: '',
+    nameEng: 'Family hearth',
     nameRus: 'Семейный очаг'
+  }, {
+    nameEng: 'Wedding',
+    nameRus: 'Свадьба'
+  }, {
+    nameEng: 'Active partner',
+    nameRus: 'Активный партнер'
+  }, {
+    nameEng: 'Trust',
+    nameRus: 'Доверие'
+  }, {
+    nameEng: 'Sexology',
+    nameRus: 'Сексология'
+  }, {
+    nameEng: 'Orgy',
+    nameRus: 'Оргия'
+  }, {
+    nameEng: 'Intime connection',
+    nameRus: 'Интимная связь'
+  }, {
+    nameEng: 'Sadomasochism',
+    nameRus: 'Садомазохизм'
+  }, {
+    nameEng: 'Heartbreaker',
+    nameRus: 'Сердцеед'
+  }, {
+    nameEng: 'The harlot',
+    nameRus: 'Блудница'
+  }, {
+    nameEng: "Women's honor",
+    nameRus: 'Женская честь'
+  }, {
+    nameEng: 'Anal sex',
+    nameRus: 'Анальный секс'
+  }, {
+    nameEng: 'Sexual impotence',
+    nameRus: 'Половое бессилие'
+  }, {
+    nameEng: 'Conqueror of hearts',
+    nameRus: 'Покоритель сердец'
+  }, {
+    nameEng: 'Exhibitionism',
+    nameRus: 'Эксгибиционизм'
+  }, {
+    nameEng: 'Boyfriend',
+    nameRus: 'Ухажер'
+  }, {
+    nameEng: 'Sex therapy',
+    nameRus: 'Секс-терапия'
+  }, {
+    nameEng: 'Homosexual',
+    nameRus: 'Гомосексуал'
+  }, {
+    nameEng: 'Menopause',
+    nameRus: 'Менопауза'
+  }, {
+    nameEng: 'Ejaculation',
+    nameRus: 'Эякуляция'
+  }, {
+    nameEng: 'Drink up',
+    nameRus: 'Запой'
+  }, {
+    nameEng: 'Porn',
+    nameRus: 'Порно'
+  }, {
+    nameEng: 'Excitement',
+    nameRus: 'Возбуждение'
+  }, {
+    nameEng: 'Spermatoxicosis',
+    nameRus: 'Сперматоксикоз'
+  }, {
+    nameEng: 'Defloration',
+    nameRus: 'Дефлорация'
+  }, {
+    nameEng: 'Bachelor party',
+    nameRus: 'Мальчишник'
+  }, {
+    nameEng: 'Pheromones',
+    nameRus: 'Феромоны'
+  }, {
+    nameEng: 'Nymhomaniac',
+    nameRus: 'Нимфоманка'
+  }, {
+    nameEng: 'Pollution',
+    nameRus: 'Поллюция'
+  }, {
+    nameEng: 'Masochism',
+    nameRus: 'Мазохизм'
+  }, {
+    nameEng: 'Slave of love',
+    nameRus: 'Рабыня любви'
+  }, {
+    nameEng: 'Contraceptive',
+    nameRus: 'Контрацептив'
+  }, {
+    nameEng: 'Conception',
+    nameRus: 'Зачатие'
+  }, {
+    nameEng: 'Cavalier',
+    nameRus: 'Кавалер'
+  }, {
+    nameEng: 'Adultery',
+    nameRus: 'Супрыжеская измена'
+  }, {
+    nameEng: 'Bondage',
+    nameRus: 'Бондаж'
+  }, {
+    nameEng: 'Spout',
+    nameRus: 'Загул'
+  }, {
+    nameEng: 'Lubricant',
+    nameRus: 'Лубрикант'
+  }, {
+    nameEng: 'Slut',
+    nameRus: 'Развратница'
+  }, {
+    nameEng: 'Seduction',
+    nameRus: 'Обольщение'
+  }, {
+    nameEng: 'Engagement',
+    nameRus: 'Обручение'
+  }, {
+    nameEng: 'Nursing mother',
+    nameRus: 'Кормящая мать'
+  }, {
+    nameEng: 'Office romance',
+    nameRus: 'Служебный роман'
+  }, {
+    nameEng: 'Blow a kiss',
+    nameRus: 'Воздушный поцелуй'
+  }, {
+    nameEng: 'Serenade',
+    nameRus: 'Серенада'
+  }, {
+    nameEng: 'Erotic games',
+    nameRus: 'Эротические игры'
+  }, {
+    nameEng: 'Homisexuality',
+    nameRus: 'Гомосексуальность'
+  }, {
+    nameEng: 'Wedding night',
+    nameRus: 'Брачная ночь'
+  }, {
+    nameEng: 'Hard sex',
+    nameRus: 'Жесткий секс'
+  }, {
+    nameEng: 'Sex life',
+    nameRus: 'Половая жизнь'
+  }, {
+    nameEng: 'Threesome',
+    nameRus: 'Тройничек'
+  }, {
+    nameEng: 'Baccanalia',
+    nameRus: 'Вакханалия'
+  }, {
+    nameEng: 'Companion',
+    nameRus: 'Спутница'
+  }, {
+    nameEng: 'Honeymoon',
+    nameRus: 'Медовый месяц'
+  }, {
+    nameEng: 'Circumcision',
+    nameRus: 'Обрезание'
+  }, {
+    nameEng: 'Group sex',
+    nameRus: 'Групповой секс'
+  }, {
+    nameEng: 'Blind passion',
+    nameRus: 'Слепая страсть'
+  }, {
+    nameEng: 'Nude',
+    nameRus: 'Обнаженная'
+  }, {
+    nameEng: 'Polygamy',
+    nameRus: 'Многоженство'
+  }, {
+    nameEng: 'Swingers',
+    nameRus: 'Свингеры'
+  }, {
+    nameEng: 'Temptation',
+    nameRus: 'Искушение'
+  }, {
+    nameEng: 'Striptease',
+    nameRus: 'Стриптиз'
+  }, {
+    nameEng: 'Eunuch',
+    nameRus: 'Евнух'
+  }, {
+    nameEng: 'Kiss',
+    nameRus: 'Поцелуй'
+  }, {
+    nameEng: 'Heterosexual',
+    nameRus: 'Гетеросексуал'
+  }, {
+    nameEng: 'Impotence',
+    nameRus: 'Импотенция'
+  }, {
+    nameEng: 'Erogenous zone',
+    nameRus: 'Эрогенная зона'
+  }, {
+    nameEng: 'Vulgarity',
+    nameRus: 'Вульгарность'
+  }, {
+    nameEng: 'Valentine',
+    nameRus: 'Валентинка'
+  }, {
+    nameEng: 'Female bust',
+    nameRus: 'Женский бюст'
   }],
   main: [{
     nameEng: 'Bus',
     nameRus: 'Автобус'
   }, {
-    nameEng: '',
+    nameEng: 'House',
     nameRus: 'Дом'
   }, {
-    nameEng: '',
+    nameEng: 'Bridge',
     nameRus: 'Мост'
   }, {
-    nameEng: '',
+    nameEng: 'Moon',
     nameRus: 'Лупа'
   }, {
-    nameEng: '',
+    nameEng: 'Peper',
     nameRus: 'Перец'
   }, {
-    nameEng: '',
+    nameEng: 'City',
     nameRus: 'Город'
   }, {
-    nameEng: '',
+    nameEng: 'Walrus',
     nameRus: 'Морж'
   }, {
-    nameEng: '',
+    nameEng: 'Pirate',
     nameRus: 'Пират'
   }, {
-    nameEng: '',
+    nameEng: 'Sea',
     nameRus: 'Море'
   }, {
-    nameEng: '',
+    nameEng: 'Apple',
     nameRus: 'Яблоко'
   }, {
-    nameEng: '',
+    nameEng: 'Shark',
     nameRus: 'Акула'
   }, {
-    nameEng: '',
+    nameEng: 'Sun',
     nameRus: 'Солнце'
   }, {
-    nameEng: '',
+    nameEng: 'Ball',
     nameRus: 'Шарик'
   }, {
-    nameEng: '',
+    nameEng: 'Plasticine',
     nameRus: 'Пластилин'
   }, {
-    nameEng: '',
+    nameEng: 'Bucket',
     nameRus: 'Ведро'
   }, {
-    nameEng: '',
+    nameEng: 'Chief',
     nameRus: 'Начальник'
   }, {
-    nameEng: '',
+    nameEng: 'Vacuum cleaner',
     nameRus: 'Пылесос'
   }, {
-    nameEng: '',
+    nameEng: 'Aquarium',
     nameRus: 'Аквариум'
   }, {
-    nameEng: '',
+    nameEng: 'Monitor',
     nameRus: 'Монитор'
   }, {
-    nameEng: '',
+    nameEng: 'Garlic',
     nameRus: 'Чеснок'
   }, {
-    nameEng: '',
+    nameEng: 'Ostrich',
     nameRus: 'Страус'
   }, {
-    nameEng: '',
+    nameEng: 'Distance',
     nameRus: 'Расстояние'
   }, {
-    nameEng: '',
+    nameEng: 'Lazy',
     nameRus: 'Лень'
   }, {
-    nameEng: '',
+    nameEng: 'Smoke',
     nameRus: 'Дым'
   }, {
-    nameEng: '',
+    nameEng: 'Bite',
     nameRus: 'Укус'
   }, {
-    nameEng: '',
+    nameEng: 'Mosquito',
     nameRus: 'Комар'
   }, {
-    nameEng: '',
+    nameEng: 'Athlete',
     nameRus: 'Спортсмен'
   }, {
-    nameEng: '',
+    nameEng: 'Wire',
     nameRus: 'Провод'
   }, {
-    nameEng: '',
+    nameEng: 'Motor',
     nameRus: 'Мотор'
   }, {
-    nameEng: '',
+    nameEng: 'Wife',
     nameRus: 'Жена'
   }, {
-    nameEng: '',
+    nameEng: 'Juice',
     nameRus: 'Сок'
   }, {
-    nameEng: '',
+    nameEng: 'Birch',
     nameRus: 'Береза'
   }, {
-    nameEng: '',
+    nameEng: 'Vaza',
     nameRus: 'Ваза'
   }, {
-    nameEng: '',
+    nameEng: 'Fish',
     nameRus: 'Рыба'
   }, {
-    nameEng: '',
+    nameEng: 'Nightingale',
     nameRus: 'Соловей'
   }, {
-    nameEng: '',
+    nameEng: 'Lake',
     nameRus: 'Озеро'
   }, {
-    nameEng: '',
+    nameEng: 'Wallet',
     nameRus: 'Кошелек'
   }, {
-    nameEng: '',
+    nameEng: 'Moon',
     nameRus: 'Луна'
   }, {
-    nameEng: '',
+    nameEng: 'Grandfather',
     nameRus: 'Дед'
   }, {
-    nameEng: '',
+    nameEng: 'Calendar',
     nameRus: 'Календарь'
   }, {
-    nameEng: '',
+    nameEng: 'Shovel',
     nameRus: 'Лопата'
   }, {
-    nameEng: '',
+    nameEng: 'Swing',
     nameRus: 'Качели'
   }, {
-    nameEng: '',
+    nameEng: 'Fear',
     nameRus: 'Страх'
   }, {
-    nameEng: '',
+    nameEng: 'Bag',
     nameRus: 'Сумка'
   }, {
-    nameEng: '',
+    nameEng: 'Window',
     nameRus: 'Окно'
   }, {
-    nameEng: '',
+    nameEng: 'Dog',
     nameRus: 'Собака'
   }, {
-    nameEng: '',
+    nameEng: 'Friends',
     nameRus: 'Друзья'
   }, {
-    nameEng: '',
+    nameEng: 'Child',
     nameRus: 'Ребенок'
   }, {
-    nameEng: '',
+    nameEng: 'Month',
     nameRus: 'Месяц'
   }, {
-    nameEng: '',
+    nameEng: 'Kitten',
     nameRus: 'Котенок'
   }, {
-    nameEng: '',
+    nameEng: 'Candy',
     nameRus: 'Конфета'
   }, {
-    nameEng: '',
+    nameEng: 'Holiday',
     nameRus: 'Праздник'
   }, {
-    nameEng: '',
+    nameEng: 'Sleep',
     nameRus: 'Сон'
   }, {
-    nameEng: '',
+    nameEng: 'Skeleton',
     nameRus: 'Скелет'
   }, {
-    nameEng: '',
+    nameEng: 'Boat',
     nameRus: 'Лодка'
   }, {
-    nameEng: '',
+    nameEng: 'Island',
     nameRus: 'Остров'
   }, {
-    nameEng: '',
+    nameEng: 'Bracelet',
     nameRus: 'Браслет'
   }, {
-    nameEng: '',
+    nameEng: 'Bred',
     nameRus: 'Хлеб'
   }, {
-    nameEng: '',
+    nameEng: 'Chicken',
     nameRus: 'Курица'
   }, {
-    nameEng: '',
+    nameEng: 'Roof',
     nameRus: 'Крыша'
   }, {
-    nameEng: '',
+    nameEng: 'Vest',
     nameRus: 'Жилет'
   }, {
-    nameEng: '',
+    nameEng: 'Diary',
     nameRus: 'Дневник'
   }, {
-    nameEng: '',
+    nameEng: 'Garbage',
     nameRus: 'Мусор'
   }, {
-    nameEng: '',
+    nameEng: 'Car',
     nameRus: 'Автомобиль'
   }, {
-    nameEng: '',
+    nameEng: 'Girl',
     nameRus: 'Девочка'
   }, {
-    nameEng: '',
+    nameEng: 'Shoes',
     nameRus: 'Туфли'
   }, {
-    nameEng: '',
+    nameEng: 'Waffles',
     nameRus: 'Вафли'
   }, {
-    nameEng: '',
+    nameEng: 'Donor',
     nameRus: 'Донор'
   }, {
-    nameEng: '',
+    nameEng: 'Seeds',
     nameRus: 'Семечки'
   }, {
-    nameEng: '',
+    nameEng: 'Phone',
     nameRus: 'Телефон'
   }, {
-    nameEng: '',
+    nameEng: 'Thunderstorm',
     nameRus: 'Гроза'
   }, {
-    nameEng: '',
+    nameEng: 'Paperclip',
     nameRus: 'Скрепка'
   }, {
-    nameEng: '',
+    nameEng: 'Joy',
     nameRus: 'Радость'
   }, {
-    nameEng: '',
+    nameEng: 'Mel',
     nameRus: 'Мел'
   }, {
-    nameEng: '',
+    nameEng: 'Paper',
     nameRus: 'Бумага'
   }, {
-    nameEng: '',
+    nameEng: 'Mouse',
     nameRus: 'Мышка'
   }, {
-    nameEng: '',
+    nameEng: 'Teeth',
     nameRus: 'Зубы'
   }, {
-    nameEng: '',
+    nameEng: 'Nose',
     nameRus: 'Нос'
   }, {
-    nameEng: '',
+    nameEng: 'Grass',
     nameRus: 'Трава'
   }, {
-    nameEng: '',
+    nameEng: 'Mittens',
     nameRus: 'Варежки'
   }, {
-    nameEng: '',
+    nameEng: 'Mop',
     nameRus: 'Швабра'
   }, {
-    nameEng: '',
+    nameEng: 'Wig',
     nameRus: 'Парик'
   }, {
-    nameEng: '',
+    nameEng: 'Pencil',
     nameRus: 'Карандаш'
   }, {
-    nameEng: '',
+    nameEng: 'Medicine',
     nameRus: 'Лекарство'
   }, {
-    nameEng: '',
+    nameEng: 'Skirt',
     nameRus: 'Юбка'
   }, {
-    nameEng: '',
+    nameEng: 'Leo',
     nameRus: 'Лев'
   }, {
-    nameEng: '',
+    nameEng: 'Grad',
     nameRus: 'Град'
   }, {
-    nameEng: '',
+    nameEng: 'Base',
     nameRus: 'База'
   }, {
-    nameEng: '',
+    nameEng: 'Notes',
     nameRus: 'Ноты'
   }, {
-    nameEng: '',
+    nameEng: 'Radiation',
     nameRus: 'Радиация'
   }, {
-    nameEng: '',
+    nameEng: 'Dishes',
     nameRus: 'Посуда'
   }, {
-    nameEng: '',
+    nameEng: 'Air conditioner',
     nameRus: 'Кондиционер'
   }, {
-    nameEng: '',
+    nameEng: 'Parade',
     nameRus: 'Парад'
   }, {
-    nameEng: '',
+    nameEng: 'Cup',
     nameRus: 'Чашка'
   }, {
-    nameEng: '',
+    nameEng: 'Powder',
     nameRus: 'Порошок'
   }, {
-    nameEng: '',
+    nameEng: 'List',
     nameRus: 'Список'
   }, {
-    nameEng: '',
+    nameEng: 'Photographer',
     nameRus: 'Фотограф'
   }, {
-    nameEng: '',
+    nameEng: 'Turtle',
     nameRus: 'Черепаха'
   }, {
-    nameEng: '',
+    nameEng: 'Star',
     nameRus: 'Звезда'
   }, {
-    nameEng: '',
+    nameEng: 'Cap',
     nameRus: 'Колпак'
   }, {
-    nameEng: '',
+    nameEng: 'Drum',
     nameRus: 'Барабан'
   }, {
-    nameEng: '',
+    nameEng: 'Pants',
     nameRus: 'Брюки'
   }, {
-    nameEng: '',
+    nameEng: 'Aunt',
     nameRus: 'Тётя'
   }, {
-    nameEng: '',
+    nameEng: 'Brooch',
     nameRus: 'Брошка'
   }, {
-    nameEng: '',
+    nameEng: 'Smile',
     nameRus: 'Улыбка'
   }, {
-    nameEng: '',
+    nameEng: 'Stick',
     nameRus: 'Палка'
   }, {
-    nameEng: '',
-    nameRus: 'Блоднинка'
+    nameEng: 'Blonde',
+    nameRus: 'Блондинка'
   }, {
-    nameEng: '',
+    nameEng: 'Post',
     nameRus: 'Пост'
   }, {
-    nameEng: '',
+    nameEng: 'Bouquet',
     nameRus: 'Букет'
   }, {
-    nameEng: '',
+    nameEng: 'Penalty',
     nameRus: 'Штраф'
   }, {
-    nameEng: '',
+    nameEng: 'Laughter',
     nameRus: 'Смех'
   }, {
-    nameEng: '',
+    nameEng: 'Circus',
     nameRus: 'Цирк'
   }, {
-    nameEng: '',
+    nameEng: 'Marker',
     nameRus: 'Маркер'
   }, {
-    nameEng: '',
+    nameEng: 'Ferret',
     nameRus: 'Хорек'
   }, {
-    nameEng: '',
+    nameEng: 'Cell',
     nameRus: 'Клетка'
   }, {
-    nameEng: '',
+    nameEng: 'Letter',
     nameRus: 'Письмо'
   }, {
-    nameEng: '',
+    nameEng: 'Button',
     nameRus: 'Кнопка'
+  }],
+  Alias: [{
+    nameEng: 'Balcony',
+    nameRus: 'Балкон'
+  }, {
+    nameEng: 'Cornflakes',
+    nameRus: 'Кукурузные хлопья'
+  }, {
+    nameEng: 'River',
+    nameRus: 'Река'
+  }, {
+    nameEng: 'Lasso',
+    nameRus: 'Лассо'
+  }, {
+    nameEng: 'To warn',
+    nameRus: 'Предостерегать'
+  }, {
+    nameEng: 'Unconscious',
+    nameRus: 'Бессознательные'
+  }, {
+    nameEng: 'Matchbox',
+    nameRus: 'Спичечный коробок'
+  }, {
+    nameEng: 'Dice game',
+    nameRus: 'Игра в кости'
+  }, {
+    nameEng: 'Foal',
+    nameRus: 'Жеребенок'
+  }, {
+    nameEng: 'Piercing',
+    nameRus: 'Пирсинг'
+  }, {
+    nameEng: 'Salad',
+    nameRus: 'Салат'
+  }, {
+    nameEng: 'Tuxedo',
+    nameRus: 'Смокинг'
+  }, {
+    nameEng: 'Collection of stories',
+    nameRus: 'Сборник рассказов'
+  }, {
+    nameEng: 'Stone',
+    nameRus: 'Камень'
+  }, {
+    nameEng: 'Sector',
+    nameRus: 'Сектор'
+  }, {
+    nameEng: 'Union',
+    nameRus: 'Объединение'
+  }, {
+    nameEng: 'Orange',
+    nameRus: 'Апельсин'
+  }, {
+    nameEng: 'Motherland',
+    nameRus: 'Родина'
+  }, {
+    nameEng: 'Atomic',
+    nameRus: 'Атомный'
+  }, {
+    nameEng: 'To thicken',
+    nameRus: 'Сгущаться'
+  }, {
+    nameEng: 'Blue',
+    nameRus: 'Голубой'
+  }, {
+    nameEng: 'Rough ',
+    nameRus: 'Шершавый'
+  }, {
+    nameEng: 'Clavicle',
+    nameRus: 'Ключица'
+  }, {
+    nameEng: 'Envelope',
+    nameRus: 'Конверт'
+  }, {
+    nameEng: 'Translation',
+    nameRus: 'Перевод'
+  }, {
+    nameEng: 'Odd number',
+    nameRus: 'Нечётное число'
+  }, {
+    nameEng: 'Leverage',
+    nameRus: 'Плечо'
+  }, {
+    nameEng: 'High',
+    nameRus: 'Высокий'
+  }, {
+    nameEng: 'Equestrian polo',
+    nameRus: 'Конное поло'
+  }, {
+    nameEng: 'Trash',
+    nameRus: 'Хлам'
+  }, {
+    nameEng: 'Cardboard',
+    nameRus: 'Картон'
+  }, {
+    nameEng: 'Look at close range',
+    nameRus: 'Смотреть в упор'
+  }, {
+    nameEng: 'Production',
+    nameRus: 'Добыча'
+  }, {
+    nameEng: 'Detail',
+    nameRus: 'Подробность'
+  }, {
+    nameEng: 'Direction',
+    nameRus: 'Направление'
+  }, {
+    nameEng: 'Shard',
+    nameRus: 'Осколок'
+  }, {
+    nameEng: 'Local radio',
+    nameRus: 'Местное радио'
+  }, {
+    nameEng: 'Newspaper',
+    nameRus: 'Газета'
+  }, {
+    nameEng: 'Shaft',
+    nameRus: 'Древко'
+  }, {
+    nameEng: 'Personality',
+    nameRus: 'Личность'
+  }, {
+    nameEng: 'Nature',
+    nameRus: 'Природа'
+  }, {
+    nameEng: 'Milky Way',
+    nameRus: 'Млечный путь'
+  }, {
+    nameEng: 'Bach',
+    nameRus: 'Бах'
+  }, {
+    nameEng: 'Courage',
+    nameRus: 'Отвага'
+  }, {
+    nameEng: 'Blow',
+    nameRus: 'Удар'
+  }, {
+    nameEng: 'Halo',
+    nameRus: 'Ореол'
+  }, {
+    nameEng: 'Speed',
+    nameRus: 'Скорость'
+  }, {
+    nameEng: 'Encyclopedia',
+    nameRus: 'Энциклопедия'
+  }, {
+    nameEng: 'Fondue',
+    nameRus: 'Фондю'
+  }, {
+    nameEng: 'Security',
+    nameRus: 'Охрана'
+  }, {
+    nameEng: 'Praise',
+    nameRus: 'Похвала'
+  }, {
+    nameEng: 'Break',
+    nameRus: 'Обрыв'
+  }, {
+    nameEng: 'Attempt',
+    nameRus: 'Попытка'
+  }, {
+    nameEng: 'Jester',
+    nameRus: 'Шут'
+  }, {
+    nameEng: 'Plague',
+    nameRus: 'Чума'
+  }, {
+    nameEng: 'Aviation',
+    nameRus: 'Авиация'
+  }, {
+    nameEng: 'Caterpillar',
+    nameRus: 'Гусеница'
+  }, {
+    nameEng: 'Mirror',
+    nameRus: 'Зеркало'
+  }, {
+    nameEng: 'To cut',
+    nameRus: 'Резать'
+  }, {
+    nameEng: 'The Statue of Liberty',
+    nameRus: 'Статуя Свободы'
+  }, {
+    nameEng: 'Sleeve',
+    nameRus: 'Рукав'
+  }, {
+    nameEng: 'Knock',
+    nameRus: 'Стук'
+  }, {
+    nameEng: 'Napkin',
+    nameRus: 'Салфетка'
+  }, {
+    nameEng: 'Ugly',
+    nameRus: 'Безобразный'
+  }, {
+    nameEng: 'Raven',
+    nameRus: 'Ворон'
+  }, {
+    nameEng: 'Evidence',
+    nameRus: 'Улика'
+  }, {
+    nameEng: 'Mirage',
+    nameRus: 'Мираж'
+  }, {
+    nameEng: 'Loadspeaker',
+    nameRus: 'Громкоговоритель'
+  }, {
+    nameEng: 'Canary',
+    nameRus: 'Канарейка'
+  }, {
+    nameEng: 'Normal',
+    nameRus: 'Нормальный'
+  }, {
+    nameEng: 'To tighten',
+    nameRus: 'Ужесточить'
+  }, {
+    nameEng: 'Gymnastics',
+    nameRus: 'Гимнастика'
+  }, {
+    nameEng: 'Air',
+    nameRus: 'Воздух'
+  }, {
+    nameEng: 'Wedding cake',
+    nameRus: 'Свадебный торт'
+  }, {
+    nameEng: 'Satan',
+    nameRus: 'Сатана'
+  }, {
+    nameEng: 'Trophy',
+    nameRus: 'Трофей'
+  }, {
+    nameEng: 'Bathroom',
+    nameRus: 'Ванная'
+  }, {
+    nameEng: 'Duel',
+    nameRus: 'Дуэль'
+  }, {
+    nameEng: 'Crossword',
+    nameRus: 'Кроссворд'
+  }, {
+    nameEng: 'Scratch',
+    nameRus: 'Царапина'
+  }, {
+    nameEng: 'Portfolio',
+    nameRus: 'Портфель'
+  }, {
+    nameEng: 'North',
+    nameRus: 'Север'
+  }, {
+    nameEng: 'Team',
+    nameRus: 'Команда'
+  }, {
+    nameEng: 'Sprout',
+    nameRus: 'Росток'
+  }, {
+    nameEng: 'Shawl',
+    nameRus: 'Шаль'
+  }, {
+    nameEng: 'Ticket',
+    nameRus: 'Билет'
+  }, {
+    nameEng: 'Chapter',
+    nameRus: 'Глава'
+  }, {
+    nameEng: 'Hippodrome',
+    nameRus: 'Ипподром'
+  }, {
+    nameEng: 'Chomp',
+    nameRus: 'Чавкать'
+  }, {
+    nameEng: 'Murder',
+    nameRus: 'Убийство'
+  }, {
+    nameEng: 'Buttocks',
+    nameRus: 'Ягодицы'
+  }, {
+    nameEng: 'Age',
+    nameRus: 'Возраст'
+  }, {
+    nameEng: 'Butterfly',
+    nameRus: 'Бабочка'
+  }, {
+    nameEng: 'City center',
+    nameRus: 'Центр города'
+  }, {
+    nameEng: 'Fix',
+    nameRus: 'Исправление'
+  }, {
+    nameEng: 'Ice',
+    nameRus: 'Гололёд'
+  }, {
+    nameEng: 'Joker',
+    nameRus: 'Джокер'
+  }, {
+    nameEng: 'Non-stop',
+    nameRus: 'Безостановочный'
+  }, {
+    nameEng: 'Conviction',
+    nameRus: 'Убежденность'
+  }, {
+    nameEng: 'Impudent',
+    nameRus: 'Наглый'
+  }, {
+    nameEng: 'To smoke a pipe',
+    nameRus: 'Курить трубку'
+  }, {
+    nameEng: 'Soundproofing',
+    nameRus: 'Звукоизоляция'
+  }, {
+    nameEng: 'Ballast',
+    nameRus: 'Балласт'
+  }, {
+    nameEng: 'Crane',
+    nameRus: 'Журавль'
+  }, {
+    nameEng: 'Piano',
+    nameRus: 'Фортепьяно'
+  }, {
+    nameEng: 'Heron',
+    nameRus: 'Цапля'
+  }, {
+    nameEng: 'Eyebrow',
+    nameRus: 'Бровь'
+  }, {
+    nameEng: 'To get up',
+    nameRus: 'Вставать'
+  }, {
+    nameEng: 'Driver',
+    nameRus: 'Водитель'
+  }, {
+    nameEng: 'Independence',
+    nameRus: 'Независимость'
+  }, {
+    nameEng: 'Chainsaw',
+    nameRus: 'Бензопила'
+  }, {
+    nameEng: 'Symptom',
+    nameRus: 'Симптом'
+  }, {
+    nameEng: 'Personnel',
+    nameRus: 'Персонал'
+  }, {
+    nameEng: 'Spouse',
+    nameRus: 'Супруг'
+  }, {
+    nameEng: 'Region',
+    nameRus: 'Область'
+  }, {
+    nameEng: 'Capsule',
+    nameRus: 'Капсула'
+  }, {
+    nameEng: 'Specified',
+    nameRus: 'Определенный'
+  }, {
+    nameEng: 'Fog',
+    nameRus: 'Туман'
+  }, {
+    nameEng: 'Cheese',
+    nameRus: 'Сыр'
+  }, {
+    nameEng: 'Guitar',
+    nameRus: 'Гитара'
+  }, {
+    nameEng: 'Vegetarian',
+    nameRus: 'Вегетарианец'
+  }, {
+    nameEng: 'Judo',
+    nameRus: 'Дзюдо'
+  }, {
+    nameEng: 'Travel',
+    nameRus: 'Путешествие'
+  }, {
+    nameEng: 'Waltz',
+    nameRus: 'Вальс'
+  }, {
+    nameEng: 'Brain',
+    nameRus: 'Мозг'
+  }, {
+    nameEng: 'Hoof',
+    nameRus: 'Копыто'
+  }, {
+    nameEng: 'Concept',
+    nameRus: 'Понятие'
+  }, {
+    nameEng: 'Lunch',
+    nameRus: 'Обед'
+  }, {
+    nameEng: 'Stockings',
+    nameRus: 'Чулки'
+  }, {
+    nameEng: 'To creep',
+    nameRus: 'Пресмыкаться'
+  }, {
+    nameEng: 'Сarcass',
+    nameRus: 'Туша'
+  }, {
+    nameEng: 'Democracy',
+    nameRus: 'Демократия'
+  }, {
+    nameEng: 'Distress',
+    nameRus: 'Бедствие'
+  }, {
+    nameEng: 'Songbird',
+    nameRus: 'Певчая птица'
+  }, {
+    nameEng: 'Los Angeles',
+    nameRus: 'Лос Анджелес'
+  }, {
+    nameEng: 'Roof',
+    nameRus: 'Крыша'
+  }, {
+    nameEng: 'To close',
+    nameRus: 'Закрывать'
+  }, {
+    nameEng: 'Blinking',
+    nameRus: 'Мерцание'
+  }, {
+    nameEng: 'Human',
+    nameRus: 'Человеческий'
+  }, {
+    nameEng: 'Hide',
+    nameRus: 'Таиться'
+  }, {
+    nameEng: 'Match',
+    nameRus: 'Спичка'
+  }, {
+    nameEng: 'Poison',
+    nameRus: 'Яд'
+  }, {
+    nameEng: 'Candidate',
+    nameRus: 'Кандидат'
+  }, {
+    nameEng: 'Highway',
+    nameRus: 'Магистраль'
+  }, {
+    nameEng: 'Vision',
+    nameRus: 'Зрение'
+  }, {
+    nameEng: 'Border',
+    nameRus: 'Граница'
+  }, {
+    nameEng: 'Rumor',
+    nameRus: 'Молва'
+  }, {
+    nameEng: 'Dry rations',
+    nameRus: 'Сухой паёк'
+  }, {
+    nameEng: 'Remember',
+    nameRus: 'Помнить'
+  }, {
+    nameEng: 'Fracture',
+    nameRus: 'Перелом'
+  }, {
+    nameEng: 'Ostrich',
+    nameRus: 'Страус'
+  }, {
+    nameEng: 'East',
+    nameRus: 'Восток'
+  }, {
+    nameEng: 'Armpit',
+    nameRus: 'Подмышка'
+  }, {
+    nameEng: 'Las Vegas',
+    nameRus: 'Лас Вегас'
+  }, {
+    nameEng: 'Elephant',
+    nameRus: 'Слон'
+  }, {
+    nameEng: 'Poor',
+    nameRus: 'Бедный'
+  }, {
+    nameEng: 'To waste time',
+    nameRus: 'Терять время'
+  }, {
+    nameEng: 'Spotlight',
+    nameRus: 'Прожектор'
+  }, {
+    nameEng: 'Chronicle',
+    nameRus: 'Хроника'
+  }, {
+    nameEng: 'To fortify',
+    nameRus: 'Укреплять'
+  }, {
+    nameEng: 'Flexible',
+    nameRus: 'Гибкий'
+  }, {
+    nameEng: 'Competition',
+    nameRus: 'Соревнование'
+  }, {
+    nameEng: 'India',
+    nameRus: 'Индия'
+  }, {
+    nameEng: 'Skates',
+    nameRus: 'Коньки'
+  }, {
+    nameEng: 'Picket',
+    nameRus: 'Кол'
+  }, {
+    nameEng: 'Elder',
+    nameRus: 'Старец'
+  }, {
+    nameEng: 'Meek',
+    nameRus: 'Кроткий'
+  }, {
+    nameEng: 'Big Ben',
+    nameRus: 'Биг Бен'
+  }, {
+    nameEng: 'To pray',
+    nameRus: 'Молиться'
+  }, {
+    nameEng: 'Agile',
+    nameRus: 'Проворный'
+  }, {
+    nameEng: 'Braces',
+    nameRus: 'Подтяжки'
+  }, {
+    nameEng: 'Ice cream',
+    nameRus: 'Мороженное'
+  }, {
+    nameEng: 'Congratulations',
+    nameRus: 'Поздравление'
+  }, {
+    nameEng: 'Kidnapping',
+    nameRus: 'Похищение людей'
+  }, {
+    nameEng: 'Denture',
+    nameRus: 'Зубной протез'
+  }, {
+    nameEng: 'Bottle',
+    nameRus: 'Бутылка'
+  }, {
+    nameEng: 'Merry',
+    nameRus: 'Весёлый'
+  }, {
+    nameEng: 'Model',
+    nameRus: 'Модель'
+  }, {
+    nameEng: 'Thorn',
+    nameRus: 'Колючка'
+  }, {
+    nameEng: 'Testament',
+    nameRus: 'Завещание'
+  }, {
+    nameEng: 'Tear',
+    nameRus: 'Слеза'
+  }, {
+    nameEng: 'Bit',
+    nameRus: 'Разряд'
+  }, {
+    nameEng: 'Spice',
+    nameRus: 'Специя'
+  }, {
+    nameEng: 'Magic trick',
+    nameRus: 'Магический фокус'
+  }, {
+    nameEng: 'To detect',
+    nameRus: 'Обнаруживать'
+  }, {
+    nameEng: 'Flea market',
+    nameRus: 'Блошиный рынок'
+  }, {
+    nameEng: 'Harmless',
+    nameRus: 'Безобидный'
+  }, {
+    nameEng: 'To wear',
+    nameRus: 'Носить'
+  }, {
+    nameEng: 'Cloud',
+    nameRus: 'Облако'
+  }, {
+    nameEng: 'Raccoon',
+    nameRus: 'Енот'
+  }, {
+    nameEng: 'Dart',
+    nameRus: 'Дротик'
+  }, {
+    nameEng: 'Greedy',
+    nameRus: 'Жадный'
+  }, {
+    nameEng: 'Cattle feed',
+    nameRus: 'Корм для скота'
+  }, {
+    nameEng: 'Inflation',
+    nameRus: 'Инфляция'
+  }, {
+    nameEng: 'Completeness',
+    nameRus: 'Полнота'
+  }, {
+    nameEng: 'Badger',
+    nameRus: 'Барсук'
+  }, {
+    nameEng: 'Arena',
+    nameRus: 'Арена'
+  }, {
+    nameEng: 'Mainland',
+    nameRus: 'Материк'
+  }, {
+    nameEng: 'To explain',
+    nameRus: 'Объяснить'
+  }, {
+    nameEng: 'Bamboo',
+    nameRus: 'Бамбук'
+  }, {
+    nameEng: 'To check',
+    nameRus: 'Проверять'
+  }, {
+    nameEng: 'Bell',
+    nameRus: 'Колокольчик'
+  }, {
+    nameEng: 'Fisherman',
+    nameRus: 'Рыбак'
+  }, {
+    nameEng: 'Birthday',
+    nameRus: 'День рождения'
+  }, {
+    nameEng: 'Cottage',
+    nameRus: 'Коттедж'
+  }, {
+    nameEng: 'Suncreen',
+    nameRus: 'Солнцезащитный'
+  }, {
+    nameEng: 'To travel',
+    nameRus: 'Путешествовать'
+  }, {
+    nameEng: 'Rat',
+    nameRus: 'Крыса'
+  }, {
+    nameEng: 'Slime',
+    nameRus: 'Слизь'
+  }, {
+    nameEng: 'Lunar eclipse',
+    nameRus: 'Лунное затмение'
+  }, {
+    nameEng: 'News',
+    nameRus: 'Новости'
+  }, {
+    nameEng: 'Weapon',
+    nameRus: 'Орудие'
+  }, {
+    nameEng: 'Wallpaper',
+    nameRus: 'Обои'
+  }, {
+    nameEng: 'Famous',
+    nameRus: 'Знаменитый'
+  }, {
+    nameEng: 'Atlantis',
+    nameRus: 'Атлантида'
+  }, {
+    nameEng: 'Rear',
+    nameRus: 'Тыльный'
+  }, {
+    nameEng: 'Helmet',
+    nameRus: 'Шлем'
+  }, {
+    nameEng: 'Smell',
+    nameRus: 'Обоняние'
+  }, {
+    nameEng: 'Deal',
+    nameRus: 'Сделка'
+  }, {
+    nameEng: 'Traffic light',
+    nameRus: 'Светофор'
+  }, {
+    nameEng: 'Tent',
+    nameRus: 'Палатка'
+  }, {
+    nameEng: 'To dedicate',
+    nameRus: 'Посвящать'
+  }, {
+    nameEng: 'Night cafe',
+    nameRus: 'Ночное кафе'
+  }, {
+    nameEng: 'Pineapple',
+    nameRus: 'Ананас'
+  }, {
+    nameEng: 'Doubt',
+    nameRus: 'Сомнение'
+  }, {
+    nameEng: 'Tennis',
+    nameRus: 'Теннис'
+  }, {
+    nameEng: 'Theater',
+    nameRus: 'Театр'
+  }, {
+    nameEng: 'Diary',
+    nameRus: 'Дневник'
+  }, {
+    nameEng: 'Deodarant',
+    nameRus: 'Дезодарант'
+  }, {
+    nameEng: 'Road',
+    nameRus: 'Дорога'
+  }, {
+    nameEng: 'Raw',
+    nameRus: 'Сырой'
+  }, {
+    nameEng: 'Olympic flame',
+    nameRus: 'Олимпийский огонь'
+  }, {
+    nameEng: 'Reflection',
+    nameRus: 'Отражение'
+  }, {
+    nameEng: 'Worship',
+    nameRus: 'Поклонение'
+  }, {
+    nameEng: 'Enemy',
+    nameRus: 'Враг'
+  }, {
+    nameEng: 'Icy',
+    nameRus: 'Ледяной'
+  }, {
+    nameEng: 'To encourage',
+    nameRus: 'Побуждать'
+  }, {
+    nameEng: 'Pigtail',
+    nameRus: 'Косичка'
+  }, {
+    nameEng: 'Pop',
+    nameRus: 'Поп'
+  }, {
+    nameEng: 'Guitarist',
+    nameRus: 'Гитарист'
+  }, {
+    nameEng: 'Fly swatter',
+    nameRus: 'Мухобойка'
+  }, {
+    nameEng: 'Grandchildren',
+    nameRus: 'Внуки'
+  }, {
+    nameEng: 'Funeral',
+    nameRus: 'Похороны'
+  }, {
+    nameEng: 'Father',
+    nameRus: 'Отец'
+  }, {
+    nameEng: 'Vibration',
+    nameRus: 'Вибрация'
+  }, {
+    nameEng: 'Ocean',
+    nameRus: 'Океан'
+  }, {
+    nameEng: 'Opposite',
+    nameRus: 'Противоположный'
+  }, {
+    nameEng: 'Inch',
+    nameRus: 'Дюйм'
+  }, {
+    nameEng: 'Palace',
+    nameRus: 'Парламент'
+  }, {
+    nameEng: 'Zero',
+    nameRus: 'Нуль'
+  }, {
+    nameEng: 'Shop',
+    nameRus: 'Магазин'
+  }, {
+    nameEng: 'Business',
+    nameRus: 'Дело'
+  }, {
+    nameEng: 'Dallas',
+    nameRus: 'Даллас'
+  }, {
+    nameEng: 'Vampire',
+    nameRus: 'Вампир'
+  }, {
+    nameEng: 'Bacon',
+    nameRus: 'Сало'
+  }, {
+    nameEng: 'Protection',
+    nameRus: 'Защита'
+  }, {
+    nameEng: 'Jungle',
+    nameRus: 'Джунгли'
+  }, {
+    nameEng: 'Reckless',
+    nameRus: 'Опрометчивый'
+  }, {
+    nameEng: 'Hideout',
+    nameRus: 'Убежище'
+  }, {
+    nameEng: 'Heir',
+    nameRus: 'Наследник'
+  }, {
+    nameEng: 'Voting rights',
+    nameRus: 'Право голоса'
+  }, {
+    nameEng: 'Collar',
+    nameRus: 'Воротник'
+  }, {
+    nameEng: 'Jump',
+    nameRus: 'Прыжок'
+  }, {
+    nameEng: 'To speak',
+    nameRus: 'Говорить'
+  }, {
+    nameEng: 'Grain',
+    nameRus: 'Зерно'
+  }, {
+    nameEng: 'Polar bear',
+    nameRus: 'Белый медведь'
+  }, {
+    nameEng: 'Pollen',
+    nameRus: 'Пыльца'
+  }, {
+    nameEng: 'Unreasonable',
+    nameRus: 'Необоснованный'
+  }, {
+    nameEng: 'Sailor',
+    nameRus: 'Моряк'
+  }, {
+    nameEng: 'Bench',
+    nameRus: 'Скамья'
+  }, {
+    nameEng: 'Chile',
+    nameRus: 'Чили'
+  }, {
+    nameEng: 'Solar eclipse',
+    nameRus: 'Солнечное затмение'
+  }, {
+    nameEng: 'Bone marrow',
+    nameRus: 'Костный мозг'
+  }, {
+    nameEng: 'Walking',
+    nameRus: 'Ходьба'
+  }, {
+    nameEng: 'Hockey',
+    nameRus: 'Хоккей'
+  }, {
+    nameEng: 'Castle',
+    nameRus: 'Замок'
+  }, {
+    nameEng: 'Dead',
+    nameRus: 'Мёртвый'
+  }, {
+    nameEng: 'Twisty',
+    nameRus: 'Извилистый'
+  }, {
+    nameEng: 'Overlay',
+    nameRus: 'Накладка'
+  }, {
+    nameEng: 'Colored pencil',
+    nameRus: 'Цветной карандаш'
+  }, {
+    nameEng: 'Hiroshima',
+    nameRus: 'Хиросима'
+  }, {
+    nameEng: 'The Hobbit',
+    nameRus: 'Хоббит'
+  }, {
+    nameEng: 'Killer whale',
+    nameRus: 'Косатка'
+  }, {
+    nameEng: 'Blush',
+    nameRus: 'Румянец'
+  }, {
+    nameEng: 'Ladder',
+    nameRus: 'Лестница'
+  }, {
+    nameEng: 'Sandpaper',
+    nameRus: 'Наждачная бумага'
+  }, {
+    nameEng: 'Bandit',
+    nameRus: 'Бандит'
+  }, {
+    nameEng: 'Crystal',
+    nameRus: 'Кристалл'
+  }, {
+    nameEng: 'Move',
+    nameRus: 'Перемещение'
+  }, {
+    nameEng: 'To harass',
+    nameRus: 'Притеснять'
+  }, {
+    nameEng: 'Alcoholic',
+    nameRus: 'Алкоголик'
+  }, {
+    nameEng: 'Wedding gift',
+    nameRus: 'Свадебный подарок'
+  }, {
+    nameEng: 'Territory',
+    nameRus: 'Территория'
+  }, {
+    nameEng: 'Gravel',
+    nameRus: 'Гравий'
+  }, {
+    nameEng: 'School',
+    nameRus: 'Школа'
+  }, {
+    nameEng: 'Woodchuck',
+    nameRus: 'Лесной сурок'
+  }, {
+    nameEng: 'Ladybug',
+    nameRus: 'Божья коровка'
+  }, {
+    nameEng: 'Encourage',
+    nameRus: 'Ободрять'
+  }, {
+    nameEng: 'Pepper',
+    nameRus: 'Перец'
+  }, {
+    nameEng: 'Vampirism',
+    nameRus: 'Вампиризм'
+  }, {
+    nameEng: 'Angle',
+    nameRus: 'Угол'
+  }, {
+    nameEng: 'Sky',
+    nameRus: 'Небо'
+  }, {
+    nameEng: 'Cancell cell',
+    nameRus: 'Раковая клетка'
+  }, {
+    nameEng: 'Anchor',
+    nameRus: 'Якорь'
+  }, {
+    nameEng: 'Squerrel',
+    nameRus: 'Белка'
+  }, {
+    nameEng: 'Mouse',
+    nameRus: 'Мышь'
+  }, {
+    nameEng: 'Triplet',
+    nameRus: 'Тройня'
+  }, {
+    nameEng: 'Word',
+    nameRus: 'Слово'
+  }, {
+    nameEng: 'Attentive',
+    nameRus: 'Внимательный'
+  }, {
+    nameEng: 'Scale',
+    nameRus: 'Масштаб'
+  }, {
+    nameEng: 'Obvious',
+    nameRus: 'Очевидный'
+  }, {
+    nameEng: 'Chat',
+    nameRus: 'Калякать'
+  }, {
+    nameEng: 'Race',
+    nameRus: 'Гонка'
+  }, {
+    nameEng: 'Old maid',
+    nameRus: 'Старая дева'
+  }, {
+    nameEng: 'Deck',
+    nameRus: 'Колода'
+  }, {
+    nameEng: 'Belly',
+    nameRus: 'Живот'
+  }, {
+    nameEng: 'Hidden',
+    nameRus: 'Спрятанный'
+  }, {
+    nameEng: 'Worm',
+    nameRus: 'Червь'
+  }, {
+    nameEng: 'Study',
+    nameRus: 'Учёба'
+  }, {
+    nameEng: 'Power',
+    nameRus: 'Мощь'
+  }, {
+    nameEng: 'Stomach pain',
+    nameRus: 'Боль в животе'
+  }, {
+    nameEng: 'Rag',
+    nameRus: 'Тряпка'
+  }, {
+    nameEng: 'Foreigner',
+    nameRus: 'Иностранец'
+  }, {
+    nameEng: 'To exceed',
+    nameRus: 'Превосходить'
+  }, {
+    nameEng: 'Vitamin',
+    nameRus: 'Витамин'
+  }, {
+    nameEng: 'To sorry',
+    nameRus: 'Извинять'
+  }, {
+    nameEng: 'Pit',
+    nameRus: 'Яма'
+  }, {
+    nameEng: 'Jingle',
+    nameRus: 'Звяканье'
+  }, {
+    nameEng: 'Doctor',
+    nameRus: 'Врач'
+  }, {
+    nameEng: 'Joint',
+    nameRus: 'Сустав'
+  }, {
+    nameEng: 'Mug',
+    nameRus: 'Кружка'
+  }, {
+    nameEng: 'Boomerang',
+    nameRus: 'Бумеранг'
+  }, {
+    nameEng: 'Woman',
+    nameRus: 'Женщина'
+  }, {
+    nameEng: 'Seamstress',
+    nameRus: 'Белошвейка'
+  }, {
+    nameEng: 'Tractor',
+    nameRus: 'Трактор'
+  }, {
+    nameEng: 'Gulp',
+    nameRus: 'Глоток'
+  }, {
+    nameEng: 'Dictum',
+    nameRus: 'Изречение'
+  }, {
+    nameEng: 'Ant',
+    nameRus: 'Антенна'
+  }, {
+    nameEng: 'Alligator',
+    nameRus: 'Аллигатор'
+  }, {
+    nameEng: 'Lawn mower',
+    nameRus: 'Газонокосилка'
+  }, {
+    nameEng: 'Pull',
+    nameRus: 'Тяга'
+  }, {
+    nameEng: 'Song',
+    nameRus: 'Песня'
+  }, {
+    nameEng: 'Gold medalist',
+    nameRus: 'Золотой медалист'
+  }, {
+    nameEng: 'Bottom',
+    nameRus: 'Дно'
+  }, {
+    nameEng: 'Moar with water',
+    nameRus: 'Ров с водой'
+  }, {
+    nameEng: 'Wine',
+    nameRus: 'Вино'
+  }, {
+    nameEng: 'Life',
+    nameRus: 'Жизнь'
+  }, {
+    nameEng: 'Idiot',
+    nameRus: 'Идиот'
+  }, {
+    nameEng: 'Furnace',
+    nameRus: 'Топка'
+  }, {
+    nameEng: 'Corrosion',
+    nameRus: 'Коррозия'
+  }, {
+    nameEng: 'Behind the scenes',
+    nameRus: 'Закулисный'
+  }, {
+    nameEng: 'Freckles',
+    nameRus: 'Веснушки'
+  }, {
+    nameEng: 'Consumer',
+    nameRus: 'Потребитель'
+  }, {
+    nameEng: 'Devotee',
+    nameRus: 'Преданный'
+  }, {
+    nameEng: 'Dishwasher',
+    nameRus: 'Посудомойка'
+  }, {
+    nameEng: 'Hangers',
+    nameRus: 'Плечики'
+  }, {
+    nameEng: 'Gardener',
+    nameRus: 'Садовник'
+  }, {
+    nameEng: 'Raid',
+    nameRus: 'Налёт'
+  }, {
+    nameEng: 'Criminal',
+    nameRus: 'Преступный'
+  }, {
+    nameEng: 'Peat',
+    nameRus: 'Торф'
+  }, {
+    nameEng: 'To fill in',
+    nameRus: 'Заполнять'
+  }, {
+    nameEng: 'Bully',
+    nameRus: 'Задира'
+  }, {
+    nameEng: 'Suction',
+    nameRus: 'Присасывание'
+  }, {
+    nameEng: 'Stewardess',
+    nameRus: 'Стюардесса'
+  }, {
+    nameEng: 'Notification',
+    nameRus: 'Уведомление'
+  }, {
+    nameEng: 'Postage stamp',
+    nameRus: 'Почтовая марка'
+  }, {
+    nameEng: 'Uganda',
+    nameRus: 'Уганда'
+  }, {
+    nameEng: 'Voice',
+    nameRus: 'Голос'
+  }, {
+    nameEng: 'Guardian Angel',
+    nameRus: 'Ангел-хранитель'
+  }, {
+    nameEng: 'Keyboard',
+    nameRus: 'Клавиатура'
+  }, {
+    nameEng: 'Omelet',
+    nameRus: 'Омлет'
+  }, {
+    nameEng: 'Neglect',
+    nameRus: 'Пренебрежение'
+  }, {
+    nameEng: 'Doomsday',
+    nameRus: 'Судный день'
+  }, {
+    nameEng: 'Smelt',
+    nameRus: 'Корюшка'
+  }, {
+    nameEng: 'To read',
+    nameRus: 'Считать'
+  }, {
+    nameEng: 'To hang',
+    nameRus: 'Висеть'
+  }, {
+    nameEng: 'To giggle',
+    nameRus: 'Хихикать'
+  }, {
+    nameEng: 'Meteorologist',
+    nameRus: 'Метеоролог'
+  }, {
+    nameEng: 'To save',
+    nameRus: 'Спасать'
+  }, {
+    nameEng: 'Wrist',
+    nameRus: 'Запястье'
+  }, {
+    nameEng: 'Character',
+    nameRus: 'Характер'
+  }, {
+    nameEng: 'Disco',
+    nameRus: 'Дискотека'
+  }, {
+    nameEng: 'Knight',
+    nameRus: 'Рыцарь'
+  }, {
+    nameEng: 'Gate',
+    nameRus: 'Ворота'
+  }, {
+    nameEng: 'To return',
+    nameRus: 'Возвращаться'
+  }, {
+    nameEng: 'Import',
+    nameRus: 'Импорт'
+  }, {
+    nameEng: 'Promter',
+    nameRus: 'Суфлёр'
+  }, {
+    nameEng: 'Unemployed',
+    nameRus: 'Безработный'
+  }, {
+    nameEng: 'Sphere',
+    nameRus: 'Сфера'
+  }, {
+    nameEng: 'Nightingate',
+    nameRus: 'Соловей'
+  }, {
+    nameEng: 'Word War',
+    nameRus: 'Мировая война'
+  }, {
+    nameEng: 'To set up',
+    nameRus: 'Устраивать'
+  }, {
+    nameEng: 'Burrow',
+    nameRus: 'Нора'
+  }, {
+    nameEng: 'Jump',
+    nameRus: 'Скачок'
+  }, {
+    nameEng: 'Giant',
+    nameRus: 'Гигантский'
+  }, {
+    nameEng: 'To scrape',
+    nameRus: 'Скрести'
+  }, {
+    nameEng: 'Spaghetti',
+    nameRus: 'Спагетти'
+  }, {
+    nameEng: 'Newbie',
+    nameRus: 'Новичок'
+  }, {
+    nameEng: 'Rally racer',
+    nameRus: 'Ралли гонщик'
+  }, {
+    nameEng: 'Correct',
+    nameRus: 'Правильный'
+  }, {
+    nameEng: 'Elk',
+    nameRus: 'Лось'
+  }, {
+    nameEng: 'Ship',
+    nameRus: 'Корабль'
+  }, {
+    nameEng: 'Cider',
+    nameRus: 'Сидр'
+  }, {
+    nameEng: 'Home',
+    nameRus: 'Дом'
+  }, {
+    nameEng: 'Radio',
+    nameRus: 'Радио'
+  }, {
+    nameEng: 'Saddle',
+    nameRus: 'Седло'
+  }, {
+    nameEng: 'Low',
+    nameRus: 'Низкий'
+  }, {
+    nameEng: 'Light',
+    nameRus: 'Свет'
+  }, {
+    nameEng: 'Icon',
+    nameRus: 'Значок'
+  }, {
+    nameEng: 'Mile',
+    nameRus: 'Миля'
+  }, {
+    nameEng: 'Oatmeal',
+    nameRus: 'Овсяная крупа'
+  }, {
+    nameEng: 'Swift',
+    nameRus: 'Стремительный'
+  }, {
+    nameEng: 'Leadership',
+    nameRus: 'Лидерство'
+  }, {
+    nameEng: 'Appear',
+    nameRus: 'Появляться'
+  }, {
+    nameEng: 'Rye bread',
+    nameRus: 'Ржаной хлеб'
+  }, {
+    nameEng: 'Basin',
+    nameRus: 'Таз'
+  }, {
+    nameEng: 'Lower floor',
+    nameRus: 'Нижний этаж'
+  }, {
+    nameEng: 'Stand',
+    nameRus: 'Подставка'
+  }, {
+    nameEng: 'Willpower',
+    nameRus: 'Сила воли'
+  }, {
+    nameEng: 'Skeleton',
+    nameRus: 'Скелет'
+  }, {
+    nameEng: 'Plastics',
+    nameRus: 'Пласмасса'
+  }, {
+    nameEng: 'Slippers',
+    nameRus: 'Шлёпанцы'
+  }, {
+    nameEng: 'Twitching',
+    nameRus: 'Дерганье'
+  }, {
+    nameEng: 'Shopping center',
+    nameRus: 'Торговый центр'
+  }, {
+    nameEng: 'Excited',
+    nameRus: 'Взволнованный'
+  }, {
+    nameEng: 'Hilarious',
+    nameRus: 'Уморительный'
+  }, {
+    nameEng: 'Quality',
+    nameRus: 'Качество'
+  }, {
+    nameEng: 'To pursue',
+    nameRus: 'Преследовать'
+  }, {
+    nameEng: 'Trembling',
+    nameRus: 'Дрожь'
+  }, {
+    nameEng: 'Silent',
+    nameRus: 'Молчаливый'
+  }, {
+    nameEng: 'Boots',
+    nameRus: 'Ботинки'
+  }, {
+    nameEng: 'Printer',
+    nameRus: 'Принтер'
+  }, {
+    nameEng: 'Peacock',
+    nameRus: 'Павлин'
+  }, {
+    nameEng: 'Curtain',
+    nameRus: 'Занавеска'
+  }, {
+    nameEng: 'Clone',
+    nameRus: 'Клон'
+  }, {
+    nameEng: 'Nonsense',
+    nameRus: 'Чепуха'
+  }, {
+    nameEng: 'Lucky coin',
+    nameRus: 'Счасливая монетка'
+  }, {
+    nameEng: 'Pari',
+    nameRus: 'Пари'
+  }, {
+    nameEng: 'Accounts',
+    nameRus: 'Счёты'
+  }, {
+    nameEng: 'Mixer',
+    nameRus: 'Смеситель'
+  }, {
+    nameEng: 'Acacia',
+    nameRus: 'Акация'
+  }, {
+    nameEng: 'Settler',
+    nameRus: 'Поселенец'
+  }, {
+    nameEng: 'Column',
+    nameRus: 'Колонна'
+  }, {
+    nameEng: 'Fish',
+    nameRus: 'Рыба'
+  }, {
+    nameEng: 'Business card',
+    nameRus: 'Визитка'
+  }, {
+    nameEng: 'Obstruct',
+    nameRus: 'Препятствовать'
+  }, {
+    nameEng: 'Dessert',
+    nameRus: 'Десерт'
+  }, {
+    nameEng: 'Fridge',
+    nameRus: 'Холодильник'
+  }, {
+    nameEng: 'Filter',
+    nameRus: 'Фильтр'
+  }, {
+    nameEng: 'Earring',
+    nameRus: 'Серёжка'
+  }, {
+    nameEng: 'Currency',
+    nameRus: 'Валюта'
+  }, {
+    nameEng: 'Deck of cards',
+    nameRus: 'Колода карт'
+  }, {
+    nameEng: 'To give',
+    nameRus: 'Давать'
+  }, {
+    nameEng: 'Dam',
+    nameRus: 'Дамба'
+  }, {
+    nameEng: 'Proud',
+    nameRus: 'Гордый'
+  }, {
+    nameEng: 'Cool',
+    nameRus: 'Прохладный'
+  }, {
+    nameEng: 'Interview',
+    nameRus: 'Интервью'
+  }, {
+    nameEng: 'Glory',
+    nameRus: 'Слава'
+  }, {
+    nameEng: 'Nostril',
+    nameRus: 'Ноздря'
+  }, {
+    nameEng: 'Palette',
+    nameRus: 'Палитра'
+  }, {
+    nameEng: 'Need',
+    nameRus: 'Нужда'
+  }, {
+    nameEng: 'Prunes',
+    nameRus: 'Чернослив'
+  }, {
+    nameEng: 'Game board',
+    nameRus: 'Игровая доска'
+  }, {
+    nameEng: 'Vegetable',
+    nameRus: 'Овощь'
+  }, {
+    nameEng: 'Stream',
+    nameRus: 'Поток'
+  }, {
+    nameEng: 'Reform',
+    nameRus: 'Реформа'
+  }, {
+    nameEng: 'Seaweed',
+    nameRus: 'Морская водоросль'
+  }, {
+    nameEng: 'Lazy',
+    nameRus: 'Ленивый'
+  }, {
+    nameEng: 'The Salvation Army',
+    nameRus: 'Армия Спасения'
+  }, {
+    nameEng: 'Stadium',
+    nameRus: 'Стадион'
+  }, {
+    nameEng: 'Worker',
+    nameRus: 'Рабочий'
+  }, {
+    nameEng: 'Indian',
+    nameRus: 'Индеец'
+  }, {
+    nameEng: 'Shovel',
+    nameRus: 'Лопата'
+  }, {
+    nameEng: 'Last name',
+    nameRus: 'Фамилия'
+  }, {
+    nameEng: 'Guest of honor',
+    nameRus: 'Почётный гость'
+  }, {
+    nameEng: 'Porous',
+    nameRus: 'Пористый'
+  }, {
+    nameEng: 'Smell',
+    nameRus: 'Запах'
+  }, {
+    nameEng: 'Antactica',
+    nameRus: 'Антарктида'
+  }, {
+    nameEng: 'Intolerance',
+    nameRus: 'Нетерпимость'
+  }, {
+    nameEng: 'Disgusting',
+    nameRus: 'Свинство'
+  }, {
+    nameEng: 'Grumpy',
+    nameRus: 'Сварливый'
+  }, {
+    nameEng: 'Birthmark',
+    nameRus: 'Родинка'
+  }, {
+    nameEng: 'Kite',
+    nameRus: 'Бумажный змей'
+  }, {
+    nameEng: 'Amplifier',
+    nameRus: 'Усилитель'
+  }, {
+    nameEng: 'Resin',
+    nameRus: 'Смола'
+  }, {
+    nameEng: 'Crusade',
+    nameRus: 'Крестовый поход'
+  }, {
+    nameEng: 'Abort',
+    nameRus: 'Прерывать'
+  }, {
+    nameEng: 'Dry',
+    nameRus: 'Сухой'
+  }, {
+    nameEng: 'Imagination',
+    nameRus: 'Воображение'
+  }, {
+    nameEng: 'Scissors',
+    nameRus: 'Ножницы'
+  }, {
+    nameEng: 'Branch',
+    nameRus: 'Веточка'
+  }, {
+    nameEng: 'Quarter',
+    nameRus: 'Четверть'
+  }, {
+    nameEng: 'Spy',
+    nameRus: 'Шпион'
+  }, {
+    nameEng: 'Bandit',
+    nameRus: 'Бандит'
+  }, {
+    nameEng: 'Newcastle',
+    nameRus: 'Ньюкасл'
+  }, {
+    nameEng: 'Exchange',
+    nameRus: 'Обмен'
+  }, {
+    nameEng: 'Columbus',
+    nameRus: 'Колумб'
+  }, {
+    nameEng: 'Motive',
+    nameRus: 'Мотив'
+  }, {
+    nameEng: 'Badminton',
+    nameRus: 'Бадминтон'
+  }, {
+    nameEng: 'Ascent',
+    nameRus: 'Восхождение'
+  }, {
+    nameEng: 'Elastic',
+    nameRus: 'Эластичный'
+  }, {
+    nameEng: 'Horse racing',
+    nameRus: 'Скачки'
+  }, {
+    nameEng: 'Psychiatrist',
+    nameRus: 'Психиатр'
+  }, {
+    nameEng: 'Marsupial',
+    nameRus: 'Сумчатый'
+  }, {
+    nameEng: 'Navel',
+    nameRus: 'Пупок'
+  }, {
+    nameEng: 'Salty',
+    nameRus: 'Солёный'
+  }, {
+    nameEng: 'Compare',
+    nameRus: 'Сравнивать'
+  }, {
+    nameEng: 'Highway',
+    nameRus: 'Шоссе'
+  }, {
+    nameEng: 'Hangshake',
+    nameRus: 'Рукопожатие'
+  }, {
+    nameEng: 'Delivery',
+    nameRus: 'Доставка'
+  }, {
+    nameEng: 'Skateboard',
+    nameRus: 'Скейтборд'
+  }, {
+    nameEng: 'Feast',
+    nameRus: 'Пир'
+  }, {
+    nameEng: 'Surfboard',
+    nameRus: 'Доска для серфинга'
+  }, {
+    nameEng: 'Diamond',
+    nameRus: 'Алмаз'
+  }, {
+    nameEng: 'Capricorn',
+    nameRus: 'Козерог'
+  }, {
+    nameEng: 'Air',
+    nameRus: 'Воздушный'
+  }, {
+    nameEng: 'Parachute',
+    nameRus: 'Парашют'
+  }, {
+    nameEng: 'Fall asleep',
+    nameRus: 'Засыпать'
+  }, {
+    nameEng: 'Ambitious',
+    nameRus: 'Честолюбивый'
+  }, {
+    nameEng: 'Official',
+    nameRus: 'Чиновник'
+  }, {
+    nameEng: 'Photographer',
+    nameRus: 'Фотограф'
+  }, {
+    nameEng: 'Solarium',
+    nameRus: 'Солярий'
+  }, {
+    nameEng: 'Termites',
+    nameRus: 'Термиты'
+  }, {
+    nameEng: 'Justice',
+    nameRus: 'Справедливость'
+  }, {
+    nameEng: 'Tight',
+    nameRus: 'Тугой'
+  }, {
+    nameEng: 'Center',
+    nameRus: 'Центр'
+  }, {
+    nameEng: 'Valve',
+    nameRus: 'Клапан'
+  }, {
+    nameEng: 'Donkey',
+    nameRus: 'Осёл'
+  }, {
+    nameEng: 'Invincible',
+    nameRus: 'Неуязвимый'
+  }, {
+    nameEng: 'To add',
+    nameRus: 'Складывать'
+  }, {
+    nameEng: 'Exhaust pipe',
+    nameRus: 'Выхлопная труба'
+  }, {
+    nameEng: 'Insurance',
+    nameRus: 'Страховка'
+  }, {
+    nameEng: 'Soviet Union',
+    nameRus: 'Советский Союз'
+  }, {
+    nameEng: 'Knife',
+    nameRus: 'Нож'
+  }, {
+    nameEng: 'Thunder',
+    nameRus: 'Гром'
+  }, {
+    nameEng: 'Revenge',
+    nameRus: 'Месть'
+  }, {
+    nameEng: 'Dinosaur',
+    nameRus: 'Динозавр'
+  }, {
+    nameEng: 'Side by side',
+    nameRus: 'Бок о бок'
+  }, {
+    nameEng: 'Furious',
+    nameRus: 'Неистовый'
+  }, {
+    nameEng: 'Monastery',
+    nameRus: 'Монастырь'
+  }, {
+    nameEng: 'Shoplifting',
+    nameRus: 'Магазинная кража'
+  }, {
+    nameEng: 'Same name',
+    nameRus: 'Однофамилец'
+  }, {
+    nameEng: 'Door mat',
+    nameRus: 'Дверной коврик'
+  }, {
+    nameEng: 'Bath towel',
+    nameRus: 'Банное полотенце'
+  }, {
+    nameEng: 'Descendant',
+    nameRus: 'Потомок'
+  }, {
+    nameEng: 'Seasickness',
+    nameRus: 'Морская болезнь'
+  }, {
+    nameEng: 'Hour',
+    nameRus: 'Час'
+  }, {
+    nameEng: 'Pensioner',
+    nameRus: 'Пенсионер'
+  }, {
+    nameEng: 'Fresh',
+    nameRus: 'Свежий'
+  }, {
+    nameEng: 'Ruby',
+    nameRus: 'Рубин'
+  }, {
+    nameEng: 'High temperature',
+    nameRus: 'Высокая температура'
+  }, {
+    nameEng: 'Bird cherry',
+    nameRus: 'Черёмуха'
+  }, {
+    nameEng: 'Dog collar',
+    nameRus: 'Собачий ошейник'
+  }, {
+    nameEng: 'Ram',
+    nameRus: 'Баран'
+  }, {
+    nameEng: 'Spider',
+    nameRus: 'Паук'
+  }, {
+    nameEng: 'Middle finger',
+    nameRus: 'Средний палец'
+  }, {
+    nameEng: 'Snoring',
+    nameRus: 'Храпение'
+  }, {
+    nameEng: 'Shot',
+    nameRus: 'Выстрел'
+  }, {
+    nameEng: 'Bickering',
+    nameRus: 'Перебранка'
+  }, {
+    nameEng: 'Roller skates',
+    nameRus: 'Роликовые коньки'
+  }, {
+    nameEng: 'Dried mushroom',
+    nameRus: 'Сушёный гриб'
+  }, {
+    nameEng: 'Wreath',
+    nameRus: 'Венок'
+  }, {
+    nameEng: 'Golf',
+    nameRus: 'Гольф'
+  }, {
+    nameEng: 'Caravan',
+    nameRus: 'Караван'
+  }, {
+    nameEng: 'Fireplace',
+    nameRus: 'Камин'
+  }, {
+    nameEng: 'Picnic',
+    nameRus: 'Пикник'
+  }, {
+    nameEng: 'Decorate',
+    nameRus: 'Украшать'
+  }, {
+    nameEng: 'Tonsils',
+    nameRus: 'Гланда'
+  }, {
+    nameEng: 'Inheritance',
+    nameRus: 'Наследство'
+  }, {
+    nameEng: 'Scoundrel',
+    nameRus: 'Негодяй'
+  }, {
+    nameEng: 'Salvation',
+    nameRus: 'Спасение'
+  }, {
+    nameEng: 'Translator',
+    nameRus: 'Переводчик'
+  }, {
+    nameEng: 'Throwing',
+    nameRus: 'Метание'
+  }, {
+    nameEng: 'Deer',
+    nameRus: 'Олень'
+  }, {
+    nameEng: 'Wish',
+    nameRus: 'Желание'
+  }, {
+    nameEng: 'Contact lenses',
+    nameRus: 'Контактный линзы'
+  }, {
+    nameEng: 'Melody',
+    nameRus: 'Мелодия'
+  }, {
+    nameEng: 'Stomach ulcer',
+    nameRus: 'Язва желудка'
+  }, {
+    nameEng: 'Vintage',
+    nameRus: 'Марочный'
+  }, {
+    nameEng: 'Milk tooth',
+    nameRus: 'Молочный зуб'
+  }, {
+    nameEng: 'Predator',
+    nameRus: 'Хищник'
+  }, {
+    nameEng: 'Pile',
+    nameRus: 'Ворс'
+  }, {
+    nameEng: 'Cinema',
+    nameRus: 'Кинотеатр'
+  }, {
+    nameEng: 'Cream soup',
+    nameRus: 'Суп-пюре'
+  }, {
+    nameEng: 'Development',
+    nameRus: 'Развитие'
+  }, {
+    nameEng: 'Hump',
+    nameRus: 'Горб'
+  }, {
+    nameEng: 'Voting',
+    nameRus: 'Голосование'
+  }, {
+    nameEng: 'Noble',
+    nameRus: 'Благородный'
+  }, {
+    nameEng: 'Fig tree',
+    nameRus: 'Фиговое дерево'
+  }, {
+    nameEng: 'Goat',
+    nameRus: 'Козёл'
+  }, {
+    nameEng: 'Blind',
+    nameRus: 'Слепой'
+  }, {
+    nameEng: 'Cleaner',
+    nameRus: 'Уборщик'
+  }, {
+    nameEng: 'Cracker',
+    nameRus: 'Взломщик'
+  }, {
+    nameEng: 'Sock',
+    nameRus: 'Носок'
+  }, {
+    nameEng: 'Stepfather',
+    nameRus: 'Отчим'
+  }, {
+    nameEng: 'Target center',
+    nameRus: 'Центр мишени'
+  }, {
+    nameEng: 'Far away',
+    nameRus: 'Далеко'
+  }, {
+    nameEng: 'Tin',
+    nameRus: 'Оловянный'
+  }, {
+    nameEng: 'Duckling',
+    nameRus: 'Утёнок'
+  }, {
+    nameEng: 'Ghost',
+    nameRus: 'Привидение'
+  }, {
+    nameEng: 'Rocket',
+    nameRus: 'Ракета'
+  }, {
+    nameEng: 'Magnet',
+    nameRus: 'Магнит'
+  }, {
+    nameEng: 'Graphic designer',
+    nameRus: 'Художник-оформитель'
+  }, {
+    nameEng: 'Volleyball',
+    nameRus: 'Воллейбол'
+  }, {
+    nameEng: 'Gloves',
+    nameRus: 'Перчатки'
+  }, {
+    nameEng: 'Infallible',
+    nameRus: 'Непогрешимый'
+  }, {
+    nameEng: 'Watermark',
+    nameRus: 'ВОдяной знак'
+  }, {
+    nameEng: 'Splashes',
+    nameRus: 'Брызги'
+  }, {
+    nameEng: 'Source',
+    nameRus: 'Исток'
+  }, {
+    nameEng: 'Minute',
+    nameRus: 'Минута'
+  }, {
+    nameEng: 'Empire',
+    nameRus: 'Империя'
+  }, {
+    nameEng: 'Villa',
+    nameRus: 'Вилла'
+  }, {
+    nameEng: 'Gulp',
+    nameRus: 'Глоток'
+  }, {
+    nameEng: 'Horizon',
+    nameRus: 'Горизонт'
+  }, {
+    nameEng: 'Corkscrew',
+    nameRus: 'Штопор'
+  }, {
+    nameEng: 'To hide',
+    nameRus: 'Прятать'
+  }, {
+    nameEng: 'Shout',
+    nameRus: 'Крик'
+  }, {
+    nameEng: 'Mustard',
+    nameRus: 'Горчица'
+  }, {
+    nameEng: 'Hunter',
+    nameRus: 'Охотник'
+  }, {
+    nameEng: "Adam's apple",
+    nameRus: 'Адамово яблоко'
+  }, {
+    nameEng: 'To hear',
+    nameRus: 'Слышать'
+  }, {
+    nameEng: 'Walnut',
+    nameRus: 'Грецкий орех'
+  }, {
+    nameEng: 'Cube',
+    nameRus: 'Куб'
+  }, {
+    nameEng: 'Patterned',
+    nameRus: 'Узорчатый'
+  }, {
+    nameEng: 'Memory',
+    nameRus: 'Память'
   }]
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (cards);
@@ -682,6 +2765,8 @@ function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.it
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+/* eslint-disable import/no-cycle */
 
 /* eslint-disable import/no-mutable-exports */
 
@@ -736,6 +2821,16 @@ function addGlobalStatisticsTeam(teamIndex, confirmedArr, skipedArr) {
 } // Buttons clickhandler
 
 
+var rotationGradient = 0;
+
+function rotationGameContainer() {
+  gsap.to('.game-container__card', {
+    duration: 0.9,
+    rotationX: rotationGradient
+  });
+  console.log(rotationGradient);
+}
+
 var i = 1;
 
 function clickContainerButtons(e) {
@@ -743,29 +2838,68 @@ function clickContainerButtons(e) {
   var clickSkip = e.target.closest('.game-container__button_skip');
   var clickNextRound = e.target.closest('.round-stat-modal__button');
   var clickCardsForAdults = e.target.closest('.cards__for-adults');
-  var clickCardsGeneral = e.target.closest('.cards__general');
+  var clickCardsGeneral = e.target.closest('.cards__main');
 
   if (clickReady) {
+    rotationGradient -= 360;
     _timer__WEBPACK_IMPORTED_MODULE_2__.teams[teamFlag].points += 1;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i].nameRus;
     arrConfirmed.push(currentCardsStack[0 + i]);
-    document.querySelector('.team-container__team-points').innerHTML = _timer__WEBPACK_IMPORTED_MODULE_2__.teams[teamFlag].points;
+    document.querySelector('.second').innerHTML = _timer__WEBPACK_IMPORTED_MODULE_2__.teams[teamFlag].points;
+    rotationGameContainer();
   } else if (clickSkip) {
+    rotationGradient += 360;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i].nameRus;
     arrSkiped.push(currentCardsStack[0 + i]);
+    rotationGameContainer();
   } else if (clickNextRound) {
     teamFlag = teamFlag ? 0 : 1;
+    rotationGradient = 0;
     nextRound();
   } else if (clickCardsForAdults) {
     currentCardsStack = _cards__WEBPACK_IMPORTED_MODULE_0__.default.forAdults;
     shuffleCards();
-    document.querySelector('.cards-selection-container').style.display = 'none';
-    (0,_gameContainer__WEBPACK_IMPORTED_MODULE_1__.mainGamePlay)();
+    gsap.to('.cards__for-adults', {
+      duration: 1,
+      ease: 'power1.out',
+      x: -500
+    });
+    gsap.to('.cards__main', {
+      duration: 1,
+      ease: 'power1.out',
+      x: 500
+    });
+    gsap.to('.cards-selection-container__title', {
+      duration: 1,
+      ease: 'power1.out',
+      y: -500
+    });
+    setTimeout(function () {
+      document.querySelector('.cards-selection-container').style.display = 'none';
+      (0,_gameContainer__WEBPACK_IMPORTED_MODULE_1__.mainGamePlay)();
+    }, 1000);
   } else if (clickCardsGeneral) {
     currentCardsStack = _cards__WEBPACK_IMPORTED_MODULE_0__.default.main;
+    gsap.to('.cards__for-adults', {
+      duration: 1,
+      ease: 'power1.out',
+      x: -500
+    });
+    gsap.to('.cards__main', {
+      duration: 1,
+      ease: 'power1.out',
+      x: 500
+    });
+    gsap.to('.cards-selection-container__title', {
+      duration: 1,
+      ease: 'power1.out',
+      y: -500
+    });
     shuffleCards();
-    document.querySelector('.cards-selection-container').style.display = 'none';
-    (0,_gameContainer__WEBPACK_IMPORTED_MODULE_1__.mainGamePlay)();
+    setTimeout(function () {
+      document.querySelector('.cards-selection-container').style.display = 'none';
+      (0,_gameContainer__WEBPACK_IMPORTED_MODULE_1__.mainGamePlay)();
+    }, 1000);
   }
 
   i += 1;
@@ -790,8 +2924,6 @@ function buttonsClickHandler() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "generateCardsSeletionContainer": () => /* binding */ generateCardsSeletionContainer,
-/* harmony export */   "generateCardsForSelection": () => /* binding */ generateCardsForSelection,
-/* harmony export */   "generateCardsForSelection2": () => /* binding */ generateCardsForSelection2,
 /* harmony export */   "generateGameContainer": () => /* binding */ generateGameContainer,
 /* harmony export */   "generateFinishGameModal": () => /* binding */ generateFinishGameModal,
 /* harmony export */   "game": () => /* binding */ game,
@@ -800,6 +2932,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _card__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./card */ "./src/modules/game/card.js");
 /* harmony import */ var _timer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./timer */ "./src/modules/game/timer.js");
 /* harmony import */ var _gameStatistics__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gameStatistics */ "./src/modules/game/gameStatistics.js");
+/* eslint-disable no-undef */
+
 /* eslint-disable import/no-mutable-exports */
 
 /* eslint-disable import/no-cycle */
@@ -807,6 +2941,7 @@ __webpack_require__.r(__webpack_exports__);
 /* eslint-disable no-use-before-define */
 
 /* eslint-disable import/named */
+// const gsap;
 
 
  // Cards selection container
@@ -815,35 +2950,34 @@ var generateCardsSeletionContainer = function generateCardsSeletionContainer() {
   var template = '';
   var cardsSelectionContainer = document.createElement('div');
   cardsSelectionContainer.className = 'cards-selection-container';
-  template += "<div class=\"cards-selection-container__title\">\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u043D\u0430\u0431\u043E\u0440 \u043A\u0430\u0440\u0442</div>";
-  template += "<div class=\"cards-container1\"></div>";
-  template += "<div class=\"cards-container2\"></div>";
+  template += "<div class=\"cards-selection-container__title\"><div class=\"sign-wrap\">\n  <div class=\"sign\">\n    <h1>\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0440\u0435\u0436\u0438\u043C</h1>\n  </div>\n  </div></div>";
+  template += "<div class=\"cards-selection-container__cards\">";
+  template += "<div class=\"cards__for-adults cards-container__cards\"><div id=\"container\"><div class=\"sign-wrap\">\n  <div class=\"sign sign1\"><p class=\"first-child\"><a href=\"#\">\n  18+\n</a></p></div></div></div></div>";
+  template += "<div class=\"cards__main cards-container__cards2\"><div id=\"container\"><div class=\"sign-wrap\">\n  <div class=\"sign sign2\"><p class=\"second-child\"><a href=\"#\">\n  \u041A\u043B\u0430\u0441\u0441\u0438\u043A\u0430\n</a></p></div></div></div></div>"; // template += `<div class="cards-container1"></div>`;
+  // template += `<div class="cards-container2"></div>`;
+
   template += "</div>";
   cardsSelectionContainer.innerHTML = template;
   return cardsSelectionContainer;
-};
-var generateCardsForSelection = function generateCardsForSelection() {
-  var cardsForSelection = document.querySelector('.cards-container1');
-  var template = '';
-
-  for (var i = 0; i < 25; i++) {
-    template += "<div class=\"cards__for-adults cards-container__cards\">\u041A\u043E\u043B\u043E\u0434\u0430 \u0434\u043B\u044F \u0432\u0437\u0440\u043E\u0441\u043B\u044B\u0445</div>";
-  }
-
-  cardsForSelection.innerHTML = template;
-  return cardsForSelection;
-};
-var generateCardsForSelection2 = function generateCardsForSelection2() {
-  var cardsForSelection = document.querySelector('.cards-container2');
-  var template = '';
-
-  for (var i = 0; i < 25; i++) {
-    template += "<div class=\"cards__main cards-container__cards2\">\u0420\u0430\u0437\u043D\u043E\u0435</div>";
-  }
-
-  cardsForSelection.innerHTML = template;
-  return cardsForSelection;
-}; // Cards cell for Cards container
+}; // export const generateCardsForSelection = () => {
+//   const cardsForSelection = document.querySelector('.cards-container1');
+//   let template = '';
+//   for (let i = 0; i < 15; i++) {
+//     template += `<div class="cards__for-adults cards-container__cards">Колода для взрослых</div>`;
+//   }
+//   cardsForSelection.innerHTML = template;
+//   return cardsForSelection;
+// };
+// export const generateCardsForSelection2 = () => {
+//   const cardsForSelection = document.querySelector('.cards-container2');
+//   let template = '';
+//   for (let i = 0; i < 15; i++) {
+//     template += `<div class="cards__main cards-container__cards2">Разное</div>`;
+//   }
+//   cardsForSelection.innerHTML = template;
+//   return cardsForSelection;
+// };
+// Cards cell for Cards container
 // export const generateCardsContainerCell = () => {
 //   let template = '';
 //   const cardsContainerCell = document.createElement('div');
@@ -860,16 +2994,14 @@ var generateGameContainer = function generateGameContainer() {
   var gameContainer = document.createElement('div');
   gameContainer.className = 'game-container';
   template += "<div class=\"team-container\">";
-  template += "<div class=\"team-container__team-name\">".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag].name, "</div>");
-  template += "<div class=\"team-container__team-points\">".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag].points, "</div>");
-  template += "<div class=\"team-container__timer\"></div>";
+  template += "<div class=\"team-container__team-name\"><div class=\"sign-wrap\">\n  <div class=\"sign sign4\"><div class=\"team-container__timer\"><div><h2>\n  \u0412\u0440\u0435\u043C\u044F: <span class=\"first\"></span>\n</h2>\n</div></div><p class=\"third-child\"><a href=\"#\">\n  ".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag].name, "\n</a></p><div class=\"team-container__team-points\"><div><h2>\n\u041E\u0447\u043A\u0438: <span class=\"second\">").concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag].points, "</span>\n</h2>\n</div></div>\n  </div></div></div>");
   template += "</div>";
   template += '<div class="card game-container__card">';
-  template += "<div class=\"card__word\"></div>";
+  template += "<div class=\"sign-wrap\">\n  <div class=\"sign sign5\">";
+  template += '<button class="button game-container__button_ready btn btn-neon btn-slow"><span></span><span></span><span></span><span></span>Готово</button>';
+  template += "<div class=\"neon\">\n  <div class=\"neon\" id=\"section16\">\n    <p class=\"card__word neon\"></p>\n  </div>\n  </div>";
+  template += '<button class="button game-container__button_skip btn btn-neon btn-blue btn-slow"><span></span><span></span><span></span><span></span>Пропустить</button>';
   template += "</div>";
-  template += "<div class=\"game-container__buttons\">";
-  template += '<button class="button game-container__button_skip">Пропустить</button>';
-  template += '<button class="button game-container__button_ready">Готово</button>';
   template += "</div>";
   gameContainer.innerHTML = template;
   return gameContainer;
@@ -887,29 +3019,54 @@ var generateFinishGameModal = function generateFinishGameModal() {
 };
 function game() {
   document.querySelector('.main').appendChild(generateCardsSeletionContainer());
-  generateCardsForSelection();
-  generateCardsForSelection2();
-  gsap.from('.cards-container__cards', {
-    duration: 1.5,
-    opacity: 1,
-    y: -850,
-    x: -1150,
-    stagger: 0.1,
-    ease: 'back.in'
-  });
   gsap.from('.cards-container__cards2', {
-    duration: 1.5,
-    opacity: 1,
-    y: -850,
-    x: -1150,
-    stagger: 0.1,
-    ease: 'back.in'
+    duration: 1,
+    ease: 'power1.out',
+    x: -500
   });
+  gsap.from('.cards-container__cards', {
+    duration: 1,
+    ease: 'power1.out',
+    x: 500
+  });
+  gsap.from('.cards-selection-container__title', {
+    duration: 1,
+    ease: 'power1.out',
+    y: -500
+  }); // generateCardsForSelection();
+  // generateCardsForSelection2();
+  // gsap.from('.cards__for-adults', {
+  //   duration: 1.5,
+  //   opacity: 1,
+  //   y: -500,
+  //   x: -500,
+  //   stagger: 0.1,
+  //   ease: 'back.in',
+  // });
+  // gsap.from('.cards__main', {
+  //   duration: 1.5,
+  //   opacity: 1,
+  //   y: -500,
+  //   x: 500,
+  //   stagger: 0.1,
+  //   ease: 'back.in',
+  // });
+
   (0,_card__WEBPACK_IMPORTED_MODULE_0__.buttonsClickHandler)();
 }
 function mainGamePlay() {
   document.querySelector('.main').appendChild(generateGameContainer());
   document.querySelector('.main').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_2__.generateRoundStatisticsModal)());
+  gsap.from('.team-container', {
+    duration: 1,
+    ease: 'power1.out',
+    y: -500
+  });
+  gsap.from('.game-container__card', {
+    duration: 1,
+    ease: 'power1.out',
+    y: 500
+  });
   (0,_card__WEBPACK_IMPORTED_MODULE_0__.generateCard)();
   (0,_timer__WEBPACK_IMPORTED_MODULE_1__.default)();
 }
@@ -988,6 +3145,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _gameStatistics__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./gameStatistics */ "./src/modules/game/gameStatistics.js");
 /* harmony import */ var _gameContainer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./gameContainer */ "./src/modules/game/gameContainer.js");
 /* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/storage */ "./src/modules/utils/storage.js");
+/* eslint-disable no-undef */
+
+/* eslint-disable no-implied-eval */
+
 /* eslint-disable import/no-cycle */
 
 /* eslint-disable no-console */
@@ -1002,7 +3163,7 @@ __webpack_require__.r(__webpack_exports__);
 // export const teamPoints = [0,0];
 
 var teams = [{
-  name: 'Team1',
+  name: 'фыва',
   points: 0,
   answers: {
     confirmed: [],
@@ -1017,21 +3178,35 @@ var teams = [{
   }
 }];
 var timer;
-var time = 5;
+var time = 30;
 var finishGamePoints = 10;
 
 function countdown() {
-  document.querySelector('.team-container__timer').innerHTML = time;
+  document.querySelector('.first').innerHTML = time;
   time--;
 
   if (time <= 0) {
     if (!teams.some(function (el) {
       return el.points >= finishGamePoints;
     }) || !(_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag === teams.length - 1)) {
-      time = 5;
-      clearTimeout(timer);
-      document.querySelector('.hidden').style.display = 'flex';
-      document.querySelector('.team-container__timer').innerHTML = 'Время вышло!'; // console.log(arrConfirmed);
+      time = 30;
+      clearTimeout(timer); // gsap.to('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
+
+      gsap.to('.game-container__card', {
+        duration: 1,
+        ease: 'power1.out',
+        x: -1500
+      });
+      setTimeout(function () {
+        document.querySelector('.hidden').style.display = 'flex';
+        gsap.from('.hidden', {
+          duration: 1,
+          ease: 'power1.out',
+          x: 1500
+        });
+      }, 1); // gsap.from('.hidden', { duration: 1, ease: 'power1.out', y: 500 });
+
+      document.querySelector('.first').innerHTML = 'Время вышло!'; // console.log(arrConfirmed);
 
       _card__WEBPACK_IMPORTED_MODULE_0__.arrConfirmed.forEach(function (el) {
         return document.querySelector('.round-stat-confirmed__container').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_1__.generateConfirmedStatisticsCell)(el));

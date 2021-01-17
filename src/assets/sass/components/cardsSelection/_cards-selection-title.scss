@@ -1,0 +1,151 @@
+
+
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: hsl(0,0%,8%);
+  background-image:
+    linear-gradient(
+      hsl(0,0%,15%) 0%,
+      hsl(0,0%,8%) 90%
+    );
+  background-size: 100% 150%;
+  background-repeat: no-repeat;
+
+}
+.sign-wrap {
+  display: inline-block;
+  // margin-top: 40px;
+  padding: 10px;
+  border-radius: 28px;
+  // background-color: hsl(0,0%,8%);
+  background-color: #222222;
+  background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+  box-shadow:
+    0px 50px 45px -15px rgba(0,0,0,.5),
+    0px 20px 10px -5px rgba(0,0,0,.5),
+    0px 5px 20px 0px rgba(0,0,0,.5),
+    0px 10px 30px rgba(0,0,0,.7) inset ;
+  border: 4px solid lighten(black, 12%);
+  border-top: 4px solid black;
+  border-bottom: 4px solid lighten(black, 16%);
+}
+.sign {
+  display: inline-block;
+  padding: 30px 15px;
+  //border: 8px solid red;
+  border-radius: 20px;
+  -webkit-filter: blur(.75px);
+  box-shadow:
+    0px 0px 0px 2px rgba(255,255,255,.7),
+    0px 0px 0px 5px red,
+    0px 0px 0px 3px red inset,
+    0px 0px 60px transparentize(red, .5),
+    0px 0px 60px transparentize(red, .5) inset;
+}
+
+h1 {
+  font-family: avenir, sans-serif;
+  font-size: 50px;
+  line-height: 0px;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke-width: 6px;
+  -webkit-text-stroke-color: #2b2b2b;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 0px 10px 3px rgba(0,0,0,.2);
+  &:before {
+    content:"Выберите режим";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparentize(#2B2C2D, .9);
+    text-shadow: 0px 0px 60px transparentize(lighten(red,10%), .3);
+    -webkit-text-stroke-width: 6px;
+    -webkit-text-stroke-color: red;
+    //-webkit-filter: blur(.75px);
+    animation: flicker 20s linear infinite;
+  }
+  &:after {
+    content:"Выберите режим";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    //-webkit-filter: blur(.75px);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255,255,255,.8);
+    // -webkit-filter: blur(.75px);
+    animation: flicker 20s linear infinite;
+  }
+}
+.sign1{
+  padding: 0px 15px;
+  box-shadow:
+    0px 0px 0px 2px rgba(255,255,255,.7),
+    0px 0px 0px 5px #FF1177,
+    0px 0px 0px 3px #FF1177 inset,
+    0px 0px 60px transparentize(#FF1177, .5),
+    0px 0px 60px transparentize(#FF1177, .5) inset;
+}
+.sign2{
+  padding: 0px 15px;
+  box-shadow:
+    0px 0px 0px 2px rgba(255,255,255,.7),
+    0px 0px 0px 5px #FFDD1B,
+    0px 0px 0px 3px #FFDD1B inset,
+    0px 0px 60px transparentize(#FFDD1B, .5),
+    0px 0px 60px transparentize(#FFDD1B, .5) inset;
+}
+.sign3{
+  h1 {
+    &:before {
+      content:"Team1";
+  }
+  &:after {
+    content:"Team1";
+  }
+}
+}
+.sign4{
+  padding: 6px 10px;
+}
+
+.sign5{
+  padding: 0px 3px;
+}
+
+@keyframes flicker {
+  0% { opacity: 0; }
+
+  // flicker
+  5%  { opacity: 0; }
+  6% { opacity: 1; }
+  11% { opacity: .4; }
+  11.25% { opacity: .6; }
+  11.5% { opacity: .4; }
+  18% { opacity: 1; }
+  18.5% { opacity: .9; }
+  22% { opacity: 1; }
+
+   // flicker
+  38.5% { opacity: 1; }
+  39% { opacity: .8; }
+  42% { opacity: 1; }
+
+  // flicker
+  60% { opacity: 1; }
+  60.5% { opacity: 0; }
+  62% { opacity: 0; }
+  63% { opacity: .2; }
+  63.25% { opacity: 0; }
+  65% { opacity: 1; }
+
+  // flicker
+  73% { opacity: 1; }
+  75% { opacity: .8; }
+  79% { opacity: 1; }
+
+  100% { opacity: 1; }
+}

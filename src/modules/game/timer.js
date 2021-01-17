@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-implied-eval */
 /* eslint-disable import/no-cycle */
 /* eslint-disable no-console */
 /* eslint-disable prefer-const */
@@ -11,22 +13,28 @@ import { set } from '../utils/storage';
 // export const teamNames = ['Team 1', 'Team 2'];
 // export const teamPoints = [0,0];
 export const teams = [
-  { name: 'Team1', points: 0, answers: { confirmed: [], skiped: [] } },
+  { name: 'фыва', points: 0, answers: { confirmed: [], skiped: [] } },
   { name: 'Team2', points: 0, answers: { confirmed: [], skiped: [] } },
 ];
 
 let timer;
-let time = 5;
+let time = 30;
 let finishGamePoints = 10;
 function countdown() {
-  document.querySelector('.team-container__timer').innerHTML = time;
+  document.querySelector('.first').innerHTML = time;
   time--;
   if (time <= 0) {
     if (!teams.some((el) => el.points >= finishGamePoints) || !(teamFlag === teams.length - 1)) {
-      time = 5;
+      time = 30;
       clearTimeout(timer);
-      document.querySelector('.hidden').style.display = 'flex';
-      document.querySelector('.team-container__timer').innerHTML = 'Время вышло!';
+      // gsap.to('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
+      gsap.to('.game-container__card', { duration: 1, ease: 'power1.out', x: -1500 });
+      setTimeout(function () {
+        document.querySelector('.hidden').style.display = 'flex';
+        gsap.from('.hidden', { duration: 1, ease: 'power1.out', x: 1500 });
+      }, 1);
+      // gsap.from('.hidden', { duration: 1, ease: 'power1.out', y: 500 });
+      document.querySelector('.first').innerHTML = 'Время вышло!';
       // console.log(arrConfirmed);
       arrConfirmed.forEach((el) =>
         document

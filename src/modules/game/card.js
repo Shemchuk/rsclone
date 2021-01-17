@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/no-mutable-exports */
 /* eslint-disable no-undef */
 /* eslint-disable no-use-before-define */
@@ -41,36 +42,55 @@ function addGlobalStatisticsTeam(teamIndex, confirmedArr, skipedArr) {
   teams[teamIndex].answers.skiped.push(...skipedArr.slice());
 }
 // Buttons clickhandler
+let rotationGradient = 0;
 
+function rotationGameContainer() {
+  gsap.to('.game-container__card', { duration: 0.9, rotationX: rotationGradient });
+  console.log(rotationGradient);
+}
 let i = 1;
 function clickContainerButtons(e) {
   const clickReady = e.target.closest('.game-container__button_ready');
   const clickSkip = e.target.closest('.game-container__button_skip');
   const clickNextRound = e.target.closest('.round-stat-modal__button');
   const clickCardsForAdults = e.target.closest('.cards__for-adults');
-  const clickCardsGeneral = e.target.closest('.cards__general');
+  const clickCardsGeneral = e.target.closest('.cards__main');
   if (clickReady) {
+    rotationGradient -= 360;
     teams[teamFlag].points += 1;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i].nameRus;
     arrConfirmed.push(currentCardsStack[0 + i]);
-    document.querySelector('.team-container__team-points').innerHTML = teams[teamFlag].points;
+    document.querySelector('.second').innerHTML = teams[teamFlag].points;
+    rotationGameContainer();
   } else if (clickSkip) {
+    rotationGradient += 360;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i].nameRus;
     arrSkiped.push(currentCardsStack[0 + i]);
+    rotationGameContainer();
   } else if (clickNextRound) {
     teamFlag = teamFlag ? 0 : 1;
+    rotationGradient = 0;
     nextRound();
   } else if (clickCardsForAdults) {
     currentCardsStack = cards.forAdults;
     shuffleCards();
-
-    document.querySelector('.cards-selection-container').style.display = 'none';
-    mainGamePlay();
+    gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -500 });
+    gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 500 });
+    gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
+    setTimeout(function () {
+      document.querySelector('.cards-selection-container').style.display = 'none';
+      mainGamePlay();
+    }, 1000);
   } else if (clickCardsGeneral) {
     currentCardsStack = cards.main;
+    gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -500 });
+    gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 500 });
+    gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
     shuffleCards();
-    document.querySelector('.cards-selection-container').style.display = 'none';
-    mainGamePlay();
+    setTimeout(function () {
+      document.querySelector('.cards-selection-container').style.display = 'none';
+      mainGamePlay();
+    }, 1000);
   }
   i += 1;
 }

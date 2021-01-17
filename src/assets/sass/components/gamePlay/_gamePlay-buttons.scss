@@ -1,0 +1,209 @@
+:root {
+  --btn-duration-slow: 2s;
+  --btn-duration-normal: 3s;
+  --btn-duration-fast: 5s;
+  --btn-default-color: #7cfc00;
+  --btn-blue-color: #00bcd4;
+  --btn-purple-color: #772aff;
+}
+
+  .btn {
+    outline: none;
+    position: relative;
+    padding: 20px 40px;
+    font-size: 18px;
+    border-width: 0;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: all .25s;
+    cursor: pointer;
+    &.btn-neon {
+      color: var(--btn-default-color);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      overflow: hidden;
+      margin: 10px;
+      span {
+        position: absolute;
+        transition: all .25s;
+        animation-duration: var(--btn-duration-slow);
+        animation-iteration-count: infinite;
+        &:nth-child(1) {
+          top: 0;
+          left: -100%;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(90deg, transparent 30%, var(--btn-default-color));
+          animation-name: btn-neon-border-top;
+        }
+        &:nth-child(2) {
+          right: 0;
+          top: -100%;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(180deg, transparent 30%, var(--btn-default-color));
+          animation-name: btn-neon-border-right;
+          animation-delay: calc(var(--btn-duration-slow) / 4);
+        }
+        &:nth-child(3) {
+          right: -100%;
+          bottom: 0;
+          width: 100%;
+          height: 2px;
+          background: linear-gradient(270deg, transparent 30%, var(--btn-default-color));
+          animation-name: btn-neon-border-bottom;
+          animation-delay: calc(var(--btn-duration-slow) / 4 * 2);
+        }
+        &:nth-child(4) {
+          bottom: -100%;
+          left: 0;
+          width: 2px;
+          height: 100%;
+          background: linear-gradient(360deg, transparent 30%, var(--btn-default-color));
+          animation-name: btn-neon-border-left;
+          animation-delay: calc(var(--btn-duration-slow) / 4 * 3);
+        }
+      }
+      &:hover {
+        background-color: var(--btn-default-color);
+        &.btn-neon {
+          color: #151515;
+          box-shadow: 0 0 10px var(--btn-default-color),
+                      0 0 30px var(--btn-default-color),
+                      0 0 50px var(--btn-default-color);
+        }
+      }
+      &.btn-blue {
+        color: var(--btn-blue-color);
+        span {
+          animation-duration: var(--btn-duration-normal);
+          &:nth-child(1) {
+            background: linear-gradient(90deg, transparent 30%, var(--btn-blue-color));
+          }
+          &:nth-child(2) {
+            background: linear-gradient(180deg, transparent 30%, var(--btn-blue-color));
+          animation-delay: calc(var(--btn-duration-normal) / 4);
+          }
+          &:nth-child(3) {
+            background: linear-gradient(270deg, transparent 30%, var(--btn-blue-color));
+          animation-delay: calc(var(--btn-duration-normal) / 4 * 2);
+          }
+          &:nth-child(4) {
+            background: linear-gradient(360deg, transparent 30%, var(--btn-blue-color));
+          animation-delay: calc(var(--btn-duration-normal) / 4 * 3);
+          }
+        }
+        &:hover {
+          background-color: var(--btn-blue-color);
+          &.btn-neon {
+            box-shadow: 0 0 10px var(--btn-blue-color),
+                        0 0 30px var(--btn-blue-color),
+                        0 0 50px var(--btn-blue-color);
+          }
+        }
+      }
+      &.btn-purple {
+        color: var(--btn-purple-color);
+        span {
+          &:nth-child(1) {
+            background: linear-gradient(90deg, transparent 30%, var(--btn-purple-color));
+          }
+          &:nth-child(2) {
+            background: linear-gradient(180deg, transparent 30%, var(--btn-purple-color));
+          }
+          &:nth-child(3) {
+            background: linear-gradient(270deg, transparent 30%, var(--btn-purple-color));
+          }
+          &:nth-child(4) {
+            background: linear-gradient(360deg, transparent 30%, var(--btn-purple-color));
+          }
+        }
+        &:hover {
+          background-color: var(--btn-purple-color);
+          &.btn-neon {
+            box-shadow: 0 0 10px var(--btn-purple-color),
+                        0 0 30px var(--btn-purple-color),
+                        0 0 50px var(--btn-purple-color);
+          }
+        }
+      }
+      &.btn-slow {
+        span {
+          animation-duration: var(--btn-duration-slow);
+          &:nth-child(2) {
+            animation-delay: calc(var(--btn-duration-slow) / 4);
+          }
+          &:nth-child(3) {
+            animation-delay: calc(var(--btn-duration-slow) / 4 * 2);
+          }
+          &:nth-child(4) {
+            animation-delay: calc(var(--btn-duration-slow) / 4 * 3);
+          }
+        }
+      }
+      &.btn-normal {
+        span {
+          animation-duration: var(--btn-duration-normal);
+          &:nth-child(2) {
+            animation-delay: calc(var(--btn-duration-normal) / 4);
+          }
+          &:nth-child(3) {
+            animation-delay: calc(var(--btn-duration-normal) / 4 * 2);
+          }
+          &:nth-child(4) {
+            animation-delay: calc(var(--btn-duration-normal) / 4 * 3);
+          }
+        }
+      }
+      &.btn-fast {
+        span {
+          animation-duration: var(--btn-duration-fast);
+          &:nth-child(2) {
+            animation-delay: calc(var(--btn-duration-fast) / 4);
+          }
+          &:nth-child(3) {
+            animation-delay: calc(var(--btn-duration-fast) / 4 * 2);
+          }
+          &:nth-child(4) {
+            animation-delay: calc(var(--btn-duration-fast) / 4 * 3);
+          }
+        }
+      }
+    }
+  }
+
+
+
+
+@keyframes btn-neon-border-top {
+from {
+  left: -100%;
+}
+to {
+  left: 100%;
+}
+}
+@keyframes btn-neon-border-right {
+from {
+  top: -100%;
+}
+to {
+  top: 100%;
+}
+}
+@keyframes btn-neon-border-bottom {
+from {
+  right: -100%;
+}
+to {
+  right: 100%;
+}
+}
+@keyframes btn-neon-border-left {
+from {
+  bottom: -100%;
+}
+to {
+  bottom: 100%;
+}
+}
