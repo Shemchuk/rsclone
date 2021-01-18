@@ -6,8 +6,23 @@
 @import './/base/base';
 //components
 @import './components/container';
+@import './components/card';
+
+@import './components/round-stat-modal';
+//components/cardSelection
+@import './components/cardsSelection/cards-selection-modal';
+@import './components/cardsSelection/cards-selection-title';
+@import './components/cardsSelection/_cards-selection-container__cards';
+
+//gamePlay
+@import './components/gamePlay/gamePlay-current-card';
+@import './components/gamePlay/gamePlay-buttons';
+@import './components/gamePlay/timer';
+@import './components/gamePlay/points';
 @import './components/menu';
 
 // layouts
 @import './layouts/wrapper';
 @import './layouts/footer';
+@import './layouts/main';
+

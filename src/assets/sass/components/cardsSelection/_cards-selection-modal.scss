@@ -1,0 +1,14 @@
+// @import "../../../../node_modules/bourbon/core/bourbon";
+.cards-selection-container{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.cards-selection-container__title{
+
+}
+.cards-selection-container__cards{
+  display: flex;
+  justify-content: space-around;
+}

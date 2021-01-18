@@ -3,11 +3,15 @@
 /* eslint-disable no-console */
 
 // import CONST from './modules/Constants';
+
+import { game } from './modules/game/gameContainer';
+
 import Menu from './modules/Menu';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { MDCRipple } from '@material/ripple/index';
 // import { MDCSlider } from '@material/slider/index';
+
 
 window.onload = () => {
   console.log('Project starts');
@@ -19,3 +23,5 @@ window.onload = () => {
   // const slider1 = new MDCSlider(document.querySelector('.slider__words__count'));
   // const slider2 = new MDCSlider(document.querySelector('.slider__round__time'));
 };
+
+game();
