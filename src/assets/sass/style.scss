@@ -19,8 +19,10 @@
 @import './components/gamePlay/gamePlay-buttons';
 @import './components/gamePlay/timer';
 @import './components/gamePlay/points';
+@import './components/menu';
 
 // layouts
+@import './layouts/wrapper';
 @import './layouts/footer';
 @import './layouts/main';
 
