@@ -71,17 +71,22 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_Menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/Menu */ "./src/modules/Menu.js");
+/* harmony import */ var _modules_game_gameContainer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/game/gameContainer */ "./src/modules/game/gameContainer.js");
+/* harmony import */ var _modules_Menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Menu */ "./src/modules/Menu.js");
+/* harmony import */ var _modules_commands__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/commands */ "./src/modules/commands.js");
+/* harmony import */ var _modules_createCommands__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/createCommands */ "./src/modules/createCommands.js");
+/* harmony import */ var _modules_createBackgroundSound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/createBackgroundSound */ "./src/modules/createBackgroundSound.js");
+/* harmony import */ var _modules_backgroundSound__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/backgroundSound */ "./src/modules/backgroundSound.js");
 /* eslint-disable no-unused-vars */
 
 /* eslint-disable import/no-extraneous-dependencies */
 
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_game_gameContainer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/game/gameContainer */ "./src/modules/game/gameContainer.js");
 /* eslint-disable no-console */
 // import CONST from './modules/Constants';
+
+
+
+
 
  // eslint-disable-next-line import/no-extraneous-dependencies
 // import { MDCRipple } from '@material/ripple/index';
@@ -89,14 +94,285 @@ __webpack_require__.r(__webpack_exports__);
 
 window.onload = function () {
   console.log('Project starts');
-  var menu = new _modules_Menu__WEBPACK_IMPORTED_MODULE_0__.default();
-  menu.init(); // eslint-disable-next-line no-unused-vars
+  var menu = new _modules_Menu__WEBPACK_IMPORTED_MODULE_1__.default();
+  menu.init();
+  var createCommands = new _modules_createCommands__WEBPACK_IMPORTED_MODULE_3__.default();
+  createCommands.init();
+  var commands = new _modules_commands__WEBPACK_IMPORTED_MODULE_2__.default();
+  commands.init();
+  var createBackgroundSound = new _modules_createBackgroundSound__WEBPACK_IMPORTED_MODULE_4__.default();
+  createBackgroundSound.init();
+  var backgroundSound = new _modules_backgroundSound__WEBPACK_IMPORTED_MODULE_5__.default();
+  backgroundSound.init(); // eslint-disable-next-line no-unused-vars
   // const ripple = new MDCRipple(document.querySelector('.mdc-button'));
   // const slider1 = new MDCSlider(document.querySelector('.slider__words__count'));
   // const slider2 = new MDCSlider(document.querySelector('.slider__round__time'));
 };
 
 (0,_modules_game_gameContainer__WEBPACK_IMPORTED_MODULE_0__.game)();
+
+/***/ }),
+
+/***/ "./src/modules/Constants.js":
+/*!**********************************!*\
+  !*** ./src/modules/Constants.js ***!
+  \**********************************/
+/***/ (() => {
+
+// eslint-disable-next-line prettier/prettier
+
+/* eslint-disable import/prefer-default-export */
+
+/* eslint-disable no-unused-vars */
+var TMP = 1;
+
+/***/ }),
+
+/***/ "./src/modules/Menu.js":
+/*!*****************************!*\
+  !*** ./src/modules/Menu.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ Menu
+/* harmony export */ });
+/* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Constants */ "./src/modules/Constants.js");
+/* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Constants__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_menu_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/menu.html */ "./src/modules/components/menu.html");
+/* harmony import */ var _components_menu_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_menu_html__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/storage */ "./src/modules/utils/storage.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+ // eslint-disable-next-line no-unused-vars
+
+ // import { game } from './modules/game/gameContainer';
+
+var Menu = /*#__PURE__*/function () {
+  function Menu() {
+    _classCallCheck(this, Menu);
+
+    this.tmp = (_Constants__WEBPACK_IMPORTED_MODULE_0___default().TMP);
+    var main = document.querySelector('.main');
+    main.innerHTML = (_components_menu_html__WEBPACK_IMPORTED_MODULE_1___default()) + main.innerHTML;
+  }
+
+  _createClass(Menu, [{
+    key: "init",
+    value: function init() {
+      document.querySelector('.menu').addEventListener('click', this.menuEventHandler);
+    } // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: "menuEventHandler",
+    value: function menuEventHandler(e) {
+      var element = e.target.closest('.menu-button') || e.target.closest('.mapboxgl-marker');
+
+      if (!element) {
+        return;
+      }
+
+      switch (element.id) {
+        case 'button-start':
+          console.log('start');
+          Menu.hideMenu('main-menu'); // game();
+          // this.showMenu('command-menu');
+
+          break;
+
+        case 'button-settings':
+          console.log('settings');
+          Menu.hideMenu('main-menu');
+          Menu.showMenu('settings-menu');
+          break;
+
+        case 'button-tutorial':
+          console.log('tutorial');
+          Menu.hideMenu('main-menu');
+          Menu.showMenu('tutorial-menu');
+          break;
+
+        case 'button-back':
+          console.log('back');
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('settings-menu'); // Menu.hideMenu('tutorial-menu');
+
+          break;
+
+        case 'tutorial__button-back':
+          console.log('back');
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('tutorial-menu'); // Menu.hideMenu('tutorial-menu');
+
+          break;
+
+        case 'button-save':
+          console.log('save');
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('settings-menu');
+          Menu.saveSettings();
+          break;
+
+        case 'button-statistics':
+          console.log('statistics'); // Menu.showMenu('main-menu');
+          // Menu.hideMenu('settings-menu');
+
+          break;
+
+        default:
+          break;
+      }
+    }
+  }], [{
+    key: "saveSettings",
+    value: function saveSettings() {
+      var settings = {};
+      settings.wordsCount = document.querySelector('#inputWordsCount').value;
+      settings.roundTime = document.querySelector('#inputRoundTime').value;
+      settings.lang = document.querySelector('input[name="lang"]:checked').value;
+      (0,_utils_storage__WEBPACK_IMPORTED_MODULE_2__.set)('aliasSettings', settings);
+      console.log(settings);
+      console.log('Settings saved!');
+    }
+  }, {
+    key: "hideMenu",
+    value: function hideMenu(menuClassName) {
+      document.querySelector(".".concat(menuClassName)).classList.add('hide-menu');
+    }
+  }, {
+    key: "showMenu",
+    value: function showMenu(menuClassName) {
+      document.querySelector(".".concat(menuClassName)).classList.remove('hide-menu');
+    }
+  }]);
+
+  return Menu;
+}();
+
+
+
+/***/ }),
+
+/***/ "./src/modules/audioTracks.js":
+/*!************************************!*\
+  !*** ./src/modules/audioTracks.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+var audioTracks = [{
+  url: 'http://cdn.atrera.com/audio/Marcel_Pequel_-_01_-_One.mp3',
+  author: 'Author1',
+  title: 'Title1'
+}, {
+  url: 'http://cdn.atrera.com/audio/Marcel_Pequel_-_02_-_Two.mp3',
+  author: 'Author2',
+  title: 'Title2'
+}, {
+  url: 'http://cdn.atrera.com/audio/Marcel_Pequel_-_03_-_Three.mp3',
+  author: 'Author3',
+  title: 'Title3'
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (audioTracks);
+
+/***/ }),
+
+/***/ "./src/modules/backgroundSound.js":
+/*!****************************************!*\
+  !*** ./src/modules/backgroundSound.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ BackgroundSound
+/* harmony export */ });
+/* harmony import */ var _audioTracks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./audioTracks */ "./src/modules/audioTracks.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var BackgroundSound = /*#__PURE__*/function () {
+  function BackgroundSound() {
+    _classCallCheck(this, BackgroundSound);
+
+    this.backgroundSoundWrapper = document.querySelector('.background-sound-wrapper');
+    this.title = document.querySelector('.music__title');
+    this.author = document.querySelector('.music__author');
+    this.playBtn = document.querySelector('.play');
+    this.forwardBtn = document.querySelector('.forward');
+    this.volumeInput = document.getElementById('volume');
+    this.currentAudio = 'music';
+    this.currentId = 0;
+    this.audio = null;
+    this.isPlaying = false;
+  }
+
+  _createClass(BackgroundSound, [{
+    key: "play",
+    value: function play(e) {
+      if (!this.isPlaying) {
+        e.target.src = '/./src/assets/icons/pause.svg';
+        e.target.alt = 'Pause';
+        this.isPlaying = true;
+        document.querySelector('audio').play();
+      } else {
+        e.target.src = '/./src/assets/icons/play.svg';
+        e.target.alt = 'Play';
+        document.querySelector('audio').pause();
+        this.isPlaying = false;
+      }
+    }
+  }, {
+    key: "playNextTrack",
+    value: function playNextTrack() {
+      this.playBtn.src = '/./src/assets/icons/pause.svg';
+      this.playBtn.alt = 'Pause';
+      this.isPlaying = true;
+      this.currentId = this.currentId + 1 > _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default.length ? 0 : this.currentId + 1;
+      this.init();
+      document.querySelector('audio').play();
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      this.audio = document.getElementById(this.currentAudio) === null ? this.audio = new Audio() : document.getElementById(this.currentAudio);
+      this.audio.src = _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default[this.currentId].url;
+      this.audio.id = this.currentAudio; // eslint-disable-next-line no-unused-expressions
+
+      document.getElementById(this.currentAudio) === null ? this.backgroundSoundWrapper.appendChild(this.audio) : '';
+      this.title.innerHTML = _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default[this.currentId].title;
+      this.author.innerHTML = _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default[this.currentId].author; // this.audio.setVolume(this.volumeInput);
+
+      this.playBtn.addEventListener('click', this.play);
+      this.forwardBtn.addEventListener('click', function () {
+        _this.playNextTrack();
+      });
+    }
+  }]);
+
+  return BackgroundSound;
+}();
+
+
 
 /***/ }),
 
@@ -2751,6 +3027,168 @@ var cards = {
 
 /***/ }),
 
+/***/ "./src/modules/commands.js":
+/*!*********************************!*\
+  !*** ./src/modules/commands.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ Commands
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var Commands = /*#__PURE__*/function () {
+  function Commands() {
+    _classCallCheck(this, Commands);
+
+    this.addTeams = document.querySelector('.add-teams');
+    this.teamsList = document.querySelector('.teams');
+    this.items = JSON.parse(localStorage.getItem('items')) || [];
+  }
+
+  _createClass(Commands, [{
+    key: "init",
+    value: function init() {
+      this.addTeams.addEventListener('submit', this.addItem.bind(this));
+      this.teamsList.addEventListener('click', this.deleteItem.bind(this));
+      this.populateList(this.items, this.teamsList);
+    }
+  }, {
+    key: "addItem",
+    value: function addItem(e) {
+      e.preventDefault();
+      var text = this.addTeams.querySelector('[name=item]').value;
+      var item = {
+        text: text,
+        win: false
+      };
+      this.items.push(item);
+      this.populateList(this.items, this.teamsList);
+      localStorage.removeItem('items');
+      localStorage.setItem('items', JSON.stringify(this.items));
+      this.addTeams.reset();
+    }
+  }, {
+    key: "populateList",
+    value: function populateList() {
+      this.teamsList.innerHTML = this.items.map(function (el, i) {
+        return "\n        <li class=\"item".concat(i, "\" data-index=").concat(i, ">").concat(el.text, "\n        </li>\n      ");
+      }).join('');
+    }
+  }, {
+    key: "deleteItem",
+    value: function deleteItem(e) {
+      var element = e.target;
+      var index = element.dataset.index;
+      this.items.splice(index, 1);
+      localStorage.removeItem('items');
+      localStorage.setItem('items', JSON.stringify(this.items));
+      this.populateList(this.items, this.teamsList);
+    }
+  }]);
+
+  return Commands;
+}();
+
+
+
+/***/ }),
+
+/***/ "./src/modules/createBackgroundSound.js":
+/*!**********************************************!*\
+  !*** ./src/modules/createBackgroundSound.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ CreateBackgroundSound
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CreateBackgroundSound = /*#__PURE__*/function () {
+  function CreateBackgroundSound() {
+    _classCallCheck(this, CreateBackgroundSound);
+
+    this.main = document.querySelector('main');
+  }
+
+  _createClass(CreateBackgroundSound, [{
+    key: "init",
+    value: function init() {
+      var template = '';
+      var backgroundSoundContainer = document.createElement('div');
+      backgroundSoundContainer.className = 'background-sound-wrapper';
+      template = "\n      <h2 class=\"music__author\"></h2>\n      <span>-</span>\n      <h2 class=\"music__title\"></h2>\n      <div class=\"music-control\">\n        <div class=\"music-control__play\" id=\"play\">\n          <img src=\"/./src/assets/icons/play.svg\" alt=\"Play\" class=\"play\">\n        </div>\n        <div class=\"music-control__forward\" id=\"forward\">\n          <img src=\"/./src/assets/icons/next.svg\" alt=\"Forward\" class=\"forward\">\n        </div>\n      </div>\n      <div class=\"option\">\n        <label for=\"volume\">Volume</label>\n        <input type=\"range\" min=\"0\" max=\"1\" step=\"0.1\" name=\"volume\" id=\"volume\" value=\"0.2\">\n      </div>";
+      backgroundSoundContainer.innerHTML = template;
+      this.main.appendChild(backgroundSoundContainer);
+      return this.main;
+    }
+  }]);
+
+  return CreateBackgroundSound;
+}();
+
+
+
+/***/ }),
+
+/***/ "./src/modules/createCommands.js":
+/*!***************************************!*\
+  !*** ./src/modules/createCommands.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ CreateCommands
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CreateCommands = /*#__PURE__*/function () {
+  function CreateCommands() {
+    _classCallCheck(this, CreateCommands);
+
+    this.main = document.querySelector('main');
+  }
+
+  _createClass(CreateCommands, [{
+    key: "init",
+    value: function init() {
+      var template = '';
+      var commandsContainer = document.createElement('div');
+      commandsContainer.className = 'command-wrapper';
+      template = "<h2>ALL TEAMS</h2>\n    <ul class=\"teams\">\n      <li>Loading Teams...</li>\n    </ul>\n    <form class=\"add-teams\">\n      <input type=\"text\" name=\"item\" placeholder=\"Team name\" required>\n      <input type=\"submit\" value=\"add Team\">\n    </form>";
+      commandsContainer.innerHTML = template;
+      this.main.appendChild(commandsContainer);
+      return this.main;
+    }
+  }]);
+
+  return CreateCommands;
+}();
+
+
+
+/***/ }),
+
 /***/ "./src/modules/game/card.js":
 /*!**********************************!*\
   !*** ./src/modules/game/card.js ***!
@@ -3252,177 +3690,6 @@ function countdown() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (countdown);
-
-/***/ }),
-
-/***/ "./src/modules/utils/storage.js":
-/*!**************************************!*\
-  !*** ./src/modules/utils/storage.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "set": () => /* binding */ set,
-/* harmony export */   "get": () => /* binding */ get,
-/* harmony export */   "del": () => /* binding */ del
-/* harmony export */ });
-function set(name, value) {
-  window.localStorage.setItem(name, JSON.stringify(value));
-}
-function get(name) {
-  var subst = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-  return JSON.parse(window.localStorage.getItem(name) || subst);
-}
-function del(name) {
-  localStorage.removeItem(name);
-}
-
-/***/ }),
-
-/***/ "./src/modules/Constants.js":
-/*!**********************************!*\
-  !*** ./src/modules/Constants.js ***!
-  \**********************************/
-/***/ (() => {
-
-/* eslint-disable import/prefer-default-export */
-
-/* eslint-disable no-unused-vars */
-var TMP = 1;
-
-/***/ }),
-
-/***/ "./src/modules/Menu.js":
-/*!*****************************!*\
-  !*** ./src/modules/Menu.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => /* binding */ Menu
-/* harmony export */ });
-/* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Constants */ "./src/modules/Constants.js");
-/* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Constants__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_menu_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/menu.html */ "./src/modules/components/menu.html");
-/* harmony import */ var _components_menu_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_menu_html__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/storage */ "./src/modules/utils/storage.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
- // eslint-disable-next-line no-unused-vars
-
- // import { game } from './modules/game/gameContainer';
-
-var Menu = /*#__PURE__*/function () {
-  function Menu() {
-    _classCallCheck(this, Menu);
-
-    this.tmp = (_Constants__WEBPACK_IMPORTED_MODULE_0___default().TMP);
-    var main = document.querySelector('.main');
-    main.innerHTML = (_components_menu_html__WEBPACK_IMPORTED_MODULE_1___default()) + main.innerHTML;
-  }
-
-  _createClass(Menu, [{
-    key: "init",
-    value: function init() {
-      document.querySelector('.menu').addEventListener('click', this.menuEventHandler);
-    } // eslint-disable-next-line class-methods-use-this
-
-  }, {
-    key: "menuEventHandler",
-    value: function menuEventHandler(e) {
-      var element = e.target.closest('.menu-button') || e.target.closest('.mapboxgl-marker');
-
-      if (!element) {
-        return;
-      }
-
-      switch (element.id) {
-        case 'button-start':
-          console.log('start');
-          Menu.hideMenu('main-menu'); // game();
-          // this.showMenu('command-menu');
-
-          break;
-
-        case 'button-settings':
-          console.log('settings');
-          Menu.hideMenu('main-menu');
-          Menu.showMenu('settings-menu');
-          break;
-
-        case 'button-tutorial':
-          console.log('tutorial');
-          Menu.hideMenu('main-menu');
-          Menu.showMenu('tutorial-menu');
-          break;
-
-        case 'button-back':
-          console.log('back');
-          Menu.showMenu('main-menu');
-          Menu.hideMenu('settings-menu'); // Menu.hideMenu('tutorial-menu');
-
-          break;
-
-        case 'tutorial__button-back':
-          console.log('back');
-          Menu.showMenu('main-menu');
-          Menu.hideMenu('tutorial-menu'); // Menu.hideMenu('tutorial-menu');
-
-          break;
-
-        case 'button-save':
-          console.log('save');
-          Menu.showMenu('main-menu');
-          Menu.hideMenu('settings-menu');
-          Menu.saveSettings();
-          break;
-
-        case 'button-statistics':
-          console.log('statistics'); // Menu.showMenu('main-menu');
-          // Menu.hideMenu('settings-menu');
-
-          break;
-
-        default:
-          break;
-      }
-    }
-  }], [{
-    key: "saveSettings",
-    value: function saveSettings() {
-      var settings = {};
-      settings.wordsCount = document.querySelector('#inputWordsCount').value;
-      settings.roundTime = document.querySelector('#inputRoundTime').value;
-      settings.lang = document.querySelector('input[name="lang"]:checked').value;
-      (0,_utils_storage__WEBPACK_IMPORTED_MODULE_2__.set)('aliasSettings', settings);
-      console.log(settings);
-      console.log('Settings saved!');
-    }
-  }, {
-    key: "hideMenu",
-    value: function hideMenu(menuClassName) {
-      document.querySelector(".".concat(menuClassName)).classList.add('hide-menu');
-    }
-  }, {
-    key: "showMenu",
-    value: function showMenu(menuClassName) {
-      document.querySelector(".".concat(menuClassName)).classList.remove('hide-menu');
-    }
-  }]);
-
-  return Menu;
-}();
-
-
 
 /***/ }),
 
