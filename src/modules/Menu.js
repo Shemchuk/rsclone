@@ -1,11 +1,15 @@
 import CONST from './Constants';
+import menuHTML from './components/menu.html';
 
 // eslint-disable-next-line no-unused-vars
 import { set as setValueToStorage, get as getValueFromStorage } from './utils/storage';
+// import { game } from './modules/game/gameContainer';
 
 export default class Menu {
   constructor() {
     this.tmp = CONST.TMP;
+    const main = document.querySelector('.main');
+    main.innerHTML = menuHTML + main.innerHTML;
   }
 
   init() {
@@ -24,9 +28,11 @@ export default class Menu {
       case 'button-start':
         console.log('start');
         Menu.hideMenu('main-menu');
+        // game();
         // this.showMenu('command-menu');
 
         break;
+
       case 'button-settings':
         console.log('settings');
         Menu.hideMenu('main-menu');
@@ -62,6 +68,13 @@ export default class Menu {
         Menu.showMenu('main-menu');
         Menu.hideMenu('settings-menu');
         Menu.saveSettings();
+
+        break;
+
+      case 'button-statistics':
+        console.log('statistics');
+        // Menu.showMenu('main-menu');
+        // Menu.hideMenu('settings-menu');
 
         break;
       default:
