@@ -18,21 +18,24 @@ export const teams = [
 ];
 
 let timer;
-let time = 30;
+let time = 5;
 let finishGamePoints = 10;
 function countdown() {
   document.querySelector('.first').innerHTML = time;
   time--;
   if (time <= 0) {
     if (!teams.some((el) => el.points >= finishGamePoints) || !(teamFlag === teams.length - 1)) {
-      time = 30;
+      time = 5;
       clearTimeout(timer);
       // gsap.to('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
       gsap.to('.game-container__card', { duration: 1, ease: 'power1.out', x: -1500 });
       setTimeout(function () {
+        gsap.to('.team-container', { duration: 1, ease: 'power1.out' });
+        document.querySelector('.game-container__card').style.display = 'none';
         document.querySelector('.hidden').style.display = 'flex';
-        gsap.from('.hidden', { duration: 1, ease: 'power1.out', x: 1500 });
-      }, 1);
+
+        gsap.from('.hidden', { duration: 1, ease: 'power1.out', x: 1000 });
+      }, 500);
       // gsap.from('.hidden', { duration: 1, ease: 'power1.out', y: 500 });
       document.querySelector('.first').innerHTML = 'Время вышло!';
       // console.log(arrConfirmed);

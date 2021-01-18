@@ -139,7 +139,7 @@ export function game() {
 
 export function mainGamePlay() {
   document.querySelector('.main').appendChild(generateGameContainer());
-  document.querySelector('.main').appendChild(generateRoundStatisticsModal());
+  document.querySelector('.game-container').appendChild(generateRoundStatisticsModal());
   gsap.from('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
   gsap.from('.game-container__card', { duration: 1, ease: 'power1.out', y: 500 });
   generateCard();

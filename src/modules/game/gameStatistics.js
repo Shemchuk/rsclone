@@ -6,18 +6,21 @@ const generateRoundStatisticsModal = () => {
   let template = '';
   const roundStatModal = document.createElement('div');
   roundStatModal.className = 'round-stat-modal hidden';
-  template += `<div class="round-stat-modal__title">Имя команды</div>`;
+  template += `<div class="sign-wrap">`;
+  template += `<div class="sign sign5">`;
   template += `<div class="round-stat-modal__container">`;
   template += `<div class="round-stat-confirmed">`;
-  template += `<div class="round-stat-confirmed__title">Выполнено</div>`;
+  template += `<div class="round-stat-confirmed__title">Выполнено:</div>`;
   template += `<div class="round-stat-confirmed__container"></div>`;
   template += `</div>`;
   template += `<div class="round-stat-skiped">`;
-  template += `<div class="round-stat-skiped__title">Пропущено</div>`;
+  template += `<div class="round-stat-skiped__title">Пропущено:</div>`;
   template += `<div class="round-stat-skiped__container"></div>`;
   template += `</div>`;
   template += `</div>`;
   template += '<button class="button round-stat-modal__button">Следующий раунд</button>';
+  template += `</div></div>`;
+
   roundStatModal.innerHTML = template;
   return roundStatModal;
 };

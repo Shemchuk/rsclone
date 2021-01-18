@@ -3056,7 +3056,7 @@ function game() {
 }
 function mainGamePlay() {
   document.querySelector('.main').appendChild(generateGameContainer());
-  document.querySelector('.main').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_2__.generateRoundStatisticsModal)());
+  document.querySelector('.game-container').appendChild((0,_gameStatistics__WEBPACK_IMPORTED_MODULE_2__.generateRoundStatisticsModal)());
   gsap.from('.team-container', {
     duration: 1,
     ease: 'power1.out',
@@ -3093,18 +3093,20 @@ var generateRoundStatisticsModal = function generateRoundStatisticsModal() {
   var template = '';
   var roundStatModal = document.createElement('div');
   roundStatModal.className = 'round-stat-modal hidden';
-  template += "<div class=\"round-stat-modal__title\">\u0418\u043C\u044F \u043A\u043E\u043C\u0430\u043D\u0434\u044B</div>";
+  template += "<div class=\"sign-wrap\">";
+  template += "<div class=\"sign sign5\">";
   template += "<div class=\"round-stat-modal__container\">";
   template += "<div class=\"round-stat-confirmed\">";
-  template += "<div class=\"round-stat-confirmed__title\">\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E</div>";
+  template += "<div class=\"round-stat-confirmed__title\">\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E:</div>";
   template += "<div class=\"round-stat-confirmed__container\"></div>";
   template += "</div>";
   template += "<div class=\"round-stat-skiped\">";
-  template += "<div class=\"round-stat-skiped__title\">\u041F\u0440\u043E\u043F\u0443\u0449\u0435\u043D\u043E</div>";
+  template += "<div class=\"round-stat-skiped__title\">\u041F\u0440\u043E\u043F\u0443\u0449\u0435\u043D\u043E:</div>";
   template += "<div class=\"round-stat-skiped__container\"></div>";
   template += "</div>";
   template += "</div>";
   template += '<button class="button round-stat-modal__button">Следующий раунд</button>';
+  template += "</div></div>";
   roundStatModal.innerHTML = template;
   return roundStatModal;
 }; // Confirmed statistics cell
@@ -3178,7 +3180,7 @@ var teams = [{
   }
 }];
 var timer;
-var time = 30;
+var time = 5;
 var finishGamePoints = 10;
 
 function countdown() {
@@ -3189,7 +3191,7 @@ function countdown() {
     if (!teams.some(function (el) {
       return el.points >= finishGamePoints;
     }) || !(_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag === teams.length - 1)) {
-      time = 30;
+      time = 5;
       clearTimeout(timer); // gsap.to('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
 
       gsap.to('.game-container__card', {
@@ -3198,13 +3200,18 @@ function countdown() {
         x: -1500
       });
       setTimeout(function () {
+        gsap.to('.team-container', {
+          duration: 1,
+          ease: 'power1.out'
+        });
+        document.querySelector('.game-container__card').style.display = 'none';
         document.querySelector('.hidden').style.display = 'flex';
         gsap.from('.hidden', {
           duration: 1,
           ease: 'power1.out',
-          x: 1500
+          x: 1000
         });
-      }, 1); // gsap.from('.hidden', { duration: 1, ease: 'power1.out', y: 500 });
+      }, 500); // gsap.from('.hidden', { duration: 1, ease: 'power1.out', y: 500 });
 
       document.querySelector('.first').innerHTML = 'Время вышло!'; // console.log(arrConfirmed);
 
