@@ -73,8 +73,12 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_commands__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/commands */ "./src/modules/commands.js");
 /* harmony import */ var _modules_createCommands__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/createCommands */ "./src/modules/createCommands.js");
+/* harmony import */ var _modules_createBackgroundSound__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/createBackgroundSound */ "./src/modules/createBackgroundSound.js");
+/* harmony import */ var _modules_backgroundSound__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/backgroundSound */ "./src/modules/backgroundSound.js");
 /* eslint-disable no-console */
 // import CONST from './modules/Constants';
+
+
 
 
 
@@ -84,7 +88,127 @@ window.onload = function () {
   createCommands.init();
   var commands = new _modules_commands__WEBPACK_IMPORTED_MODULE_0__.default();
   commands.init();
+  var createBackgroundSound = new _modules_createBackgroundSound__WEBPACK_IMPORTED_MODULE_2__.default();
+  createBackgroundSound.init();
+  var backgroundSound = new _modules_backgroundSound__WEBPACK_IMPORTED_MODULE_3__.default();
+  backgroundSound.init();
 };
+
+/***/ }),
+
+/***/ "./src/modules/audioTracks.js":
+/*!************************************!*\
+  !*** ./src/modules/audioTracks.js ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
+/* harmony export */ });
+var audioTracks = [{
+  url: 'http://cdn.atrera.com/audio/Marcel_Pequel_-_01_-_One.mp3',
+  author: 'Author1',
+  title: 'Title1'
+}, {
+  url: 'http://cdn.atrera.com/audio/Marcel_Pequel_-_02_-_Two.mp3',
+  author: 'Author2',
+  title: 'Title2'
+}, {
+  url: 'http://cdn.atrera.com/audio/Marcel_Pequel_-_03_-_Three.mp3',
+  author: 'Author3',
+  title: 'Title3'
+}];
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (audioTracks);
+
+/***/ }),
+
+/***/ "./src/modules/backgroundSound.js":
+/*!****************************************!*\
+  !*** ./src/modules/backgroundSound.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ BackgroundSound
+/* harmony export */ });
+/* harmony import */ var _audioTracks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./audioTracks */ "./src/modules/audioTracks.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var BackgroundSound = /*#__PURE__*/function () {
+  function BackgroundSound() {
+    _classCallCheck(this, BackgroundSound);
+
+    this.backgroundSoundWrapper = document.querySelector('.background-sound-wrapper');
+    this.title = document.querySelector('.music__title');
+    this.author = document.querySelector('.music__author');
+    this.playBtn = document.querySelector('.play');
+    this.forwardBtn = document.querySelector('.forward');
+    this.volumeInput = document.getElementById('volume');
+    this.currentAudio = 'music';
+    this.currentId = 0;
+    this.audio = null;
+    this.isPlaying = false;
+  }
+
+  _createClass(BackgroundSound, [{
+    key: "play",
+    value: function play(e) {
+      if (!this.isPlaying) {
+        e.target.src = '/./src/assets/icons/pause.svg';
+        e.target.alt = 'Pause';
+        this.isPlaying = true;
+        document.querySelector('audio').play();
+      } else {
+        e.target.src = '/./src/assets/icons/play.svg';
+        e.target.alt = 'Play';
+        document.querySelector('audio').pause();
+        this.isPlaying = false;
+      }
+    }
+  }, {
+    key: "playNextTrack",
+    value: function playNextTrack() {
+      this.playBtn.src = '/./src/assets/icons/pause.svg';
+      this.playBtn.alt = 'Pause';
+      this.isPlaying = true;
+      this.currentId = this.currentId + 1 > _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default.length ? 0 : this.currentId + 1;
+      this.init();
+      document.querySelector('audio').play();
+    }
+  }, {
+    key: "init",
+    value: function init() {
+      var _this = this;
+
+      this.audio = document.getElementById(this.currentAudio) === null ? this.audio = new Audio() : document.getElementById(this.currentAudio);
+      this.audio.src = _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default[this.currentId].url;
+      this.audio.id = this.currentAudio; // eslint-disable-next-line no-unused-expressions
+
+      document.getElementById(this.currentAudio) === null ? this.backgroundSoundWrapper.appendChild(this.audio) : '';
+      this.title.innerHTML = _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default[this.currentId].title;
+      this.author.innerHTML = _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default[this.currentId].author; // this.audio.setVolume(this.volumeInput);
+
+      this.playBtn.addEventListener('click', this.play);
+      this.forwardBtn.addEventListener('click', function () {
+        _this.playNextTrack();
+      });
+    }
+  }]);
+
+  return BackgroundSound;
+}();
+
+
 
 /***/ }),
 
@@ -156,6 +280,50 @@ var Commands = /*#__PURE__*/function () {
   }]);
 
   return Commands;
+}();
+
+
+
+/***/ }),
+
+/***/ "./src/modules/createBackgroundSound.js":
+/*!**********************************************!*\
+  !*** ./src/modules/createBackgroundSound.js ***!
+  \**********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ CreateBackgroundSound
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CreateBackgroundSound = /*#__PURE__*/function () {
+  function CreateBackgroundSound() {
+    _classCallCheck(this, CreateBackgroundSound);
+
+    this.main = document.querySelector('main');
+  }
+
+  _createClass(CreateBackgroundSound, [{
+    key: "init",
+    value: function init() {
+      var template = '';
+      var backgroundSoundContainer = document.createElement('div');
+      backgroundSoundContainer.className = 'background-sound-wrapper';
+      template = "\n      <h2 class=\"music__author\"></h2>\n      <span>-</span>\n      <h2 class=\"music__title\"></h2>\n      <div class=\"music-control\">\n        <div class=\"music-control__play\" id=\"play\">\n          <img src=\"/./src/assets/icons/play.svg\" alt=\"Play\" class=\"play\">\n        </div>\n        <div class=\"music-control__forward\" id=\"forward\">\n          <img src=\"/./src/assets/icons/next.svg\" alt=\"Forward\" class=\"forward\">\n        </div>\n      </div>\n      <div class=\"option\">\n        <label for=\"volume\">Volume</label>\n        <input type=\"range\" min=\"0\" max=\"1\" step=\"0.1\" name=\"volume\" id=\"volume\" value=\"0.2\">\n      </div>";
+      backgroundSoundContainer.innerHTML = template;
+      this.main.appendChild(backgroundSoundContainer);
+      return this.main;
+    }
+  }]);
+
+  return CreateBackgroundSound;
 }();
 
 
