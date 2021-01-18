@@ -1,0 +1,85 @@
+.menu {
+  .main-menu,
+  .settings-menu,
+  .tutorial-menu {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    min-width: 30rem;
+    margin: 5rem 0rem;
+    &.hide-menu {
+      display: none;
+    }
+    .menu-title {
+      font-size: 2.5rem;
+      align-self: center;
+      margin-bottom: 3rem;
+    }
+  }
+
+  .menu-button {
+    outline: none;
+    border: 1px solid black;
+    padding: 1rem 0.5rem;
+    margin: 0.5rem 1rem;
+    border-radius: 5px;
+    min-width: 10rem;
+    &:hover:enabled {
+      cursor: pointer;
+      opacity: 0.7;
+    }
+  }
+
+  .settings-menu,
+  .tutorial-menu {
+    .settings-menu__item {
+      margin: 1rem 0;
+    }
+
+    .item__row-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 1.6rem;
+    }
+    .settings__button-block,
+    .tutorial__button-block {
+      display: flex;
+      justify-content: center;
+      margin-top: 2rem;
+    }
+
+    .setting-slider__container {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      .slider-input {
+        width: 100%;
+        background: #d3d3d3;
+        outline: none;
+        opacity: 0.7;
+        -webkit-transition: 0.2s;
+        transition: opacity 0.2s;
+        &:hover {
+          opacity: 1;
+          cursor: pointer;
+        }
+      }
+      .slider__value-indicator {
+        width: 2rem;
+        font-size: 1.6rem;
+        margin: 0 1rem;
+      }
+    }
+  }
+
+  .setting-paragraph {
+    font-size: 1.6rem;
+  }
+
+  .tutorial-menu {
+    .tutorial-text {
+      font-size: 1.6rem;
+    }
+  }
+}
