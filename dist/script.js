@@ -67,13 +67,153 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/***/ (() => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _modules_Menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/Menu */ "./src/modules/Menu.js");
+/* eslint-disable no-unused-vars */
+
+/* eslint-disable import/no-extraneous-dependencies */
 
 /* eslint-disable no-console */
 // import CONST from './modules/Constants';
+ // eslint-disable-next-line import/no-extraneous-dependencies
+// import { MDCRipple } from '@material/ripple/index';
+// import { MDCSlider } from '@material/slider/index';
+
 window.onload = function () {
   console.log('Project starts');
+  var menu = new _modules_Menu__WEBPACK_IMPORTED_MODULE_0__.default();
+  menu.init(); // eslint-disable-next-line no-unused-vars
+  // const ripple = new MDCRipple(document.querySelector('.mdc-button'));
+  // const slider1 = new MDCSlider(document.querySelector('.slider__words__count'));
+  // const slider2 = new MDCSlider(document.querySelector('.slider__round__time'));
 };
+
+/***/ }),
+
+/***/ "./src/modules/Constants.js":
+/*!**********************************!*\
+  !*** ./src/modules/Constants.js ***!
+  \**********************************/
+/***/ (() => {
+
+/* eslint-disable import/prefer-default-export */
+
+/* eslint-disable no-unused-vars */
+var TMP = 1;
+
+/***/ }),
+
+/***/ "./src/modules/Menu.js":
+/*!*****************************!*\
+  !*** ./src/modules/Menu.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ Menu
+/* harmony export */ });
+/* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Constants */ "./src/modules/Constants.js");
+/* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Constants__WEBPACK_IMPORTED_MODULE_0__);
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+
+var Menu = /*#__PURE__*/function () {
+  function Menu() {
+    _classCallCheck(this, Menu);
+
+    this.tmp = (_Constants__WEBPACK_IMPORTED_MODULE_0___default().TMP);
+  }
+
+  _createClass(Menu, [{
+    key: "init",
+    value: function init() {
+      document.querySelector('.menu').addEventListener('click', this.menuEventHandler);
+    } // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: "menuEventHandler",
+    value: function menuEventHandler(e) {
+      var element = e.target.closest('.menu-button') || e.target.closest('.mapboxgl-marker');
+
+      if (!element) {
+        return;
+      }
+
+      switch (element.id) {
+        case 'button-start':
+          console.log('start');
+          Menu.hideMenu('main-menu'); // this.showMenu('command-menu');
+
+          break;
+
+        case 'button-settings':
+          console.log('settings');
+          Menu.hideMenu('main-menu');
+          Menu.showMenu('settings-menu');
+          break;
+
+        case 'button-tutorial':
+          console.log('tutorial');
+          Menu.hideMenu('main-menu');
+          Menu.showMenu('tutorial-menu');
+          break;
+
+        case 'button-back':
+          console.log('back');
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('settings-menu'); // Menu.hideMenu('tutorial-menu');
+
+          break;
+
+        case 'tutorial__button-back':
+          console.log('back');
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('tutorial-menu'); // Menu.hideMenu('tutorial-menu');
+
+          break;
+
+        case 'button-save':
+          console.log('save');
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('settings-menu');
+          Menu.saveSettings();
+          break;
+
+        default:
+          break;
+      }
+    }
+  }], [{
+    key: "saveSettings",
+    value: function saveSettings() {
+      console.log('Settings saved!');
+    }
+  }, {
+    key: "hideMenu",
+    value: function hideMenu(menuClassName) {
+      document.querySelector(".".concat(menuClassName)).classList.add('hide-menu');
+    }
+  }, {
+    key: "showMenu",
+    value: function showMenu(menuClassName) {
+      document.querySelector(".".concat(menuClassName)).classList.remove('hide-menu');
+    }
+  }]);
+
+  return Menu;
+}();
+
+
 
 /***/ }),
 
@@ -9930,6 +10070,35 @@ try {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => module['default'] :
+/******/ 				() => module;
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop)
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
 /******/ 	(() => {
 /******/ 		// define __esModule on exports
@@ -9946,8 +10115,8 @@ try {
 /******/ 	// Load entry module
 /******/ 	__webpack_require__("./node_modules/@babel/polyfill/lib/index.js");
 /******/ 	__webpack_require__("./src/index.js");
-/******/ 	__webpack_require__("./src/assets/sass/style.scss");
 /******/ 	// This entry module used 'exports' so it can't be inlined
+/******/ 	__webpack_require__("./src/assets/sass/style.scss");
 /******/ })()
 ;
 //# sourceMappingURL=script.js.map
