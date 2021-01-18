@@ -33,7 +33,7 @@
         <div class="settings-menu hide-menu">
           <h2 class="menu-title">Settings</h2>
 
-          <div class="set__words-number">
+          <div class="settings-menu__item set__words-number">
             <p class="setting-paragraph">Count of words</p>
             <div class="setting-slider__container slider__words-count">
               <input
@@ -58,7 +58,7 @@
             </div>
           </div>
 
-          <div class="set__round-time">
+          <div class="settings-menu__item set__round-time">
             <p class="setting-paragraph">Round time, seconds</p>
             <div class="setting-slider__container slider__round-time">
               <input
@@ -80,6 +80,18 @@
                 for="inputWordsCount"
                 >60</output
               >
+            </div>
+          </div>
+
+          <div class="settings-menu__item set__lang">
+            <div class="item__row-container">
+              <p class="setting-paragraph">Language</p>
+              <div class="input__container">
+                <input type="radio" id="set-lang__en" name="lang" value="en" checked />
+                <label for="set-lang__en">ENG</label>
+                <input type="radio" id="set-lang__ru" name="lang" value="ru" />
+                <label for="set-lang__ru">RUS</label>
+              </div>
             </div>
           </div>
 

@@ -1,5 +1,8 @@
 import CONST from './Constants';
 
+// eslint-disable-next-line no-unused-vars
+import { set as setValueToStorage, get as getValueFromStorage } from './utils/storage';
+
 export default class Menu {
   constructor() {
     this.tmp = CONST.TMP;
@@ -67,6 +70,13 @@ export default class Menu {
   }
 
   static saveSettings() {
+    const settings = {};
+    settings.wordsCount = document.querySelector('#inputWordsCount').value;
+    settings.roundTime = document.querySelector('#inputRoundTime').value;
+    settings.lang = document.querySelector('input[name="lang"]:checked').value;
+    setValueToStorage('aliasSettings', settings);
+
+    console.log(settings);
     console.log('Settings saved!');
   }
 

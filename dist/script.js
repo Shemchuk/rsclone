@@ -119,11 +119,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Constants */ "./src/modules/Constants.js");
 /* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Constants__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./utils/storage */ "./src/modules/utils/storage.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+ // eslint-disable-next-line no-unused-vars
 
 
 
@@ -196,6 +199,12 @@ var Menu = /*#__PURE__*/function () {
   }], [{
     key: "saveSettings",
     value: function saveSettings() {
+      var settings = {};
+      settings.wordsCount = document.querySelector('#inputWordsCount').value;
+      settings.roundTime = document.querySelector('#inputRoundTime').value;
+      settings.lang = document.querySelector('input[name="lang"]:checked').value;
+      (0,_utils_storage__WEBPACK_IMPORTED_MODULE_1__.set)('aliasSettings', settings);
+      console.log(settings);
       console.log('Settings saved!');
     }
   }, {
@@ -214,6 +223,32 @@ var Menu = /*#__PURE__*/function () {
 }();
 
 
+
+/***/ }),
+
+/***/ "./src/modules/utils/storage.js":
+/*!**************************************!*\
+  !*** ./src/modules/utils/storage.js ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "set": () => /* binding */ set,
+/* harmony export */   "get": () => /* binding */ get,
+/* harmony export */   "del": () => /* binding */ del
+/* harmony export */ });
+function set(name, value) {
+  window.localStorage.setItem(name, JSON.stringify(value));
+}
+function get(name) {
+  var subst = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+  return JSON.parse(window.localStorage.getItem(name) || subst);
+}
+function del(name) {
+  localStorage.removeItem(name);
+}
 
 /***/ }),
 

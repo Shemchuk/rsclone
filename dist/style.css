@@ -175,6 +175,17 @@ body {
   cursor: pointer;
   opacity: 0.7;
 }
+.menu .settings-menu .settings-menu__item,
+.menu .tutorial-menu .settings-menu__item {
+  margin: 1rem 0;
+}
+.menu .settings-menu .item__row-container,
+.menu .tutorial-menu .item__row-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1.6rem;
+}
 .menu .settings-menu .settings__button-block,
 .menu .settings-menu .tutorial__button-block,
 .menu .tutorial-menu .settings__button-block,

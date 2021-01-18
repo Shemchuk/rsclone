@@ -32,6 +32,16 @@
 
   .settings-menu,
   .tutorial-menu {
+    .settings-menu__item {
+      margin: 1rem 0;
+    }
+
+    .item__row-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      font-size: 1.6rem;
+    }
     .settings__button-block,
     .tutorial__button-block {
       display: flex;
