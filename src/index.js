@@ -12,11 +12,10 @@ import Menu from './modules/Menu';
 // import { MDCRipple } from '@material/ripple/index';
 // import { MDCSlider } from '@material/slider/index';
 
-
 window.onload = () => {
   console.log('Project starts');
-  const menu = new Menu();
-  menu.init();
+  // const menu = new Menu();
+  // menu.init();
 
   // eslint-disable-next-line no-unused-vars
   // const ripple = new MDCRipple(document.querySelector('.mdc-button'));

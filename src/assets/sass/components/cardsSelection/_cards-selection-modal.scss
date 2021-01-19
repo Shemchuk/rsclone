@@ -11,4 +11,11 @@
 .cards-selection-container__cards{
   display: flex;
   justify-content: space-around;
+  width: 800px;
+}
+
+@media (max-width: 650px) {
+  .cards-selection-container__cards{
+  width: 100%;
+  }
 }

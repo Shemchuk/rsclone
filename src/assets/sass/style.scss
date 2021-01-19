@@ -20,7 +20,10 @@
 @import './components/gamePlay/timer';
 @import './components/gamePlay/points';
 @import './components/menu';
+@import './components/gamePlay/roundStatisticsModal';
 
+//endGame
+@import './components/endGame/finalModalWindow';
 // layouts
 @import './layouts/wrapper';
 @import './layouts/footer';

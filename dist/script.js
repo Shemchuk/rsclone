@@ -71,15 +71,12 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_Menu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/Menu */ "./src/modules/Menu.js");
+/* harmony import */ var _modules_game_gameContainer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/game/gameContainer */ "./src/modules/game/gameContainer.js");
+/* harmony import */ var _modules_Menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Menu */ "./src/modules/Menu.js");
 /* eslint-disable no-unused-vars */
 
 /* eslint-disable import/no-extraneous-dependencies */
 
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_game_gameContainer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/game/gameContainer */ "./src/modules/game/gameContainer.js");
 /* eslint-disable no-console */
 // import CONST from './modules/Constants';
 
@@ -88,15 +85,162 @@ __webpack_require__.r(__webpack_exports__);
 // import { MDCSlider } from '@material/slider/index';
 
 window.onload = function () {
-  console.log('Project starts');
-  var menu = new _modules_Menu__WEBPACK_IMPORTED_MODULE_0__.default();
-  menu.init(); // eslint-disable-next-line no-unused-vars
+  console.log('Project starts'); // const menu = new Menu();
+  // menu.init();
+  // eslint-disable-next-line no-unused-vars
   // const ripple = new MDCRipple(document.querySelector('.mdc-button'));
   // const slider1 = new MDCSlider(document.querySelector('.slider__words__count'));
   // const slider2 = new MDCSlider(document.querySelector('.slider__round__time'));
 };
 
 (0,_modules_game_gameContainer__WEBPACK_IMPORTED_MODULE_0__.game)();
+
+/***/ }),
+
+/***/ "./src/modules/Constants.js":
+/*!**********************************!*\
+  !*** ./src/modules/Constants.js ***!
+  \**********************************/
+/***/ (() => {
+
+// eslint-disable-next-line prettier/prettier
+
+/* eslint-disable import/prefer-default-export */
+
+/* eslint-disable no-unused-vars */
+var TMP = 1;
+
+/***/ }),
+
+/***/ "./src/modules/Menu.js":
+/*!*****************************!*\
+  !*** ./src/modules/Menu.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ Menu
+/* harmony export */ });
+/* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Constants */ "./src/modules/Constants.js");
+/* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Constants__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_menu_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/menu.html */ "./src/modules/components/menu.html");
+/* harmony import */ var _components_menu_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_menu_html__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/storage */ "./src/modules/utils/storage.js");
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+
+ // eslint-disable-next-line no-unused-vars
+
+ // import { game } from './modules/game/gameContainer';
+
+var Menu = /*#__PURE__*/function () {
+  function Menu() {
+    _classCallCheck(this, Menu);
+
+    this.tmp = (_Constants__WEBPACK_IMPORTED_MODULE_0___default().TMP);
+    var main = document.querySelector('.main');
+    main.innerHTML = (_components_menu_html__WEBPACK_IMPORTED_MODULE_1___default()) + main.innerHTML;
+  }
+
+  _createClass(Menu, [{
+    key: "init",
+    value: function init() {
+      document.querySelector('.menu').addEventListener('click', this.menuEventHandler);
+    } // eslint-disable-next-line class-methods-use-this
+
+  }, {
+    key: "menuEventHandler",
+    value: function menuEventHandler(e) {
+      var element = e.target.closest('.menu-button') || e.target.closest('.mapboxgl-marker');
+
+      if (!element) {
+        return;
+      }
+
+      switch (element.id) {
+        case 'button-start':
+          console.log('start');
+          Menu.hideMenu('main-menu'); // game();
+          // this.showMenu('command-menu');
+
+          break;
+
+        case 'button-settings':
+          console.log('settings');
+          Menu.hideMenu('main-menu');
+          Menu.showMenu('settings-menu');
+          break;
+
+        case 'button-tutorial':
+          console.log('tutorial');
+          Menu.hideMenu('main-menu');
+          Menu.showMenu('tutorial-menu');
+          break;
+
+        case 'button-back':
+          console.log('back');
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('settings-menu'); // Menu.hideMenu('tutorial-menu');
+
+          break;
+
+        case 'tutorial__button-back':
+          console.log('back');
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('tutorial-menu'); // Menu.hideMenu('tutorial-menu');
+
+          break;
+
+        case 'button-save':
+          console.log('save');
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('settings-menu');
+          Menu.saveSettings();
+          break;
+
+        case 'button-statistics':
+          console.log('statistics'); // Menu.showMenu('main-menu');
+          // Menu.hideMenu('settings-menu');
+
+          break;
+
+        default:
+          break;
+      }
+    }
+  }], [{
+    key: "saveSettings",
+    value: function saveSettings() {
+      var settings = {};
+      settings.wordsCount = document.querySelector('#inputWordsCount').value;
+      settings.roundTime = document.querySelector('#inputRoundTime').value;
+      settings.lang = document.querySelector('input[name="lang"]:checked').value;
+      (0,_utils_storage__WEBPACK_IMPORTED_MODULE_2__.set)('aliasSettings', settings);
+      console.log(settings);
+      console.log('Settings saved!');
+    }
+  }, {
+    key: "hideMenu",
+    value: function hideMenu(menuClassName) {
+      document.querySelector(".".concat(menuClassName)).classList.add('hide-menu');
+    }
+  }, {
+    key: "showMenu",
+    value: function showMenu(menuClassName) {
+      document.querySelector(".".concat(menuClassName)).classList.remove('hide-menu');
+    }
+  }]);
+
+  return Menu;
+}();
+
+
 
 /***/ }),
 
@@ -2869,21 +3013,38 @@ function clickContainerButtons(e) {
     arrSkiped.push(currentCardsStack[0 + i]);
     rotationGameContainer();
   } else if (clickNextRound) {
-    teamFlag = teamFlag ? 0 : 1;
+    if (teamFlag < _timer__WEBPACK_IMPORTED_MODULE_2__.teams.length - 1) {
+      teamFlag += 1;
+    } else {
+      teamFlag = 0;
+    }
+
+    gsap.to('.team-container__team-name', {
+      duration: 1,
+      ease: 'power1.out',
+      y: -500
+    });
+    gsap.to('.round-stat-modal', {
+      duration: 1,
+      ease: 'power1.out',
+      y: 500
+    });
     rotationGradient = 0;
-    nextRound();
+    setTimeout(function () {
+      nextRound();
+    }, 1000);
   } else if (clickCardsForAdults) {
     currentCardsStack = _cards__WEBPACK_IMPORTED_MODULE_0__.default.forAdults;
     shuffleCards();
     gsap.to('.cards__for-adults', {
       duration: 1,
       ease: 'power1.out',
-      x: -500
+      x: -1000
     });
     gsap.to('.cards__main', {
       duration: 1,
       ease: 'power1.out',
-      x: 500
+      x: 1000
     });
     gsap.to('.cards-selection-container__title', {
       duration: 1,
@@ -2899,12 +3060,12 @@ function clickContainerButtons(e) {
     gsap.to('.cards__for-adults', {
       duration: 1,
       ease: 'power1.out',
-      x: -500
+      x: -1000
     });
     gsap.to('.cards__main', {
       duration: 1,
       ease: 'power1.out',
-      x: 500
+      x: 1000
     });
     gsap.to('.cards-selection-container__title', {
       duration: 1,
@@ -2966,7 +3127,7 @@ var generateCardsSeletionContainer = function generateCardsSeletionContainer() {
   var template = '';
   var cardsSelectionContainer = document.createElement('div');
   cardsSelectionContainer.className = 'cards-selection-container';
-  template += "<div class=\"cards-selection-container__title\"><div class=\"sign-wrap\">\n  <div class=\"sign\">\n    <h1>\u0412\u044B\u0431\u0435\u0440\u0438\u0442\u0435 \u0440\u0435\u0436\u0438\u043C</h1>\n  </div>\n  </div></div>";
+  template += "<div class=\"cards-selection-container__title\"><div id=\"container\"><div class=\"sign-wrap\">\n  <div class=\"sign\">\n    <h1>\u0420\u0435\u0436\u0438\u043C \u0438\u0433\u0440\u044B</h1>\n  </div>\n  </div></div></div>";
   template += "<div class=\"cards-selection-container__cards\">";
   template += "<div class=\"cards__for-adults cards-container__cards\"><div id=\"container\"><div class=\"sign-wrap\">\n  <div class=\"sign sign1\"><p class=\"first-child\"><a href=\"#\">\n  18+\n</a></p></div></div></div></div>";
   template += "<div class=\"cards__main cards-container__cards2\"><div id=\"container\"><div class=\"sign-wrap\">\n  <div class=\"sign sign2\"><p class=\"second-child\"><a href=\"#\">\n  \u041A\u043B\u0430\u0441\u0441\u0438\u043A\u0430\n</a></p></div></div></div></div>"; // template += `<div class="cards-container1"></div>`;
@@ -3016,7 +3177,7 @@ var generateGameContainer = function generateGameContainer() {
   template += "<div class=\"sign-wrap\">\n  <div class=\"sign sign5\">";
   template += '<button class="button game-container__button_ready btn btn-neon btn-slow"><span></span><span></span><span></span><span></span>Готово</button>';
   template += "<div class=\"neon\">\n  <div class=\"neon\" id=\"section16\">\n    <p class=\"card__word neon\"></p>\n  </div>\n  </div>";
-  template += '<button class="button game-container__button_skip btn btn-neon btn-blue btn-slow"><span></span><span></span><span></span><span></span>Пропустить</button>';
+  template += '<button class="button game-container__button_skip btn btn-neon btn-blue btn-slow"><span></span><span></span><span></span><span></span>Пропуск</button>';
   template += "</div>";
   template += "</div>";
   gameContainer.innerHTML = template;
@@ -3026,10 +3187,11 @@ var generateFinishGameModal = function generateFinishGameModal() {
   var template = '';
   var finishGameModal = document.createElement('div');
   finishGameModal.className = 'finish-game-modal';
-  template += "<div class=\"finish-game-modal__title\">\u0418\u0433\u0440\u0430 \u043E\u043A\u043E\u043D\u0447\u0435\u043D\u0430!</div>";
-  template += "<div class=\"finish-game-modal__1st-place_name\">\u041F\u043E\u0431\u0435\u0434\u0438\u043B\u0430 \u043A\u043E\u043C\u0430\u043D\u0434\u0430 ".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[0].name, "</div>");
-  template += "<div class=\"finish-game-modal__1st-place_points\">".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[0].points, " \u043E\u0447\u043A\u043E\u0432</div>");
-  template += "<button class=\"button finish-game-modal__button\">\u041D\u0430\u0437\u0430\u0434 \u0432 \u043C\u0435\u043D\u044E</button>";
+  template += "<div class=\"finish-game-modal__title\"><div class=\"sign-wrap\">\n  <div class=\"sign\">\n    <h1>\u041A\u043E\u043D\u0435\u0446 \u0438\u0433\u0440\u044B!</h1>\n  </div>\n  </div></div>";
+  template += "<div class=\"sign-wrap\"><div class=\"sign\"><div class=\"finish-game-modal__1st-place\"><div><h2>\n  \u041F\u043E\u0431\u0435\u0434\u0438\u043B\u0430 <span class=\"second\">\u043A\u043E\u043C\u0430\u043D\u0434\u0430:</span>\n  </h2></div></div>";
+  template += "<div class=\"finish-game-modal__1st-place_name\"><p class=\"third-child\"><a href=\"#\">".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[0].name, "</a></p></div>");
+  template += "<div class=\"finish-game-modal__1st-place_points\"><div><h2>\n  \u041E\u0447\u043A\u0438: <span class=\"second\">".concat(_timer__WEBPACK_IMPORTED_MODULE_1__.teams[0].points, "</span>\n  </h2></div></div>");
+  template += "<button class=\"btn btn-neon btn-purple btn-slow\"><span></span><span></span><span></span><span></span>\u041D\u0430\u0437\u0430\u0434 \u0432 \u043C\u0435\u043D\u044E</button></div>";
   finishGameModal.innerHTML = template;
   return finishGameModal;
 };
@@ -3038,12 +3200,12 @@ function game() {
   gsap.from('.cards-container__cards2', {
     duration: 1,
     ease: 'power1.out',
-    x: -500
+    x: 1500
   });
   gsap.from('.cards-container__cards', {
     duration: 1,
     ease: 'power1.out',
-    x: 500
+    x: -1500
   });
   gsap.from('.cards-selection-container__title', {
     duration: 1,
@@ -3112,16 +3274,16 @@ var generateRoundStatisticsModal = function generateRoundStatisticsModal() {
   template += "<div class=\"sign-wrap\">";
   template += "<div class=\"sign sign5\">";
   template += "<div class=\"round-stat-modal__container\">";
-  template += "<div class=\"round-stat-confirmed\">";
-  template += "<div class=\"round-stat-confirmed__title\">\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E:</div>";
-  template += "<div class=\"round-stat-confirmed__container\"></div>";
+  template += "<div class=\"round-stat-confirmed round-stat__border\">";
+  template += "<h2 class=\"round-stat-confirmed__title\">\u0412\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E:";
+  template += "<span class=\"round-stat-confirmed__container\"></span>";
+  template += "</h2></div>";
+  template += "<div class=\"round-stat-skiped round-stat__border\">";
+  template += "<h2 class=\"round-stat-skiped__title\">\u041F\u0440\u043E\u043F\u0443\u0449\u0435\u043D\u043E:";
+  template += "<span class=\"round-stat-skiped__container\"></span>";
   template += "</div>";
-  template += "<div class=\"round-stat-skiped\">";
-  template += "<div class=\"round-stat-skiped__title\">\u041F\u0440\u043E\u043F\u0443\u0449\u0435\u043D\u043E:</div>";
-  template += "<div class=\"round-stat-skiped__container\"></div>";
   template += "</div>";
-  template += "</div>";
-  template += '<button class="button round-stat-modal__button">Следующий раунд</button>';
+  template += '<button class="button round-stat-modal__button btn btn-neon btn-purple btn-slow"><span></span><span></span><span></span><span></span>Следующий раунд</button>';
   template += "</div></div>";
   roundStatModal.innerHTML = template;
   return roundStatModal;
@@ -3196,18 +3358,18 @@ var teams = [{
   }
 }];
 var timer;
-var time = 5;
-var finishGamePoints = 10;
+var time = 2;
+var finishGamePoints = 1;
 
 function countdown() {
   document.querySelector('.first').innerHTML = time;
   time--;
 
-  if (time <= 0) {
+  if (time <= -1) {
     if (!teams.some(function (el) {
       return el.points >= finishGamePoints;
     }) || !(_card__WEBPACK_IMPORTED_MODULE_0__.teamFlag === teams.length - 1)) {
-      time = 5;
+      time = 2;
       clearTimeout(timer); // gsap.to('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
 
       gsap.to('.game-container__card', {
@@ -3241,7 +3403,20 @@ function countdown() {
       teams.sort(function (el1, el2) {
         return el2.points - el1.points;
       });
-      document.querySelector('.main').appendChild((0,_gameContainer__WEBPACK_IMPORTED_MODULE_2__.generateFinishGameModal)());
+      gsap.to('.team-container__team-name', {
+        duration: 1,
+        ease: 'power1.out',
+        y: -500
+      });
+      gsap.to('.game-container__card', {
+        duration: 1,
+        ease: 'power1.out',
+        y: 500
+      });
+      setTimeout(function () {
+        document.querySelector('.game-container').style.display = 'none';
+        document.querySelector('.main').appendChild((0,_gameContainer__WEBPACK_IMPORTED_MODULE_2__.generateFinishGameModal)());
+      }, 1000);
       var name = new Date();
       console.log(name);
       (0,_utils_storage__WEBPACK_IMPORTED_MODULE_3__.set)(name, teams);
@@ -3252,177 +3427,6 @@ function countdown() {
 }
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (countdown);
-
-/***/ }),
-
-/***/ "./src/modules/utils/storage.js":
-/*!**************************************!*\
-  !*** ./src/modules/utils/storage.js ***!
-  \**************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "set": () => /* binding */ set,
-/* harmony export */   "get": () => /* binding */ get,
-/* harmony export */   "del": () => /* binding */ del
-/* harmony export */ });
-function set(name, value) {
-  window.localStorage.setItem(name, JSON.stringify(value));
-}
-function get(name) {
-  var subst = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-  return JSON.parse(window.localStorage.getItem(name) || subst);
-}
-function del(name) {
-  localStorage.removeItem(name);
-}
-
-/***/ }),
-
-/***/ "./src/modules/Constants.js":
-/*!**********************************!*\
-  !*** ./src/modules/Constants.js ***!
-  \**********************************/
-/***/ (() => {
-
-/* eslint-disable import/prefer-default-export */
-
-/* eslint-disable no-unused-vars */
-var TMP = 1;
-
-/***/ }),
-
-/***/ "./src/modules/Menu.js":
-/*!*****************************!*\
-  !*** ./src/modules/Menu.js ***!
-  \*****************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => /* binding */ Menu
-/* harmony export */ });
-/* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Constants */ "./src/modules/Constants.js");
-/* harmony import */ var _Constants__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Constants__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _components_menu_html__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/menu.html */ "./src/modules/components/menu.html");
-/* harmony import */ var _components_menu_html__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_components_menu_html__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _utils_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/storage */ "./src/modules/utils/storage.js");
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-
- // eslint-disable-next-line no-unused-vars
-
- // import { game } from './modules/game/gameContainer';
-
-var Menu = /*#__PURE__*/function () {
-  function Menu() {
-    _classCallCheck(this, Menu);
-
-    this.tmp = (_Constants__WEBPACK_IMPORTED_MODULE_0___default().TMP);
-    var main = document.querySelector('.main');
-    main.innerHTML = (_components_menu_html__WEBPACK_IMPORTED_MODULE_1___default()) + main.innerHTML;
-  }
-
-  _createClass(Menu, [{
-    key: "init",
-    value: function init() {
-      document.querySelector('.menu').addEventListener('click', this.menuEventHandler);
-    } // eslint-disable-next-line class-methods-use-this
-
-  }, {
-    key: "menuEventHandler",
-    value: function menuEventHandler(e) {
-      var element = e.target.closest('.menu-button') || e.target.closest('.mapboxgl-marker');
-
-      if (!element) {
-        return;
-      }
-
-      switch (element.id) {
-        case 'button-start':
-          console.log('start');
-          Menu.hideMenu('main-menu'); // game();
-          // this.showMenu('command-menu');
-
-          break;
-
-        case 'button-settings':
-          console.log('settings');
-          Menu.hideMenu('main-menu');
-          Menu.showMenu('settings-menu');
-          break;
-
-        case 'button-tutorial':
-          console.log('tutorial');
-          Menu.hideMenu('main-menu');
-          Menu.showMenu('tutorial-menu');
-          break;
-
-        case 'button-back':
-          console.log('back');
-          Menu.showMenu('main-menu');
-          Menu.hideMenu('settings-menu'); // Menu.hideMenu('tutorial-menu');
-
-          break;
-
-        case 'tutorial__button-back':
-          console.log('back');
-          Menu.showMenu('main-menu');
-          Menu.hideMenu('tutorial-menu'); // Menu.hideMenu('tutorial-menu');
-
-          break;
-
-        case 'button-save':
-          console.log('save');
-          Menu.showMenu('main-menu');
-          Menu.hideMenu('settings-menu');
-          Menu.saveSettings();
-          break;
-
-        case 'button-statistics':
-          console.log('statistics'); // Menu.showMenu('main-menu');
-          // Menu.hideMenu('settings-menu');
-
-          break;
-
-        default:
-          break;
-      }
-    }
-  }], [{
-    key: "saveSettings",
-    value: function saveSettings() {
-      var settings = {};
-      settings.wordsCount = document.querySelector('#inputWordsCount').value;
-      settings.roundTime = document.querySelector('#inputRoundTime').value;
-      settings.lang = document.querySelector('input[name="lang"]:checked').value;
-      (0,_utils_storage__WEBPACK_IMPORTED_MODULE_2__.set)('aliasSettings', settings);
-      console.log(settings);
-      console.log('Settings saved!');
-    }
-  }, {
-    key: "hideMenu",
-    value: function hideMenu(menuClassName) {
-      document.querySelector(".".concat(menuClassName)).classList.add('hide-menu');
-    }
-  }, {
-    key: "showMenu",
-    value: function showMenu(menuClassName) {
-      document.querySelector(".".concat(menuClassName)).classList.remove('hide-menu');
-    }
-  }]);
-
-  return Menu;
-}();
-
-
 
 /***/ }),
 
@@ -12515,7 +12519,7 @@ module.exports = __webpack_require__(/*! ../modules/_core */ "./node_modules/cor
 /***/ ((module) => {
 
 // Module
-var code = "<div class=\"menu\">\n  <div class=\"main-menu\">\n    <h2 class=\"menu-title\">Main menu</h2>\n    <button id=\"button-continue\" class=\"menu-button\" disabled>Continue</button>\n    <button id=\"button-start\" class=\"menu-button\">Start</button>\n    <button id=\"button-settings\" class=\"menu-button\">Settings</button>\n    <button id=\"button-tutorial\" class=\"menu-button\">Tutorial</button>\n    <button id=\"button-statistics\" class=\"menu-button\">Statistics</button>\n  </div>\n\n  <div class=\"settings-menu hide-menu\">\n    <h2 class=\"menu-title\">Settings</h2>\n\n    <div class=\"settings-menu__item set__words-number\">\n      <p class=\"setting-paragraph\">Count of words</p>\n      <div class=\"setting-slider__container slider__words-count\">\n        <input\n          id=\"inputWordsCount\"\n          class=\"slider-input\"\n          type=\"range\"\n          min=\"10\"\n          max=\"200\"\n          value=\"50\"\n          name=\"words\"\n          step=\"5\"\n          aria-label=\"Count of words\"\n          oninput=\"outputWordsNumber.value=inputWordsCount.value;\"\n        />\n        <output\n          id=\"outputWordsNumber\"\n          class=\"slider__value-indicator\"\n          name=\"output__words-number\"\n          for=\"inputWordsCount\"\n          >60</output\n        >\n      </div>\n    </div>\n\n    <div class=\"settings-menu__item set__round-time\">\n      <p class=\"setting-paragraph\">Round time, seconds</p>\n      <div class=\"setting-slider__container slider__round-time\">\n        <input\n          id=\"inputRoundTime\"\n          class=\"slider-input\"\n          type=\"range\"\n          min=\"10\"\n          max=\"120\"\n          value=\"60\"\n          name=\"round-time\"\n          step=\"1\"\n          aria-label=\"Round time\"\n          oninput=\"outputRoundTime.value=inputRoundTime.value;\"\n        />\n        <output\n          id=\"outputRoundTime\"\n          class=\"slider__value-indicator\"\n          name=\"output__words-number\"\n          for=\"inputWordsCount\"\n          >60</output\n        >\n      </div>\n    </div>\n\n    <div class=\"settings-menu__item set__lang\">\n      <div class=\"item__row-container\">\n        <p class=\"setting-paragraph\">Language</p>\n        <div class=\"input__container\">\n          <input type=\"radio\" id=\"set-lang__en\" name=\"lang\" value=\"en\" checked />\n          <label for=\"set-lang__en\">ENG</label>\n          <input type=\"radio\" id=\"set-lang__ru\" name=\"lang\" value=\"ru\" />\n          <label for=\"set-lang__ru\">RUS</label>\n        </div>\n      </div>\n    </div>\n\n    <div class=\"settings__button-block\">\n      <button id=\"button-save\" class=\"menu-button\">Save</button>\n      <button id=\"button-back\" class=\"menu-button\">Back</button>\n    </div>\n  </div>\n\n  <div class=\"tutorial-menu hide-menu\">\n    <h2 class=\"menu-title\">Tutorial</h2>\n\n    <div class=\"tutorial-text\">\n      <h3>Tutorial</h3>\n      <p>\n        Cillum dolor esse sit incididunt velit eiusmod magna ad nostrud officia aute dolor dolor.\n        Magna esse ullamco pariatur adipisicing consectetur eu commodo officia. Ex cillum consequat\n        mollit minim elit est deserunt occaecat nisi amet. Quis aliqua nostrud Lorem occaecat sunt.\n        Eiusmod quis amet ullamco aliquip dolore ut incididunt duis adipisicing. Elit consequat nisi\n        eiusmod aute ipsum sunt veniam do est. Occaecat mollit aliquip ut proident consectetur amet\n        ex dolore consectetur aliqua elit.\n      </p>\n      <p>\n        Commodo nisi non consectetur voluptate incididunt mollit duis dolore amet amet tempor\n        exercitation. Qui amet aute ea aute id ad aliquip proident. Irure duis qui labore deserunt\n        enim in quis nisi sint consequat aliqua. Ex proident labore et laborum tempor fugiat sint\n        magna veniam minim. Nulla dolor labore adipisicing in enim mollit laboris fugiat eu. Aliquip\n        minim cillum ullamco voluptate non dolore non ex duis fugiat duis ad. Deserunt cillum ad et\n        nisi amet non voluptate culpa qui do. Labore ullamco et minim proident est laborum mollit ad\n        labore deserunt ut irure dolore. Reprehenderit ad ad irure ut irure qui est eu velit eu\n        excepteur adipisicing culpa. Laborum cupidatat ullamco eu duis anim reprehenderit proident\n        aute ad consectetur eiusmod.\n      </p>\n      <p>\n        Tempor tempor aliqua in commodo cillum Lorem magna dolore proident Lorem. Esse ad consequat\n        est excepteur irure eu irure quis aliqua qui. Do mollit esse veniam excepteur ut veniam anim\n        minim dolore sit commodo consequat duis commodo. Sunt dolor reprehenderit ipsum minim\n        eiusmod eu consectetur anim excepteur eiusmod. Duis excepteur anim dolor sit enim veniam\n        deserunt anim adipisicing Lorem elit. Cillum sunt do consequat elit laboris nisi\n        consectetur.\n      </p>\n    </div>\n\n    <div class=\"tutorial__button-block\">\n      <button id=\"tutorial__button-back\" class=\"menu-button\">Back</button>\n    </div>\n  </div>\n</div>\n";
+var code = "<div class=\"menu\">\r\n  <div class=\"main-menu\">\r\n    <h2 class=\"menu-title\">Main menu</h2>\r\n    <button id=\"button-continue\" class=\"menu-button\" disabled>Continue</button>\r\n    <button id=\"button-start\" class=\"menu-button\">Start</button>\r\n    <button id=\"button-settings\" class=\"menu-button\">Settings</button>\r\n    <button id=\"button-tutorial\" class=\"menu-button\">Tutorial</button>\r\n    <button id=\"button-statistics\" class=\"menu-button\">Statistics</button>\r\n  </div>\r\n\r\n  <div class=\"settings-menu hide-menu\">\r\n    <h2 class=\"menu-title\">Settings</h2>\r\n\r\n    <div class=\"settings-menu__item set__words-number\">\r\n      <p class=\"setting-paragraph\">Count of words</p>\r\n      <div class=\"setting-slider__container slider__words-count\">\r\n        <input\r\n          id=\"inputWordsCount\"\r\n          class=\"slider-input\"\r\n          type=\"range\"\r\n          min=\"10\"\r\n          max=\"200\"\r\n          value=\"50\"\r\n          name=\"words\"\r\n          step=\"5\"\r\n          aria-label=\"Count of words\"\r\n          oninput=\"outputWordsNumber.value=inputWordsCount.value;\"\r\n        />\r\n        <output\r\n          id=\"outputWordsNumber\"\r\n          class=\"slider__value-indicator\"\r\n          name=\"output__words-number\"\r\n          for=\"inputWordsCount\"\r\n          >60</output\r\n        >\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"settings-menu__item set__round-time\">\r\n      <p class=\"setting-paragraph\">Round time, seconds</p>\r\n      <div class=\"setting-slider__container slider__round-time\">\r\n        <input\r\n          id=\"inputRoundTime\"\r\n          class=\"slider-input\"\r\n          type=\"range\"\r\n          min=\"10\"\r\n          max=\"120\"\r\n          value=\"60\"\r\n          name=\"round-time\"\r\n          step=\"1\"\r\n          aria-label=\"Round time\"\r\n          oninput=\"outputRoundTime.value=inputRoundTime.value;\"\r\n        />\r\n        <output\r\n          id=\"outputRoundTime\"\r\n          class=\"slider__value-indicator\"\r\n          name=\"output__words-number\"\r\n          for=\"inputWordsCount\"\r\n          >60</output\r\n        >\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"settings-menu__item set__lang\">\r\n      <div class=\"item__row-container\">\r\n        <p class=\"setting-paragraph\">Language</p>\r\n        <div class=\"input__container\">\r\n          <input type=\"radio\" id=\"set-lang__en\" name=\"lang\" value=\"en\" checked />\r\n          <label for=\"set-lang__en\">ENG</label>\r\n          <input type=\"radio\" id=\"set-lang__ru\" name=\"lang\" value=\"ru\" />\r\n          <label for=\"set-lang__ru\">RUS</label>\r\n        </div>\r\n      </div>\r\n    </div>\r\n\r\n    <div class=\"settings__button-block\">\r\n      <button id=\"button-save\" class=\"menu-button\">Save</button>\r\n      <button id=\"button-back\" class=\"menu-button\">Back</button>\r\n    </div>\r\n  </div>\r\n\r\n  <div class=\"tutorial-menu hide-menu\">\r\n    <h2 class=\"menu-title\">Tutorial</h2>\r\n\r\n    <div class=\"tutorial-text\">\r\n      <h3>Tutorial</h3>\r\n      <p>\r\n        Cillum dolor esse sit incididunt velit eiusmod magna ad nostrud officia aute dolor dolor.\r\n        Magna esse ullamco pariatur adipisicing consectetur eu commodo officia. Ex cillum consequat\r\n        mollit minim elit est deserunt occaecat nisi amet. Quis aliqua nostrud Lorem occaecat sunt.\r\n        Eiusmod quis amet ullamco aliquip dolore ut incididunt duis adipisicing. Elit consequat nisi\r\n        eiusmod aute ipsum sunt veniam do est. Occaecat mollit aliquip ut proident consectetur amet\r\n        ex dolore consectetur aliqua elit.\r\n      </p>\r\n      <p>\r\n        Commodo nisi non consectetur voluptate incididunt mollit duis dolore amet amet tempor\r\n        exercitation. Qui amet aute ea aute id ad aliquip proident. Irure duis qui labore deserunt\r\n        enim in quis nisi sint consequat aliqua. Ex proident labore et laborum tempor fugiat sint\r\n        magna veniam minim. Nulla dolor labore adipisicing in enim mollit laboris fugiat eu. Aliquip\r\n        minim cillum ullamco voluptate non dolore non ex duis fugiat duis ad. Deserunt cillum ad et\r\n        nisi amet non voluptate culpa qui do. Labore ullamco et minim proident est laborum mollit ad\r\n        labore deserunt ut irure dolore. Reprehenderit ad ad irure ut irure qui est eu velit eu\r\n        excepteur adipisicing culpa. Laborum cupidatat ullamco eu duis anim reprehenderit proident\r\n        aute ad consectetur eiusmod.\r\n      </p>\r\n      <p>\r\n        Tempor tempor aliqua in commodo cillum Lorem magna dolore proident Lorem. Esse ad consequat\r\n        est excepteur irure eu irure quis aliqua qui. Do mollit esse veniam excepteur ut veniam anim\r\n        minim dolore sit commodo consequat duis commodo. Sunt dolor reprehenderit ipsum minim\r\n        eiusmod eu consectetur anim excepteur eiusmod. Duis excepteur anim dolor sit enim veniam\r\n        deserunt anim adipisicing Lorem elit. Cillum sunt do consequat elit laboris nisi\r\n        consectetur.\r\n      </p>\r\n    </div>\r\n\r\n    <div class=\"tutorial__button-block\">\r\n      <button id=\"tutorial__button-back\" class=\"menu-button\">Back</button>\r\n    </div>\r\n  </div>\r\n</div>\r\n";
 // Exports
 module.exports = code;
 

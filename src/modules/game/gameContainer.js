@@ -12,11 +12,11 @@ export const generateCardsSeletionContainer = () => {
   let template = '';
   const cardsSelectionContainer = document.createElement('div');
   cardsSelectionContainer.className = 'cards-selection-container';
-  template += `<div class="cards-selection-container__title"><div class="sign-wrap">
+  template += `<div class="cards-selection-container__title"><div id="container"><div class="sign-wrap">
   <div class="sign">
-    <h1>Выберите режим</h1>
+    <h1>Режим игры</h1>
   </div>
-  </div></div>`;
+  </div></div></div>`;
   template += `<div class="cards-selection-container__cards">`;
   template += `<div class="cards__for-adults cards-container__cards"><div id="container"><div class="sign-wrap">
   <div class="sign sign1"><p class="first-child"><a href="#">
@@ -93,7 +93,7 @@ export const generateGameContainer = () => {
   </div>
   </div>`;
   template +=
-    '<button class="button game-container__button_skip btn btn-neon btn-blue btn-slow"><span></span><span></span><span></span><span></span>Пропустить</button>';
+    '<button class="button game-container__button_skip btn btn-neon btn-blue btn-slow"><span></span><span></span><span></span><span></span>Пропуск</button>';
 
   template += `</div>`;
   template += `</div>`;
@@ -104,17 +104,26 @@ export const generateFinishGameModal = () => {
   let template = '';
   const finishGameModal = document.createElement('div');
   finishGameModal.className = 'finish-game-modal';
-  template += `<div class="finish-game-modal__title">Игра окончена!</div>`;
-  template += `<div class="finish-game-modal__1st-place_name">Победила команда ${teams[0].name}</div>`;
-  template += `<div class="finish-game-modal__1st-place_points">${teams[0].points} очков</div>`;
-  template += `<button class="button finish-game-modal__button">Назад в меню</button>`;
+  template += `<div class="finish-game-modal__title"><div class="sign-wrap">
+  <div class="sign">
+    <h1>Конец игры!</h1>
+  </div>
+  </div></div>`;
+  template += `<div class="sign-wrap"><div class="sign"><div class="finish-game-modal__1st-place"><div><h2>
+  Победила <span class="second">команда:</span>
+  </h2></div></div>`;
+  template += `<div class="finish-game-modal__1st-place_name"><p class="third-child"><a href="#">${teams[0].name}</a></p></div>`;
+  template += `<div class="finish-game-modal__1st-place_points"><div><h2>
+  Очки: <span class="second">${teams[0].points}</span>
+  </h2></div></div>`;
+  template += `<button class="btn btn-neon btn-purple btn-slow"><span></span><span></span><span></span><span></span>Назад в меню</button></div>`;
   finishGameModal.innerHTML = template;
   return finishGameModal;
 };
 export function game() {
   document.querySelector('.main').appendChild(generateCardsSeletionContainer());
-  gsap.from('.cards-container__cards2', { duration: 1, ease: 'power1.out', x: -500 });
-  gsap.from('.cards-container__cards', { duration: 1, ease: 'power1.out', x: 500 });
+  gsap.from('.cards-container__cards2', { duration: 1, ease: 'power1.out', x: 1500 });
+  gsap.from('.cards-container__cards', { duration: 1, ease: 'power1.out', x: -1500 });
   gsap.from('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
   // generateCardsForSelection();
   // generateCardsForSelection2();
