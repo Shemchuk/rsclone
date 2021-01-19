@@ -56,7 +56,7 @@ h1 {
   text-transform: uppercase;
   text-shadow: 0px 10px 3px rgba(0,0,0,.2);
   &:before {
-    content:"Выберите режим";
+    content:"Режим игры";
     position: absolute;
     top: 0;
     left: 0;
@@ -68,7 +68,7 @@ h1 {
     animation: flicker 20s linear infinite;
   }
   &:after {
-    content:"Выберите режим";
+    content:"Режим игры";
     position: absolute;
     top: 0;
     left: 0;
@@ -79,6 +79,11 @@ h1 {
     // -webkit-filter: blur(.75px);
     animation: flicker 20s linear infinite;
   }
+}
+@media (max-width: 650px){
+  h1 {
+    font-size: 35px;
+  } 
 }
 .sign1{
   padding: 0px 15px;

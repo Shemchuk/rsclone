@@ -18,6 +18,7 @@ import BackgroundSound from './modules/backgroundSound';
 
 window.onload = () => {
   console.log('Project starts');
+
   const menu = new Menu();
   menu.init();
   const createCommands = new CreateCommands();
@@ -28,6 +29,7 @@ window.onload = () => {
   createBackgroundSound.init();
   const backgroundSound = new BackgroundSound();
   backgroundSound.init();
+
   // eslint-disable-next-line no-unused-vars
   // const ripple = new MDCRipple(document.querySelector('.mdc-button'));
   // const slider1 = new MDCSlider(document.querySelector('.slider__words__count'));
