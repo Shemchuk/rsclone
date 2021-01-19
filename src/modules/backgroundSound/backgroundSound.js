@@ -1,4 +1,4 @@
-import audioTracks from './backgroundSound/audioTracks';
+import audioTracks from './audioTracks';
 
 export default class BackgroundSound {
   constructor() {
