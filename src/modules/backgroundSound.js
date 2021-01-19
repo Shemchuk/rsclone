@@ -39,7 +39,11 @@ export default class BackgroundSound {
 
     this.currentId = this.currentId + 1 > audioTracks.length ? 0 : this.currentId + 1;
     this.init();
-    document.querySelector('audio').play();
+    document.getElementById(this.currentAudio).play();
+  }
+
+  changeVolume() {
+    document.getElementById(this.currentAudio).volume = this.volumeInput.value;
   }
 
   init() {
@@ -50,6 +54,7 @@ export default class BackgroundSound {
 
     this.audio.src = audioTracks[this.currentId].url;
     this.audio.id = this.currentAudio;
+    this.audio.volume = this.volumeInput.value;
 
     // eslint-disable-next-line no-unused-expressions
     document.getElementById(this.currentAudio) === null
@@ -63,6 +68,9 @@ export default class BackgroundSound {
     this.playBtn.addEventListener('click', this.play);
     this.forwardBtn.addEventListener('click', () => {
       this.playNextTrack();
+    });
+    this.volumeInput.addEventListener('input', () => {
+      this.changeVolume();
     });
   }
 }

@@ -347,7 +347,12 @@ var BackgroundSound = /*#__PURE__*/function () {
       this.isPlaying = true;
       this.currentId = this.currentId + 1 > _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default.length ? 0 : this.currentId + 1;
       this.init();
-      document.querySelector('audio').play();
+      document.getElementById(this.currentAudio).play();
+    }
+  }, {
+    key: "changeVolume",
+    value: function changeVolume() {
+      document.getElementById(this.currentAudio).volume = this.volumeInput.value;
     }
   }, {
     key: "init",
@@ -356,7 +361,8 @@ var BackgroundSound = /*#__PURE__*/function () {
 
       this.audio = document.getElementById(this.currentAudio) === null ? this.audio = new Audio() : document.getElementById(this.currentAudio);
       this.audio.src = _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default[this.currentId].url;
-      this.audio.id = this.currentAudio; // eslint-disable-next-line no-unused-expressions
+      this.audio.id = this.currentAudio;
+      this.audio.volume = this.volumeInput.value; // eslint-disable-next-line no-unused-expressions
 
       document.getElementById(this.currentAudio) === null ? this.backgroundSoundWrapper.appendChild(this.audio) : '';
       this.title.innerHTML = _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default[this.currentId].title;
@@ -365,6 +371,9 @@ var BackgroundSound = /*#__PURE__*/function () {
       this.playBtn.addEventListener('click', this.play);
       this.forwardBtn.addEventListener('click', function () {
         _this.playNextTrack();
+      });
+      this.volumeInput.addEventListener('input', function () {
+        _this.changeVolume();
       });
     }
   }]);
@@ -3131,7 +3140,7 @@ var CreateBackgroundSound = /*#__PURE__*/function () {
       var template = '';
       var backgroundSoundContainer = document.createElement('div');
       backgroundSoundContainer.className = 'background-sound-wrapper';
-      template = "\n      <h2 class=\"music__author\"></h2>\n      <span>-</span>\n      <h2 class=\"music__title\"></h2>\n      <div class=\"music-control\">\n        <div class=\"music-control__play\" id=\"play\">\n          <img src=\"/./src/assets/icons/play.svg\" alt=\"Play\" class=\"play\">\n        </div>\n        <div class=\"music-control__forward\" id=\"forward\">\n          <img src=\"/./src/assets/icons/next.svg\" alt=\"Forward\" class=\"forward\">\n        </div>\n      </div>\n      <div class=\"option\">\n        <label for=\"volume\">Volume</label>\n        <input type=\"range\" min=\"0\" max=\"1\" step=\"0.1\" name=\"volume\" id=\"volume\" value=\"0.2\">\n      </div>";
+      template = "\n      <h2 class=\"music__author\"></h2>\n      <span>-</span>\n      <h2 class=\"music__title\"></h2>\n      <div class=\"music-control\">\n        <div class=\"music-control__play\" id=\"play\">\n          <img src=\"/./src/assets/icons/play.svg\" alt=\"Play\" class=\"play\">\n        </div>\n        <div class=\"music-control__forward\" id=\"forward\">\n          <img src=\"/./src/assets/icons/next.svg\" alt=\"Forward\" class=\"forward\">\n        </div>\n      </div>\n      <div class=\"option\">\n        <label for=\"volume\">Volume</label>\n        <input type=\"range\" min=\"0\" max=\"1\" step=\"0.1\" name=\"volume\" id=\"volume\" value=\"0.1\">\n      </div>";
       backgroundSoundContainer.innerHTML = template;
       this.main.appendChild(backgroundSoundContainer);
       return this.main;
