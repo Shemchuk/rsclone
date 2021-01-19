@@ -3,6 +3,7 @@
 @import url(https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap);
 @import url(https://fonts.googleapis.com/css2?family=Lobster&display=swap);
 @import url(https://fonts.googleapis.com/css?family=Dosis);
+
 @charset "UTF-8";
 .container .second-container .table1-container .button-fullscreen, .container .table2-container .button-fullscreen {
   position: absolute;
@@ -153,6 +154,86 @@ body {
   width: 90vw;
 }
 
+
+.command-wrapper {
+  padding: 20px;
+  max-width: 350px;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin: 0;
+  font-weight: 200;
+}
+
+.teams {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  list-style: none;
+}
+
+.teams li {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 10px 0;
+  font-weight: 100;
+  display: flex;
+}
+
+.teams input {
+  display: none;
+}
+
+.add-teams {
+  margin-top: 20px;
+}
+
+.add-teams input {
+  padding: 10px;
+  outline: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.background-sound-wrapper {
+  padding: 5px 0px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.music-control {
+  width: 90px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.music-control__play, .music-control__forward {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.play, .forward {
+  width: 25px;
+  height: 25px;
+}
+
+.music-control__play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .round-stat-modal {
   font-family: "Lobster", cursive;
   flex-direction: column;
@@ -184,6 +265,9 @@ body {
     width: 100%;
   }
 }
+=======
+}
+
 body {
   font-family: sans-serif;
   text-align: center;
@@ -226,7 +310,9 @@ h1 {
   text-shadow: 0px 10px 3px rgba(0, 0, 0, 0.2);
 }
 h1:before {
+
   content: "Режим игры";
+
   position: absolute;
   top: 0;
   left: 0;
@@ -238,6 +324,7 @@ h1:before {
 }
 h1:after {
   content: "Режим игры";
+
   position: absolute;
   top: 0;
   left: 0;
@@ -247,11 +334,13 @@ h1:after {
   animation: flicker 20s linear infinite;
 }
 
+
 @media (max-width: 650px) {
   h1 {
     font-size: 35px;
   }
 }
+
 .sign1 {
   padding: 0px 15px;
   box-shadow: 0px 0px 0px 2px rgba(255, 255, 255, 0.7), 0px 0px 0px 5px #FF1177, 0px 0px 0px 3px #FF1177 inset, 0px 0px 60px rgba(255, 17, 119, 0.5), 0px 0px 60px rgba(255, 17, 119, 0.5) inset;
@@ -351,7 +440,9 @@ body {
 }
 
 #container {
+
   width: 100%;
+
   margin: auto;
 }
 
@@ -472,11 +563,13 @@ p a:hover {
   }
 
   p {
+
     font-size: 4.5em;
   }
 
   .third-child {
     font-size: 7.5em;
+
   }
 }
 #section16 {
@@ -515,7 +608,9 @@ p a:hover {
   --btn-duration-fast: 5s;
   --btn-default-color: #7cfc00;
   --btn-blue-color: #00bcd4;
+
   --btn-purple-color: #1dcaf5;
+
 }
 
 .btn {
@@ -904,12 +999,15 @@ p a:hover {
   }
 }
 
+
 .team-container__team-points div, .finish-game-modal__1st-place div, .finish-game-modal__1st-place_points div {
+
   text-align: center;
   border-radius: 8px;
   border: 3px solid #002846;
   animation: border-flicker 2s linear forwards;
 }
+
 .team-container__team-points div .second, .finish-game-modal__1st-place div .second, .finish-game-modal__1st-place_points div .second {
   animation: letter-flicker 5s linear infinite;
 }
@@ -917,16 +1015,19 @@ p a:hover {
   animation: border-flicker 2s linear forwards;
 }
 .team-container__team-points h2, .finish-game-modal__1st-place h2, .finish-game-modal__1st-place_points h2 {
+
   font-family: "Lobster", cursive;
   font-weight: 300;
   font-size: 2.9em;
   color: rgba(120, 0, 50, 0.5);
   animation: text-flicker 5s linear forwards;
 }
+
 .team-container__team-points div:hover h2, .finish-game-modal__1st-place div:hover h2, .finish-game-modal__1st-place_points div:hover h2 {
   animation: text-flicker 5s linear forwards;
 }
 .team-container__team-points div:hover .second, .finish-game-modal__1st-place div:hover .second, .finish-game-modal__1st-place_points div:hover .second {
+
   animation: letter-flicker 3s linear infinite;
 }
 @keyframes text-flicker {
@@ -1188,6 +1289,7 @@ p a:hover {
 .menu .tutorial-menu .tutorial-text {
   font-size: 1.6rem;
 }
+
 
 .round-stat__border {
   text-align: center;
