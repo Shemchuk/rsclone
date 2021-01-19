@@ -18,14 +18,14 @@ export const teams = [
 ];
 
 let timer;
-let time = 5;
-let finishGamePoints = 10;
+let time = 2;
+let finishGamePoints = 1;
 function countdown() {
   document.querySelector('.first').innerHTML = time;
   time--;
-  if (time <= 0) {
+  if (time <= -1) {
     if (!teams.some((el) => el.points >= finishGamePoints) || !(teamFlag === teams.length - 1)) {
-      time = 5;
+      time = 2;
       clearTimeout(timer);
       // gsap.to('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
       gsap.to('.game-container__card', { duration: 1, ease: 'power1.out', x: -1500 });
@@ -51,7 +51,12 @@ function countdown() {
       );
     } else {
       teams.sort((el1, el2) => el2.points - el1.points);
-      document.querySelector('.main').appendChild(generateFinishGameModal());
+      gsap.to('.team-container__team-name', { duration: 1, ease: 'power1.out', y: -500 });
+      gsap.to('.game-container__card', { duration: 1, ease: 'power1.out', y: 500 });
+      setTimeout(function () {
+        document.querySelector('.game-container').style.display = 'none';
+        document.querySelector('.main').appendChild(generateFinishGameModal());
+      }, 1000);
       let name = new Date();
       console.log(name);
       set(name, teams);

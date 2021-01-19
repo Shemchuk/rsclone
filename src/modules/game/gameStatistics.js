@@ -9,16 +9,18 @@ const generateRoundStatisticsModal = () => {
   template += `<div class="sign-wrap">`;
   template += `<div class="sign sign5">`;
   template += `<div class="round-stat-modal__container">`;
-  template += `<div class="round-stat-confirmed">`;
-  template += `<div class="round-stat-confirmed__title">Выполнено:</div>`;
-  template += `<div class="round-stat-confirmed__container"></div>`;
+
+  template += `<div class="round-stat-confirmed round-stat__border">`;
+  template += `<h2 class="round-stat-confirmed__title">Выполнено:`;
+  template += `<span class="round-stat-confirmed__container"></span>`;
+  template += `</h2></div>`;
+  template += `<div class="round-stat-skiped round-stat__border">`;
+  template += `<h2 class="round-stat-skiped__title">Пропущено:`;
+  template += `<span class="round-stat-skiped__container"></span>`;
   template += `</div>`;
-  template += `<div class="round-stat-skiped">`;
-  template += `<div class="round-stat-skiped__title">Пропущено:</div>`;
-  template += `<div class="round-stat-skiped__container"></div>`;
   template += `</div>`;
-  template += `</div>`;
-  template += '<button class="button round-stat-modal__button">Следующий раунд</button>';
+  template +=
+    '<button class="button round-stat-modal__button btn btn-neon btn-purple btn-slow"><span></span><span></span><span></span><span></span>Следующий раунд</button>';
   template += `</div></div>`;
 
   roundStatModal.innerHTML = template;

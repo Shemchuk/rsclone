@@ -1,0 +1,214 @@
+.finish-game-modal__title{
+
+.sign-wrap {
+    display: inline-block;
+    // margin-top: 40px;
+    padding: 10px;
+    border-radius: 28px;
+    // background-color: hsl(0,0%,8%);
+    background-color: #222222;
+    background: repeating-linear-gradient(45deg, #2b2b2b 0%, #2b2b2b 10%, #222222 0%, #222222 50%) 0 / 15px 15px;
+    box-shadow:
+      0px 50px 45px -15px rgba(0,0,0,.5),
+      0px 20px 10px -5px rgba(0,0,0,.5),
+      0px 5px 20px 0px rgba(0,0,0,.5),
+      0px 10px 30px rgba(0,0,0,.7) inset ;
+    border: 4px solid lighten(black, 12%);
+    border-top: 4px solid black;
+    border-bottom: 4px solid lighten(black, 16%);
+  }
+  .sign {
+    display: inline-block;
+    padding: 30px 15px;
+    //border: 8px solid red;
+    border-radius: 20px;
+    -webkit-filter: blur(.3px);
+    box-shadow:
+      0px 0px 0px 2px rgba(255,255,255,.7),
+      0px 0px 0px 5px red,
+      0px 0px 0px 3px red inset,
+      0px 0px 60px transparentize(red, .5),
+      0px 0px 60px transparentize(red, .5) inset;
+  }
+  
+  h1 {
+    font-family: avenir, sans-serif;
+    font-size: 50px;
+    line-height: 0px;
+    font-weight: 800;
+    color: transparent;
+    -webkit-text-stroke-width: 6px;
+    -webkit-text-stroke-color: #2b2b2b;
+    position: relative;
+    text-transform: uppercase;
+    text-shadow: 0px 10px 3px rgba(0,0,0,.2);
+    &:before {
+      content:"Конец игры!";
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: transparentize(#2B2C2D, .9);
+      text-shadow: 0px 0px 60px transparentize(lighten(red,10%), .3);
+      -webkit-text-stroke-width: 6px;
+      -webkit-text-stroke-color: red;
+      //-webkit-filter: blur(.75px);
+      animation: flicker 20s linear infinite;
+    }
+    &:after {
+      content:"Конец игры!";
+      position: absolute;
+      top: 0;
+      left: 0;
+      color: transparent;
+      //-webkit-filter: blur(.75px);
+      -webkit-text-stroke-width: 1px;
+      -webkit-text-stroke-color: rgba(255,255,255,.8);
+      // -webkit-filter: blur(.75px);
+      animation: flicker 20s linear infinite;
+    }
+    
+  }
+  @media (max-width: 650px){
+        
+    .sign{
+      h1{
+        font-size: 35px;
+      }
+    }
+    }
+
+@keyframes flicker {
+    0% { opacity: 0; }
+  
+    // flicker
+    5%  { opacity: 0; }
+    6% { opacity: 1; }
+    11% { opacity: .4; }
+    11.25% { opacity: .6; }
+    11.5% { opacity: .4; }
+    18% { opacity: 1; }
+    18.5% { opacity: .9; }
+    22% { opacity: 1; }
+  
+     // flicker
+    38.5% { opacity: 1; }
+    39% { opacity: .8; }
+    42% { opacity: 1; }
+  
+    // flicker
+    60% { opacity: 1; }
+    60.5% { opacity: 0; }
+    62% { opacity: 0; }
+    63% { opacity: .2; }
+    63.25% { opacity: 0; }
+    65% { opacity: 1; }
+  
+    // flicker
+    73% { opacity: 1; }
+    75% { opacity: .8; }
+    79% { opacity: 1; }
+  
+    100% { opacity: 1; }
+  }
+}
+
+
+
+//End Game Button
+@import 'https://fonts.googleapis.com/css?family=Dosis';
+
+/* VARS */
+$main-font-size: 10px;
+
+$bg-color: #1A1A1B;
+$red: #cb3535;
+$white: #fcfcfc;
+$red-neon-0: rgba(204, 0, 0, 1);
+$red-neon-1: rgba(204, 0, 0, 0.3);
+$red-neon-2: rgba(255, 0, 0, 0.3);
+$red-neon-3: rgba(204, 0, 0, 0.3);
+$blue: #68939c;
+
+/* MIXINS */
+// Font sizing
+@mixin font-size($sizeValue) {
+  $remValue: $sizeValue;
+  $pxValue: ($sizeValue * 10);
+  font-size: $pxValue + px; 
+  line-height: ($sizeValue * 1.5 * 10) + px;  
+  font-size: $remValue + rem;
+  line-height: $sizeValue * 1.5 + rem;
+}
+
+@mixin x-rem ($property, $value) {
+  #{$property}: $value * $main-font-size;
+  #{$property}: #{$value}rem;
+}
+
+@mixin btn($color, $bg:none) {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-color: transparent;
+  background-image: $bg;
+  background-repeat: no-repeat;
+  background-position: 18px center;
+  border: 1px solid $red;
+  white-space: nowrap;
+  outline: none;
+  
+  color: $color;
+  @include font-size(1.6);
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 2px;
+  font-weight: 300;
+  width: auto;
+  
+  white-space: pre-wrap;  
+
+  @if $bg == none {
+    padding: 10px 1.8em;
+  } @else {
+    padding: 10px 18px 10px 50px;
+  }
+    
+  transition: all 0.3s ease;
+  -webkit-appearance: none;
+  -webkit-border-radius: 0;
+  
+  @media (min-width: 480px) { width:auto; }
+
+  
+  &:hover {
+  
+    animation: intermittente 0.01s infinite alternate;
+    box-shadow:  0px 0px 35px $red-neon-1, 
+      0 0 11px $red-neon-1, 
+      0 0 2px $red-neon-2, 
+      0 0 1px $red-neon-3, 
+      0 0px 17px $red-neon-1, 
+      inset 0px 0 17px $red-neon-3, 
+      inset 0px 0 30px $red-neon-3;
+  }
+  
+}
+
+/* ANIMATIONS */
+@keyframes intermittente {
+  75%{
+    opacity: 0.7;
+  }
+}
+
+
+.btn-exit {
+  @include btn($blue);
+  font-family: 'Dosis', sans-serif;
+//   transform: translate3d(-50%,-50%,0);
+}
+
+
+

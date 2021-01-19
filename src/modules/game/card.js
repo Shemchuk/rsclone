@@ -68,14 +68,22 @@ function clickContainerButtons(e) {
     arrSkiped.push(currentCardsStack[0 + i]);
     rotationGameContainer();
   } else if (clickNextRound) {
-    teamFlag = teamFlag ? 0 : 1;
+    if (teamFlag < teams.length - 1) {
+      teamFlag += 1;
+    } else {
+      teamFlag = 0;
+    }
+    gsap.to('.team-container__team-name', { duration: 1, ease: 'power1.out', y: -500 });
+    gsap.to('.round-stat-modal', { duration: 1, ease: 'power1.out', y: 500 });
     rotationGradient = 0;
-    nextRound();
+    setTimeout(function () {
+      nextRound();
+    }, 1000);
   } else if (clickCardsForAdults) {
     currentCardsStack = cards.forAdults;
     shuffleCards();
-    gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -500 });
-    gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 500 });
+    gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -1000 });
+    gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 1000 });
     gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
     setTimeout(function () {
       document.querySelector('.cards-selection-container').style.display = 'none';
@@ -83,8 +91,8 @@ function clickContainerButtons(e) {
     }, 1000);
   } else if (clickCardsGeneral) {
     currentCardsStack = cards.main;
-    gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -500 });
-    gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 500 });
+    gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -1000 });
+    gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 1000 });
     gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
     shuffleCards();
     setTimeout(function () {
