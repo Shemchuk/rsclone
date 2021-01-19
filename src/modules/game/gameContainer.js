@@ -116,7 +116,7 @@ export const generateFinishGameModal = () => {
   template += `<div class="finish-game-modal__1st-place_points"><div><h2>
   Очки: <span class="second">${teams[0].points}</span>
   </h2></div></div>`;
-  template += `<button class="btn btn-neon btn-purple btn-slow"><span></span><span></span><span></span><span></span>Назад в меню</button></div>`;
+  template += `<button class="back-to-main-menu__button btn btn-neon btn-purple btn-slow"><span></span><span></span><span></span><span></span>Назад в меню</button></div>`;
   finishGameModal.innerHTML = template;
   return finishGameModal;
 };

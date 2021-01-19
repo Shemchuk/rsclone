@@ -1,14 +1,23 @@
+import { game } from '../game/gameContainer';
+import { addTeamNamesToTeamsArr } from '../game/timer';
+
 export default class Commands {
   constructor() {
     this.addTeams = document.querySelector('.add-teams');
     this.teamsList = document.querySelector('.teams');
     this.items = JSON.parse(localStorage.getItem('items')) || [];
+    this.startGameButton = document.querySelector('.button-startgame-play');
   }
 
   init() {
     this.addTeams.addEventListener('submit', this.addItem.bind(this));
     this.teamsList.addEventListener('click', this.deleteItem.bind(this));
     this.populateList(this.items, this.teamsList);
+    this.startGameButton.addEventListener('click', function () {
+      document.querySelector('.main').innerHTML = '';
+      addTeamNamesToTeamsArr();
+      game();
+    });
   }
 
   addItem(e) {

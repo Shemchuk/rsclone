@@ -14,7 +14,8 @@ export default class CreateCommands {
     <form class="add-teams">
       <input type="text" name="item" placeholder="Team name" required>
       <input type="submit" value="add Team">
-    </form>`;
+    </form>
+    <button class="button-startgame-play">start game</button>`;
     commandsContainer.innerHTML = template;
     this.main.appendChild(commandsContainer);
     return this.main;
