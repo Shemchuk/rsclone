@@ -21,7 +21,7 @@ export default class CreateBackgroundSound {
       </div>
       <div class="option">
         <label for="volume">Volume</label>
-        <input type="range" min="0" max="1" step="0.1" name="volume" id="volume" value="0.2">
+        <input type="range" min="0" max="1" step="0.1" name="volume" id="volume" value="0.1">
       </div>`;
     backgroundSoundContainer.innerHTML = template;
     this.main.appendChild(backgroundSoundContainer);
