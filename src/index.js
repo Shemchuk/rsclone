@@ -7,10 +7,10 @@
 import { game } from './modules/game/gameContainer';
 
 import Menu from './modules/Menu';
-import Commands from './modules/commands';
-import CreateCommands from './modules/createCommands';
-import CreateBackgroundSound from './modules/createBackgroundSound';
-import BackgroundSound from './modules/backgroundSound';
+import Commands from './modules/commands/commands';
+import CreateCommands from './modules/commands/createCommands';
+import CreateBackgroundSound from './modules/backgroundSound/createBackgroundSound';
+import BackgroundSound from './modules/backgroundSound/backgroundSound';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { MDCRipple } from '@material/ripple/index';
@@ -18,8 +18,8 @@ import BackgroundSound from './modules/backgroundSound';
 
 window.onload = () => {
   console.log('Project starts');
-  const menu = new Menu();
-  menu.init();
+  // const menu = new Menu();
+  // menu.init();
   const createCommands = new CreateCommands();
   createCommands.init();
   const commands = new Commands();

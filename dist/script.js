@@ -73,10 +73,10 @@ __webpack_require__(/*! regenerator-runtime/runtime */ "./node_modules/regenerat
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_game_gameContainer__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/game/gameContainer */ "./src/modules/game/gameContainer.js");
 /* harmony import */ var _modules_Menu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/Menu */ "./src/modules/Menu.js");
-/* harmony import */ var _modules_commands__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/commands */ "./src/modules/commands.js");
-/* harmony import */ var _modules_createCommands__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/createCommands */ "./src/modules/createCommands.js");
-/* harmony import */ var _modules_createBackgroundSound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/createBackgroundSound */ "./src/modules/createBackgroundSound.js");
-/* harmony import */ var _modules_backgroundSound__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/backgroundSound */ "./src/modules/backgroundSound.js");
+/* harmony import */ var _modules_commands_commands__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/commands/commands */ "./src/modules/commands/commands.js");
+/* harmony import */ var _modules_commands_createCommands__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/commands/createCommands */ "./src/modules/commands/createCommands.js");
+/* harmony import */ var _modules_backgroundSound_createBackgroundSound__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/backgroundSound/createBackgroundSound */ "./src/modules/backgroundSound/createBackgroundSound.js");
+/* harmony import */ var _modules_backgroundSound_backgroundSound__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./modules/backgroundSound/backgroundSound */ "./src/modules/backgroundSound/backgroundSound.js");
 /* eslint-disable no-unused-vars */
 
 /* eslint-disable import/no-extraneous-dependencies */
@@ -93,16 +93,16 @@ __webpack_require__.r(__webpack_exports__);
 // import { MDCSlider } from '@material/slider/index';
 
 window.onload = function () {
-  console.log('Project starts');
-  var menu = new _modules_Menu__WEBPACK_IMPORTED_MODULE_1__.default();
-  menu.init();
-  var createCommands = new _modules_createCommands__WEBPACK_IMPORTED_MODULE_3__.default();
+  console.log('Project starts'); // const menu = new Menu();
+  // menu.init();
+
+  var createCommands = new _modules_commands_createCommands__WEBPACK_IMPORTED_MODULE_3__.default();
   createCommands.init();
-  var commands = new _modules_commands__WEBPACK_IMPORTED_MODULE_2__.default();
+  var commands = new _modules_commands_commands__WEBPACK_IMPORTED_MODULE_2__.default();
   commands.init();
-  var createBackgroundSound = new _modules_createBackgroundSound__WEBPACK_IMPORTED_MODULE_4__.default();
+  var createBackgroundSound = new _modules_backgroundSound_createBackgroundSound__WEBPACK_IMPORTED_MODULE_4__.default();
   createBackgroundSound.init();
-  var backgroundSound = new _modules_backgroundSound__WEBPACK_IMPORTED_MODULE_5__.default();
+  var backgroundSound = new _modules_backgroundSound_backgroundSound__WEBPACK_IMPORTED_MODULE_5__.default();
   backgroundSound.init(); // eslint-disable-next-line no-unused-vars
   // const ripple = new MDCRipple(document.querySelector('.mdc-button'));
   // const slider1 = new MDCSlider(document.querySelector('.slider__words__count'));
@@ -260,10 +260,10 @@ var Menu = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./src/modules/audioTracks.js":
-/*!************************************!*\
-  !*** ./src/modules/audioTracks.js ***!
-  \************************************/
+/***/ "./src/modules/backgroundSound/audioTracks.js":
+/*!****************************************************!*\
+  !*** ./src/modules/backgroundSound/audioTracks.js ***!
+  \****************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -272,7 +272,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => __WEBPACK_DEFAULT_EXPORT__
 /* harmony export */ });
 var audioTracks = [{
-  url: 'http://cdn.atrera.com/audio/Marcel_Pequel_-_01_-_One.mp3',
+  url: 'http://cdn.atrera.com/audio/Marcel_Pequel_-_03_-_Three.mp3',
   author: 'Author1',
   title: 'Title1'
 }, {
@@ -288,10 +288,10 @@ var audioTracks = [{
 
 /***/ }),
 
-/***/ "./src/modules/backgroundSound.js":
-/*!****************************************!*\
-  !*** ./src/modules/backgroundSound.js ***!
-  \****************************************/
+/***/ "./src/modules/backgroundSound/backgroundSound.js":
+/*!********************************************************!*\
+  !*** ./src/modules/backgroundSound/backgroundSound.js ***!
+  \********************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -299,7 +299,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => /* binding */ BackgroundSound
 /* harmony export */ });
-/* harmony import */ var _audioTracks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./audioTracks */ "./src/modules/audioTracks.js");
+/* harmony import */ var _audioTracks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./audioTracks */ "./src/modules/backgroundSound/audioTracks.js");
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
@@ -361,8 +361,7 @@ var BackgroundSound = /*#__PURE__*/function () {
 
       this.audio = document.getElementById(this.currentAudio) === null ? this.audio = new Audio() : document.getElementById(this.currentAudio);
       this.audio.src = _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default[this.currentId].url;
-      this.audio.id = this.currentAudio;
-      this.audio.volume = this.volumeInput.value; // eslint-disable-next-line no-unused-expressions
+      this.audio.id = this.currentAudio; // eslint-disable-next-line no-unused-expressions
 
       document.getElementById(this.currentAudio) === null ? this.backgroundSoundWrapper.appendChild(this.audio) : '';
       this.title.innerHTML = _audioTracks__WEBPACK_IMPORTED_MODULE_0__.default[this.currentId].title;
@@ -379,6 +378,50 @@ var BackgroundSound = /*#__PURE__*/function () {
   }]);
 
   return BackgroundSound;
+}();
+
+
+
+/***/ }),
+
+/***/ "./src/modules/backgroundSound/createBackgroundSound.js":
+/*!**************************************************************!*\
+  !*** ./src/modules/backgroundSound/createBackgroundSound.js ***!
+  \**************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => /* binding */ CreateBackgroundSound
+/* harmony export */ });
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var CreateBackgroundSound = /*#__PURE__*/function () {
+  function CreateBackgroundSound() {
+    _classCallCheck(this, CreateBackgroundSound);
+
+    this.main = document.querySelector('main');
+  }
+
+  _createClass(CreateBackgroundSound, [{
+    key: "init",
+    value: function init() {
+      var template = '';
+      var backgroundSoundContainer = document.createElement('div');
+      backgroundSoundContainer.className = 'background-sound-wrapper';
+      template = "\n      <h2 class=\"music__author\"></h2>\n      <span>-</span>\n      <h2 class=\"music__title\"></h2>\n      <div class=\"music-control\">\n        <div class=\"music-control__play\" id=\"play\">\n          <img src=\"/./src/assets/icons/play.svg\" alt=\"Play\" class=\"play\">\n        </div>\n        <div class=\"music-control__forward\" id=\"forward\">\n          <img src=\"/./src/assets/icons/next.svg\" alt=\"Forward\" class=\"forward\">\n        </div>\n      </div>\n      <div class=\"option\">\n        <label for=\"volume\">Volume</label>\n        <input type=\"range\" min=\"0\" max=\"1\" step=\"0.1\" name=\"volume\" id=\"volume\" value=\"0.1\">\n      </div>";
+      backgroundSoundContainer.innerHTML = template;
+      this.main.appendChild(backgroundSoundContainer);
+      return this.main;
+    }
+  }]);
+
+  return CreateBackgroundSound;
 }();
 
 
@@ -3036,10 +3079,10 @@ var cards = {
 
 /***/ }),
 
-/***/ "./src/modules/commands.js":
-/*!*********************************!*\
-  !*** ./src/modules/commands.js ***!
-  \*********************************/
+/***/ "./src/modules/commands/commands.js":
+/*!******************************************!*\
+  !*** ./src/modules/commands/commands.js ***!
+  \******************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -3110,54 +3153,10 @@ var Commands = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ "./src/modules/createBackgroundSound.js":
-/*!**********************************************!*\
-  !*** ./src/modules/createBackgroundSound.js ***!
-  \**********************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => /* binding */ CreateBackgroundSound
-/* harmony export */ });
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-var CreateBackgroundSound = /*#__PURE__*/function () {
-  function CreateBackgroundSound() {
-    _classCallCheck(this, CreateBackgroundSound);
-
-    this.main = document.querySelector('main');
-  }
-
-  _createClass(CreateBackgroundSound, [{
-    key: "init",
-    value: function init() {
-      var template = '';
-      var backgroundSoundContainer = document.createElement('div');
-      backgroundSoundContainer.className = 'background-sound-wrapper';
-      template = "\n      <h2 class=\"music__author\"></h2>\n      <span>-</span>\n      <h2 class=\"music__title\"></h2>\n      <div class=\"music-control\">\n        <div class=\"music-control__play\" id=\"play\">\n          <img src=\"/./src/assets/icons/play.svg\" alt=\"Play\" class=\"play\">\n        </div>\n        <div class=\"music-control__forward\" id=\"forward\">\n          <img src=\"/./src/assets/icons/next.svg\" alt=\"Forward\" class=\"forward\">\n        </div>\n      </div>\n      <div class=\"option\">\n        <label for=\"volume\">Volume</label>\n        <input type=\"range\" min=\"0\" max=\"1\" step=\"0.1\" name=\"volume\" id=\"volume\" value=\"0.1\">\n      </div>";
-      backgroundSoundContainer.innerHTML = template;
-      this.main.appendChild(backgroundSoundContainer);
-      return this.main;
-    }
-  }]);
-
-  return CreateBackgroundSound;
-}();
-
-
-
-/***/ }),
-
-/***/ "./src/modules/createCommands.js":
-/*!***************************************!*\
-  !*** ./src/modules/createCommands.js ***!
-  \***************************************/
+/***/ "./src/modules/commands/createCommands.js":
+/*!************************************************!*\
+  !*** ./src/modules/commands/createCommands.js ***!
+  \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
