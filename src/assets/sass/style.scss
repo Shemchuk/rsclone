@@ -9,8 +9,9 @@
 @import './components/card';
 @import './components/commands';
 @import './components/_backgroundSound';
-
 @import './components/round-stat-modal';
+//Loading Before Menu
+@import './components/loadingBeforeMenu/loadingBeforeMenu';
 //components/cardSelection
 @import './components/cardsSelection/cards-selection-modal';
 @import './components/cardsSelection/cards-selection-title';
