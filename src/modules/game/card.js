@@ -9,6 +9,7 @@ import cards from '../cards';
 import { mainGamePlay } from './gameContainer';
 import { teams } from './timer';
 import Menu from '../Menu';
+import Language from '../lang/Language';
 
 export let teamFlag = 0;
 // import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
@@ -16,6 +17,12 @@ export let teamFlag = 0;
 const arrConfirmed = [];
 const arrSkiped = [];
 let currentCardsStack;
+
+// =========== LANG =============== //
+const langObject = new Language();
+const lang = langObject.getCurrentLangObject().game; // Object "game"
+const langName = langObject.getCurrentLangName(); // 'en' | 'ru'
+// =========== LANG =============== //
 
 // const arrAnException = [];
 // Generate random cards
