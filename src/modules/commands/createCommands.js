@@ -12,7 +12,7 @@ export default class CreateCommands {
       <li>Loading Teams...</li>
     </ul>
     <form class="add-teams">
-      <input type="text" name="item" placeholder="Team name" required>
+      <input type="text" name="item" placeholder="Team name">
       <input type="submit" value="add Team">
     </form>
     <button class="button-startgame-play">start game</button>`;
