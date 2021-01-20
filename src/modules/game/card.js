@@ -8,6 +8,7 @@ import cards from '../cards';
 // eslint-disable-next-line import/no-cycle
 import { mainGamePlay } from './gameContainer';
 import { teams } from './timer';
+import Menu from '../Menu';
 
 export let teamFlag = 0;
 // import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
@@ -55,6 +56,7 @@ function clickContainerButtons(e) {
   const clickNextRound = e.target.closest('.round-stat-modal__button');
   const clickCardsForAdults = e.target.closest('.cards__for-adults');
   const clickCardsGeneral = e.target.closest('.cards__main');
+  const clickBackToMainMenu = e.target.closest('.back-to-main-menu__button');
   if (clickReady) {
     rotationGradient -= 360;
     teams[teamFlag].points += 1;
@@ -99,6 +101,11 @@ function clickContainerButtons(e) {
       document.querySelector('.cards-selection-container').style.display = 'none';
       mainGamePlay();
     }, 1000);
+  } else if (clickBackToMainMenu) {
+    // Menu.showMenu('main-menu');
+    document.querySelector('.main').innerHTML = '';
+    const menu = new Menu();
+    menu.init();
   }
   i += 1;
 }

@@ -1,5 +1,7 @@
 import CONST from './Constants';
 import menuHTML from './components/menu.html';
+import Commands from './commands/commands';
+import CreateCommands from './commands/createCommands';
 
 // eslint-disable-next-line no-unused-vars
 import { set as setValueToStorage, get as getValueFromStorage } from './utils/storage';
@@ -23,11 +25,17 @@ export default class Menu {
     if (!element) {
       return;
     }
-
+    let createCommands;
+    let commands;
     switch (element.id) {
       case 'button-start':
         console.log('start');
         Menu.hideMenu('main-menu');
+        createCommands = new CreateCommands();
+        createCommands.init();
+        commands = new Commands();
+        commands.init();
+        // document.querySelector('.command-wrapper').style.display = 'block';
         // game();
         // this.showMenu('command-menu');
 

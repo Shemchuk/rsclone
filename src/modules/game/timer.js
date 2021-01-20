@@ -7,25 +7,36 @@
 import { teamFlag, arrConfirmed, arrSkiped } from './card';
 import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
 import { generateFinishGameModal } from './gameContainer';
-import { set } from '../utils/storage';
+import { get, set } from '../utils/storage';
 
 // ___________________________________Temporary data______________________________________________
 // export const teamNames = ['Team 1', 'Team 2'];
 // export const teamPoints = [0,0];
-export const teams = [
-  { name: 'фыва', points: 0, answers: { confirmed: [], skiped: [] } },
-  { name: 'Team2', points: 0, answers: { confirmed: [], skiped: [] } },
-];
+export const teams = [];
 
+export function createCommandFromLS(teamItem) {
+  return {
+    name: teamItem.text,
+    points: 0,
+    answers: { confirmed: [], skiped: [] },
+  };
+}
+export function addTeamNamesToTeamsArr() {
+  let teamNamesFromCommandsList = JSON.parse(localStorage.getItem('items')) || [];
+  teamNamesFromCommandsList.forEach((el) => teams.push(createCommandFromLS(el)));
+  console.log(teams);
+}
+// решить проблему с локал стораджем, не подхватывает базовое значение через функцию
+const setaliasSettings = { wordsCount: '1', roundTime: '5', lang: 'en' };
 let timer;
-let time = 2;
-let finishGamePoints = 1;
+let time = setaliasSettings.roundTime;
+let finishGamePoints = setaliasSettings.wordsCount;
 function countdown() {
   document.querySelector('.first').innerHTML = time;
   time--;
   if (time <= -1) {
     if (!teams.some((el) => el.points >= finishGamePoints) || !(teamFlag === teams.length - 1)) {
-      time = 2;
+      time = setaliasSettings.roundTime;
       clearTimeout(timer);
       // gsap.to('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
       gsap.to('.game-container__card', { duration: 1, ease: 'power1.out', x: -1500 });
@@ -54,12 +65,12 @@ function countdown() {
       gsap.to('.team-container__team-name', { duration: 1, ease: 'power1.out', y: -500 });
       gsap.to('.game-container__card', { duration: 1, ease: 'power1.out', y: 500 });
       setTimeout(function () {
-        document.querySelector('.game-container').style.display = 'none';
+        document.querySelector('.main').innerHTML = '';
         document.querySelector('.main').appendChild(generateFinishGameModal());
       }, 1000);
-      let name = new Date();
-      console.log(name);
-      set(name, teams);
+      let date = new Date();
+      set('AliasStatistics', { date, teams });
+      console.log({ date, teams });
     }
   } else {
     timer = setTimeout(countdown, 1000);
