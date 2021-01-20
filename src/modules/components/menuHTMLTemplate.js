@@ -1,12 +1,13 @@
 const menuHTMLTemplate = (lang) => `
 <div class="menu">
   <div class="main-menu">
-    <h2 class="menu-title">${lang.mainMenuTitle}</h2>
+
     <button id="button-continue" class="menu-button" disabled>${lang.continueButton}</button>
     <button id="button-start" class="menu-button">${lang.startButton}</button>
     <button id="button-settings" class="menu-button">${lang.settingsButton}</button>
     <button id="button-tutorial" class="menu-button">${lang.tutorialButton}</button>
     <button id="button-statistics" class="menu-button">${lang.statisticsButton}</button>
+
   </div>
 
   <div class="settings-menu hide-menu">

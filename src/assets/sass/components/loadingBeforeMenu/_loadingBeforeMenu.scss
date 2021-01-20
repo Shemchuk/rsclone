@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceland&display=swap');
+
+
+
+.loading-block{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all margin-top 2s;
+    top: 15px;
+    transition: all position 1s;
+    position: absolute;
+}
+
+$color-list: #ec0aac, #7f43d7, #0d8fdb;
+
+.loader {
+    margin: 0px 0 0;
+    width: 25em;
+    background: transparent;
+    height: 3em;
+    position: relative;
+      
+    div {
+      animation: 4s slide ;
+     background: red;
+      height: 3em;
+      left: 0;
+      position: absolute;
+      width: 0;
+    }
+    h3 {
+        position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    font-size: 30px;
+    font-weight: 800;
+    font-family: Iceland;
+    font-weight: bolder;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    // color: transparent;
+    text-shadow: 0 0 25px #228DFF;
+    color: #228DFF;
+    }
+    //___________________LOADING text
+    .loarder-start2 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        font-size: 30px;
+        font-weight: 800;
+        font-family: Iceland;
+        // font-weight: bolder;
+        text-transform: uppercase;
+        color: #228DFF;
+        font-family: Iceland;
+        text-decoration: none;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+
+      }
+      .loarder-start3 {
+        -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+        -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+        animation: neon2 1.5s ease-in-out infinite alternate;
+        color: #ffffff;
+      }
+      
+      
+      @-webkit-keyframes neon2 {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+        }
+        to {
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+        }
+      }
+      @-moz-keyframes neon2 {
+        from {
+          text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+        }
+        to {
+          text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+        }
+      }
+      
+}
+
+
+  @keyframes slide {
+    0% {
+       background: nth($color-list, 1);
+       box-shadow: 0 0 1em rgba(nth($color-list, 1), 0.8), 0 0 1.8em rgba(nth($color-list, 1), 0.6), inset 0 0 0.2em darken(nth($color-list, 1), 30%);
+      width: 0;
+     }
+    
+     50% {
+       background: nth($color-list, 2);
+       box-shadow: 0 0 1em rgba(nth($color-list, 2), 0.8), 0 0 1.8em rgba(nth($color-list, 2), 0.6), inset 0 0 0.2em darken(nth($color-list, 2), 30%);
+     }
+     
+    100% {
+       background: nth($color-list, 3);
+       box-shadow: 0 0 1em rgba(nth($color-list, 3), 0.8), 0 0 1.8em rgba(nth($color-list, 3), 0.6), inset 0 0 0.2em darken(nth($color-list, 3), 30%);
+      width: 25em; 
+     }  
+   }
+
+
+
+   // _______________________________________________________________Alias Banner___________________________________________________________________
+   
+$color: #f00;
+$color2: #00f;
+@import url(https://fonts.googleapis.com/css?family=Roboto:100);
+body {
+	// user-select: none;  
+	// background: #111;
+	// font-family: "Roboto";
+	// display: flex;
+	// justify-content: center;
+	// align-items: center;
+	// height: 98vh;
+}
+* {
+	// transition: all 500ms;
+}
+#toggle {
+	// position: fixed;
+	// top: 10px;
+	// left: 10px;
+    // padding: 15px;
+    
+	background: black;
+	color: rgba(255,255,255,0.5);
+    border: 2px solid rgba(255,255,255,0.5);
+    
+}
+#sign {
+    margin-bottom: 15px;
+	padding: 28px;
+	border-radius: 50%;
+	box-shadow: 0px 0px 10px #fff, 5px 5px 5px $color2, -5px -5px 5px $color2, -5px 5px 5px $color2, 5px -5px 5px $color2, 0px -5px 5px $color2, 5px 0px 5px $color2, 0px 5px 5px $color2, 0px 0px 15px #fff;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	transform: rotate(10deg);
+	background: #000;
+	text-align: center;
+    animation:power-sign 400ms 0s 4 cubic-bezier(1.000, 0.000, 1.000, 0.000), sign 6s 2000ms infinite alternate;
+    
+}
+
+.message {
+}
+.off {
+	color: rgba(255,255,255,0.2);
+	transition: none;
+	font-weight: 100;
+	text-shadow: none!important;
+	box-shadow: none!important;
+	animation: none!important;
+	& * {
+		text-shadow: none!important;
+		animation: none!important;
+	}
+}
+#sign.off {
+	border: 2px solid rgba(255,255,255,0.2);
+}
+.Neon {
+	color: rgba(255,255,255,0.2);
+	font-size: 135px;
+	font-weight: 100;
+	text-shadow: 0px 0px 15px $color, 5px 5px 5px $color, -5px -5px 5px $color, -5px 5px 5px $color, 5px -5px 5px $color, 0px -5px 5px $color, 5px 0px 5px $color, 0px 5px 5px $color, 0px 0px 15px #fff;
+}
+#N {
+	animation:power 100ms 0s 6 cubic-bezier(1.000, 0.000, 1.000, 0.000), flicker 3s 1600ms infinite alternate;
+}
+#E {
+	animation:power 300ms 0s 2 cubic-bezier(1.000, 0.000, 1.000, 0.000), flicker 2s 600ms alternate;
+}
+#O {
+	animation:power 200ms 0s 4 cubic-bezier(1.000, 0.000, 1.000, 0.000), flicker 5s 800ms  alternate;
+}
+#N2 {
+	animation:power 400ms 0s 4 cubic-bezier(1.000, 0.000, 1.000, 0.000), flicker 10s 1600ms infinite alternate;
+}
+@keyframes flicker {
+	0% {
+		text-shadow: 0px 0px 15px $color, 5px 5px 5px $color, -5px -5px 5px $color, -5px 5px 5px $color, 5px -5px 5px $color, 0px -5px 5px $color, 5px 0px 5px $color, 0px 5px 5px $color, 0px 0px 15px #fff;
+	}
+	5% {
+		text-shadow: 0px 0px 15px transparentize($color,0.5), 5px 5px 5px transparentize($color,0.5), -5px -5px 5px transparentize($color,0.5), -5px 5px 5px transparentize($color,0.5), 5px -5px 5px transparentize($color,0.5), 0px -5px 5px transparentize($color,0.5), 5px 0px 5px transparentize($color,0.5), 0px 5px 5px transparentize($color,0.5), 0px 0px 15px #fff;
+	}
+	7% {
+		text-shadow: 0px 0px 15px $color, 5px 5px 5px $color, -5px -5px 5px $color, -5px 5px 5px $color, 5px -5px 5px $color, 0px -5px 5px $color, 5px 0px 5px $color, 0px 5px 5px $color, 0px 0px 15px #fff;
+	}
+	11% {
+		text-shadow: 0px 0px 15px transparentize($color,0.5), 5px 5px 5px transparentize($color,0.8), -5px -5px 5px transparentize($color,0.5), -5px 5px 5px transparentize($color,0.8), 5px -5px 5px transparentize($color,0.5), 0px -5px 5px transparentize($color,0.5), 5px 0px 5px transparentize($color,0.8), 0px 5px 5px transparentize($color,0.5), 0px 0px 15px #fff;
+	}
+	15% {
+		text-shadow: 0px 0px 15px $color, 5px 5px 5px $color, -5px -5px 5px $color, -5px 5px 5px $color, 5px -5px 5px $color, 0px -5px 5px $color, 5px 0px 5px $color, 0px 5px 5px $color, 0px 0px 15px #fff;
+	}
+	60% {
+		text-shadow: 0px 0px 15px $color, 5px 5px 5px $color, -5px -5px 5px $color, -5px 5px 5px $color, 5px -5px 5px $color, 0px -5px 5px $color, 5px 0px 5px $color, 0px 5px 5px $color, 0px 0px 15px #fff;
+	}
+	75% {
+		text-shadow: 0px 0px 15px transparentize($color,0.5), 5px 5px 5px transparentize($color,0.5), -5px -5px 5px transparentize($color,0.5), -5px 5px 5px transparentize($color,0.5), 5px -5px 5px transparentize($color,0.5), 0px -5px 5px transparentize($color,0.5), 5px 0px 5px transparentize($color,0.5), 0px 5px 5px transparentize($color,0.5), 0px 0px 15px #fff;
+	}
+	85% {
+		text-shadow: 0px 0px 15px transparentize($color,0.2), 5px 5px 5px transparentize($color,0.5), -5px -5px 5px transparentize($color,0.2), -5px 5px 5px transparentize($color,0.5), 5px -5px 5px transparentize($color,0.2), 0px -5px 5px transparentize($color,0.5), 5px 0px 5px transparentize($color,0.2), 0px 5px 5px transparentize($color,0.2), 0px 0px 15px #fff;
+	}
+}
+@keyframes sign {
+	0% {
+		box-shadow: 0px 0px 10px #fff, 5px 5px 5px $color2, -5px -5px 5px $color2, -5px 5px 5px $color2, 5px -5px 5px $color2, 0px -5px 5px $color2, 5px 0px 5px $color2, 0px 5px 5px $color2, 0px 0px 15px #fff;
+	}
+	50% {
+		box-shadow: 0px 0px 15px #fff, 5px 5px 15px $color2, -5px -5px 25px $color2, -5px 5px 15px $color2, 5px -5px 10px $color2, 0px -5px 15px $color2, 5px 0px 10px $color2, 0px 5px 5px $color2, 0px 0px 15px #fff;
+	}
+}
+@keyframes power {0%{text-shadow: none;} 100% {text-shadow: 0px 0px 15px $color, 5px 5px 5px $color, -5px -5px 5px $color, -5px 5px 5px $color, 5px -5px 5px $color, 0px -5px 5px $color, 5px 0px 5px $color, 0px 5px 5px $color, 0px 0px 15px #fff;}}
+
+@keyframes power-sign {0%{box-shadow: none!important;} 100% {box-shadow: 0px 0px 15px $color2, 5px 5px 5px $color2, -5px -5px 5px $color2, -5px 5px 5px $color2, 5px -5px 5px $color2, 0px -5px 5px $color2, 5px 0px 5px $color2, 0px 5px 5px $color2, 0px 0px 15px #fff;}}

@@ -21,7 +21,7 @@ let currentCardsStack;
 // =========== LANG =============== //
 const langObject = new Language();
 const lang = langObject.getCurrentLangObject().game; // Object "game"
-const langName = langObject.getCurrentLangName(); // 'en' | 'ru'
+const langName = Language.getCurrentLangName(); // 'en' | 'ru'
 // =========== LANG =============== //
 
 // const arrAnException = [];

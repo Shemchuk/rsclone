@@ -5,7 +5,7 @@
 // import CONST from './modules/Constants';
 
 import { game } from './modules/game/gameContainer';
-
+import { loadingBeforeMenu } from './modules/game/loadingBeforeMenu';
 import Menu from './modules/Menu';
 
 import CreateBackgroundSound from './modules/backgroundSound/createBackgroundSound';
@@ -17,9 +17,9 @@ import BackgroundSound from './modules/backgroundSound/backgroundSound';
 
 window.onload = () => {
   console.log('Project starts');
-
-  const menu = new Menu();
-  menu.init();
+  loadingBeforeMenu();
+  // const menu = new Menu();
+  // menu.init();
 
   // const createBackgroundSound = new CreateBackgroundSound();
   // createBackgroundSound.init();
