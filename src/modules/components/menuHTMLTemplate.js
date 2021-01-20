@@ -1,24 +1,26 @@
+const menuHTMLTemplate = (lang) => `
 <div class="menu">
   <div class="main-menu">
-    <h2 class="menu-title"></h2>
-    <button id="button-continue" class="menu-button" disabled>Continue</button>
-    <button id="button-start" class="menu-button">Start</button>
-    <button id="button-settings" class="menu-button">Settings</button>
-    <button id="button-tutorial" class="menu-button">Tutorial</button>
-    <button id="button-statistics" class="menu-button">Statistics</button>
+
+    <button id="button-continue" class="menu-button" disabled>${lang.continueButton}</button>
+    <button id="button-start" class="menu-button">${lang.startButton}</button>
+    <button id="button-settings" class="menu-button">${lang.settingsButton}</button>
+    <button id="button-tutorial" class="menu-button">${lang.tutorialButton}</button>
+    <button id="button-statistics" class="menu-button">${lang.statisticsButton}</button>
+
   </div>
 
   <div class="settings-menu hide-menu">
-    <h2 class="menu-title">Settings</h2>
+    <h2 class="menu-title">${lang.settingsMenuTitle}</h2>
 
     <div class="settings-menu__item set__words-number">
-      <p class="setting-paragraph">Count of words</p>
+      <p class="setting-paragraph">${lang.labelCountOfWords}</p>
       <div class="setting-slider__container slider__words-count">
         <input
           id="inputWordsCount"
           class="slider-input"
           type="range"
-          min="10"
+          min="5"
           max="200"
           value="50"
           name="words"
@@ -37,13 +39,13 @@
     </div>
 
     <div class="settings-menu__item set__round-time">
-      <p class="setting-paragraph">Round time, seconds</p>
+      <p class="setting-paragraph">${lang.labelRoundTime}</p>
       <div class="setting-slider__container slider__round-time">
         <input
           id="inputRoundTime"
           class="slider-input"
           type="range"
-          min="10"
+          min="5"
           max="120"
           value="60"
           name="round-time"
@@ -63,7 +65,7 @@
 
     <div class="settings-menu__item set__lang">
       <div class="item__row-container">
-        <p class="setting-paragraph">Language</p>
+        <p class="setting-paragraph">${lang.labelLanguage}</p>
         <div class="input__container">
           <input type="radio" id="set-lang__en" name="lang" value="en" checked />
           <label for="set-lang__en">ENG</label>
@@ -74,8 +76,8 @@
     </div>
 
     <div class="settings__button-block">
-      <button id="button-save" class="menu-button">Save</button>
-      <button id="button-back" class="menu-button">Back</button>
+      <button id="button-save" class="menu-button">${lang.saveButton}</button>
+      <button id="button-back" class="menu-button">${lang.backButton}</button>
     </div>
   </div>
 
@@ -83,7 +85,7 @@
     <h2 class="menu-title">Tutorial</h2>
 
     <div class="tutorial-text">
-      <h3>Tutorial</h3>
+      <h3>${lang.TutorialMenuTitle}</h3>
       <p>
         Cillum dolor esse sit incididunt velit eiusmod magna ad nostrud officia aute dolor dolor.
         Magna esse ullamco pariatur adipisicing consectetur eu commodo officia. Ex cillum consequat
@@ -118,3 +120,6 @@
     </div>
   </div>
 </div>
+`;
+
+export default menuHTMLTemplate;
