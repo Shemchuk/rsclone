@@ -24,12 +24,12 @@ body {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 1px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: $color-primary-light;
+  // background: $color-primary-light;
 }
 
 /* Handle */

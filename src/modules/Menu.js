@@ -19,7 +19,7 @@ export default class Menu {
   }
 
   createMenu() {
-    const main = document.querySelector('.main');
+    const main = document.querySelector('.loading-block');
     const menu = document.querySelector('.menu');
 
     if (menu) {
@@ -27,7 +27,7 @@ export default class Menu {
     }
 
     this.lang = this.langObject.getCurrentLangObject().mainMenu;
-    main.innerHTML = menuHTMLTemplate(this.lang) + main.innerHTML;
+    main.innerHTML += menuHTMLTemplate(this.lang);
     this.setEventHandlers();
   }
 
