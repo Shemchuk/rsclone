@@ -65,6 +65,7 @@ function clickContainerButtons(e) {
   const clickCardsForAdults = e.target.closest('.cards__for-adults');
   const clickCardsGeneral = e.target.closest('.cards__main');
   const clickBackToMainMenu = e.target.closest('.back-to-main-menu__button');
+
   if (clickReady) {
     rotationGradient -= 360;
     teams[teamFlag].points += 1;

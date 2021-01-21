@@ -12,11 +12,17 @@ export default class CreateBackgroundSound {
       <span>-</span>
       <h2 class="music__title"></h2>
       <div class="music-control">
+        <div class="music-control__previous" id="previous">
+          <img src="/./src/assets/icons/play.svg" alt="Previous" class="previous">
+        </div>
         <div class="music-control__play" id="play">
-          <img src="/./src/assets/icons/play.svg" alt="Play" class="play">
+          <img src="/./src/assets/icons/next.svg" alt="Play" class="play">
         </div>
         <div class="music-control__forward" id="forward">
-          <img src="/./src/assets/icons/next.svg" alt="Forward" class="forward">
+          <img src="/./src/assets/icons/play.svg" alt="Forward" class="forward">
+        </div>
+        <div class="music-control__mute" id="mute">
+          <img src="/./src/assets/icons/mute.svg" alt="Mute" class="mute">
         </div>
       </div>
       <div class="option">
