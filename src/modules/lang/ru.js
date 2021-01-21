@@ -16,8 +16,12 @@ const ru = {
     labelLanguage: 'Язык',
   },
   commandMenu: {
+    allCommands: 'Все команды',
+    loadingTeams: 'Загрузка списка команд..',
+    teamName: 'Название команды',
     addTeamButton: 'Добавить команду',
-    startGameButton: 'Начала игры',
+    startGameButton: 'Начать игру',
+    deleteTeamButton: 'Удалить команду',
   },
   game: {
     correctWordButton: 'Правильно',

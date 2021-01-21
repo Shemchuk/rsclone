@@ -1,5 +1,6 @@
 import { game } from '../game/gameContainer';
 import { addTeamNamesToTeamsArr } from '../game/timer';
+import Language from '../lang/Language';
 
 export default class Commands {
   constructor() {
@@ -11,6 +12,8 @@ export default class Commands {
     // this.adjective = ['Ужасный', 'Злобный', 'Сопливый', 'Колючий', 'Опасный', 'Вонючий', 'Черный'];
     // this.race = ['Огр', 'Гном', 'Гоблин', 'Орк', 'Зомби', 'Демон', 'Нежить'];
     // this.name = ['Том', 'Макс', 'Кеша', 'Вася', 'Ваня', 'Петя', 'Саша'];
+    this.langObject = new Language();
+    this.lang = this.langObject.getCurrentLangObject().commandMenu;
   }
 
   init() {
@@ -58,7 +61,7 @@ export default class Commands {
       .map((el, i) => {
         return `
         <li class="item${i}">${el.text}
-          <button class="delete-team${i}" data-index=${i}>delete</button>
+          <button class="delete-team${i}" data-index=${i}>${this.lang.deleteTeamButton}</button>
         </li>
       `;
       })
