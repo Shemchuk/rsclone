@@ -44,7 +44,7 @@ body {
     0px 0px 60px transparentize(red, .5) inset;
 }
 
-h1 {
+.h1-ru {
   font-family: avenir, sans-serif;
   font-size: 50px;
   line-height: 0px;
@@ -80,6 +80,43 @@ h1 {
     animation: flicker 20s linear infinite;
   }
 }
+.h1-eng{
+  font-family: avenir, sans-serif;
+  font-size: 50px;
+  line-height: 0px;
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke-width: 6px;
+  -webkit-text-stroke-color: #2b2b2b;
+  position: relative;
+  text-transform: uppercase;
+  text-shadow: 0px 10px 3px rgba(0,0,0,.2);
+  &:before {
+  content:"Game mode";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparentize(#2B2C2D, .9);
+    text-shadow: 0px 0px 60px transparentize(lighten(red,10%), .3);
+    -webkit-text-stroke-width: 6px;
+    -webkit-text-stroke-color: red;
+    //-webkit-filter: blur(.75px);
+    animation: flicker 20s linear infinite;
+  }
+  &:after {
+    content:"Game mode";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: transparent;
+    //-webkit-filter: blur(.75px);
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: rgba(255,255,255,.8);
+    // -webkit-filter: blur(.75px);
+    animation: flicker 20s linear infinite;
+}
+}
+
 @media (max-width: 650px){
   h1 {
     font-size: 35px;
@@ -153,4 +190,10 @@ h1 {
   79% { opacity: 1; }
 
   100% { opacity: 1; }
+}
+
+@media (max-width: 650px) {
+.h1-eng {
+  font-size: 43px !important;
+}
 }
