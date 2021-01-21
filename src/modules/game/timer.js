@@ -9,7 +9,7 @@ import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from '.
 import { generateFinishGameModal } from './gameContainer';
 import { get, set } from '../utils/storage';
 import Language from '../lang/Language';
-
+import { defaultSettings } from '../Constants';
 // =========== LANG =============== //
 const langObject = new Language();
 // const lang = langObject.getCurrentLangObject().game; // Object "game"
@@ -34,11 +34,23 @@ export function addTeamNamesToTeamsArr() {
   console.log(teams);
 }
 
-const setaliasSettings = { wordsCount: '1', roundTime: '5', lang: 'en' };
+let setaliasSettings = get('aliasSettings', defaultSettings);
 let timer;
 let time = setaliasSettings.roundTime;
 let finishGamePoints = setaliasSettings.wordsCount;
+let isFirstLaunch = true;
 function countdown() {
+  if (isFirstLaunch) {
+    isFirstLaunch = false;
+    console.log(isFirstLaunch);
+    setaliasSettings = get('aliasSettings', defaultSettings);
+    time = setaliasSettings.roundTime;
+    finishGamePoints = setaliasSettings.wordsCount;
+  }
+  // const setaliasSettings = get('aliasSettings', defaultSettings);
+  // let timer;
+  // let time = setaliasSettings.roundTime;
+  // let finishGamePoints = setaliasSettings.wordsCount;
   const lang = langObject.getCurrentLangObject().game;
   document.querySelector('.first').innerHTML = time;
   time--;

@@ -8,12 +8,16 @@ import { generateCard, buttonsClickHandler, teamFlag } from './card';
 import countdown, { teams } from './timer';
 import { generateRoundStatisticsModal } from './gameStatistics';
 import Language from '../lang/Language';
+// import { defaultSettings } from '../Constants';
 
 // =========== LANG =============== //
 // const langObject = new Language();
 // const lang = langObject.getCurrentLangObject().game; // Object "game"
 // const langName = Language.getCurrentLangName(); // 'en' | 'ru'
 // =========== LANG =============== //
+// let setaliasSettings;
+// export let time;
+// export let finishGamePoints;
 
 // Cards selection container
 export const generateCardsSeletionContainer = () => {
@@ -156,6 +160,9 @@ export function game() {
   gsap.from('.cards-container__cards2', { duration: 1, ease: 'power1.out', x: 1500 });
   gsap.from('.cards-container__cards', { duration: 1, ease: 'power1.out', x: -1500 });
   gsap.from('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
+  // setaliasSettings = get('aliasSettings', defaultSettings);
+  // time = setaliasSettings.roundTime;
+  // finishGamePoints = setaliasSettings.wordsCount;
   // generateCardsForSelection();
   // generateCardsForSelection2();
   // gsap.from('.cards__for-adults', {
