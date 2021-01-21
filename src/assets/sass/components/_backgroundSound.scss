@@ -1,6 +1,6 @@
 .background-sound-wrapper {
   padding: 5px 0px;
-  max-width: 300px;
+  max-width: 600px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -9,24 +9,32 @@
   box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+h2 {
+  width: 180px;
+}
+
 .music-control {
-  width: 90px;
+  width: 162px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
 }
 
-.music-control__play, .music-control__forward {
+.music-control__previous, .music-control__play, .music-control__forward, .music-control__mute {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
 
-.play, .forward {
+.previous, .play, .forward, .mute {
   width: 25px;
   height: 25px;
+}
+
+.previous {
+  transform: rotate(180deg);
 }
 
 .music-control__play {

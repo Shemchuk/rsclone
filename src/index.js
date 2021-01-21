@@ -17,14 +17,14 @@ import BackgroundSound from './modules/backgroundSound/backgroundSound';
 
 window.onload = () => {
   console.log('Project starts');
-  loadingBeforeMenu();
+  // loadingBeforeMenu();
   // const menu = new Menu();
   // menu.init();
 
-  // const createBackgroundSound = new CreateBackgroundSound();
-  // createBackgroundSound.init();
-  // const backgroundSound = new BackgroundSound();
-  // backgroundSound.init();
+  const createBackgroundSound = new CreateBackgroundSound();
+  createBackgroundSound.init();
+  const backgroundSound = new BackgroundSound();
+  backgroundSound.init();
 
   // eslint-disable-next-line no-unused-vars
   // const ripple = new MDCRipple(document.querySelector('.mdc-button'));

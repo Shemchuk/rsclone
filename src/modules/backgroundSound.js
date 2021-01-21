@@ -23,7 +23,7 @@ export default class BackgroundSound {
       this.isPlaying = true;
       document.querySelector('audio').play();
     } else {
-      e.target.src = '/./src/assets/icons/play.svg';
+      e.target.src = '/./src/assets/icons/pause.svg';
       e.target.alt = 'Play';
 
       document.querySelector('audio').pause();
@@ -32,7 +32,7 @@ export default class BackgroundSound {
   }
 
   playNextTrack() {
-    this.playBtn.src = '/./src/assets/icons/pause.svg';
+    this.playBtn.src = '/./src/assets/icons/play.svg';
     this.playBtn.alt = 'Pause';
 
     this.isPlaying = true;
