@@ -16,8 +16,12 @@ const en = {
     labelLanguage: 'Language',
   },
   commandMenu: {
+    allCommands: 'All commands',
+    loadingTeams: 'Loading Teams..',
+    teamName: 'Team name',
     addTeamButton: 'Add team',
     startGameButton: 'Start game',
+    deleteTeamButton: 'Delete team',
   },
   game: {
     cardsSeletionContainerClassic: 'Classic',

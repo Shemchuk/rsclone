@@ -5,14 +5,18 @@ export default class BackgroundSound {
     this.backgroundSoundWrapper = document.querySelector('.background-sound-wrapper');
     this.title = document.querySelector('.music__title');
     this.author = document.querySelector('.music__author');
+    this.previousBtn = document.querySelector('.previous');
     this.playBtn = document.querySelector('.play');
     this.forwardBtn = document.querySelector('.forward');
+    this.muteBtn = document.querySelector('.mute');
     this.volumeInput = document.getElementById('volume');
 
     this.currentAudio = 'music';
     this.currentId = 0;
     this.audio = null;
     this.isPlaying = false;
+    this.isMute = false;
+    this.audioValue = 0;
   }
 
   play(e) {
@@ -23,12 +27,23 @@ export default class BackgroundSound {
       this.isPlaying = true;
       document.querySelector('audio').play();
     } else {
-      e.target.src = '/./src/assets/icons/play.svg';
+      e.target.src = '/./src/assets/icons/next.svg';
       e.target.alt = 'Play';
 
       document.querySelector('audio').pause();
       this.isPlaying = false;
     }
+  }
+
+  playPreviousTrack() {
+    this.playBtn.src = '/./src/assets/icons/pause.svg';
+    this.playBtn.alt = 'Pause';
+
+    this.isPlaying = true;
+
+    this.currentId = this.currentId - 1 < 0 ? audioTracks.length : this.currentId - 1;
+    this.init();
+    document.getElementById(this.currentAudio).play();
   }
 
   playNextTrack() {
@@ -40,6 +55,19 @@ export default class BackgroundSound {
     this.currentId = this.currentId + 1 > audioTracks.length ? 0 : this.currentId + 1;
     this.init();
     document.getElementById(this.currentAudio).play();
+  }
+
+  mute() {
+    if (this.isMute) {
+      this.isMute = false;
+      this.volumeInput.value = this.audioValue;
+      document.getElementById(this.currentAudio).volume = this.volumeInput.value;
+    } else {
+      this.audioValue = this.volumeInput.value;
+      this.isMute = true;
+      this.volumeInput.value = 0;
+      document.getElementById(this.currentAudio).volume = this.volumeInput.value;
+    }
   }
 
   changeVolume() {
@@ -64,9 +92,15 @@ export default class BackgroundSound {
     this.author.innerHTML = audioTracks[this.currentId].author;
     // this.audio.setVolume(this.volumeInput);
 
+    this.previousBtn.addEventListener('click', () => {
+      this.playPreviousTrack();
+    });
     this.playBtn.addEventListener('click', this.play);
     this.forwardBtn.addEventListener('click', () => {
       this.playNextTrack();
+    });
+    this.muteBtn.addEventListener('click', () => {
+      this.mute();
     });
     this.volumeInput.addEventListener('input', () => {
       this.changeVolume();
