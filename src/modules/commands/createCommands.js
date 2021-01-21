@@ -2,7 +2,7 @@ import Language from '../lang/Language';
 
 export default class CreateCommands {
   constructor() {
-    this.main = document.querySelector('main');
+    this.sign = document.querySelector('.menu #container .sign-wrap .sign');
     this.langObject = new Language();
     this.lang = this.langObject.getCurrentLangObject().commandMenu;
   }
@@ -21,7 +21,7 @@ export default class CreateCommands {
     </form>
     <button class="button-startgame-play">${this.lang.startGameButton}</button>`;
     commandsContainer.innerHTML = template;
-    this.main.appendChild(commandsContainer);
+    this.sign.appendChild(commandsContainer);
     return this.main;
   }
 }

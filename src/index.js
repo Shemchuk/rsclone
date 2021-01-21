@@ -17,9 +17,9 @@ import BackgroundSound from './modules/backgroundSound/backgroundSound';
 
 window.onload = () => {
   console.log('Project starts');
-  // loadingBeforeMenu();
-  const menu = new Menu();
-  menu.init();
+  loadingBeforeMenu();
+  // const menu = new Menu();
+  // menu.init();
 
   // const createBackgroundSound = new CreateBackgroundSound();
   // createBackgroundSound.init();

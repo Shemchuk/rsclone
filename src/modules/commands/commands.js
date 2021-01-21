@@ -46,9 +46,9 @@ export default class Commands {
       return;
     }
 
-    const player = new Audio();
-    player.src = '/../src/assets/sounds/LAZER.wav';
-    player.play();
+    // const player = new Audio();
+    // player.src = '/../src/assets/sounds/LAZER.wav';
+    // player.play();
 
     this.items.push(item);
     this.populateList(this.items, this.teamsList);
@@ -80,9 +80,9 @@ export default class Commands {
     const { index } = button.dataset;
     this.items.splice(index, 1);
 
-    const player = new Audio();
-    player.src = '/../src/assets/sounds/LAZER.wav';
-    player.play();
+    // const player = new Audio();
+    // player.src = '/../src/assets/sounds/LAZER.wav';
+    // player.play();
 
     localStorage.removeItem('items');
     localStorage.setItem('items', JSON.stringify(this.items));

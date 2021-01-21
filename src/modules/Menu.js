@@ -43,9 +43,9 @@ export default class Menu {
       return;
     }
 
-    const player = new Audio();
-    player.src = '/../src/assets/sounds/LAZER.wav';
-    player.play();
+    // const player = new Audio();
+    // player.src = '/../src/assets/sounds/LAZER.wav';
+    // player.play();
 
     switch (element.id) {
       case 'button-start':
