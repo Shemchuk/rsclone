@@ -1,40 +1,54 @@
-import CONST from './Constants';
-import menuHTML from './components/menu.html';
+import * as CONST from './Constants';
+import menuHTMLTemplate from './components/menuHTMLTemplate';
 import Commands from './commands/commands';
 import CreateCommands from './commands/createCommands';
+import Language from './lang/Language';
 
 // eslint-disable-next-line no-unused-vars
 import { set as setValueToStorage, get as getValueFromStorage } from './utils/storage';
-// import { game } from './modules/game/gameContainer';
 
 export default class Menu {
   constructor() {
     this.tmp = CONST.TMP;
-    const main = document.querySelector('.main');
-    main.innerHTML = menuHTML + main.innerHTML;
+    this.langObject = new Language();
+    // this.lang = this.langObject.getCurrentLangObject().mainMenu;
   }
 
   init() {
-    document.querySelector('.menu').addEventListener('click', this.menuEventHandler);
+    this.createMenu();
+  }
+
+  createMenu() {
+    const main = document.querySelector('.main');
+    const menu = document.querySelector('.menu');
+
+    if (menu) {
+      menu.remove();
+    }
+
+    this.lang = this.langObject.getCurrentLangObject().mainMenu;
+    main.innerHTML = menuHTMLTemplate(this.lang) + main.innerHTML;
+    this.setEventHandlers();
+  }
+
+  setEventHandlers() {
+    document.querySelector('.menu').addEventListener('click', this.menuEventHandler.bind(this));
   }
 
   // eslint-disable-next-line class-methods-use-this
   menuEventHandler(e) {
-    const element = e.target.closest('.menu-button') || e.target.closest('.mapboxgl-marker');
-
+    const element = e.target.closest('.menu-button');
+    console.log('event handler');
     if (!element) {
       return;
     }
-    let createCommands;
-    let commands;
+
     switch (element.id) {
       case 'button-start':
         console.log('start');
         Menu.hideMenu('main-menu');
-        createCommands = new CreateCommands();
-        createCommands.init();
-        commands = new Commands();
-        commands.init();
+        Menu.showCommandMenu();
+
         // document.querySelector('.command-wrapper').style.display = 'block';
         // game();
         // this.showMenu('command-menu');
@@ -43,6 +57,7 @@ export default class Menu {
 
       case 'button-settings':
         console.log('settings');
+        Menu.loadSettingsFromLocalStorage();
         Menu.hideMenu('main-menu');
         Menu.showMenu('settings-menu');
 
@@ -73,9 +88,9 @@ export default class Menu {
 
       case 'button-save':
         console.log('save');
-        Menu.showMenu('main-menu');
-        Menu.hideMenu('settings-menu');
-        Menu.saveSettings();
+        this.saveSettings();
+        // Menu.showMenu('main-menu');
+        // Menu.hideMenu('settings-menu');
 
         break;
 
@@ -90,15 +105,42 @@ export default class Menu {
     }
   }
 
-  static saveSettings() {
+  static showCommandMenu() {
+    const createCommands = new CreateCommands();
+    createCommands.init();
+    const commands = new Commands();
+    commands.init();
+  }
+
+  saveSettings() {
     const settings = {};
     settings.wordsCount = document.querySelector('#inputWordsCount').value;
     settings.roundTime = document.querySelector('#inputRoundTime').value;
     settings.lang = document.querySelector('input[name="lang"]:checked').value;
     setValueToStorage('aliasSettings', settings);
 
+    setTimeout(this.createMenu(), 50);
     console.log(settings);
     console.log('Settings saved!');
+  }
+
+  static loadSettingsFromLocalStorage() {
+    const settings = getValueFromStorage('aliasSettings', CONST.defaultSettings);
+    const wordsCount = document.querySelector('#inputWordsCount');
+    const outputWordsNumber = document.querySelector('#outputWordsNumber');
+    const roundTime = document.querySelector('#inputRoundTime');
+    const outputRoundTime = document.querySelector('#outputRoundTime');
+
+    wordsCount.value = settings.wordsCount;
+    outputWordsNumber.value = settings.wordsCount;
+    roundTime.value = settings.roundTime;
+    outputRoundTime.value = settings.roundTime;
+
+    if (settings.lang === 'en') {
+      document.querySelector('#set-lang__en').checked = true;
+    } else {
+      document.querySelector('#set-lang__ru').checked = true;
+    }
   }
 
   static hideMenu(menuClassName) {
