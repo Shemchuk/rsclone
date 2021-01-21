@@ -7,16 +7,36 @@
 import { generateCard, buttonsClickHandler, teamFlag } from './card';
 import countdown, { teams } from './timer';
 import { generateRoundStatisticsModal } from './gameStatistics';
+import Language from '../lang/Language';
+
+// =========== LANG =============== //
+// const langObject = new Language();
+// const lang = langObject.getCurrentLangObject().game; // Object "game"
+// const langName = Language.getCurrentLangName(); // 'en' | 'ru'
+// =========== LANG =============== //
+
 // Cards selection container
 export const generateCardsSeletionContainer = () => {
+  const langObject = new Language();
+  const lang = langObject.getCurrentLangObject().game;
+  const langName = Language.getCurrentLangName();
   let template = '';
   const cardsSelectionContainer = document.createElement('div');
   cardsSelectionContainer.className = 'cards-selection-container';
-  template += `<div class="cards-selection-container__title"><div id="container"><div class="sign-wrap">
-  <div class="sign">
-    <h1>Режим игры</h1>
-  </div>
-  </div></div></div>`;
+  if (langName == 'ru') {
+    template += `<div class="cards-selection-container__title"><div id="container"><div class="sign-wrap">
+    <div class="sign">
+      <h1 class="h1-ru">Режим игры</h1>
+    </div>
+    </div></div></div>`;
+  } else {
+    template += `<div class="cards-selection-container__title"><div id="container"><div class="sign-wrap">
+    <div class="sign">
+      <h1 class="h1-eng">Game mode</h1>
+    </div>
+    </div></div></div>`;
+  }
+
   template += `<div class="cards-selection-container__cards">`;
   template += `<div class="cards__for-adults cards-container__cards"><div id="container"><div class="sign-wrap">
   <div class="sign sign1"><p class="first-child"><a href="#">
@@ -24,7 +44,7 @@ export const generateCardsSeletionContainer = () => {
 </a></p></div></div></div></div>`;
   template += `<div class="cards__main cards-container__cards2"><div id="container"><div class="sign-wrap">
   <div class="sign sign2"><p class="second-child"><a href="#">
-  Классика
+  ${lang.cardsSeletionContainerClassic}
 </a></p></div></div></div></div>`;
   // template += `<div class="cards-container1"></div>`;
   // template += `<div class="cards-container2"></div>`;
@@ -65,18 +85,20 @@ export const generateCardsSeletionContainer = () => {
 
 // Game container
 export const generateGameContainer = () => {
+  const langObject = new Language();
+  const lang = langObject.getCurrentLangObject().game;
   let template = '';
   const gameContainer = document.createElement('div');
   gameContainer.className = 'game-container';
   template += `<div class="team-container">`;
   template += `<div class="team-container__team-name"><div class="sign-wrap">
   <div class="sign sign4"><div class="team-container__timer"><div><h2>
-  Время: <span class="first"></span>
+  ${lang.gameContainerTime} <span class="first"></span>
 </h2>
 </div></div><p class="third-child"><a href="#">
   ${teams[teamFlag].name}
 </a></p><div class="team-container__team-points"><div><h2>
-Очки: <span class="second">${teams[teamFlag].points}</span>
+${lang.gameContainerPoints} <span class="second">${teams[teamFlag].points}</span>
 </h2>
 </div></div>
   </div></div></div>`;
@@ -84,16 +106,14 @@ export const generateGameContainer = () => {
   template += '<div class="card game-container__card">';
   template += `<div class="sign-wrap">
   <div class="sign sign5">`;
-  template +=
-    '<button class="button game-container__button_ready btn btn-neon btn-slow"><span></span><span></span><span></span><span></span>Готово</button>';
+  template += `<button class="button game-container__button_ready btn btn-neon btn-slow"><span></span><span></span><span></span><span></span> ${lang.gameContainerReady}</button>`;
 
   template += `<div class="neon">
   <div class="neon" id="section16">
     <p class="card__word neon"></p>
   </div>
   </div>`;
-  template +=
-    '<button class="button game-container__button_skip btn btn-neon btn-blue btn-slow"><span></span><span></span><span></span><span></span>Пропуск</button>';
+  template += `<button class="button game-container__button_skip btn btn-neon btn-blue btn-slow"><span></span><span></span><span></span><span></span> ${lang.gameContainerSkip}</button>`;
 
   template += `</div>`;
   template += `</div>`;
@@ -101,22 +121,33 @@ export const generateGameContainer = () => {
   return gameContainer;
 };
 export const generateFinishGameModal = () => {
+  const langObject = new Language();
+  const lang = langObject.getCurrentLangObject().game;
+  const langName = Language.getCurrentLangName();
   let template = '';
   const finishGameModal = document.createElement('div');
   finishGameModal.className = 'finish-game-modal';
-  template += `<div class="finish-game-modal__title"><div class="sign-wrap">
+  if (langName == 'ru') {
+    template += `<div class="finish-game-modal__title"><div class="sign-wrap">
   <div class="sign">
-    <h1>Конец игры!</h1>
+    <h1 class="h1-end-ru">Конец игры!</h1>
   </div>
   </div></div>`;
+  } else {
+    template += `<div class="finish-game-modal__title"><div class="sign-wrap">
+  <div class="sign">
+    <h1 class="h1-end-eng">Game over!</h1>
+  </div>
+  </div></div>`;
+  }
   template += `<div class="sign-wrap"><div class="sign"><div class="finish-game-modal__1st-place"><div><h2>
-  Победила <span class="second">команда:</span>
+  ${lang.finishGameModalWin} <span class="second">${lang.finishGameModalTeam}</span>
   </h2></div></div>`;
   template += `<div class="finish-game-modal__1st-place_name"><p class="third-child"><a href="#">${teams[0].name}</a></p></div>`;
   template += `<div class="finish-game-modal__1st-place_points"><div><h2>
-  Очки: <span class="second">${teams[0].points}</span>
+  ${lang.gameContainerPoints} <span class="second">${teams[0].points}</span>
   </h2></div></div>`;
-  template += `<button class="back-to-main-menu__button btn btn-neon btn-purple btn-slow"><span></span><span></span><span></span><span></span>Назад в меню</button></div>`;
+  template += `<button class="back-to-main-menu__button btn btn-neon btn-purple btn-slow"><span></span><span></span><span></span><span></span>${lang.finishGameModalBackToMenu}</button></div>`;
   finishGameModal.innerHTML = template;
   return finishGameModal;
 };

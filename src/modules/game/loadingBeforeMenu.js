@@ -7,7 +7,7 @@ export const generateLoardingBeforeMenu = () => {
   template += `
     <div id="sign" class="off"><div class="message off" id="ready"><span class="Neon" id="N">A</span><span class="Neon" id="E">li</span><span class="Neon" id="O">a</span><span class="Neon" id="N2">s</span></div></div>`;
 
-  template += `<div id="container"><div class="sign-wrap">
+  template += `<div class="loading-line" id="container"><div class="sign-wrap">
   <div class="sign"><div class="loader"><p class="loarder-start"><a class="loarder-start2" href="#">Loading<p><a>
     <div></div>
   </div>`;
@@ -34,7 +34,7 @@ export function loadingBeforeMenu() {
         const menu = new Menu();
         menu.init();
         // document.querySelector('.loading-block').style.position = 'absolute';
-        gsap.from('.menu', { duration: 1.5, y: 500 });
+        gsap.from('.menu', { duration: 1, y: 500 });
       }, 500);
     }, 1500);
     // gsap.to('.loader', { duration: 3, opacity: 0, scale: 0.5 });

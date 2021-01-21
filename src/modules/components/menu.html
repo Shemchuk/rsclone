@@ -1,30 +1,24 @@
-const menuHTMLTemplate = (lang) => `
 <div class="menu">
-  <div id="container">
-  <div class="sign-wrap">
-  <div class="sign">
-    <div class="main-menu">
-    <button id="button-start" class="menu-button"><p><a href="#">
-    ${lang.startButton}
-  </a></p></button>
-    <button id="button-settings" class="menu-button"><p><a href="#">${lang.settingsButton}</a></p></button>
-    <button id="button-tutorial" class="menu-button"><p><a href="#">${lang.tutorialButton}</a></p></button>
-    <button id="button-statistics" class="menu-button"><p><a href="#">${lang.statisticsButton}</a></p></button>
-    </div>
-    
-  
+  <div class="main-menu">
+    <h2 class="menu-title"></h2>
+    <button id="button-continue" class="menu-button" disabled>Continue</button>
+    <button id="button-start" class="menu-button">Start</button>
+    <button id="button-settings" class="menu-button">Settings</button>
+    <button id="button-tutorial" class="menu-button">Tutorial</button>
+    <button id="button-statistics" class="menu-button">Statistics</button>
+  </div>
 
   <div class="settings-menu hide-menu">
-    <h2 class="menu-title menu-font"><p><a href="#">${lang.settingsMenuTitle}</a></p></h2>
+    <h2 class="menu-title">Settings</h2>
 
-    <div class="settings-menu__item set__words-number menu-font">
-      <p class="setting-paragraph "><a href="#">${lang.labelCountOfWords}</a></p>
-      <div class="setting-slider__container slider__words-count menu-font">
+    <div class="settings-menu__item set__words-number">
+      <p class="setting-paragraph">Count of words</p>
+      <div class="setting-slider__container slider__words-count">
         <input
           id="inputWordsCount"
           class="slider-input"
           type="range"
-          min="5"
+          min="10"
           max="200"
           value="50"
           name="words"
@@ -32,24 +26,24 @@ const menuHTMLTemplate = (lang) => `
           aria-label="Count of words"
           oninput="outputWordsNumber.value=inputWordsCount.value;"
         />
-        <p><a><output
+        <output
           id="outputWordsNumber"
           class="slider__value-indicator"
           name="output__words-number"
           for="inputWordsCount"
           >60</output
-        ></a></p>
+        >
       </div>
     </div>
 
-    <div class="settings-menu__item set__round-time menu-font">
-      <p class="setting-paragraph"><a>${lang.labelRoundTime}</a></p>
-      <div class="setting-slider__container slider__round-time menu-font">
-      <input
+    <div class="settings-menu__item set__round-time">
+      <p class="setting-paragraph">Round time, seconds</p>
+      <div class="setting-slider__container slider__round-time">
+        <input
           id="inputRoundTime"
           class="slider-input"
           type="range"
-          min="5"
+          min="10"
           max="120"
           value="60"
           name="round-time"
@@ -57,40 +51,40 @@ const menuHTMLTemplate = (lang) => `
           aria-label="Round time"
           oninput="outputRoundTime.value=inputRoundTime.value;"
         />
-        <p><a><output
+        <output
           id="outputRoundTime"
-          class="slider__value-indicator menu-font"
+          class="slider__value-indicator"
           name="output__words-number"
           for="inputWordsCount"
           >60</output
-        ></a></p>
+        >
       </div>
     </div>
 
     <div class="settings-menu__item set__lang">
-      <div class="item__row-container menu-font">
-        <p class="setting-paragraph"><a>${lang.labelLanguage}</a></p>
+      <div class="item__row-container">
+        <p class="setting-paragraph">Language</p>
         <div class="input__container">
           <input type="radio" id="set-lang__en" name="lang" value="en" checked />
-          <label for="set-lang__en"><p><a>ENG</p></a></label>
+          <label for="set-lang__en">ENG</label>
           <input type="radio" id="set-lang__ru" name="lang" value="ru" />
-          <label for="set-lang__ru"><p><a>RUS</p></a></label>
+          <label for="set-lang__ru">RUS</label>
         </div>
       </div>
     </div>
 
     <div class="settings__button-block">
-      <button id="button-save" class="menu-button"><p><a href="#">${lang.saveButton}</a></p></button>
-      <button id="button-back" class="menu-button"><p><a href="#">${lang.backButton}</a></p></button>
+      <button id="button-save" class="menu-button">Save</button>
+      <button id="button-back" class="menu-button">Back</button>
     </div>
   </div>
 
-  <div class="tutorial-menu hide-menu menu-font">
-    <h2 class="menu-title"><p><a>${lang.TutorialMenuTitle}</p></a></h2>
+  <div class="tutorial-menu hide-menu">
+    <h2 class="menu-title">Tutorial</h2>
 
     <div class="tutorial-text">
-      <h3></h3>
-      <p data-title="Чо-то там" class="dialog-box_info">
+      <h3>Tutorial</h3>
+      <p>
         Cillum dolor esse sit incididunt velit eiusmod magna ad nostrud officia aute dolor dolor.
         Magna esse ullamco pariatur adipisicing consectetur eu commodo officia. Ex cillum consequat
         mollit minim elit est deserunt occaecat nisi amet. Quis aliqua nostrud Lorem occaecat sunt.
@@ -98,7 +92,7 @@ const menuHTMLTemplate = (lang) => `
         eiusmod aute ipsum sunt veniam do est. Occaecat mollit aliquip ut proident consectetur amet
         ex dolore consectetur aliqua elit.
       </p>
-      <p data-title="Чо-то там" class="dialog-box_info">>
+      <p>
         Commodo nisi non consectetur voluptate incididunt mollit duis dolore amet amet tempor
         exercitation. Qui amet aute ea aute id ad aliquip proident. Irure duis qui labore deserunt
         enim in quis nisi sint consequat aliqua. Ex proident labore et laborum tempor fugiat sint
@@ -109,7 +103,7 @@ const menuHTMLTemplate = (lang) => `
         excepteur adipisicing culpa. Laborum cupidatat ullamco eu duis anim reprehenderit proident
         aute ad consectetur eiusmod.
       </p>
-      <p data-title="Чо-то там" class="dialog-box_info">>
+      <p>
         Tempor tempor aliqua in commodo cillum Lorem magna dolore proident Lorem. Esse ad consequat
         est excepteur irure eu irure quis aliqua qui. Do mollit esse veniam excepteur ut veniam anim
         minim dolore sit commodo consequat duis commodo. Sunt dolor reprehenderit ipsum minim
@@ -120,13 +114,7 @@ const menuHTMLTemplate = (lang) => `
     </div>
 
     <div class="tutorial__button-block">
-      <button id="tutorial__button-back" class="menu-button"><p><a>Get back</a></p></button>
+      <button id="tutorial__button-back" class="menu-button">Back</button>
     </div>
   </div>
 </div>
-</div>
-</div>
-    </div>
-`;
-
-export default menuHTMLTemplate;

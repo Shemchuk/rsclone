@@ -15,10 +15,11 @@ body {
 }
 
 /*Neon*/
-p {
-  text-align: center;
-  font-size: 7em;
-  // margin: 20px 0 20px 0;
+.second-child, .first-child {
+  a{
+    text-align: center;
+    font-size: 7em;
+  }
 }
 a {
   text-decoration: none;
@@ -114,6 +115,7 @@ p a:hover {
     -webkit-animation: neon6 1.5s ease-in-out infinite alternate;
     -moz-animation: neon6 1.5s ease-in-out infinite alternate;
     animation: neon6 1.5s ease-in-out infinite alternate;
+    font-size: 7.5em;
   }
 
   a:hover {
@@ -136,10 +138,13 @@ p a:hover {
   #container {
     width: 100%;
   }
-  p {
-    font-size: 4.5em;
-  }
-  .third-child{
-    font-size: 7.5em;
-  }
+  .second-child, .first-child {
+    a{
+      text-align: center;
+      font-size: 4.5em;
+    }
+  
+  
+}
+
 }
