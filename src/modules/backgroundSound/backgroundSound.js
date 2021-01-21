@@ -16,7 +16,7 @@ export default class BackgroundSound {
     this.audio = null;
     this.isPlaying = false;
     this.isMute = false;
-    this.beforeMute = 0;
+    this.audioValue = 0;
   }
 
   play(e) {
@@ -58,16 +58,16 @@ export default class BackgroundSound {
   }
 
   mute() {
-    // if (this.isMute) {
-    this.beforeMute = this.volumeInput.value;
-    this.volumeInput.value = 0;
-    document.getElementById(this.currentAudio).volume = this.volumeInput.value;
-    this.isMute = true;
-    // } else {
-    //   this.volumeInput.value = this.beforeMute;
-    //   document.getElementById(this.currentAudio).volume = this.before;
-    //   this.isMute = false;
-    // }
+    if (this.isMute) {
+      this.isMute = false;
+      this.volumeInput.value = this.audioValue;
+      document.getElementById(this.currentAudio).volume = this.volumeInput.value;
+    } else {
+      this.audioValue = this.volumeInput.value;
+      this.isMute = true;
+      this.volumeInput.value = 0;
+      document.getElementById(this.currentAudio).volume = this.volumeInput.value;
+    }
   }
 
   changeVolume() {
