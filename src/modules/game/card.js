@@ -10,6 +10,7 @@ import { mainGamePlay } from './gameContainer';
 import { teams } from './timer';
 import Menu from '../Menu';
 import Language from '../lang/Language';
+import { generateLoardingBeforeMenu } from './loadingBeforeMenu';
 
 export let teamFlag = 0;
 // import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
@@ -112,6 +113,10 @@ function clickContainerButtons(e) {
   } else if (clickBackToMainMenu) {
     // Menu.showMenu('main-menu');
     document.querySelector('.main').innerHTML = '';
+    document.querySelector('.main').appendChild(generateLoardingBeforeMenu());
+    document.querySelector('.loading-line').style.display = 'none';
+    document.querySelector('#ready').classList.remove('off');
+    document.querySelector('#sign').classList.remove('off');
     const menu = new Menu();
     menu.init();
   }

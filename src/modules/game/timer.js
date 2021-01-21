@@ -8,6 +8,13 @@ import { teamFlag, arrConfirmed, arrSkiped } from './card';
 import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
 import { generateFinishGameModal } from './gameContainer';
 import { get, set } from '../utils/storage';
+import Language from '../lang/Language';
+
+// =========== LANG =============== //
+const langObject = new Language();
+// const lang = langObject.getCurrentLangObject().game; // Object "game"
+const langName = Language.getCurrentLangName(); // 'en' | 'ru'
+// =========== LANG =============== //
 
 // ___________________________________Temporary data______________________________________________
 // export const teamNames = ['Team 1', 'Team 2'];
@@ -26,12 +33,13 @@ export function addTeamNamesToTeamsArr() {
   teamNamesFromCommandsList.forEach((el) => teams.push(createCommandFromLS(el)));
   console.log(teams);
 }
-// решить проблему с локал стораджем, не подхватывает базовое значение через функцию
+
 const setaliasSettings = { wordsCount: '1', roundTime: '5', lang: 'en' };
 let timer;
 let time = setaliasSettings.roundTime;
 let finishGamePoints = setaliasSettings.wordsCount;
 function countdown() {
+  const lang = langObject.getCurrentLangObject().game;
   document.querySelector('.first').innerHTML = time;
   time--;
   if (time <= -1) {
@@ -39,7 +47,7 @@ function countdown() {
       time = setaliasSettings.roundTime;
       clearTimeout(timer);
       // gsap.to('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
-      gsap.to('.game-container__card', { duration: 1, ease: 'power1.out', x: -1500 });
+      gsap.to('.game-container__card', { duration: 1, ease: 'power1.out', x: -2000 });
       setTimeout(function () {
         gsap.to('.team-container', { duration: 1, ease: 'power1.out' });
         document.querySelector('.game-container__card').style.display = 'none';
@@ -48,7 +56,7 @@ function countdown() {
         gsap.from('.hidden', { duration: 1, ease: 'power1.out', x: 1000 });
       }, 500);
       // gsap.from('.hidden', { duration: 1, ease: 'power1.out', y: 500 });
-      document.querySelector('.first').innerHTML = 'Время вышло!';
+      document.querySelector('.first').innerHTML = `${lang.gameContainertimeOut}`;
       // console.log(arrConfirmed);
       arrConfirmed.forEach((el) =>
         document
