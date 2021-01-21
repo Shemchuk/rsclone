@@ -77,7 +77,8 @@ function countdown() {
         document.querySelector('.main').appendChild(generateFinishGameModal());
       }, 1000);
       let date = new Date();
-      set('AliasStatistics', { date, teams });
+      // set('AliasStatistics', { date, teams });
+
       console.log({ date, teams });
     }
   } else {
