@@ -9,10 +9,10 @@ const menuHTMLTemplate = (lang) => `
   </a></p></button>
     <button id="button-settings" class="menu-button"><p><a href="#">${lang.settingsButton}</a></p></button>
     <button id="button-tutorial" class="menu-button"><p><a href="#">${lang.tutorialButton}</a></p></button>
-    <button id="button-statistics" class="menu-button"><p><a href="#">${lang.statisticsButton}</a></p></button>
+    <button id="button-result" class="menu-button"><p><a href="#">${lang.resultButton}</a></p></button>
     </div>
-    
-  
+
+
 
   <div class="settings-menu hide-menu">
     <h2 class="menu-title menu-font"><p><a href="#">${lang.settingsMenuTitle}</a></p></h2>
@@ -72,7 +72,7 @@ const menuHTMLTemplate = (lang) => `
         <p class="setting-paragraph"><a>${lang.labelLanguage}</a></p>
         <div class="input__container">
           <input type="radio" id="set-lang__en" name="lang" value="en" checked />
-          <label for="set-lang__en"><p><a>ENG</p></a></label>
+          <label for="set-lang__en"><p><a>ENG &nbsp &nbsp</p></a></label>
           <input type="radio" id="set-lang__ru" name="lang" value="ru" />
           <label for="set-lang__ru"><p><a>RUS</p></a></label>
         </div>
@@ -120,9 +120,40 @@ const menuHTMLTemplate = (lang) => `
     </div>
 
     <div class="tutorial__button-block">
-      <button id="tutorial__button-back" class="menu-button"><p><a>Get back</a></p></button>
+      <button id="tutorial__button-back" class="menu-button"><p><a>${lang.backButton}</a></p></button>
     </div>
   </div>
+
+  <div class="result-menu hide-menu menu-font">
+    <h2 class="menu-title"><p><a>${lang.resultMenuTitle}</p></a></h2>
+
+    <div class="result-table-container">
+    <table class="result-table">
+      <thead class="result-table__head">
+        <tr class="result-table__head-row">
+          <th class="result-table__head-row-cell" data-prop-name="teamName">${lang.tableLabelTeam}</th>
+          <th class="result-table__head-row-cell" data-prop-name="score">${lang.tableLabelScore}</th>
+        </tr>
+      </thead>
+      <tbody class="result-table__body">
+        <tr class="result-table__body-row">
+          <td class="result-table__body-row-cell">Team #1</td>
+          <td class="result-table__body-row-cell">100</td>
+        </tr>
+        <tr class="result-table__body-row">
+          <td class="result-table__body-row-cell">Team #2</td>
+          <td class="result-table__body-row-cell">50</td>
+        </tr>
+      </tbody>
+    </table>
+
+    </div>
+
+    <div class="result__button-block">
+      <button id="result__button-back" class="menu-button"><p><a>${lang.backButton}</a></p></button>
+    </div>
+  </div>
+
 </div>
 </div>
 </div>
