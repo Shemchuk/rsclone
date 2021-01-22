@@ -11,17 +11,18 @@ export default class Commands {
     this.items = JSON.parse(localStorage.getItem('items')) || [];
     this.backMenuButton = document.querySelector('.button-backmenu-menu');
     this.startGameButton = document.querySelector('.button-startgame-play');
-    // this.adjective = ['Ужасный', 'Злобный', 'Сопливый', 'Колючий', 'Опасный', 'Вонючий', 'Черный'];
-    // this.race = ['Огр', 'Гном', 'Гоблин', 'Орк', 'Зомби', 'Демон', 'Нежить'];
-    // this.name = ['Том', 'Макс', 'Кеша', 'Вася', 'Ваня', 'Петя', 'Саша'];
+    this.adjective = ['Ужасный', 'Злобный', 'Сопливый', 'Колючий', 'Опасный', 'Вонючий', 'Черный'];
+    this.race = ['Огр', 'Гном', 'Гоблин', 'Орк', 'Зомби', 'Демон', 'Нежить'];
+    this.name = ['Том', 'Макс', 'Кеша', 'Вася', 'Ваня', 'Петя', 'Саша'];
     this.langObject = new Language();
     this.lang = this.langObject.getCurrentLangObject().commandMenu;
   }
 
   init() {
+    this.generateTeamName();
+    this.populateList(this.items, this.teamsList);
     this.addTeams.addEventListener('submit', this.addItem.bind(this));
     this.teamsList.addEventListener('click', this.deleteItem.bind(this));
-    this.populateList(this.items, this.teamsList);
     this.startGameButton.addEventListener('click', function () {
       document.querySelector('.main').innerHTML = '';
       addTeamNamesToTeamsArr();
@@ -33,11 +34,26 @@ export default class Commands {
     });
   }
 
+  generateTeamName() {
+    while (this.items.length < 2) {
+      const text = `${this.random(this.adjective)} ${this.random(this.race)} ${this.random(
+        this.name
+      )}`;
+
+      const item = {
+        text,
+      };
+
+      this.items.push(item);
+      localStorage.setItem('items', JSON.stringify(this.items));
+    }
+  }
+
   // eslint-disable-next-line class-methods-use-this
-  // random(arr) {
-  //   const rand = Math.floor(Math.random() * arr.length);
-  //   return arr[rand];
-  // }
+  random(arr) {
+    const index = Math.floor(Math.random() * arr.length);
+    return arr[index];
+  }
 
   addItem(e) {
     e.preventDefault();
@@ -68,8 +84,8 @@ export default class Commands {
   }
 
   populateList() {
-    // if (this.items === []) {
-    //   text = `${this.random(this.adjective)} ${this.random(this.race)} ${this.random(this.name)}`;
+    // if (this.items.length === 0) {
+    //   this.generateTeamName();
     // } else {
     this.teamsList.innerHTML = this.items
       .map((el, i) => {
@@ -80,6 +96,7 @@ export default class Commands {
       `;
       })
       .join('');
+    // }
   }
 
   deleteItem(e) {
