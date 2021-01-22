@@ -90,6 +90,14 @@ export default class Menu {
 
         break;
 
+      case 'result__button-back':
+        console.log('back from result');
+        Menu.showMenu('main-menu');
+        Menu.hideMenu('result-menu');
+        // Menu.hideMenu('tutorial-menu');
+
+        break;
+
       case 'button-save':
         console.log('save');
         this.saveSettings();
@@ -98,10 +106,10 @@ export default class Menu {
 
         break;
 
-      case 'button-statistics':
-        console.log('statistics');
-        // Menu.showMenu('main-menu');
-        // Menu.hideMenu('settings-menu');
+      case 'button-result':
+        console.log('result');
+        Menu.showMenu('result-menu');
+        Menu.hideMenu('main-menu');
 
         break;
       default:
