@@ -1,6 +1,7 @@
 import { game } from '../game/gameContainer';
 import { addTeamNamesToTeamsArr } from '../game/timer';
 import Language from '../lang/Language';
+import Menu from '../Menu';
 
 export default class Commands {
   constructor() {
@@ -8,6 +9,7 @@ export default class Commands {
     this.teamsList = document.querySelector('.teams');
     // this.deleteTeam = document.querySelector('.delete-team');
     this.items = JSON.parse(localStorage.getItem('items')) || [];
+    this.backMenuButton = document.querySelector('.button-backmenu-menu');
     this.startGameButton = document.querySelector('.button-startgame-play');
     // this.adjective = ['Ужасный', 'Злобный', 'Сопливый', 'Колючий', 'Опасный', 'Вонючий', 'Черный'];
     // this.race = ['Огр', 'Гном', 'Гоблин', 'Орк', 'Зомби', 'Демон', 'Нежить'];
@@ -24,6 +26,10 @@ export default class Commands {
       document.querySelector('.main').innerHTML = '';
       addTeamNamesToTeamsArr();
       game();
+    });
+    this.backMenuButton.addEventListener('click', function () {
+      const menu = new Menu();
+      menu.init();
     });
   }
 

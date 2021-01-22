@@ -20,6 +20,7 @@ const ru = {
     loadingTeams: 'Загрузка списка команд..',
     teamName: 'Название команды',
     addTeamButton: 'Добавить команду',
+    backMenuButton: 'В меню',
     startGameButton: 'Начать игру',
     deleteTeamButton: 'Удалить команду',
   },

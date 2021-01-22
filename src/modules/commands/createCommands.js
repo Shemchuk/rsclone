@@ -19,7 +19,10 @@ export default class CreateCommands {
       <input type="text" name="item" placeholder="${this.lang.teamName}">
       <input type="submit" value="${this.lang.addTeamButton}">
     </form>
-    <button class="button-startgame-play">${this.lang.startGameButton}</button>`;
+    <div class="teams-button">
+      <button class="button-backmenu-menu">${this.lang.backMenuButton}</button>;
+      <button class="button-startgame-play">${this.lang.startGameButton}</button>
+    </div>`;
     commandsContainer.innerHTML = template;
     this.sign.appendChild(commandsContainer);
     return this.main;

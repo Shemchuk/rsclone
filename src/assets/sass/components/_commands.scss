@@ -41,6 +41,12 @@
   margin-top: 20px;
 }
 
+.teams-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .add-teams input, button {
   padding: 10px;
   margin: 3px;
