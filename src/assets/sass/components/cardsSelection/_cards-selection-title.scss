@@ -45,7 +45,7 @@ body {
 }
 
 .h1-ru {
-  font-family: avenir, sans-serif;
+  font-family: avenir, sans-serif, 'Jura', sans-serif;
   font-size: 50px;
   line-height: 0px;
   font-weight: 800;
@@ -81,7 +81,7 @@ body {
   }
 }
 .h1-eng{
-  font-family: avenir, sans-serif;
+  font-family: avenir, sans-serif, 'Jura', sans-serif;
   font-size: 50px;
   line-height: 0px;
   font-weight: 800;
@@ -156,6 +156,7 @@ body {
 
 .sign5{
   padding: 0px 3px;
+  min-width: 314px;
 }
 
 @keyframes flicker {

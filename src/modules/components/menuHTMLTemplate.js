@@ -90,7 +90,7 @@ const menuHTMLTemplate = (lang) => `
 
     <div class="tutorial-text">
       <h3></h3>
-      <p data-title="Чо-то там" class="dialog-box_info">
+      <p data-title="The essence" class="dialog-box_info">
         Cillum dolor esse sit incididunt velit eiusmod magna ad nostrud officia aute dolor dolor.
         Magna esse ullamco pariatur adipisicing consectetur eu commodo officia. Ex cillum consequat
         mollit minim elit est deserunt occaecat nisi amet. Quis aliqua nostrud Lorem occaecat sunt.
@@ -98,7 +98,7 @@ const menuHTMLTemplate = (lang) => `
         eiusmod aute ipsum sunt veniam do est. Occaecat mollit aliquip ut proident consectetur amet
         ex dolore consectetur aliqua elit.
       </p>
-      <p data-title="Чо-то там" class="dialog-box_info">>
+      <p data-title="Points" class="dialog-box_info">>
         Commodo nisi non consectetur voluptate incididunt mollit duis dolore amet amet tempor
         exercitation. Qui amet aute ea aute id ad aliquip proident. Irure duis qui labore deserunt
         enim in quis nisi sint consequat aliqua. Ex proident labore et laborum tempor fugiat sint
@@ -109,7 +109,7 @@ const menuHTMLTemplate = (lang) => `
         excepteur adipisicing culpa. Laborum cupidatat ullamco eu duis anim reprehenderit proident
         aute ad consectetur eiusmod.
       </p>
-      <p data-title="Чо-то там" class="dialog-box_info">>
+      <p data-title="Winner" class="dialog-box_info">>
         Tempor tempor aliqua in commodo cillum Lorem magna dolore proident Lorem. Esse ad consequat
         est excepteur irure eu irure quis aliqua qui. Do mollit esse veniam excepteur ut veniam anim
         minim dolore sit commodo consequat duis commodo. Sunt dolor reprehenderit ipsum minim

@@ -17,11 +17,11 @@ const ru = {
   },
   commandMenu: {
     allCommands: 'Все команды',
-    loadingTeams: 'Загрузка списка команд..',
+    loadingTeams: 'Создайте команду',
     teamName: 'Название команды',
-    addTeamButton: 'Добавить команду',
+    addTeamButton: 'Добавить',
     startGameButton: 'Начать игру',
-    deleteTeamButton: 'Удалить команду',
+    deleteTeamButton: `&#10006`,
   },
   game: {
     cardsSeletionContainerClassic: 'Классика',

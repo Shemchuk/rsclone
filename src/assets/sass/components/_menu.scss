@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap');
+
 .menu {
   .main-menu,
   .settings-menu,
@@ -114,7 +117,7 @@
   p a {
     font-size: 45px;
     color: #228DFF;
-    font-family: Iceland;
+    font-family: Iceland, 'Jura', sans-serif;
     box-sizing: border-box;
   }
 }
@@ -240,6 +243,7 @@
 
 //______________TUTORIAL___________________
 
+
 $white: #fafafa;
 $background: #222;
 
@@ -258,10 +262,14 @@ $background: #222;
     left: 50%;
     padding: 0 1em;
     position: absolute;    
-    text-transform: uppercase;
+    // text-transform: uppercase;
     top: -0.6em;
     text-align: center;
     transform: translateX(-50%);
+    font-size: 25px;
+  // color: #228DFF;
+  font-family: Iceland, 'Jura', sans-serif;
+  box-sizing: border-box;
   }
 }
 
@@ -285,9 +293,17 @@ $background: #222;
 
 .dialog-box_info {
   @include dialog-box(); 
+  font-size: 15px;
+  // color: #228DFF;
+  font-family: Iceland, 'Jura', sans-serif;
 }
 @media (max-width: 550px) {
   .dialog-box_info {
-    width: 240px;
+    width: 203px;
+    &:before {
+      background: $background;
+      content: attr(data-title);
+      font-size: 25px;
   }
+}
 }

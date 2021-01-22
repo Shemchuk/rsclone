@@ -17,11 +17,11 @@ const en = {
   },
   commandMenu: {
     allCommands: 'All commands',
-    loadingTeams: 'Loading Teams..',
+    loadingTeams: 'Create team please',
     teamName: 'Team name',
     addTeamButton: 'Add team',
     startGameButton: 'Start game',
-    deleteTeamButton: 'Delete team',
+    deleteTeamButton: `&#10006`,
   },
   game: {
     cardsSeletionContainerClassic: 'Classic',

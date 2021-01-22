@@ -17,12 +17,12 @@ const generateRoundStatisticsModal = () => {
   template += `<div class="sign sign5">`;
   template += `<div class="round-stat-modal__container">`;
   template += `<div class="round-stat-confirmed round-stat__border">`;
-  template += `<h2 class="round-stat-confirmed__title">${lang.roundStatisticsModalConfirmed}`;
-  template += `<span class="round-stat-confirmed__container"></span>`;
-  template += `</h2></div>`;
+  template += `<h2 class="round-stat-confirmed__title">${lang.roundStatisticsModalConfirmed}</h2>`;
+  template += `<span class="round-stat__container round-stat-confirmed__container"></span>`;
+  template += `</div>`;
   template += `<div class="round-stat-skiped round-stat__border">`;
-  template += `<h2 class="round-stat-skiped__title">${lang.roundStatisticsModalSkiped}`;
-  template += `<span class="round-stat-skiped__container"></span>`;
+  template += `<h2 class="round-stat-skiped__title">${lang.roundStatisticsModalSkiped}</h2>`;
+  template += `<span class="round-stat__container round-stat-skiped__container"></span>`;
   template += `</div>`;
   template += `</div>`;
   template += `<button class="button round-stat-modal__button btn btn-neon btn-purple btn-slow"><span></span><span></span><span></span><span></span>${lang.roundStatisticsNextRound}</button>`;

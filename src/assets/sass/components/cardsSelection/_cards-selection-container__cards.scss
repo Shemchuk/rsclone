@@ -11,7 +11,7 @@ body {
 
 #container {
   width: 100%;
-  margin: 50px 0 0 0;
+  margin: 20px 0 0 0;
 }
 
 /*Neon*/
@@ -29,7 +29,7 @@ a {
 }
 .first-child{
    a {
-    font-family: Monoton, sans-serif;
+    font-family: Monoton, sans-serif, 'Jura', sans-serif;
     color: #FF1177;
     -webkit-animation: none;
     -moz-animation: none;
@@ -70,7 +70,7 @@ a {
 .second-child{
   a {
     color: #FFDD1B;
-    font-family: Pacifico, sans-serif;
+    font-family: Pacifico, sans-serif, 'Jura', sans-serif;
   }
 
    a:hover {
