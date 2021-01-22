@@ -1,6 +1,7 @@
 import { game } from '../game/gameContainer';
 import { addTeamNamesToTeamsArr } from '../game/timer';
 import Language from '../lang/Language';
+import Menu from '../Menu';
 
 export default class Commands {
   constructor() {
@@ -8,18 +9,19 @@ export default class Commands {
     this.teamsList = document.querySelector('.teams');
     // this.deleteTeam = document.querySelector('.delete-team');
     this.items = JSON.parse(localStorage.getItem('items')) || [];
+    this.backMenuButton = document.querySelector('.button-backmenu-menu');
     this.startGameButton = document.querySelector('.button-startgame-play');
-    // this.adjective = ['Ужасный', 'Злобный', 'Сопливый', 'Колючий', 'Опасный', 'Вонючий', 'Черный'];
-    // this.race = ['Огр', 'Гном', 'Гоблин', 'Орк', 'Зомби', 'Демон', 'Нежить'];
-    // this.name = ['Том', 'Макс', 'Кеша', 'Вася', 'Ваня', 'Петя', 'Саша'];
+    this.adjective = ['Ужасный', 'Злобный', 'Сопливый', 'Колючий', 'Опасный', 'Вонючий', 'Черный'];
+    this.race = ['Огр', 'Гном', 'Гоблин', 'Орк', 'Зомби', 'Демон', 'Нежить'];
     this.langObject = new Language();
     this.lang = this.langObject.getCurrentLangObject().commandMenu;
   }
 
   init() {
+    this.generateTeamName();
+    this.populateList(this.items, this.teamsList);
     this.addTeams.addEventListener('submit', this.addItem.bind(this));
     this.teamsList.addEventListener('click', this.deleteItem.bind(this));
-    this.populateList(this.items, this.teamsList);
     this.startGameButton.addEventListener('click', function () {
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 2000 });
       gsap.to('.sign', { duration: 1, ease: 'power1.out', y: -500 });
@@ -29,13 +31,30 @@ export default class Commands {
         game();
       }, 1000);
     });
+    this.backMenuButton.addEventListener('click', function () {
+      const menu = new Menu();
+      menu.init();
+    });
+  }
+
+  generateTeamName() {
+    while (this.items.length < 2) {
+      const text = `${this.random(this.adjective)} ${this.random(this.race)}`;
+
+      const item = {
+        text,
+      };
+
+      this.items.push(item);
+      localStorage.setItem('items', JSON.stringify(this.items));
+    }
   }
 
   // eslint-disable-next-line class-methods-use-this
-  // random(arr) {
-  //   const rand = Math.floor(Math.random() * arr.length);
-  //   return arr[rand];
-  // }
+  random(arr) {
+    const index = Math.floor(Math.random() * arr.length);
+    return arr[index];
+  }
 
   addItem(e) {
     e.preventDefault();
@@ -46,14 +65,18 @@ export default class Commands {
       text,
     };
 
-    if (item.text === '') {
+    let temp = '';
+    this.items.forEach((el) => {
+      temp = el.text;
+    });
+
+    if (item.text === temp || item.text === '') {
       return;
     }
 
     // const player = new Audio();
     // player.src = '/../src/assets/sounds/LAZER.wav';
     // player.play();
-
     this.items.push(item);
     this.populateList(this.items, this.teamsList);
     localStorage.removeItem('items');
@@ -62,9 +85,6 @@ export default class Commands {
   }
 
   populateList() {
-    // if (this.items === []) {
-    //   text = `${this.random(this.adjective)} ${this.random(this.race)} ${this.random(this.name)}`;
-    // } else {
     this.teamsList.innerHTML = this.items
       .map((el, i) => {
         return `

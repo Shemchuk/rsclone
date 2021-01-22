@@ -19,7 +19,9 @@ export default class CreateCommands {
       <input type="text" class="input-here" autocomplete="off" name="item" placeholder="${this.lang.teamName}">
       <input type="submit" class="menu-button input-button" value="${this.lang.addTeamButton}">
     </form>
+    <button class="button-backmenu-menu">${this.lang.backMenuButton}</button>;
     <button class="button-startgame-play menu-button"><p><a>${this.lang.startGameButton}</a></p></button>`;
+
     commandsContainer.innerHTML = template;
     this.sign.appendChild(commandsContainer);
     return this.main;
