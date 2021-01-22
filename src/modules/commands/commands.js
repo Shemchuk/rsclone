@@ -48,14 +48,18 @@ export default class Commands {
       text,
     };
 
-    if (item.text === '') {
+    let temp = '';
+    this.items.forEach((el) => {
+      temp = el.text;
+    });
+
+    if (item.text === temp || item.text === '') {
       return;
     }
 
     // const player = new Audio();
     // player.src = '/../src/assets/sounds/LAZER.wav';
     // player.play();
-
     this.items.push(item);
     this.populateList(this.items, this.teamsList);
     localStorage.removeItem('items');
