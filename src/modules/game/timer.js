@@ -9,7 +9,7 @@ import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from '.
 import { generateFinishGameModal } from './gameContainer';
 import { get, set } from '../utils/storage';
 import Language from '../lang/Language';
-
+import { defaultSettings } from '../Constants';
 // =========== LANG =============== //
 const langObject = new Language();
 // const lang = langObject.getCurrentLangObject().game; // Object "game"
@@ -34,12 +34,25 @@ export function addTeamNamesToTeamsArr() {
   console.log(teams);
 }
 
-const setaliasSettings = { wordsCount: '1', roundTime: '5', lang: 'en' };
+let setaliasSettings = get('aliasSettings', defaultSettings);
 let timer;
 let time = setaliasSettings.roundTime;
 let finishGamePoints = setaliasSettings.wordsCount;
+let isFirstLaunch = true;
 function countdown() {
+  if (isFirstLaunch) {
+    isFirstLaunch = false;
+    console.log(isFirstLaunch);
+    setaliasSettings = get('aliasSettings', defaultSettings);
+    time = setaliasSettings.roundTime;
+    finishGamePoints = setaliasSettings.wordsCount;
+  }
+  // const setaliasSettings = get('aliasSettings', defaultSettings);
+  // let timer;
+  // let time = setaliasSettings.roundTime;
+  // let finishGamePoints = setaliasSettings.wordsCount;
   const lang = langObject.getCurrentLangObject().game;
+
   document.querySelector('.first').innerHTML = time;
   time--;
   if (time <= -1) {
@@ -51,7 +64,7 @@ function countdown() {
       setTimeout(function () {
         gsap.to('.team-container', { duration: 1, ease: 'power1.out' });
         document.querySelector('.game-container__card').style.display = 'none';
-        document.querySelector('.hidden').style.display = 'flex';
+        document.querySelector('.round-stat-modal').style.display = 'flex';
 
         gsap.from('.hidden', { duration: 1, ease: 'power1.out', x: 1000 });
       }, 500);
@@ -77,7 +90,10 @@ function countdown() {
         document.querySelector('.main').appendChild(generateFinishGameModal());
       }, 1000);
       let date = new Date();
-      set('AliasStatistics', { date, teams });
+      time = setaliasSettings.roundTime;
+
+      // set('AliasStatistics', { date, teams });
+
       console.log({ date, teams });
     }
   } else {

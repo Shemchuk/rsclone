@@ -1,7 +1,11 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jura:wght@600&display=swap');
+
 .menu {
   .main-menu,
   .settings-menu,
-  .tutorial-menu {
+  .tutorial-menu,
+  .result-menu {
     display: flex;
     flex-direction: column;
     // width: 50vw;
@@ -9,25 +13,27 @@
     &.hide-menu {
       display: none;
     }
-}
+  }
 
-  .menu-button, .menu-font{
-      outline: none;
-      background-color: transparent;
-      min-width: 10rem;
-      border: 3px solid transparent;
+  .menu-button,
+  .menu-font {
+    outline: none;
+    background-color: transparent;
+    min-width: 10rem;
+    border: 3px solid transparent;
+    box-sizing: border-box;
+    &:hover:enabled {
+      cursor: pointer;
       box-sizing: border-box;
-      &:hover:enabled {
-        cursor: pointer;
-        box-sizing: border-box;
-        text-align: center;
-        border-radius: 8px;
-        cursor: pointer;
-      }
+      text-align: center;
+      border-radius: 8px;
+      cursor: pointer;
+    }
   }
 
   .settings-menu,
-  .tutorial-menu {
+  .tutorial-menu,
+  .result-menu {
     .settings-menu__item {
       margin: 1rem 0;
     }
@@ -39,7 +45,8 @@
       font-size: 1.6rem;
     }
     .settings__button-block,
-    .tutorial__button-back {
+    .tutorial__button-back,
+    .result__button-block {
       display: flex;
       justify-content: center;
       // margin-top: 2rem;
@@ -68,15 +75,15 @@
         // font-size: 1.6rem;
         margin: 0 1rem;
       }
-      
     }
   }
-  .input__container{
+  .input__container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-          }
-  .menu-title, .menu-light{
+  }
+  .menu-title,
+  .menu-light {
     border-radius: 8px;
     p a {
       color: #ffffff;
@@ -99,10 +106,31 @@
       overflow: scroll;
     }
   }
+
+  .result-menu {
+    .result-table-container {
+      width: 100%;
+      .result-table {
+        width: 100%;
+        font-size: 1.6rem;
+        border: 2px solid black;
+        .result-table__head-row-cell:first-child,
+        .result-table__body-row-cell:first-child {
+          width: 70%;
+        }
+
+        .result-table__head-row-cell:nth-child(2),
+        .result-table__body-row-cell:nth-child(2) {
+          width: 30%;
+        }
+      }
+    }
+  }
 }
 
 //____________buttons text__________________________________
-.menu-button, .menu-font{
+.menu-button,
+.menu-font {
   a {
     text-decoration: none;
     -webkit-transition: all 0.5s;
@@ -110,22 +138,23 @@
     transition: all 0.5s;
     box-sizing: border-box;
   }
-  
+
   p a {
     font-size: 45px;
     color: #228DFF;
-    font-family: Iceland;
+    font-family: Iceland, 'Jura', sans-serif;
+
     box-sizing: border-box;
   }
 }
 @media (max-width: 400px) {
-  .menu-font{
-  p a {
-    font-size: 33px;
+  .menu-font {
+    p a {
+      font-size: 33px;
+    }
   }
 }
-}
-.menu-button:hover{
+.menu-button:hover {
   p a {
     color: #ffffff;
     -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
@@ -137,26 +166,32 @@
 
 @-webkit-keyframes neon2 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff, 0 0 70px #228dff,
+      0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff, 0 0 35px #228dff,
+      0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
   }
 }
 @-moz-keyframes neon2 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff, 0 0 70px #228dff,
+      0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff, 0 0 35px #228dff,
+      0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
   }
 }
 @keyframes neon2 {
   from {
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228DFF, 0 0 70px #228DFF, 0 0 80px #228DFF, 0 0 100px #228DFF, 0 0 150px #228DFF;
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #228dff, 0 0 70px #228dff,
+      0 0 80px #228dff, 0 0 100px #228dff, 0 0 150px #228dff;
   }
   to {
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228DFF, 0 0 35px #228DFF, 0 0 40px #228DFF, 0 0 50px #228DFF, 0 0 75px #228DFF;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #228dff, 0 0 35px #228dff,
+      0 0 40px #228dff, 0 0 50px #228dff, 0 0 75px #228dff;
   }
 }
 
@@ -173,8 +208,7 @@
 @keyframes border-flicker {
   2% {
     border: 3px solid rgb(0, 180, 230);
-    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
-    0 0 12px -1px rgb(0, 180, 230) inset;
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 0 0 12px -1px rgb(0, 180, 230) inset;
   }
   3% {
     border: 3px solid rgb(0, 40, 70);
@@ -182,8 +216,7 @@
   }
   5% {
     border: 3px solid rgb(0, 180, 230);
-    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
-    0 0 12px -1px rgb(0, 180, 230) inset;
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 0 0 12px -1px rgb(0, 180, 230) inset;
   }
   6% {
     border: 3px solid rgb(0, 40, 70);
@@ -191,8 +224,7 @@
   }
   7% {
     border: 3px solid rgb(0, 180, 230);
-    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
-    0 0 12px -1px rgb(0, 180, 230) inset;
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 0 0 12px -1px rgb(0, 180, 230) inset;
   }
   9% {
     border: 3px solid rgb(0, 40, 70);
@@ -200,8 +232,7 @@
   }
   13% {
     border: 3px solid rgb(0, 180, 230);
-    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
-    0 0 12px -1px rgb(0, 180, 230) inset;
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 0 0 12px -1px rgb(0, 180, 230) inset;
   }
   16% {
     border: 3px solid rgb(0, 40, 70);
@@ -209,8 +240,7 @@
   }
   18% {
     border: 3px solid rgb(0, 180, 230);
-    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
-    0 0 12px -1px rgb(0, 180, 230) inset;
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 0 0 12px -1px rgb(0, 180, 230) inset;
   }
   22% {
     border: 3px solid rgb(0, 40, 70);
@@ -218,8 +248,7 @@
   }
   34% {
     border: 3px solid rgb(0, 180, 230);
-    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
-    0 0 12px -1px rgb(0, 180, 230) inset;
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 0 0 12px -1px rgb(0, 180, 230) inset;
   }
   36% {
     border: 3px solid rgb(0, 40, 70);
@@ -227,18 +256,16 @@
   }
   54% {
     border: 3px solid rgb(0, 180, 230);
-    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
-    0 0 12px -1px rgb(0, 180, 230) inset;
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 0 0 12px -1px rgb(0, 180, 230) inset;
   }
   100% {
     border: 3px solid rgb(0, 180, 230);
-    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 
-    0 0 12px -1px rgb(0, 180, 230) inset;
+    box-shadow: 0 0 15px -1px rgb(0, 180, 230), 0 0 12px -1px rgb(0, 180, 230) inset;
   }
 }
 
-
 //______________TUTORIAL___________________
+
 
 $white: #fafafa;
 $background: #222;
@@ -250,30 +277,35 @@ $background: #222;
   max-width: 25em;
   padding: 2em;
   position: relative;
-  width: 95%;   
+  width: 95%;
 
   &:before {
     background: $background;
     content: attr(data-title);
     left: 50%;
     padding: 0 1em;
-    position: absolute;    
-    text-transform: uppercase;
+    position: absolute;
+    // text-transform: uppercase;
+
     top: -0.6em;
     text-align: center;
     transform: translateX(-50%);
+    font-size: 25px;
+  // color: #228DFF;
+  font-family: Iceland, 'Jura', sans-serif;
+  box-sizing: border-box;
   }
 }
 
-@mixin dialog-box ($color: #00b4e6 ){
+@mixin dialog-box($color: #00b4e6) {
   @extend %dialog-box;
-  border: 0.1em solid lighten($color,10%);
+  border: 0.1em solid lighten($color, 10%);
   // border: 3px solid #00b4e6;
   box-shadow: 0 0 15px -1px #00b4e6, 0 0 12px -1px #00b4e6 inset;
 
   &:before {
-    border-left: 0.2em solid lighten($color,10%);
-    border-right: 0.2em solid lighten($color,10%);
+    border-left: 0.2em solid lighten($color, 10%);
+    border-right: 0.2em solid lighten($color, 10%);
     color: lighten($color, 30%);
     text-shadow: 0 0 0.4em $color;
   }
@@ -284,10 +316,20 @@ $background: #222;
 }
 
 .dialog-box_info {
-  @include dialog-box(); 
+  @include dialog-box();
+  font-size: 15px;
+  // color: #228DFF;
+  font-family: Iceland, 'Jura', sans-serif;
+
 }
 @media (max-width: 550px) {
   .dialog-box_info {
-    width: 240px;
+    width: 203px;
+    &:before {
+      background: $background;
+      content: attr(data-title);
+      font-size: 25px;
   }
 }
+}
+

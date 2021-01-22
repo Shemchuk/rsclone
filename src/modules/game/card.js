@@ -85,7 +85,7 @@ function clickContainerButtons(e) {
       teamFlag = 0;
     }
     gsap.to('.team-container__team-name', { duration: 1, ease: 'power1.out', y: -500 });
-    gsap.to('.round-stat-modal', { duration: 1, ease: 'power1.out', y: 500 });
+    gsap.to('.round-stat-modal', { duration: 1, ease: 'power1.out', y: 1000 });
     rotationGradient = 0;
     setTimeout(function () {
       nextRound();
@@ -96,8 +96,10 @@ function clickContainerButtons(e) {
     gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -1000 });
     gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 1000 });
     gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
+    shuffleCards();
     setTimeout(function () {
-      document.querySelector('.cards-selection-container').style.display = 'none';
+      // document.querySelector('.cards-selection-container').style.display = 'none';
+      document.querySelector('.main').innerHTML = '';
       mainGamePlay();
     }, 1000);
   } else if (clickCardsGeneral) {
@@ -107,7 +109,7 @@ function clickContainerButtons(e) {
     gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
     shuffleCards();
     setTimeout(function () {
-      document.querySelector('.cards-selection-container').style.display = 'none';
+      document.querySelector('.main').innerHTML = '';
       mainGamePlay();
     }, 1000);
   } else if (clickBackToMainMenu) {

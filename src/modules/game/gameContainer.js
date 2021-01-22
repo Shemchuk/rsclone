@@ -8,12 +8,16 @@ import { generateCard, buttonsClickHandler, teamFlag } from './card';
 import countdown, { teams } from './timer';
 import { generateRoundStatisticsModal } from './gameStatistics';
 import Language from '../lang/Language';
+// import { defaultSettings } from '../Constants';
 
 // =========== LANG =============== //
 // const langObject = new Language();
 // const lang = langObject.getCurrentLangObject().game; // Object "game"
 // const langName = Language.getCurrentLangName(); // 'en' | 'ru'
 // =========== LANG =============== //
+// let setaliasSettings;
+// export let time;
+// export let finishGamePoints;
 
 // Cards selection container
 export const generateCardsSeletionContainer = () => {
@@ -85,6 +89,7 @@ export const generateCardsSeletionContainer = () => {
 
 // Game container
 export const generateGameContainer = () => {
+  document.querySelector('.main').innerHTML = '';
   const langObject = new Language();
   const lang = langObject.getCurrentLangObject().game;
   let template = '';
@@ -121,6 +126,7 @@ ${lang.gameContainerPoints} <span class="second">${teams[teamFlag].points}</span
   return gameContainer;
 };
 export const generateFinishGameModal = () => {
+  document.querySelector('.main').innerHTML = '';
   const langObject = new Language();
   const lang = langObject.getCurrentLangObject().game;
   const langName = Language.getCurrentLangName();
@@ -156,6 +162,9 @@ export function game() {
   gsap.from('.cards-container__cards2', { duration: 1, ease: 'power1.out', x: 1500 });
   gsap.from('.cards-container__cards', { duration: 1, ease: 'power1.out', x: -1500 });
   gsap.from('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
+  // setaliasSettings = get('aliasSettings', defaultSettings);
+  // time = setaliasSettings.roundTime;
+  // finishGamePoints = setaliasSettings.wordsCount;
   // generateCardsForSelection();
   // generateCardsForSelection2();
   // gsap.from('.cards__for-adults', {
@@ -178,10 +187,14 @@ export function game() {
 }
 
 export function mainGamePlay() {
+  document.querySelector('.main').innerHTML = '';
   document.querySelector('.main').appendChild(generateGameContainer());
   document.querySelector('.game-container').appendChild(generateRoundStatisticsModal());
+
   gsap.from('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
   gsap.from('.game-container__card', { duration: 1, ease: 'power1.out', y: 500 });
-  generateCard();
   countdown();
+  generateCard();
+
+  document.querySelector('.round-stat-modal').style.display = 'none';
 }
