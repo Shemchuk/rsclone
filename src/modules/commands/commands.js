@@ -13,7 +13,6 @@ export default class Commands {
     this.startGameButton = document.querySelector('.button-startgame-play');
     this.adjective = ['Ужасный', 'Злобный', 'Сопливый', 'Колючий', 'Опасный', 'Вонючий', 'Черный'];
     this.race = ['Огр', 'Гном', 'Гоблин', 'Орк', 'Зомби', 'Демон', 'Нежить'];
-    this.name = ['Том', 'Макс', 'Кеша', 'Вася', 'Ваня', 'Петя', 'Саша'];
     this.langObject = new Language();
     this.lang = this.langObject.getCurrentLangObject().commandMenu;
   }
@@ -36,9 +35,7 @@ export default class Commands {
 
   generateTeamName() {
     while (this.items.length < 2) {
-      const text = `${this.random(this.adjective)} ${this.random(this.race)} ${this.random(
-        this.name
-      )}`;
+      const text = `${this.random(this.adjective)} ${this.random(this.race)}`;
 
       const item = {
         text,
@@ -84,9 +81,6 @@ export default class Commands {
   }
 
   populateList() {
-    // if (this.items.length === 0) {
-    //   this.generateTeamName();
-    // } else {
     this.teamsList.innerHTML = this.items
       .map((el, i) => {
         return `
@@ -96,7 +90,6 @@ export default class Commands {
       `;
       })
       .join('');
-    // }
   }
 
   deleteItem(e) {
