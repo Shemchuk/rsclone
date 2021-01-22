@@ -21,9 +21,13 @@ export default class Commands {
     this.teamsList.addEventListener('click', this.deleteItem.bind(this));
     this.populateList(this.items, this.teamsList);
     this.startGameButton.addEventListener('click', function () {
-      document.querySelector('.main').innerHTML = '';
-      addTeamNamesToTeamsArr();
-      game();
+      gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 2000 });
+      gsap.to('.sign', { duration: 1, ease: 'power1.out', y: -500 });
+      setTimeout(function () {
+        document.querySelector('.main').innerHTML = '';
+        addTeamNamesToTeamsArr();
+        game();
+      }, 1000);
     });
   }
 
@@ -64,8 +68,8 @@ export default class Commands {
     this.teamsList.innerHTML = this.items
       .map((el, i) => {
         return `
-        <li class="item${i}">${el.text}
-          <button class="delete-team${i}" data-index=${i}>${this.lang.deleteTeamButton}</button>
+        <li class="item${i} item"><p  class="third-child point-events-none text-small"><a>${el.text}</a></p>
+          <button id="menu-button__del" class="delete-team${i} menu-button menu-button__small" data-index=${i}><p><a>${this.lang.deleteTeamButton}</a></p></button>
         </li>
       `;
       })

@@ -18,7 +18,7 @@ export const generateLoardingBeforeMenu = () => {
 
 export function loadingBeforeMenu() {
   document.querySelector('.main').appendChild(generateLoardingBeforeMenu());
-  gsap.from('#sign', { duration: 1, y: -700 });
+  gsap.from('#sign', { duration: 1, y: -1000 });
   gsap.from('#container', { duration: 0.5, y: 500 });
   //   document.querySelector('#toggle').style.display = 'none';
   setTimeout(() => {
@@ -28,13 +28,13 @@ export function loadingBeforeMenu() {
     // document.querySelector('.loarder-start3').classList.remove('.loarder-start2');
     document.querySelector('.loarder-start2').innerHTML = 'Get Ready!';
     setTimeout(() => {
-      gsap.to('#container', { duration: 0.5, y: 500 });
+      gsap.to('#container', { duration: 0.5, y: 1000 });
       setTimeout(() => {
         document.querySelector('#container').style.display = 'none';
         const menu = new Menu();
         menu.init();
         // document.querySelector('.loading-block').style.position = 'absolute';
-        gsap.from('.menu', { duration: 1, y: 500 });
+        gsap.from('.menu', { duration: 1, y: 1000 });
       }, 500);
     }, 1500);
     // gsap.to('.loader', { duration: 3, opacity: 0, scale: 0.5 });

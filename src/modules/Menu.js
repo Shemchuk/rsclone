@@ -50,8 +50,10 @@ export default class Menu {
     switch (element.id) {
       case 'button-start':
         console.log('start');
-        Menu.hideMenu('main-menu');
         Menu.showCommandMenu();
+        setTimeout(function () {
+          Menu.hideMenu('main-menu');
+        }, 1000);
 
         // document.querySelector('.command-wrapper').style.display = 'block';
         // game();
@@ -62,30 +64,42 @@ export default class Menu {
       case 'button-settings':
         console.log('settings');
         Menu.loadSettingsFromLocalStorage();
-        Menu.hideMenu('main-menu');
-        Menu.showMenu('settings-menu');
+        Menu.slideAnimationMethod();
+        setTimeout(function () {
+          Menu.hideMenu('main-menu');
+          Menu.showMenu('settings-menu');
+        }, 1000);
 
         break;
 
       case 'button-tutorial':
         console.log('tutorial');
-        Menu.hideMenu('main-menu');
-        Menu.showMenu('tutorial-menu');
+        Menu.slideAnimationMethod();
+        setTimeout(function () {
+          Menu.hideMenu('main-menu');
+          Menu.showMenu('tutorial-menu');
+        }, 1000);
 
         break;
 
       case 'button-back':
         console.log('back');
-        Menu.showMenu('main-menu');
-        Menu.hideMenu('settings-menu');
+        Menu.slideAnimationMethod();
+        setTimeout(function () {
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('settings-menu');
+        }, 1000);
         // Menu.hideMenu('tutorial-menu');
 
         break;
 
       case 'tutorial__button-back':
         console.log('back');
-        Menu.showMenu('main-menu');
-        Menu.hideMenu('tutorial-menu');
+        Menu.slideAnimationMethod();
+        setTimeout(function () {
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('tutorial-menu');
+        }, 1000);
         // Menu.hideMenu('tutorial-menu');
 
         break;
@@ -100,7 +114,10 @@ export default class Menu {
 
       case 'button-save':
         console.log('save');
+        // Menu.slideAnimationMethod();
+        // setTimeout(function () {
         this.saveSettings();
+        // }, 1000);
         // Menu.showMenu('main-menu');
         // Menu.hideMenu('settings-menu');
 
@@ -117,11 +134,22 @@ export default class Menu {
     }
   }
 
+  static slideAnimationMethod() {
+    gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 1000 });
+    setTimeout(function () {
+      gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 0 });
+    }, 1000);
+  }
+
   static showCommandMenu() {
-    const createCommands = new CreateCommands();
-    createCommands.init();
-    const commands = new Commands();
-    commands.init();
+    gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 1000 });
+    setTimeout(function () {
+      gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 0 });
+      const createCommands = new CreateCommands();
+      createCommands.init();
+      const commands = new Commands();
+      commands.init();
+    }, 1000);
   }
 
   saveSettings() {

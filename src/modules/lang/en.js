@@ -6,7 +6,7 @@ const en = {
     tutorialButton: 'Tutorial',
     resultButton: 'Statistics',
     saveButton: 'Save',
-    backButton: 'Get back',
+    backButton: 'Back',
     mainMenuTitle: 'Main menu',
     settingsMenuTitle: 'Settings menu',
     TutorialMenuTitle: 'Tutorial',
@@ -19,11 +19,11 @@ const en = {
   },
   commandMenu: {
     allCommands: 'All commands',
-    loadingTeams: 'Loading Teams..',
+    loadingTeams: 'Create team please',
     teamName: 'Team name',
     addTeamButton: 'Add team',
     startGameButton: 'Start game',
-    deleteTeamButton: 'Delete team',
+    deleteTeamButton: `&#10006`,
   },
   game: {
     cardsSeletionContainerClassic: 'Classic',
