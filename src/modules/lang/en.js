@@ -6,7 +6,7 @@ const en = {
     tutorialButton: 'Tutorial',
     resultButton: 'Statistics',
     saveButton: 'Save',
-    backButton: 'Get back',
+    backButton: 'Back',
     mainMenuTitle: 'Main menu',
     settingsMenuTitle: 'Settings menu',
     TutorialMenuTitle: 'Tutorial',

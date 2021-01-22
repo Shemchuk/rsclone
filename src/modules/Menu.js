@@ -114,10 +114,10 @@ export default class Menu {
 
       case 'button-save':
         console.log('save');
-        Menu.slideAnimationMethod();
-        setTimeout(function () {
-          this.saveSettings();
-        }, 1000);
+        // Menu.slideAnimationMethod();
+        // setTimeout(function () {
+        this.saveSettings();
+        // }, 1000);
         // Menu.showMenu('main-menu');
         // Menu.hideMenu('settings-menu');
 
