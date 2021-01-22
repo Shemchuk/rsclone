@@ -104,6 +104,14 @@ export default class Menu {
 
         break;
 
+      case 'result__button-back':
+        console.log('back from result');
+        Menu.showMenu('main-menu');
+        Menu.hideMenu('result-menu');
+        // Menu.hideMenu('tutorial-menu');
+
+        break;
+
       case 'button-save':
         console.log('save');
         Menu.slideAnimationMethod();
@@ -115,13 +123,11 @@ export default class Menu {
 
         break;
 
-      case 'button-statistics':
-        console.log('statistics');
-        Menu.slideAnimationMethod();
-        // setTimeout(function () {
-        // // Menu.showMenu('main-menu');
-        // // Menu.hideMenu('settings-menu');
-        // , 1000);
+      case 'button-result':
+        console.log('result');
+        Menu.showMenu('result-menu');
+        Menu.hideMenu('main-menu');
+
         break;
       default:
         break;
