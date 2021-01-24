@@ -187,7 +187,7 @@ export function game() {
 }
 
 export function mainGamePlay() {
-  document.querySelector('.main').innerHTML = '';
+  // document.querySelector('.main').innerHTML = '';
   document.querySelector('.main').appendChild(generateGameContainer());
   document.querySelector('.game-container').appendChild(generateRoundStatisticsModal());
 

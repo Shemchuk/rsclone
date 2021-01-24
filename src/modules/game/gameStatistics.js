@@ -2,6 +2,7 @@
 // import {arrConfirmed, arrSkiped}
 // import game from './gameContainer';
 import Language from '../lang/Language';
+import { currentWordsLang } from './card';
 
 const langObject = new Language();
 // const lang = langObject.getCurrentLangObject().game; // Object "game"
@@ -36,14 +37,14 @@ const generateRoundStatisticsModal = () => {
 const generateConfirmedStatisticsCell = (data) => {
   const confirmedCell = document.createElement('div');
   confirmedCell.className = 'round-stat-confirmed__cell';
-  confirmedCell.innerHTML = `${data.nameRus}`;
+  confirmedCell.innerHTML = `${data[currentWordsLang]}`;
   return confirmedCell;
 };
 // Ckiped statistics cell
 const generateSkipedStatisticsCell = (data) => {
   const skipedCell = document.createElement('div');
   skipedCell.className = 'round-stat-skiped__cell';
-  skipedCell.innerHTML = `${data.nameRus}`;
+  skipedCell.innerHTML = `${data[currentWordsLang]}`;
   return skipedCell;
 };
 

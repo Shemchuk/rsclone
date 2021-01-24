@@ -18,14 +18,26 @@ export let teamFlag = 0;
 const arrConfirmed = [];
 const arrSkiped = [];
 let currentCardsStack;
+// For words lang
+export let currentWordsLang;
 
 // =========== LANG =============== //
 const langObject = new Language();
 const lang = langObject.getCurrentLangObject().game; // Object "game"
-const langName = Language.getCurrentLangName(); // 'en' | 'ru'
+
 // =========== LANG =============== //
 
 // const arrAnException = [];
+// Chose card words lang from langName
+function choseCurrentCardsLang() {
+  const langName = Language.getCurrentLangName(); // 'en' | 'ru'
+  if (langName === 'en') {
+    currentWordsLang = 'nameEng';
+    console.log(currentWordsLang);
+  } else if (langName === 'ru') {
+    currentWordsLang = 'nameRus';
+  }
+}
 // Generate random cards
 function shuffleCards() {
   return currentCardsStack.sort(() => Math.round(Math.random() * 100) - 50);
@@ -33,7 +45,8 @@ function shuffleCards() {
 
 // Card
 function generateCard() {
-  document.querySelector('.card__word').innerHTML = currentCardsStack[0].nameRus;
+  // choseCurrentCardsLang();
+  document.querySelector('.card__word').innerHTML = currentCardsStack[0][currentWordsLang];
 }
 // Next round function
 function nextRound() {
@@ -69,13 +82,13 @@ function clickContainerButtons(e) {
   if (clickReady) {
     rotationGradient -= 360;
     teams[teamFlag].points += 1;
-    document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i].nameRus;
+    document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
     arrConfirmed.push(currentCardsStack[0 + i]);
     document.querySelector('.second').innerHTML = teams[teamFlag].points;
     rotationGameContainer();
   } else if (clickSkip) {
     rotationGradient += 360;
-    document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i].nameRus;
+    document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
     arrSkiped.push(currentCardsStack[0 + i]);
     rotationGameContainer();
   } else if (clickNextRound) {
@@ -91,7 +104,9 @@ function clickContainerButtons(e) {
       nextRound();
     }, 1000);
   } else if (clickCardsForAdults) {
+    // console.log(langName);
     currentCardsStack = cards.forAdults;
+    choseCurrentCardsLang();
     shuffleCards();
     gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -1000 });
     gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 1000 });
@@ -104,6 +119,7 @@ function clickContainerButtons(e) {
     }, 1000);
   } else if (clickCardsGeneral) {
     currentCardsStack = cards.main;
+    choseCurrentCardsLang();
     gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -1000 });
     gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 1000 });
     gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
