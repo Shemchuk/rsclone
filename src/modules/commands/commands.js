@@ -26,6 +26,19 @@ export default class Commands {
       'Черные',
       'Белые',
     ];
+    this.engAdjective = [
+      'Cosmic',
+      'Wisdom',
+      'Funny',
+      'Cool',
+      'Bad',
+      'Flying',
+      'Spiteful',
+      'Thorny',
+      'Dangerous',
+      'Black',
+      'White',
+    ];
     this.race = [
       'Помидоры',
       'Бакланы',
@@ -38,6 +51,19 @@ export default class Commands {
       'Гномы',
       'Зомби',
       'Демоны',
+    ];
+    this.engRace = [
+      'Tomatos',
+      'Cormorants',
+      'Bears',
+      'Kitten',
+      'Badgers',
+      'Pockemons',
+      'Kangaroo',
+      'Lamas',
+      'Gnomes',
+      'Zombies',
+      'Demons',
     ];
     this.langObject = new Language();
     this.lang = this.langObject.getCurrentLangObject().commandMenu;
@@ -80,7 +106,10 @@ export default class Commands {
 
   generateTeamName() {
     while (this.items.length < 2) {
-      const text = `${this.random(this.adjective)} ${this.random(this.race)}`;
+      const text =
+        this.aliasSettings.lang === 'en'
+          ? `${this.random(this.engAdjective)} ${this.random(this.engRace)}`
+          : `${this.random(this.adjective)} ${this.random(this.race)}`;
 
       const item = {
         text,
