@@ -28,10 +28,29 @@ export function createCommandFromLS(teamItem) {
     answers: { confirmed: [], skiped: [] },
   };
 }
+
 export function addTeamNamesToTeamsArr() {
   let teamNamesFromCommandsList = JSON.parse(localStorage.getItem('items')) || [];
   teamNamesFromCommandsList.forEach((el) => teams.push(createCommandFromLS(el)));
   console.log(teams);
+}
+
+function saveResultToLS(teamList) {
+  let statistics = get('AliasStatistics', {});
+
+  teamList.forEach((team) => {
+    let oldScore = 0;
+    if (Object.prototype.hasOwnProperty.call(statistics, team.name)) {
+      oldScore = statistics[team.name];
+    } else {
+      statistics[team.name] = 0;
+    }
+    const score = team.points + oldScore;
+    statistics[team.name] = score;
+  });
+
+  set('AliasStatistics', statistics);
+  return statistics;
 }
 
 let setaliasSettings = get('aliasSettings', defaultSettings);
@@ -89,12 +108,10 @@ function countdown() {
         document.querySelector('.main').innerHTML = '';
         document.querySelector('.main').appendChild(generateFinishGameModal());
       }, 1000);
-      let date = new Date();
+
       time = setaliasSettings.roundTime;
-
-      // set('AliasStatistics', { date, teams });
-
-      console.log({ date, teams });
+      const statistics = saveResultToLS(teams);
+      console.log(statistics);
     }
   } else {
     timer = setTimeout(countdown, 1000);

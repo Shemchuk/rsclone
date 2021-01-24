@@ -16,6 +16,7 @@ const ru = {
     labelLanguage: 'Язык',
     tableLabelTeam: 'Команда',
     tableLabelScore: 'Очки',
+    labelSounds: 'Звуки',
   },
   commandMenu: {
     allCommands: 'Все команды',
