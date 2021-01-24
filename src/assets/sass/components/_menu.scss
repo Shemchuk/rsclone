@@ -147,10 +147,10 @@
     box-sizing: border-box;
   }
 }
-@media (max-width: 400px) {
-  .menu-font {
+@media (max-width: 600px) {
+  .menu-button, .menu-font {
     p a {
-      font-size: 33px;
+      font-size: 25px;
     }
   }
 }

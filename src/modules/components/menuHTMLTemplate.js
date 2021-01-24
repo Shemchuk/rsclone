@@ -4,21 +4,21 @@ const menuHTMLTemplate = (lang) => `
   <div class="sign-wrap">
   <div class="sign">
     <div class="main-menu">
-    <button id="button-start" class="menu-button"><p><a href="#">
+    <button id="button-start" class="menu-button"><p><a>
     ${lang.startButton}
   </a></p></button>
-    <button id="button-settings" class="menu-button"><p><a href="#">${lang.settingsButton}</a></p></button>
-    <button id="button-tutorial" class="menu-button"><p><a href="#">${lang.tutorialButton}</a></p></button>
-    <button id="button-result" class="menu-button"><p><a href="#">${lang.resultButton}</a></p></button>
+    <button id="button-settings" class="menu-button"><p><a >${lang.settingsButton}</a></p></button>
+    <button id="button-tutorial" class="menu-button"><p><a>${lang.tutorialButton}</a></p></button>
+    <button id="button-result" class="menu-button"><p><a>${lang.resultButton}</a></p></button>
     </div>
 
 
 
   <div class="settings-menu hide-menu">
-    <h2 class="menu-title menu-font"><p><a href="#">${lang.settingsMenuTitle}</a></p></h2>
+    <h2 class="menu-title menu-font"><p><a>${lang.settingsMenuTitle}</a></p></h2>
 
     <div class="settings-menu__item set__words-number menu-font">
-      <p class="setting-paragraph "><a href="#">${lang.labelCountOfWords}</a></p>
+      <p class="setting-paragraph "><a>${lang.labelCountOfWords}</a></p>
       <div class="setting-slider__container slider__words-count menu-font">
         <input
           id="inputWordsCount"
