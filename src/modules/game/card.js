@@ -130,15 +130,22 @@ function clickContainerButtons(e) {
     }, 1000);
   } else if (clickBackToMainMenu) {
     // Menu.showMenu('main-menu');
-    document.querySelector('.main').innerHTML = '';
-    document.querySelector('.main').appendChild(generateLoardingBeforeMenu());
-    document.querySelector('.loading-line').style.display = 'none';
-    document.querySelector('#ready').classList.remove('off');
-    document.querySelector('#sign').classList.remove('off');
-    const menu = new Menu();
-    menu.init();
-    teams.length = 0;
-    rotationGradient = 0;
+
+    gsap.to('.finish-game-modal__title', { duration: 1, ease: 'power1.out', y: -500 });
+    gsap.to('.finish-modal', { duration: 1, ease: 'power1.out', y: 500 });
+    setTimeout(function () {
+      document.querySelector('.main').innerHTML = '';
+      document.querySelector('.main').appendChild(generateLoardingBeforeMenu());
+      document.querySelector('.loading-line').style.display = 'none';
+      document.querySelector('#ready').classList.remove('off');
+      document.querySelector('#sign').classList.remove('off');
+      const menu = new Menu();
+      menu.init();
+      gsap.from('#sign', { duration: 1, ease: 'power1.out', y: -500 });
+      gsap.from('.menu', { duration: 1, ease: 'power1.out', y: 700 });
+      teams.length = 0;
+      rotationGradient = 0;
+    }, 1000);
   }
   i += 1;
 }

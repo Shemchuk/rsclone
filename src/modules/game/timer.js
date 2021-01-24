@@ -88,6 +88,8 @@ function countdown() {
       setTimeout(function () {
         document.querySelector('.main').innerHTML = '';
         document.querySelector('.main').appendChild(generateFinishGameModal());
+        gsap.from('.finish-game-modal__title', { duration: 1, ease: 'power1.out', y: -500 });
+        gsap.from('.finish-modal', { duration: 1, ease: 'power1.out', y: 500 });
       }, 1000);
       let date = new Date();
       time = setaliasSettings.roundTime;

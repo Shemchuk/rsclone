@@ -146,7 +146,7 @@ export const generateFinishGameModal = () => {
   </div>
   </div></div>`;
   }
-  template += `<div class="sign-wrap"><div class="sign"><div class="finish-game-modal__1st-place"><div><h2>
+  template += `<div class="sign-wrap finish-modal"><div class="sign"><div class="finish-game-modal__1st-place"><div><h2>
   ${lang.finishGameModalWin} <span class="second">${lang.finishGameModalTeam}</span>
   </h2></div></div>`;
   template += `<div class="finish-game-modal__1st-place_name"><p class="third-child"><a href="#">${teams[0].name}</a></p></div>`;

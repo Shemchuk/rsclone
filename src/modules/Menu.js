@@ -124,9 +124,12 @@ export default class Menu {
         break;
 
       case 'button-result':
+        Menu.slideAnimationMethod();
+        setTimeout(function () {
+          Menu.showMenu('result-menu');
+          Menu.hideMenu('main-menu');
+        }, 1000);
         console.log('result');
-        Menu.showMenu('result-menu');
-        Menu.hideMenu('main-menu');
 
         break;
       default:

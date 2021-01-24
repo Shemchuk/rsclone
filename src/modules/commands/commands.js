@@ -23,8 +23,8 @@ export default class Commands {
     this.addTeams.addEventListener('submit', this.addItem.bind(this));
     this.teamsList.addEventListener('click', this.deleteItem.bind(this));
     this.startGameButton.addEventListener('click', function () {
-      gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 2000 });
-      gsap.to('.sign', { duration: 1, ease: 'power1.out', y: -500 });
+      gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 800 });
+      gsap.to('#sign', { duration: 1, ease: 'power1.out', y: -500 });
       setTimeout(function () {
         document.querySelector('.main').innerHTML = '';
         addTeamNamesToTeamsArr();
