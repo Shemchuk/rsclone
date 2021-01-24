@@ -2,17 +2,43 @@ import { game } from '../game/gameContainer';
 import { addTeamNamesToTeamsArr } from '../game/timer';
 import Language from '../lang/Language';
 import Menu from '../Menu';
-
+import soundLinks from '../sound/soundLinks';
+// import Sound from '../sound/sound';
 export default class Commands {
   constructor() {
     this.addTeams = document.querySelector('.add-teams');
     this.teamsList = document.querySelector('.teams');
     // this.deleteTeam = document.querySelector('.delete-team');
+    this.aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
     this.items = JSON.parse(localStorage.getItem('items')) || [];
     this.backMenuButton = document.querySelector('.button-backmenu-menu');
     this.startGameButton = document.querySelector('.button-startgame-play');
-    this.adjective = ['Ужасный', 'Злобный', 'Сопливый', 'Колючий', 'Опасный', 'Вонючий', 'Черный'];
-    this.race = ['Огр', 'Гном', 'Гоблин', 'Орк', 'Зомби', 'Демон', 'Нежить'];
+    this.adjective = [
+      'Космические',
+      'Всезнающие',
+      'Веселые',
+      'Крутые',
+      'Плохие',
+      'Летающие',
+      'Злобные',
+      'Колючие',
+      'Опасные',
+      'Черные',
+      'Белые',
+    ];
+    this.race = [
+      'Помидоры',
+      'Бакланы',
+      'Медведи',
+      'Котики',
+      'Барсуки',
+      'Покемоны',
+      'Кенгуру',
+      'Ламы',
+      'Гномы',
+      'Зомби',
+      'Демоны',
+    ];
     this.langObject = new Language();
     this.lang = this.langObject.getCurrentLangObject().commandMenu;
   }
@@ -22,7 +48,16 @@ export default class Commands {
     this.populateList(this.items, this.teamsList);
     this.addTeams.addEventListener('submit', this.addItem.bind(this));
     this.teamsList.addEventListener('click', this.deleteItem.bind(this));
-    this.startGameButton.addEventListener('click', function () {
+    this.startGameButton.addEventListener('click', () => {
+      while (this.items.length < 2) {
+        return;
+      }
+      if (this.aliasSettings.lang === 'en') {
+        const startGameClick = new Audio();
+        startGameClick.src = soundLinks.startGameClick;
+        startGameClick.play();
+      }
+
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 2000 });
       gsap.to('.sign', { duration: 1, ease: 'power1.out', y: -500 });
       setTimeout(function () {
@@ -31,7 +66,13 @@ export default class Commands {
         game();
       }, 1000);
     });
-    this.backMenuButton.addEventListener('click', function () {
+    this.backMenuButton.addEventListener('click', () => {
+      if (this.aliasSettings.lang === 'en') {
+        const startGameClick = new Audio();
+        startGameClick.src = soundLinks.startGameClick;
+        startGameClick.play();
+      }
+
       const menu = new Menu();
       menu.init();
     });
@@ -74,9 +115,12 @@ export default class Commands {
       return;
     }
 
-    // const player = new Audio();
-    // player.src = '/../src/assets/sounds/LAZER.wav';
-    // player.play();
+    if (this.aliasSettings.lang === 'en') {
+      const addTeam = new Audio();
+      addTeam.src = soundLinks.startGameClick;
+      addTeam.play();
+    }
+
     this.items.push(item);
     this.populateList(this.items, this.teamsList);
     localStorage.removeItem('items');
@@ -104,9 +148,11 @@ export default class Commands {
     const { index } = button.dataset;
     this.items.splice(index, 1);
 
-    // const player = new Audio();
-    // player.src = '/../src/assets/sounds/LAZER.wav';
-    // player.play();
+    if (this.aliasSettings.lang === 'en') {
+      const deleteTeam = new Audio();
+      deleteTeam.src = soundLinks.deleteTeam;
+      deleteTeam.play();
+    }
 
     localStorage.removeItem('items');
     localStorage.setItem('items', JSON.stringify(this.items));

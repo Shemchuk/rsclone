@@ -11,6 +11,7 @@ import { teams } from './timer';
 import Menu from '../Menu';
 import Language from '../lang/Language';
 import { generateLoardingBeforeMenu } from './loadingBeforeMenu';
+import soundsLinks from '../sound/soundLinks';
 
 export let teamFlag = 0;
 // import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
@@ -18,7 +19,7 @@ export let teamFlag = 0;
 const arrConfirmed = [];
 const arrSkiped = [];
 let currentCardsStack;
-
+const aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
 // =========== LANG =============== //
 const langObject = new Language();
 const lang = langObject.getCurrentLangObject().game; // Object "game"
@@ -66,17 +67,37 @@ function clickContainerButtons(e) {
   const clickCardsGeneral = e.target.closest('.cards__main');
   const clickBackToMainMenu = e.target.closest('.back-to-main-menu__button');
 
+  if (aliasSettings.lang === 'en') {
+    const skipCardClick = new Audio();
+    skipCardClick.src = soundsLinks.skipCardClick;
+    skipCardClick.play();
+  }
+
   if (clickReady) {
     rotationGradient -= 360;
     teams[teamFlag].points += 1;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i].nameRus;
     arrConfirmed.push(currentCardsStack[0 + i]);
     document.querySelector('.second').innerHTML = teams[teamFlag].points;
+
+    // if (aliasSettings.lang === 'en') {
+    //   const skipCardClick = new Audio();
+    //   skipCardClick.src = soundsLinks.skipCardClick;
+    //   skipCardClick.play();
+    // }
+
     rotationGameContainer();
   } else if (clickSkip) {
     rotationGradient += 360;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i].nameRus;
     arrSkiped.push(currentCardsStack[0 + i]);
+
+    // if (aliasSettings.lang === 'en') {
+    //   const skipCardClick = new Audio();
+    //   skipCardClick.src = soundsLinks.skipCardClick;
+    //   skipCardClick.play();
+    // }
+
     rotationGameContainer();
   } else if (clickNextRound) {
     if (teamFlag < teams.length - 1) {
@@ -84,6 +105,7 @@ function clickContainerButtons(e) {
     } else {
       teamFlag = 0;
     }
+
     gsap.to('.team-container__team-name', { duration: 1, ease: 'power1.out', y: -500 });
     gsap.to('.round-stat-modal', { duration: 1, ease: 'power1.out', y: 1000 });
     rotationGradient = 0;
