@@ -121,6 +121,8 @@ function clickContainerButtons(e) {
     document.querySelector('#sign').classList.remove('off');
     const menu = new Menu();
     menu.init();
+    teams.length = 0;
+    rotationGradient = 0;
   }
   i += 1;
 }

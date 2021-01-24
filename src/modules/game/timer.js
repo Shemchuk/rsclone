@@ -19,7 +19,7 @@ const langName = Language.getCurrentLangName(); // 'en' | 'ru'
 // ___________________________________Temporary data______________________________________________
 // export const teamNames = ['Team 1', 'Team 2'];
 // export const teamPoints = [0,0];
-export const teams = [];
+export let teams = [];
 
 export function createCommandFromLS(teamItem) {
   return {

@@ -124,25 +124,25 @@ const menuHTMLTemplate = (lang) => `
     </div>
   </div>
 
-  <div class="result-menu hide-menu menu-font">
-    <h2 class="menu-title"><p><a>${lang.resultMenuTitle}</p></a></h2>
+  <div class="result-menu hide-menu">
+    <h2 class="menu-title menu-font"><p><a>${lang.resultMenuTitle}</a></p></h2>
 
     <div class="result-table-container">
     <table class="result-table">
       <thead class="result-table__head">
         <tr class="result-table__head-row">
-          <th class="result-table__head-row-cell" data-prop-name="teamName">${lang.tableLabelTeam}</th>
-          <th class="result-table__head-row-cell" data-prop-name="score">${lang.tableLabelScore}</th>
+          <th class="result-table__head-row-cell menu-font" data-prop-name="teamName"><p><a>${lang.tableLabelTeam}</a></p></th>
+          <th class="result-table__head-row-cell menu-font" data-prop-name="score"><p><a>${lang.tableLabelScore}</a></p></th>
         </tr>
       </thead>
       <tbody class="result-table__body">
         <tr class="result-table__body-row">
-          <td class="result-table__body-row-cell">Team #1</td>
-          <td class="result-table__body-row-cell">100</td>
+          <td class="result-table__body-row-cell"><p class="third-child point-events-none text-small"><a>Team #1</a></p></td>
+          <td class="result-table__body-row-cell menu-font"><p><a>100</a></p></td>
         </tr>
         <tr class="result-table__body-row">
-          <td class="result-table__body-row-cell">Team #2</td>
-          <td class="result-table__body-row-cell">50</td>
+          <td class="result-table__body-row-cell"><p class="third-child point-events-none text-small"><a>Team #2</a></p></td>
+          <td class="result-table__body-row-cell menu-font"><p><a>50</a></p></td>
         </tr>
       </tbody>
     </table>
