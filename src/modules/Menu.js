@@ -19,8 +19,8 @@ export default class Menu {
   }
 
   createMenu() {
-    // const main = document.querySelector('.loading-block');
-    const main = document.querySelector('.main');
+    const main = document.querySelector('.loading-block');
+    // const main = document.querySelector('.main');
     const menu = document.querySelector('.menu');
 
     if (menu) {
