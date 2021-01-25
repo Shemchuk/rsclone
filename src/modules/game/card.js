@@ -24,7 +24,7 @@ let currentCardsStack;
 export let currentWordsLang;
 
 // =========== LANG =============== //
-const langObject = new Language();
+// const langObject = new Language();
 // const lang = langObject.getCurrentLangObject().game; // Object "game"
 
 // =========== LANG =============== //
@@ -183,7 +183,6 @@ function buttonsClickHandler() {
   const buttonsContainer = document.querySelector('.main');
   const footerHandler = document.querySelector('.footer');
   buttonsContainer.addEventListener('click', clickContainerButtons);
-  // console.log(document.querySelector('#123'));
   footerHandler.addEventListener('click', clickContainerButtons);
 }
 buttonsClickHandler();
