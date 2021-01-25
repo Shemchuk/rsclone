@@ -79,6 +79,26 @@ const menuHTMLTemplate = (lang) => `
       </div>
     </div>
 
+    <div class="settings-menu__item set__sounds">
+    <div class="item__row-container menu-font">
+      <p class="setting-paragraph"><a>${lang.labelSounds}</a></p>
+      <div class="input__container">
+        <input type="radio" id="set-sounds__on" name="sounds" value="true" checked />
+        <label for="set-sounds__on"><p><a>
+          <span class="material-icons">
+            volume_up
+          </span>
+          &nbsp &nbsp</p></a></label>
+        <input type="radio" id="set-sounds__off" name="sounds" value="false" />
+        <label for="set-sounds__off"><p><a>
+          <span class="material-icons">
+          volume_off
+          </span>
+        </p></a></label>
+      </div>
+    </div>
+  </div>
+
     <div class="settings__button-block">
       <button id="button-save" class="menu-button"><p><a href="#">${lang.saveButton}</a></p></button>
       <button id="button-back" class="menu-button"><p><a href="#">${lang.backButton}</a></p></button>

@@ -16,6 +16,7 @@ const en = {
     labelLanguage: 'Language',
     tableLabelTeam: 'Team',
     tableLabelScore: 'Score',
+    labelSounds: 'Sounds',
   },
   commandMenu: {
     allCommands: 'All commands',
