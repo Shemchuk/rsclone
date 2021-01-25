@@ -74,6 +74,7 @@ export default class Commands {
     this.populateList(this.items, this.teamsList);
     this.addTeams.addEventListener('submit', this.addItem.bind(this));
     this.teamsList.addEventListener('click', this.deleteItem.bind(this));
+
     this.startGameButton.addEventListener('click', () => {
       while (this.items.length < 2) {
         return;
@@ -86,6 +87,7 @@ export default class Commands {
 
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 2000 });
       gsap.to('.sign', { duration: 1, ease: 'power1.out', y: -500 });
+
       setTimeout(function () {
         document.querySelector('.main').innerHTML = '';
         addTeamNamesToTeamsArr();

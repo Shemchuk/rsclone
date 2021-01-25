@@ -22,6 +22,7 @@ export default class Menu {
 
   createMenu() {
     const main = document.querySelector('.loading-block');
+    // const main = document.querySelector('.main');
     const menu = document.querySelector('.menu');
 
     if (menu) {
@@ -54,7 +55,7 @@ export default class Menu {
       case 'button-start':
         console.log('start');
         Menu.showCommandMenu();
-        setTimeout(function () {
+        setTimeout(() => {
           Menu.hideMenu('main-menu');
         }, 1000);
 
@@ -68,7 +69,7 @@ export default class Menu {
         console.log('settings');
         Menu.loadSettingsFromLocalStorage();
         Menu.slideAnimationMethod();
-        setTimeout(function () {
+        setTimeout(() => {
           Menu.hideMenu('main-menu');
           Menu.showMenu('settings-menu');
         }, 1000);
@@ -78,7 +79,7 @@ export default class Menu {
       case 'button-tutorial':
         console.log('tutorial');
         Menu.slideAnimationMethod();
-        setTimeout(function () {
+        setTimeout(() => {
           Menu.hideMenu('main-menu');
           Menu.showMenu('tutorial-menu');
         }, 1000);
@@ -88,7 +89,7 @@ export default class Menu {
       case 'button-back':
         console.log('back');
         Menu.slideAnimationMethod();
-        setTimeout(function () {
+        setTimeout(() => {
           Menu.showMenu('main-menu');
           Menu.hideMenu('settings-menu');
         }, 1000);
@@ -99,11 +100,10 @@ export default class Menu {
       case 'tutorial__button-back':
         console.log('back');
         Menu.slideAnimationMethod();
-        setTimeout(function () {
+        setTimeout(() => {
           Menu.showMenu('main-menu');
           Menu.hideMenu('tutorial-menu');
         }, 1000);
-        // Menu.hideMenu('tutorial-menu');
 
         break;
 
@@ -111,23 +111,25 @@ export default class Menu {
         console.log('back from result');
         Menu.showMenu('main-menu');
         Menu.hideMenu('result-menu');
-        // Menu.hideMenu('tutorial-menu');
 
         break;
 
       case 'button-save':
         console.log('save');
         // Menu.slideAnimationMethod();
-        // setTimeout(function () {
         this.saveSettings();
-        // }, 1000);
-        // Menu.showMenu('main-menu');
-        // Menu.hideMenu('settings-menu');
 
         break;
 
       case 'button-result':
+        Menu.slideAnimationMethod();
+        setTimeout(function () {
+          Menu.showMenu('result-menu');
+          Menu.hideMenu('main-menu');
+        }, 1000);
         console.log('result');
+
+        Menu.createStatisticMenu();
         Menu.showMenu('result-menu');
         Menu.hideMenu('main-menu');
 
@@ -139,14 +141,14 @@ export default class Menu {
 
   static slideAnimationMethod() {
     gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 1000 });
-    setTimeout(function () {
+    setTimeout(() => {
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 0 });
     }, 1000);
   }
 
   static showCommandMenu() {
     gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 1000 });
-    setTimeout(function () {
+    setTimeout(() => {
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 0 });
       const createCommands = new CreateCommands();
       createCommands.init();
@@ -160,11 +162,41 @@ export default class Menu {
     settings.wordsCount = document.querySelector('#inputWordsCount').value;
     settings.roundTime = document.querySelector('#inputRoundTime').value;
     settings.lang = document.querySelector('input[name="lang"]:checked').value;
+    settings.isSounds = document.querySelector('input[name="sounds"]:checked').value;
     setValueToStorage('aliasSettings', settings);
 
     setTimeout(this.createMenu(), 50);
     console.log(settings);
     console.log('Settings saved!');
+  }
+
+  static createStatisticMenu() {
+    const statisticsData = getValueFromStorage('AliasStatistics');
+
+    if (!statisticsData) {
+      return;
+    }
+
+    const statistic = document.querySelector('.result-table__body');
+    const data = [];
+    statistic.innerHTML = '';
+
+    // eslint-disable-next-line no-restricted-syntax
+    for (const key in statisticsData) {
+      if (Object.prototype.hasOwnProperty.call(statisticsData, key)) {
+        data.push({ teamName: key, score: statisticsData[key] });
+      }
+    }
+    data.sort((a, b) => b.score - a.score);
+
+    data.forEach((item) => {
+      statistic.innerHTML += `
+      <tr class="result-table__body-row">
+        <td class="result-table__body-row-cell">${item.teamName}</td>
+        <td class="result-table__body-row-cell">${item.score}</td>
+      </tr>
+      `;
+    });
   }
 
   static loadSettingsFromLocalStorage() {
@@ -178,11 +210,17 @@ export default class Menu {
     outputWordsNumber.value = settings.wordsCount;
     roundTime.value = settings.roundTime;
     outputRoundTime.value = settings.roundTime;
-
+    console.log(settings);
     if (settings.lang === 'en') {
       document.querySelector('#set-lang__en').checked = true;
     } else {
       document.querySelector('#set-lang__ru').checked = true;
+    }
+
+    if (settings.isSounds === 'true') {
+      document.querySelector('#set-sounds__on').checked = true;
+    } else {
+      document.querySelector('#set-sounds__off').checked = true;
     }
   }
 
