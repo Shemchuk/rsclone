@@ -4,13 +4,12 @@ import Commands from './commands/commands';
 import CreateCommands from './commands/createCommands';
 import Language from './lang/Language';
 import soundsLinks from './sound/soundLinks';
-
+import Hotkeys from './Hotkeys';
 // eslint-disable-next-line no-unused-vars
 import { set as setValueToStorage, get as getValueFromStorage } from './utils/storage';
 
 export default class Menu {
   constructor() {
-    this.tmp = CONST.TMP;
     this.langObject = new Language();
     // this.lang = this.langObject.getCurrentLangObject().mainMenu;
     this.aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
@@ -18,11 +17,13 @@ export default class Menu {
 
   init() {
     this.createMenu();
+    this.hotkeys = new Hotkeys();
+    this.hotkeys.setMenuHandler();
   }
 
   createMenu() {
-    const main = document.querySelector('.loading-block');
-    // const main = document.querySelector('.main');
+    // const main = document.querySelector('.loading-block');
+    const main = document.querySelector('.main');
     const menu = document.querySelector('.menu');
 
     if (menu) {
@@ -36,6 +37,11 @@ export default class Menu {
 
   setEventHandlers() {
     document.querySelector('.menu').addEventListener('click', this.menuEventHandler.bind(this));
+    document.querySelector('.main-menu').addEventListener('mouseenter', () => {
+      this.hotkeys.disableActiveMenuButtons();
+      this.hotkeys.init();
+      console.log('on mouse enter');
+    });
   }
 
   // eslint-disable-next-line class-methods-use-this

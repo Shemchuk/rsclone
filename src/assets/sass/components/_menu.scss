@@ -28,7 +28,7 @@
       border-radius: 8px;
     }
 
-    &.item-menu__active {
+    &[data-active-menu-item='true'] {
       p a {
         color: #ffffff;
         -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
