@@ -10,7 +10,7 @@ import Menu from './modules/Menu';
 import { generateFooter } from './modules/footer';
 import CreateBackgroundSound from './modules/backgroundSound/createBackgroundSound';
 import BackgroundSound from './modules/backgroundSound/backgroundSound';
-
+// import swipe from './modules/game/swiper';
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { MDCRipple } from '@material/ripple/index';
 // import { MDCSlider } from '@material/slider/index';

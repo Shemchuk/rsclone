@@ -46,16 +46,16 @@ function shuffleCards() {
 // Card
 function generateCard() {
   // choseCurrentCardsLang();
-  document.querySelector('.card__word').innerHTML = currentCardsStack[0][currentWordsLang];
+  document.querySelector('.card__word').innerHTML = currentCardsStack[i][currentWordsLang];
+  i++;
 }
 // Next round function
 function nextRound() {
   document.querySelector('.main').innerHTML = '';
-  // arrAnException.push(arrConfirmed, arrSkiped);
-  // console.log(arrAnException);
   addGlobalStatisticsTeam(teamFlag, arrConfirmed, arrSkiped);
   arrConfirmed.length = 0;
   arrSkiped.length = 0;
+  console.log(arrConfirmed);
   mainGamePlay();
 }
 // Add statistics teams in global array-stat
@@ -83,13 +83,14 @@ function clickContainerButtons(e) {
     rotationGradient -= 360;
     teams[teamFlag].points += 1;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
-    arrConfirmed.push(currentCardsStack[0 + i]);
+    arrConfirmed.push(currentCardsStack[i - 1]);
     document.querySelector('.second').innerHTML = teams[teamFlag].points;
     rotationGameContainer();
   } else if (clickSkip) {
     rotationGradient += 360;
-    document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
-    arrSkiped.push(currentCardsStack[0 + i]);
+    document.querySelector('.card__word').innerHTML =
+      currentCardsStack[0 + i - 1][currentWordsLang];
+    arrSkiped.push(currentCardsStack[i - 1]);
     rotationGameContainer();
   } else if (clickNextRound) {
     if (teamFlag < teams.length - 1) {
@@ -102,20 +103,22 @@ function clickContainerButtons(e) {
     rotationGradient = 0;
     setTimeout(function () {
       nextRound();
+      generateSwiper();
     }, 1000);
   } else if (clickCardsForAdults) {
     // console.log(langName);
     currentCardsStack = cards.forAdults;
     choseCurrentCardsLang();
     shuffleCards();
+    console.log(currentCardsStack);
     gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -1000 });
     gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 1000 });
     gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
-    shuffleCards();
     setTimeout(function () {
       // document.querySelector('.cards-selection-container').style.display = 'none';
       document.querySelector('.main').innerHTML = '';
       mainGamePlay();
+      generateSwiper();
     }, 1000);
   } else if (clickCardsGeneral) {
     currentCardsStack = cards.main;
@@ -124,13 +127,13 @@ function clickContainerButtons(e) {
     gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 1000 });
     gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
     shuffleCards();
+    console.log(currentCardsStack);
     setTimeout(function () {
       document.querySelector('.main').innerHTML = '';
       mainGamePlay();
+      generateSwiper();
     }, 1000);
   } else if (clickBackToMainMenu) {
-    // Menu.showMenu('main-menu');
-
     gsap.to('.finish-game-modal__title', { duration: 1, ease: 'power1.out', y: -500 });
     gsap.to('.finish-modal', { duration: 1, ease: 'power1.out', y: 500 });
     setTimeout(function () {
@@ -143,8 +146,12 @@ function clickContainerButtons(e) {
       menu.init();
       gsap.from('#sign', { duration: 1, ease: 'power1.out', y: -500 });
       gsap.from('.menu', { duration: 1, ease: 'power1.out', y: 700 });
+      shuffleCards();
+      console.log(currentCardsStack);
       teams.length = 0;
       rotationGradient = 0;
+      i = 1;
+      teamFlag = 0;
     }, 1000);
   }
   i += 1;
@@ -152,6 +159,32 @@ function clickContainerButtons(e) {
 function buttonsClickHandler() {
   const buttonsContainer = document.querySelector('.main');
   buttonsContainer.addEventListener('click', clickContainerButtons);
+}
+
+// Swiper
+function generateSwiper() {
+  const hammertime = new Hammer(document.querySelector('.game-container__card'), {
+    enable: true,
+    recognizers: [[Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]],
+  });
+
+  hammertime.on('swipeup', function () {
+    rotationGradient -= 360;
+    teams[teamFlag].points += 1;
+    document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
+    arrConfirmed.push(currentCardsStack[0 + i]);
+    document.querySelector('.second').innerHTML = teams[teamFlag].points;
+    rotationGameContainer();
+    i += 1;
+  });
+
+  hammertime.on('swipedown', function () {
+    rotationGradient += 360;
+    document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
+    arrSkiped.push(currentCardsStack[0 + i]);
+    rotationGameContainer();
+    i += 1;
+  });
 }
 
 export { generateCard, shuffleCards, buttonsClickHandler, arrConfirmed, arrSkiped };
