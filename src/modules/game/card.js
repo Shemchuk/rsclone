@@ -23,7 +23,7 @@ export let currentWordsLang;
 
 // =========== LANG =============== //
 const langObject = new Language();
-const lang = langObject.getCurrentLangObject().game; // Object "game"
+// const lang = langObject.getCurrentLangObject().game; // Object "game"
 
 // =========== LANG =============== //
 
@@ -33,7 +33,6 @@ function choseCurrentCardsLang() {
   const langName = Language.getCurrentLangName(); // 'en' | 'ru'
   if (langName === 'en') {
     currentWordsLang = 'nameEng';
-    console.log(currentWordsLang);
   } else if (langName === 'ru') {
     currentWordsLang = 'nameRus';
   }
@@ -55,7 +54,6 @@ function nextRound() {
   addGlobalStatisticsTeam(teamFlag, arrConfirmed, arrSkiped);
   arrConfirmed.length = 0;
   arrSkiped.length = 0;
-  console.log(arrConfirmed);
   mainGamePlay();
 }
 // Add statistics teams in global array-stat
@@ -68,7 +66,6 @@ let rotationGradient = 0;
 
 function rotationGameContainer() {
   gsap.to('.game-container__card', { duration: 0.9, rotationX: rotationGradient });
-  console.log(rotationGradient);
 }
 let i = 1;
 function clickContainerButtons(e) {
@@ -101,21 +98,18 @@ function clickContainerButtons(e) {
     gsap.to('.team-container__team-name', { duration: 1, ease: 'power1.out', y: -500 });
     gsap.to('.round-stat-modal', { duration: 1, ease: 'power1.out', y: 1000 });
     rotationGradient = 0;
-    setTimeout(function () {
+    setTimeout(() => {
       nextRound();
       generateSwiper();
     }, 1000);
   } else if (clickCardsForAdults) {
-    // console.log(langName);
     currentCardsStack = cards.forAdults;
     choseCurrentCardsLang();
     shuffleCards();
-    console.log(currentCardsStack);
     gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -1000 });
     gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 1000 });
     gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
-    setTimeout(function () {
-      // document.querySelector('.cards-selection-container').style.display = 'none';
+    setTimeout(() => {
       document.querySelector('.main').innerHTML = '';
       mainGamePlay();
       generateSwiper();
@@ -127,8 +121,7 @@ function clickContainerButtons(e) {
     gsap.to('.cards__main', { duration: 1, ease: 'power1.out', x: 1000 });
     gsap.to('.cards-selection-container__title', { duration: 1, ease: 'power1.out', y: -500 });
     shuffleCards();
-    console.log(currentCardsStack);
-    setTimeout(function () {
+    setTimeout(() => {
       document.querySelector('.main').innerHTML = '';
       mainGamePlay();
       generateSwiper();
@@ -136,7 +129,7 @@ function clickContainerButtons(e) {
   } else if (clickBackToMainMenu) {
     gsap.to('.finish-game-modal__title', { duration: 1, ease: 'power1.out', y: -500 });
     gsap.to('.finish-modal', { duration: 1, ease: 'power1.out', y: 500 });
-    setTimeout(function () {
+    setTimeout(() => {
       document.querySelector('.main').innerHTML = '';
       document.querySelector('.main').appendChild(generateLoardingBeforeMenu());
       document.querySelector('.loading-line').style.display = 'none';
@@ -147,7 +140,6 @@ function clickContainerButtons(e) {
       gsap.from('#sign', { duration: 1, ease: 'power1.out', y: -500 });
       gsap.from('.menu', { duration: 1, ease: 'power1.out', y: 700 });
       shuffleCards();
-      console.log(currentCardsStack);
       teams.length = 0;
       rotationGradient = 0;
       i = 1;
@@ -168,7 +160,7 @@ function generateSwiper() {
     recognizers: [[Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]],
   });
 
-  hammertime.on('swipeup', function () {
+  hammertime.on('swipeup', () => {
     rotationGradient -= 360;
     teams[teamFlag].points += 1;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
@@ -178,7 +170,7 @@ function generateSwiper() {
     i += 1;
   });
 
-  hammertime.on('swipedown', function () {
+  hammertime.on('swipedown', () => {
     rotationGradient += 360;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
     arrSkiped.push(currentCardsStack[0 + i]);

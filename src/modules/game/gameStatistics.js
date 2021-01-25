@@ -5,9 +5,6 @@ import Language from '../lang/Language';
 import { currentWordsLang } from './card';
 
 const langObject = new Language();
-// const lang = langObject.getCurrentLangObject().game; // Object "game"
-const langName = Language.getCurrentLangName(); // 'en' | 'ru'
-// =========== LANG =============== //
 
 const generateRoundStatisticsModal = () => {
   const lang = langObject.getCurrentLangObject().game;
@@ -26,9 +23,10 @@ const generateRoundStatisticsModal = () => {
   template += `<span class="round-stat__container round-stat-skiped__container"></span>`;
   template += `</div>`;
   template += `</div>`;
-  template += `<button class="button round-stat-modal__button btn btn-neon btn-purple btn-slow"><span></span><span></span><span></span><span></span>${lang.roundStatisticsNextRound}</button>`;
-  template += `</div></div>`;
-
+  template += `<button class="button round-stat-modal__button btn btn-neon btn-purple btn-slow">`;
+  template += `<span></span><span></span><span></span><span></span>${lang.roundStatisticsNextRound}</button>`;
+  template += `</div>`;
+  template += `</div>`;
   roundStatModal.innerHTML = template;
   return roundStatModal;
 };

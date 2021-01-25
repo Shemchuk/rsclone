@@ -7,7 +7,7 @@
 import { game } from './modules/game/gameContainer';
 import { loadingBeforeMenu } from './modules/game/loadingBeforeMenu';
 import Menu from './modules/Menu';
-import { generateFooter } from './modules/footer';
+import generateFooter from './modules/footer';
 import CreateBackgroundSound from './modules/backgroundSound/createBackgroundSound';
 import BackgroundSound from './modules/backgroundSound/backgroundSound';
 // import swipe from './modules/game/swiper';
