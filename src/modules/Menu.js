@@ -46,9 +46,9 @@ export default class Menu {
       return;
     }
 
-    const menuClick = new Audio();
-    menuClick.src = soundsLinks.startGameClick;
-    menuClick.play();
+    // const menuClick = new Audio();
+    // menuClick.src = soundsLinks.startGameClick;
+    // menuClick.play();
 
     switch (element.id) {
       case 'button-start':

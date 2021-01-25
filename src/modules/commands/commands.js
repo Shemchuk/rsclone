@@ -78,11 +78,11 @@ export default class Commands {
       while (this.items.length < 2) {
         return;
       }
-      if (this.aliasSettings.lang === 'en') {
-        const startGameClick = new Audio();
-        startGameClick.src = soundLinks.startGameClick;
-        startGameClick.play();
-      }
+      // if (this.aliasSettings.lang === 'en') {
+      //   const startGameClick = new Audio();
+      //   startGameClick.src = soundLinks.startGameClick;
+      //   startGameClick.play();
+      // }
 
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 2000 });
       gsap.to('.sign', { duration: 1, ease: 'power1.out', y: -500 });
@@ -93,11 +93,11 @@ export default class Commands {
       }, 1000);
     });
     this.backMenuButton.addEventListener('click', () => {
-      if (this.aliasSettings.lang === 'en') {
-        const startGameClick = new Audio();
-        startGameClick.src = soundLinks.startGameClick;
-        startGameClick.play();
-      }
+      // if (this.aliasSettings.lang === 'en') {
+      //   const startGameClick = new Audio();
+      //   startGameClick.src = soundLinks.startGameClick;
+      //   startGameClick.play();
+      // }
 
       const menu = new Menu();
       menu.init();
@@ -144,11 +144,11 @@ export default class Commands {
       return;
     }
 
-    if (this.aliasSettings.lang === 'en') {
-      const addTeam = new Audio();
-      addTeam.src = soundLinks.startGameClick;
-      addTeam.play();
-    }
+    // if (this.aliasSettings.lang === 'en') {
+    //   const addTeam = new Audio();
+    //   addTeam.src = soundLinks.startGameClick;
+    //   addTeam.play();
+    // }
 
     this.items.push(item);
     this.populateList(this.items, this.teamsList);
@@ -177,11 +177,11 @@ export default class Commands {
     const { index } = button.dataset;
     this.items.splice(index, 1);
 
-    if (this.aliasSettings.lang === 'en') {
-      const deleteTeam = new Audio();
-      deleteTeam.src = soundLinks.deleteTeam;
-      deleteTeam.play();
-    }
+    // if (this.aliasSettings.lang === 'en') {
+    //   const deleteTeam = new Audio();
+    //   deleteTeam.src = soundLinks.deleteTeam;
+    //   deleteTeam.play();
+    // }
 
     localStorage.removeItem('items');
     localStorage.setItem('items', JSON.stringify(this.items));

@@ -4,7 +4,7 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable import/named */
 // const gsap;
-import { generateCard, buttonsClickHandler, teamFlag } from './card';
+import { generateCard, buttonsClickHandler, teamFlag, arrConfirmed, arrSkiped } from './card';
 import countdown, { teams } from './timer';
 import { generateRoundStatisticsModal } from './gameStatistics';
 import Language from '../lang/Language';

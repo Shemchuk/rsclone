@@ -67,11 +67,11 @@ function clickContainerButtons(e) {
   const clickCardsGeneral = e.target.closest('.cards__main');
   const clickBackToMainMenu = e.target.closest('.back-to-main-menu__button');
 
-  if (aliasSettings.lang === 'en') {
-    const skipCardClick = new Audio();
-    skipCardClick.src = soundsLinks.skipCardClick;
-    skipCardClick.play();
-  }
+  // if (aliasSettings.lang === 'en') {
+  //   const skipCardClick = new Audio();
+  //   skipCardClick.src = soundsLinks.skipCardClick;
+  //   skipCardClick.play();
+  // }
 
   if (clickReady) {
     rotationGradient -= 360;
