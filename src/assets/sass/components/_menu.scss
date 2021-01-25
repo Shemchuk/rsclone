@@ -26,7 +26,16 @@
       box-sizing: border-box;
       text-align: center;
       border-radius: 8px;
-      cursor: pointer;
+    }
+
+    &.item-menu__active {
+      p a {
+        color: #ffffff;
+        -webkit-animation: neon2 1.5s ease-in-out infinite alternate;
+        -moz-animation: neon2 1.5s ease-in-out infinite alternate;
+        animation: neon2 1.5s ease-in-out infinite alternate;
+      }
+      animation: border-flicker 2s linear forwards;
     }
   }
 
@@ -150,7 +159,8 @@
   }
 }
 @media (max-width: 600px) {
-  .menu-button, .menu-font {
+  .menu-button,
+  .menu-font {
     p a {
       font-size: 25px;
     }
