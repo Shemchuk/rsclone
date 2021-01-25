@@ -3,7 +3,7 @@ import menuHTMLTemplate from './components/menuHTMLTemplate';
 import Commands from './commands/commands';
 import CreateCommands from './commands/createCommands';
 import Language from './lang/Language';
-import soundsLinks from './sound/soundLinks';
+import soundLinks from './sound/soundLinks';
 
 // eslint-disable-next-line no-unused-vars
 import { set as setValueToStorage, get as getValueFromStorage } from './utils/storage';
@@ -47,12 +47,14 @@ export default class Menu {
       return;
     }
 
-    // const menuClick = new Audio();
-    // menuClick.src = soundsLinks.startGameClick;
-    // menuClick.play();
+    const startGameClick = new Audio();
 
     switch (element.id) {
       case 'button-start':
+        if (this.aliasSettings.isSounds === 'true') {
+          startGameClick.src = soundLinks.startGameClick;
+          startGameClick.play();
+        }
         console.log('start');
         Menu.showCommandMenu();
         setTimeout(() => {
@@ -69,6 +71,12 @@ export default class Menu {
         console.log('settings');
         Menu.loadSettingsFromLocalStorage();
         Menu.slideAnimationMethod();
+
+        // if (this.aliasSettings.isSounds === 'true') {
+        //   startGameClick.src = soundLinks.startGameClick;
+        //   startGameClick.play();
+        // }
+
         setTimeout(() => {
           Menu.hideMenu('main-menu');
           Menu.showMenu('settings-menu');
@@ -77,6 +85,10 @@ export default class Menu {
         break;
 
       case 'button-tutorial':
+        // if (this.aliasSettings.isSounds === 'true') {
+        //   startGameClick.src = soundLinks.startGameClick;
+        //   startGameClick.play();
+        // }
         console.log('tutorial');
         Menu.slideAnimationMethod();
         setTimeout(() => {
@@ -87,6 +99,10 @@ export default class Menu {
         break;
 
       case 'button-back':
+        // if (this.aliasSettings.isSounds === 'true') {
+        //   startGameClick.src = soundLinks.startGameClick;
+        //   startGameClick.play();
+        // }
         console.log('back');
         Menu.slideAnimationMethod();
         setTimeout(() => {
@@ -94,10 +110,13 @@ export default class Menu {
           Menu.hideMenu('settings-menu');
         }, 1000);
         // Menu.hideMenu('tutorial-menu');
-
         break;
 
       case 'tutorial__button-back':
+        // if (this.aliasSettings.isSounds === 'true') {
+        //   startGameClick.src = soundLinks.startGameClick;
+        //   startGameClick.play();
+        // }
         console.log('back');
         Menu.slideAnimationMethod();
         setTimeout(() => {
@@ -108,6 +127,10 @@ export default class Menu {
         break;
 
       case 'result__button-back':
+        // if (this.aliasSettings.isSounds === 'true') {
+        //   startGameClick.src = soundLinks.startGameClick;
+        //   startGameClick.play();
+        // }
         console.log('back from result');
         Menu.showMenu('main-menu');
         Menu.hideMenu('result-menu');
@@ -115,6 +138,10 @@ export default class Menu {
         break;
 
       case 'button-save':
+        // if (this.aliasSettings.isSounds === 'true') {
+        //   startGameClick.src = soundLinks.startGameClick;
+        //   startGameClick.play();
+        // }
         console.log('save');
         // Menu.slideAnimationMethod();
         this.saveSettings();
@@ -122,6 +149,11 @@ export default class Menu {
         break;
 
       case 'button-result':
+        // if (this.aliasSettings.isSounds === 'true') {
+        //   startGameClick.src = soundLinks.startGameClick;
+        //   startGameClick.play();
+        // }
+
         Menu.slideAnimationMethod();
         setTimeout(function () {
           Menu.showMenu('result-menu');
