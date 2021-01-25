@@ -51,6 +51,5 @@ const generateFooter = () => {
   footer.innerHTML = template;
   return footer;
 };
-// generateFooter();
 
 export default generateFooter;
