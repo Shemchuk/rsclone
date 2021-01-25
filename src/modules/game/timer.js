@@ -6,7 +6,7 @@
 import { teamFlag, arrConfirmed, arrSkiped } from './card';
 import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
 import { generateFinishGameModal } from './gameContainer';
-import { get } from '../utils/storage';
+import { get, set } from '../utils/storage';
 import Language from '../lang/Language';
 import { defaultSettings } from '../Constants';
 

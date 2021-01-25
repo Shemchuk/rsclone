@@ -119,3 +119,25 @@ height: 100;
   }
 }
 
+.footer__button {
+  width: 50px;
+  height: 105px;
+  position: fixed;
+  // right: 0px;
+  bottom: 0px;
+  background: transparent;
+  border: 0;
+    // background-color: red;
+    // color: red;
+    
+    fill: #5c5c5c;
+    &:hover{
+      fill:#2493f2;
+      transition: 0.3s;
+    }
+    
+}
+
+.hide {
+  height:0;
+}
