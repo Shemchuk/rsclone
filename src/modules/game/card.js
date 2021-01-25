@@ -27,7 +27,7 @@ export let currentWordsLang;
 const aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
 
 // =========== LANG =============== //
-const langObject = new Language();
+// const langObject = new Language();
 // const lang = langObject.getCurrentLangObject().game; // Object "game"
 
 // =========== LANG =============== //
@@ -80,6 +80,8 @@ function clickContainerButtons(e) {
   const clickCardsForAdults = e.target.closest('.cards__for-adults');
   const clickCardsGeneral = e.target.closest('.cards__main');
   const clickBackToMainMenu = e.target.closest('.back-to-main-menu__button');
+  const clickHideFooterButton = e.target.closest('.hide-footer');
+  const clickShowFooterButton = e.target.closest('.show-footer');
 
   // if (aliasSettings.isSounds === 'true') {
   //   const gameAudio = new Audio();
@@ -94,12 +96,14 @@ function clickContainerButtons(e) {
     arrConfirmed.push(currentCardsStack[i - 1]);
     document.querySelector('.second').innerHTML = teams[teamFlag].points;
     rotationGameContainer();
+    i += 1;
   } else if (clickSkip) {
     rotationGradient += 360;
     document.querySelector('.card__word').innerHTML =
       currentCardsStack[0 + i - 1][currentWordsLang];
     arrSkiped.push(currentCardsStack[i - 1]);
     rotationGameContainer();
+    i += 1;
   } else if (clickNextRound) {
     if (teamFlag < teams.length - 1) {
       teamFlag += 1;
@@ -155,14 +159,26 @@ function clickContainerButtons(e) {
       rotationGradient = 0;
       i = 1;
       teamFlag = 0;
+      arrConfirmed.length = 0;
+      arrSkiped.length = 0;
     }, 1000);
+  } else if (clickHideFooterButton) {
+    gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 65 });
+    document.querySelector('.show-footer').classList.remove('hide');
+    document.querySelector('.hide-footer').classList.add('hide');
+  } else if (clickShowFooterButton) {
+    gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 0 });
+    document.querySelector('.show-footer').classList.add('hide');
+    document.querySelector('.hide-footer').classList.remove('hide');
   }
-  i += 1;
 }
 function buttonsClickHandler() {
   const buttonsContainer = document.querySelector('.main');
+  const footerHandler = document.querySelector('.footer');
   buttonsContainer.addEventListener('click', clickContainerButtons);
+  footerHandler.addEventListener('click', clickContainerButtons);
 }
+buttonsClickHandler();
 
 // Swiper
 function generateSwiper() {
@@ -189,5 +205,21 @@ function generateSwiper() {
     i += 1;
   });
 }
+
+function generateSwiperFooter() {
+  const hammertime = new Hammer(document.querySelector('.footer'), {
+    enable: true,
+    recognizers: [[Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]],
+  });
+
+  hammertime.on('swipedown', () => {
+    gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 65 });
+  });
+
+  hammertime.on('swipeup', () => {
+    gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 0 });
+  });
+}
+generateSwiperFooter();
 
 export { generateCard, shuffleCards, buttonsClickHandler, arrConfirmed, arrSkiped };
