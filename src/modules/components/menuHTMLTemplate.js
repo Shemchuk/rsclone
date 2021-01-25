@@ -4,21 +4,21 @@ const menuHTMLTemplate = (lang) => `
   <div class="sign-wrap">
   <div class="sign">
     <div class="main-menu">
-    <button id="button-start" class="menu-button"><p><a href="#">
+    <button id="button-start" class="menu-button"><p><a>
     ${lang.startButton}
   </a></p></button>
-    <button id="button-settings" class="menu-button"><p><a href="#">${lang.settingsButton}</a></p></button>
-    <button id="button-tutorial" class="menu-button"><p><a href="#">${lang.tutorialButton}</a></p></button>
-    <button id="button-result" class="menu-button"><p><a href="#">${lang.resultButton}</a></p></button>
+    <button id="button-settings" class="menu-button"><p><a >${lang.settingsButton}</a></p></button>
+    <button id="button-tutorial" class="menu-button"><p><a>${lang.tutorialButton}</a></p></button>
+    <button id="button-result" class="menu-button"><p><a>${lang.resultButton}</a></p></button>
     </div>
 
 
 
   <div class="settings-menu hide-menu">
-    <h2 class="menu-title menu-font"><p><a href="#">${lang.settingsMenuTitle}</a></p></h2>
+    <h2 class="menu-title menu-font"><p><a>${lang.settingsMenuTitle}</a></p></h2>
 
     <div class="settings-menu__item set__words-number menu-font">
-      <p class="setting-paragraph "><a href="#">${lang.labelCountOfWords}</a></p>
+      <p class="setting-paragraph "><a>${lang.labelCountOfWords}</a></p>
       <div class="setting-slider__container slider__words-count menu-font">
         <input
           id="inputWordsCount"
@@ -144,25 +144,25 @@ const menuHTMLTemplate = (lang) => `
     </div>
   </div>
 
-  <div class="result-menu hide-menu menu-font">
-    <h2 class="menu-title"><p><a>${lang.resultMenuTitle}</p></a></h2>
+  <div class="result-menu hide-menu">
+    <h2 class="menu-title menu-font"><p><a>${lang.resultMenuTitle}</a></p></h2>
 
     <div class="result-table-container">
     <table class="result-table">
       <thead class="result-table__head">
         <tr class="result-table__head-row">
-          <th class="result-table__head-row-cell" data-prop-name="teamName">${lang.tableLabelTeam}</th>
-          <th class="result-table__head-row-cell" data-prop-name="score">${lang.tableLabelScore}</th>
+          <th class="result-table__head-row-cell menu-font" data-prop-name="teamName"><p><a>${lang.tableLabelTeam}</a></p></th>
+          <th class="result-table__head-row-cell menu-font" data-prop-name="score"><p><a>${lang.tableLabelScore}</a></p></th>
         </tr>
       </thead>
       <tbody class="result-table__body">
         <tr class="result-table__body-row">
-          <td class="result-table__body-row-cell">Team #1</td>
-          <td class="result-table__body-row-cell">100</td>
+          <td class="result-table__body-row-cell"><p class="third-child point-events-none text-small"><a>Team #1</a></p></td>
+          <td class="result-table__body-row-cell menu-font"><p><a>100</a></p></td>
         </tr>
         <tr class="result-table__body-row">
-          <td class="result-table__body-row-cell">Team #2</td>
-          <td class="result-table__body-row-cell">50</td>
+          <td class="result-table__body-row-cell"><p class="third-child point-events-none text-small"><a>Team #2</a></p></td>
+          <td class="result-table__body-row-cell menu-font"><p><a>50</a></p></td>
         </tr>
       </tbody>
     </table>

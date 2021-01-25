@@ -1,43 +1,121 @@
 .footer {
+  // margin-top: 10px;
+  position: fixed;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+    display: flex;
+    justify-content: center;
+    color: #228DFF;
+    font-family: Iceland, 'Jura', sans-serif;
+    font-size: 25px;
+}
+.footer__wrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  font-size: 1.8rem;
-  height: $footer-height;
-  clear: both;
-  padding-bottom: 1rem;
-  background-color: $color-body;
-  .footer__link {
-    text-decoration: none;
-    display: block;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    color: $color-dark-s;
-
-    width: 5rem;
-    height: 5rem;
-    margin: 0 2rem;
-    transition: all 0.2s ease-in-out;
-    &:hover {
-      opacity: 0.5;
-      transition: all 0.2s ease-in-out;
-      transform: scale(1.1);
-    }
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  width: 985px;
+  height: 70px;
+    background-color: #2D2F34;
+    box-sizing: border-box;
+    border-radius: 1px;
+    border: solid 2.1px #404040;
+    font-weight: bold;
+    line-height: 24px;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    user-select: none;
+}
+@media (max-width: 979px){
+  .footer__wrapper{
+      width: 479px;
+      height: 50px;
   }
-
-  .footer__text {
-    color: $color-primary;
-  }
-
-  .github-logo {
-    background-image: url('../icons/github-logo.svg');
-    margin: 0 2rem;
-  }
-
-  .school-logo {
-    background-image: url('../icons/rs_school_js.svg');
-    width: 10rem;
+@media (max-width: 499px){
+  .footer__wrapper{
+    width: 354px;
+    height: 50px;
+}
+}
+  .footer__wrapper>*{
+    font-size: 10px;
   }
 }
+
+.footer__developers{
+display: flex;
+justify-content: space-around;
+width: 100%;
+height: 100;
+}
+
+
+.developer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.developer__links{
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 979px){
+  .developer__links{
+    width: 60px;
+  }
+}
+
+.footer__school-logo-container {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer__school-logo{
+  fill:#adadad;
+  width: 100px;
+  height: 40px;
+}
+.footer__school-logo:hover{
+  transition: 0.3s;
+  fill:#2493f2;
+}
+@media (max-width: 979px){
+  .footer__school-logo{
+    width: 50px;
+  height: 20px;
+  }
+  }
+.ico{
+  fill: #5c5c5c;
+
+}
+.ico>*{
+  fill: #5c5c5c;
+  width: 25px;
+  height: 25px;
+}
+.ico>*:hover{
+  transition: 0.3s;
+  fill: #2493f2;
+}
+@media (max-width: 979px){
+  .ico>*{
+    fill: #5c5c5c;
+    width: 15px;
+    height: 15px;
+  }
+}
+@media (max-width: 499px) {
+  .chart__icon_full-screen{
+    visibility: hidden;
+  }
+  .chart__icons-full-screen{
+    visibility: hidden;
+  }
+}
+

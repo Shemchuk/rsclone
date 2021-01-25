@@ -23,7 +23,7 @@ const en = {
     loadingTeams: 'Create team please',
     teamName: 'Team name',
     addTeamButton: 'Add team',
-    backMenuButton: 'Menu',
+    backMenuButton: 'Get back',
     startGameButton: 'Start game',
     deleteTeamButton: `&#10006`,
   },

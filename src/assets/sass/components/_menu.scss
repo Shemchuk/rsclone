@@ -116,7 +116,7 @@
       .result-table {
         width: 100%;
         font-size: 1.6rem;
-        border: 2px solid black;
+        // border: 2px solid black;
         .result-table__head-row-cell:first-child,
         .result-table__body-row-cell:first-child {
           width: 70%;
@@ -146,14 +146,13 @@
     font-size: 45px;
     color: #228dff;
     font-family: Iceland, 'Jura', sans-serif;
-
     box-sizing: border-box;
   }
 }
-@media (max-width: 400px) {
-  .menu-font {
+@media (max-width: 600px) {
+  .menu-button, .menu-font {
     p a {
-      font-size: 33px;
+      font-size: 25px;
     }
   }
 }
