@@ -63,7 +63,11 @@ function countdown() {
   document.querySelector('.first').innerHTML = time;
   time--;
   if (time <= -1) {
-    if (!teams.some((el) => el.points >= finishGamePoints) || !(teamFlag === teams.length - 1)) {
+    if (
+      !teams.some((el) => el.points >= finishGamePoints) ||
+      !(teamFlag === teams.length - 1) ||
+      teams[0].points === teams[1].points
+    ) {
       time = setaliasSettings.roundTime;
       clearTimeout(timer);
       gsap.to('.game-container__card', { duration: 1, ease: 'power1.out', x: -2000 });

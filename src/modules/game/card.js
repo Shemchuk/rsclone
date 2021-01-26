@@ -170,7 +170,7 @@ function clickContainerButtons(e) {
       arrSkiped.length = 0;
     }, 1000);
   } else if (clickHideFooterButton) {
-    gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 65 });
+    gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 85 });
     document.querySelector('.show-footer').classList.remove('hide');
     document.querySelector('.hide-footer').classList.add('hide');
   } else if (clickShowFooterButton) {
@@ -221,10 +221,14 @@ function generateSwiperFooter() {
 
   hammertime.on('swipedown', () => {
     gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 65 });
+    document.querySelector('.show-footer').classList.remove('hide');
+    document.querySelector('.hide-footer').classList.add('hide');
   });
 
   hammertime.on('swipeup', () => {
     gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 0 });
+    document.querySelector('.show-footer').classList.add('hide');
+    document.querySelector('.hide-footer').classList.remove('hide');
   });
 }
 generateSwiperFooter();
