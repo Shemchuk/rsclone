@@ -7,7 +7,7 @@ const menuHTMLTemplate = (lang) => `
     <button id="button-start" class="menu-button"><p><a>
     ${lang.startButton}
   </a></p></button>
-    <button id="button-settings" class="menu-button"><p><a >${lang.settingsButton}</a></p></button>
+    <button id="button-settings" class="menu-button"><p><a>${lang.settingsButton}</a></p></button>
     <button id="button-tutorial" class="menu-button"><p><a>${lang.tutorialButton}</a></p></button>
     <button id="button-result" class="menu-button"><p><a>${lang.resultButton}</a></p></button>
     </div>

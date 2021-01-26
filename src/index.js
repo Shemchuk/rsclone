@@ -29,10 +29,6 @@ window.onload = () => {
   // const backgroundSound = new BackgroundSound();
   // backgroundSound.init();
 
-  const createPause = new CreatePause();
-  createPause.init();
-  const pause = new Pause();
-  pause.init();
 
   // eslint-disable-next-line no-unused-vars
   // const ripple = new MDCRipple(document.querySelector('.mdc-button'));

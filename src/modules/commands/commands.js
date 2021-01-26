@@ -87,7 +87,7 @@ export default class Commands {
       }
 
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 800 });
-      gsap.to('.sign', { duration: 1, ease: 'power1.out', y: -500 });
+      gsap.to('#sign', { duration: 1, ease: 'power1.out', y: -500 });
 
       setTimeout(function () {
         document.querySelector('.main').innerHTML = '';
