@@ -17,6 +17,14 @@ const en = {
     tableLabelTeam: 'Team',
     tableLabelScore: 'Score',
     labelSounds: 'Sounds',
+    essenceTitle: 'Essence',
+    essenceContent:
+      'Players are divided into groups. The number of players in each group does not have to be equal. The goal of the players is to explain the conceived word to teammates without using gestures and words of the same root',
+    pointsTitle: 'Points',
+    pointsContent:
+      'Each guessed word gives the team 1 point. If the team did not manage to answer the last word - the word is not counted. The team gets 0 points',
+    winnerTitle: 'Winner',
+    winnerContent: 'The game lasts until one of the teams has the required number of points to win',
   },
   commandMenu: {
     allCommands: 'All commands',

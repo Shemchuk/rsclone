@@ -10,6 +10,8 @@ import Menu from './modules/Menu';
 import generateFooter from './modules/footer';
 import CreateBackgroundSound from './modules/backgroundSound/createBackgroundSound';
 import BackgroundSound from './modules/backgroundSound/backgroundSound';
+import CreatePause from './modules/pause/createPause';
+import Pause from './modules/pause/pause';
 // import swipe from './modules/game/swiper';
 // eslint-disable-next-line import/no-extraneous-dependencies
 // import { MDCRipple } from '@material/ripple/index';
@@ -26,6 +28,11 @@ window.onload = () => {
   // createBackgroundSound.init();
   // const backgroundSound = new BackgroundSound();
   // backgroundSound.init();
+
+  // const createPause = new CreatePause();
+  // createPause.init();
+  // const pause = new Pause();
+  // pause.init();
 
   // eslint-disable-next-line no-unused-vars
   // const ripple = new MDCRipple(document.querySelector('.mdc-button'));
