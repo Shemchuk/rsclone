@@ -60,6 +60,7 @@ export default class Menu {
     switch (element.id) {
       case 'button-start':
         console.log('start');
+        this.hotkeys.removeMenuHandler();
         MenuUtils.pressButtonStart();
 
         // document.querySelector('.command-wrapper').style.display = 'block';

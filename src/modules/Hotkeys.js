@@ -5,7 +5,6 @@ export default class Hotkeys {
   constructor() {
     this.currentItem = -1;
     this.buttons = document.querySelectorAll('.main-menu .menu-button ');
-    console.log(this.buttons);
   }
 
   init() {
@@ -14,15 +13,20 @@ export default class Hotkeys {
 
   setMenuHandler() {
     this.bindedMenuEventHandler = this.menuEventHandler.bind(this);
-    this.menuHandler = document.addEventListener('keydown', this.bindedMenuEventHandler);
+    document.addEventListener('keydown', this.bindedMenuEventHandler, false);
+    console.log('setMenuHandler');
+    console.log(this.bindedMenuEventHandler);
   }
 
   removeMenuHandler() {
-    this.menuHandler = document.removeEventListener('keydown', this.bindedMenuEventHandler);
+    document.removeEventListener('keydown', this.bindedMenuEventHandler, false);
+
+    console.log('removeMenuHandler');
+    console.log(this.bindedMenuEventHandler);
   }
 
   setGameHandler() {
-    this.bindedGameEventHandler = this.menuEventHandler.bind(this);
+    this.bindedGameEventHandler = this.gameEventHandler.bind(this);
     this.gameHandler = document.addEventListener('keydown', this.bindedGameEventHandler);
   }
 
@@ -86,6 +90,7 @@ export default class Hotkeys {
     };
 
     const buttonCode = e.code;
+    const mainMenu = document.querySelector('.main-menu.hide-menu');
     console.log(buttonCode);
 
     if (e.stopPropagation) e.stopPropagation();
@@ -93,19 +98,31 @@ export default class Hotkeys {
     switch (buttonCode) {
       case 'Enter':
       case 'Space':
-        openActiveMenu();
+        // e.preventDefault();
+        if (!mainMenu) openActiveMenu();
         break;
 
       case 'Escape':
+        // e.preventDefault();
         goToMainMenu();
+        console.log('Escape menu button');
         break;
 
       case 'ArrowUp':
-        menuPressUpKey();
+        // e.preventDefault();
+        if (!mainMenu) {
+          menuPressUpKey();
+          console.log('menuPressUpKey');
+        }
         break;
 
       case 'ArrowDown':
-        menuPressDownKey();
+        // e.preventDefault();
+        if (!mainMenu) {
+          menuPressDownKey();
+          console.log('menuPressDownKey');
+        }
+
         break;
 
       default:
@@ -149,15 +166,23 @@ export default class Hotkeys {
       case 'Enter':
       case 'Space':
       case 'ArrowUp':
-        if (typeof this.upGameButton() === 'function') this.upGameButton();
+        if (typeof this.upGameButton() === 'function') {
+          this.upGameButton();
+          console.log('Up game button - inside check for function');
+        }
+        console.log('Up game button');
+
         break;
 
       case 'ArrowDown':
         if (typeof this.downGameButton() === 'function') this.downGameButton();
+        console.log('Up game button');
         break;
 
       case 'Escape':
         if (typeof this.escGameButton() === 'function') this.escGameButton();
+        console.log('Escape game button');
+
         break;
 
       default:
