@@ -72,9 +72,9 @@ const menuHTMLTemplate = (lang) => `
         <p class="setting-paragraph"><a>${lang.labelLanguage}</a></p>
         <div class="input__container">
           <input type="radio" id="set-lang__en" name="lang" value="en" checked />
-          <label for="set-lang__en"><p><a>ENG &nbsp &nbsp</p></a></label>
+          <label class="small-text" for="set-lang__en"><p><a>ENG &nbsp &nbsp</p></a></label>
           <input type="radio" id="set-lang__ru" name="lang" value="ru" />
-          <label for="set-lang__ru"><p><a>RUS</p></a></label>
+          <label class="small-text" for="set-lang__ru"><p><a>RUS</p></a></label>
         </div>
       </div>
     </div>
