@@ -94,7 +94,7 @@ export default class Commands {
     this.teamsList.innerHTML = this.items
       .map((el, i) => {
         return `
-        <li class="item${i} item"><p  class="third-child point-events-none text-small"><a>${el.text}</a></p>
+        <li class="item${i} item"><p  class="third-childd point-events-none text-small"><a>${el.text}</a></p>
           <button id="menu-button__del" class="delete-team${i} menu-button menu-button__small" data-index=${i}><p><a>${this.lang.deleteTeamButton}</a></p></button>
         </li>
       `;

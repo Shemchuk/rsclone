@@ -112,13 +112,15 @@
     .tutorial-text {
       font-size: 1.6rem;
       height: 300px;
-      overflow: scroll;
+      overflow-y: scroll;
     }
   }
 
   .result-menu {
     .result-table-container {
       width: 100%;
+      max-height: 250px;
+      overflow-y: scroll;
       .result-table {
         width: 100%;
         font-size: 0.4rem;
