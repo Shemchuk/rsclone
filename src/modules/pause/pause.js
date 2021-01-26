@@ -1,85 +1,53 @@
 import Menu from '../Menu';
-import CreateBackgroundSound from '../backgroundSound/createBackgroundSound';
 import BackgroundSound from '../backgroundSound/backgroundSound';
 
 export default class Pause {
   constructor() {
+    this.main = document.querySelector('.main');
+    this.pause = document.querySelector('.pause');
     this.resumeBtn = document.querySelector('.pause__btn_resume');
     this.menuBtn = document.querySelector('.pause__btn_menu');
     this.settingsBtn = document.querySelector('.pause__btn_settings');
-    this.pausePlayerBtn = document.querySelector('.pause__btn_player');
 
-    this.isPlayer = false;
+    this.backgroundSound = new BackgroundSound();
+    this.menu = new Menu();
   }
 
-  showPlayer() {
-    if (this.isPlayer === false) {
-      const createBackgroundSound = new CreateBackgroundSound();
-      createBackgroundSound.init();
-      const backgroundSound = new BackgroundSound();
-      backgroundSound.init();
+  continueGame() {
+    setTimeout(() => {
+      this.pause.classList.add('hide-pause');
+    }, 1000);
+  }
 
-      this.isPlayer = true;
-    }
+  showSettings() {
+    // this.main.innerHTML = '';
+    this.menu.loadSettingsFromLocalStorage();
+    this.menu.slideAnimationMethod();
 
-    this.isPlayer = false;
+    setTimeout(() => {
+      this.menu.hideMenu('main-menu');
+      this.menu.showMenu('settings-menu');
+    }, 1000);
+  }
+
+  showMenu() {
+    // this.main.innerHTML = '';
+    setTimeout(() => {
+      this.menu.init();
+    }, 1000);
   }
 
   init() {
+    this.backgroundSound.init();
+
     this.resumeBtn.addEventListener('click', () => {
-      return this.showPlayer();
+      return this.continueGame();
     });
     this.menuBtn.addEventListener('click', () => {
-      return this.showPlayer();
+      return this.showMenu();
     });
     this.settingsBtn.addEventListener('click', () => {
-      return this.showPlayer();
-    });
-    this.pausePlayerBtn.addEventListener('click', () => {
-      return this.showPlayer();
+      return this.showSettings();
     });
   }
 }
-
-// init() {
-//   this.setEventHandlers();
-// }
-
-// setEventHandlers() {
-//   document
-//     .querySelector('.pause')
-//     .addEventListener('click', () => this.menuEventHandler.bind(this));
-// }
-
-// eslint-disable-next-line class-methods-use-this
-// menuEventHandler(e) {
-//   const element = e.target.closest('.pause__btn');
-
-//   if (!element) {
-//     return;
-//   }
-
-//   switch (element.id) {
-//     case 'pause__btn_resume':
-//       Pause.showPlayer();
-
-//       break;
-
-//     case 'pause__btn_menu':
-//       Pause.showPlayer();
-
-//       break;
-
-//     case 'pause__btn_settings':
-//       Pause.showPlayer();
-
-//       break;
-
-//     case 'pause__btn_player':
-//       this.showPlayer();
-
-//       break;
-//     default:
-//       break;
-//   }
-// }
