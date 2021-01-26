@@ -105,7 +105,6 @@ export default class Commands {
       }, 1000);
       // const menu = new Menu();
       // menu.init();
-
     });
   }
 
