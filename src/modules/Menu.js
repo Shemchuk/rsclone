@@ -109,8 +109,11 @@ export default class Menu {
 
       case 'result__button-back':
         console.log('back from result');
-        Menu.showMenu('main-menu');
-        Menu.hideMenu('result-menu');
+        Menu.slideAnimationMethod();
+        setTimeout(function () {
+          Menu.showMenu('main-menu');
+          Menu.hideMenu('result-menu');
+        }, 1000);
 
         break;
 
@@ -124,14 +127,15 @@ export default class Menu {
       case 'button-result':
         Menu.slideAnimationMethod();
         setTimeout(function () {
+          Menu.createStatisticMenu();
           Menu.showMenu('result-menu');
           Menu.hideMenu('main-menu');
         }, 1000);
         console.log('result');
 
-        Menu.createStatisticMenu();
-        Menu.showMenu('result-menu');
-        Menu.hideMenu('main-menu');
+        // Menu.createStatisticMenu();
+        // Menu.showMenu('result-menu');
+        // Menu.hideMenu('main-menu');
 
         break;
       default:
@@ -192,8 +196,8 @@ export default class Menu {
     data.forEach((item) => {
       statistic.innerHTML += `
       <tr class="result-table__body-row">
-        <td class="result-table__body-row-cell">${item.teamName}</td>
-        <td class="result-table__body-row-cell">${item.score}</td>
+        <td class="result-table__body-row-cell"><p class="third-childd point-events-none small-text"><a>${item.teamName}</a></p></td>
+        <td class="result-table__body-row-cell  menu-font"><p><a>${item.score}</a></p></td>
       </tr>
       `;
     });
