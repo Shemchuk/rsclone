@@ -7,7 +7,7 @@
 import cards from '../cards';
 // eslint-disable-next-line import/no-cycle
 import { mainGamePlay } from './gameContainer';
-import { teams } from './timer';
+import { teams, time } from './timer';
 import Menu from '../Menu';
 import Language from '../lang/Language';
 import { generateLoardingBeforeMenu } from './loadingBeforeMenu';
@@ -19,6 +19,7 @@ export let teamFlag = 0;
 const arrConfirmed = [];
 const arrSkiped = [];
 let currentCardsStack;
+export let pauseFlag = false;
 
 // For words lang
 export let currentWordsLang;
@@ -82,7 +83,8 @@ function clickContainerButtons(e) {
   const clickBackToMainMenu = e.target.closest('.back-to-main-menu__button');
   const clickHideFooterButton = e.target.closest('.hide-footer');
   const clickShowFooterButton = e.target.closest('.show-footer');
-
+  const clickPauseMenu = e.target.closest('.pause-menu');
+  const clickResume = e.target.closest('.pause__btn_resume');
   // if (aliasSettings.isSounds === 'true') {
   //   const gameAudio = new Audio();
   //   gameAudio.src = soundLinks.skipCardClick;
@@ -163,13 +165,19 @@ function clickContainerButtons(e) {
       arrSkiped.length = 0;
     }, 1000);
   } else if (clickHideFooterButton) {
-    gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 65 });
+    gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 85 });
     document.querySelector('.show-footer').classList.remove('hide');
     document.querySelector('.hide-footer').classList.add('hide');
   } else if (clickShowFooterButton) {
     gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 0 });
     document.querySelector('.show-footer').classList.add('hide');
     document.querySelector('.hide-footer').classList.remove('hide');
+  } else if (clickPauseMenu) {
+    document.querySelector('.pause').style.visibility = 'visible';
+    pauseFlag = true;
+  } else if (clickResume) {
+    document.querySelector('.pause').style.visibility = 'hidden';
+    pauseFlag = false;
   }
 }
 function buttonsClickHandler() {
@@ -214,10 +222,14 @@ function generateSwiperFooter() {
 
   hammertime.on('swipedown', () => {
     gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 65 });
+    document.querySelector('.show-footer').classList.remove('hide');
+    document.querySelector('.hide-footer').classList.add('hide');
   });
 
   hammertime.on('swipeup', () => {
     gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 0 });
+    document.querySelector('.show-footer').classList.add('hide');
+    document.querySelector('.hide-footer').classList.remove('hide');
   });
 }
 generateSwiperFooter();
