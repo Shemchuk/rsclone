@@ -110,32 +110,14 @@ const menuHTMLTemplate = (lang) => `
 
     <div class="tutorial-text">
       <h3></h3>
-      <p data-title="The essence" class="dialog-box_info">
-        Cillum dolor esse sit incididunt velit eiusmod magna ad nostrud officia aute dolor dolor.
-        Magna esse ullamco pariatur adipisicing consectetur eu commodo officia. Ex cillum consequat
-        mollit minim elit est deserunt occaecat nisi amet. Quis aliqua nostrud Lorem occaecat sunt.
-        Eiusmod quis amet ullamco aliquip dolore ut incididunt duis adipisicing. Elit consequat nisi
-        eiusmod aute ipsum sunt veniam do est. Occaecat mollit aliquip ut proident consectetur amet
-        ex dolore consectetur aliqua elit.
+      <p data-title="${lang.essenceTitle}" class="dialog-box_info">
+        ${lang.essenceContent}
       </p>
-      <p data-title="Points" class="dialog-box_info">>
-        Commodo nisi non consectetur voluptate incididunt mollit duis dolore amet amet tempor
-        exercitation. Qui amet aute ea aute id ad aliquip proident. Irure duis qui labore deserunt
-        enim in quis nisi sint consequat aliqua. Ex proident labore et laborum tempor fugiat sint
-        magna veniam minim. Nulla dolor labore adipisicing in enim mollit laboris fugiat eu. Aliquip
-        minim cillum ullamco voluptate non dolore non ex duis fugiat duis ad. Deserunt cillum ad et
-        nisi amet non voluptate culpa qui do. Labore ullamco et minim proident est laborum mollit ad
-        labore deserunt ut irure dolore. Reprehenderit ad ad irure ut irure qui est eu velit eu
-        excepteur adipisicing culpa. Laborum cupidatat ullamco eu duis anim reprehenderit proident
-        aute ad consectetur eiusmod.
+      <p data-title="${lang.pointsTitle}" class="dialog-box_info">
+        ${lang.pointsContent}
       </p>
-      <p data-title="Winner" class="dialog-box_info">>
-        Tempor tempor aliqua in commodo cillum Lorem magna dolore proident Lorem. Esse ad consequat
-        est excepteur irure eu irure quis aliqua qui. Do mollit esse veniam excepteur ut veniam anim
-        minim dolore sit commodo consequat duis commodo. Sunt dolor reprehenderit ipsum minim
-        eiusmod eu consectetur anim excepteur eiusmod. Duis excepteur anim dolor sit enim veniam
-        deserunt anim adipisicing Lorem elit. Cillum sunt do consequat elit laboris nisi
-        consectetur.
+      <p data-title="${lang.winnerTitle}" class="dialog-box_info">
+        ${lang.winnerContent}
       </p>
     </div>
 
