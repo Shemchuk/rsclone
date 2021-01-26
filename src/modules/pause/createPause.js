@@ -11,12 +11,21 @@ export default class CreatePause {
     let template = '';
     const pauseContainer = document.createElement('div');
     pauseContainer.className = 'pause';
-    template = `<h2 class='pause__title'>PAUSE MENU</h2>
+    template = `<div id="container">
+    <div class="sign-wrap">
+    <div class="sign">
+    <div class="menu">
+    <h2 class='menu-title menu-font'><p><a>PAUSE</a></p></h2>
     <div class='pause__content'>
-    <button class='pause__btn pause__btn_resume' id='pause__btn_resume'>Resume</button>
-    <button class='pause__btn pause__btn_menu' id='pause__btn_menu'>Menu</button>
-    <button class='pause__btn pause__btn_settings' id='pause__btn_settings'>Settings</button>
-    <button class='pause__btn pause__btn_player' id='pause__btn_player'>Player</button>`;
+    <button class='pause__btn pause__btn_player' id='pause__btn_player'>Player</button>
+    <button class='pause__btn pause__btn_resume menu-button' id='pause__btn_resume'><p><a>Resume</a></p></button>
+    <button class='pause__btn pause__btn_settings menu-button' id='pause__btn_settings'><p><a>Settings</a></p></button>
+    <button class='pause__btn pause__btn_menu menu-button' id='pause__btn_menu'><p><a>Main menu</a></p></button>
+    </div>
+    </div>
+    </div>
+    </div>`;
+
     pauseContainer.innerHTML = template;
     this.main.appendChild(pauseContainer);
     return this.main;
