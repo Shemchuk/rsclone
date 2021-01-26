@@ -8,6 +8,8 @@ import { generateCard, buttonsClickHandler, teamFlag, arrConfirmed, arrSkiped } 
 import countdown, { teams } from './timer';
 import { generateRoundStatisticsModal } from './gameStatistics';
 import Language from '../lang/Language';
+import CreatePause from '../pause/createPause';
+import Pause from '../pause/pause';
 
 // Cards selection container
 export const generateCardsSeletionContainer = () => {
@@ -60,7 +62,7 @@ export const generateGameContainer = () => {
   template += `<div class="team-container__timer"><div>`;
   template += `<h2>${lang.gameContainerTime} <span class="first"></span></h2>`;
   template += `</div></div>`;
-  template += `<p class="third-child"><a>${teams[teamFlag].name}</a></p>`;
+  template += `<p class="third-child pause-menu"><a>${teams[teamFlag].name}</a></p>`;
   template += `<div class="team-container__team-points"><div>`;
   template += `<h2>${lang.gameContainerPoints}`;
   template += `<span class="second">${teams[teamFlag].points}</span>`;
@@ -134,7 +136,12 @@ export function mainGamePlay() {
   document.querySelector('.game-container').appendChild(generateRoundStatisticsModal());
   gsap.from('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
   gsap.from('.game-container__card', { duration: 1, ease: 'power1.out', y: 500 });
+  const createPause = new CreatePause();
+  createPause.init();
+  const pause = new Pause();
+  pause.init();
   countdown();
   generateCard();
+
   document.querySelector('.round-stat-modal').style.display = 'none';
 }

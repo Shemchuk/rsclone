@@ -43,7 +43,7 @@
   .tutorial-menu,
   .result-menu {
     .settings-menu__item {
-      margin: 1rem 0;
+      // margin: 0.5rem 0;
     }
 
     .item__row-container {
@@ -85,6 +85,12 @@
       }
     }
   }
+  .small-text{
+    p a{
+      font-size: 25px;
+    }
+  }
+
   .input__container {
     display: flex;
     justify-content: space-between;
@@ -115,16 +121,18 @@
     .tutorial-text {
       font-size: 1.6rem;
       height: 300px;
-      overflow: scroll;
+      overflow-y: scroll;
     }
   }
 
   .result-menu {
     .result-table-container {
       width: 100%;
+      max-height: 250px;
+      overflow-y: scroll;
       .result-table {
         width: 100%;
-        font-size: 1.6rem;
+        font-size: 0.4rem;
         // border: 2px solid black;
         .result-table__head-row-cell:first-child,
         .result-table__body-row-cell:first-child {

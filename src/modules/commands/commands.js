@@ -79,14 +79,15 @@ export default class Commands {
       while (this.items.length < 2) {
         return;
       }
-      // if (this.aliasSettings.lang === 'en') {
-      //   const startGameClick = new Audio();
-      //   startGameClick.src = soundLinks.startGameClick;
-      //   startGameClick.play();
-      // }
 
-      gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 2000 });
-      gsap.to('.sign', { duration: 1, ease: 'power1.out', y: -500 });
+      if (this.aliasSettings.isSounds === 'true') {
+        const startGameClick = new Audio();
+        startGameClick.src = soundLinks.startGameClick;
+        startGameClick.play();
+      }
+
+      gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 800 });
+      gsap.to('#sign', { duration: 1, ease: 'power1.out', y: -500 });
 
       setTimeout(function () {
         document.querySelector('.main').innerHTML = '';
@@ -94,15 +95,16 @@ export default class Commands {
         game();
       }, 1000);
     });
-    this.backMenuButton.addEventListener('click', () => {
-      // if (this.aliasSettings.lang === 'en') {
-      //   const startGameClick = new Audio();
-      //   startGameClick.src = soundLinks.startGameClick;
-      //   startGameClick.play();
-      // }
 
-      const menu = new Menu();
-      menu.init();
+    this.backMenuButton.addEventListener('click', function () {
+      gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 1000 });
+      setTimeout(() => {
+        const menu = new Menu();
+        menu.init();
+        gsap.from('.menu', { duration: 1, ease: 'power1.out', y: 1000 });
+      }, 1000);
+      // const menu = new Menu();
+      // menu.init();
     });
   }
 
@@ -146,11 +148,11 @@ export default class Commands {
       return;
     }
 
-    // if (this.aliasSettings.lang === 'en') {
-    //   const addTeam = new Audio();
-    //   addTeam.src = soundLinks.startGameClick;
-    //   addTeam.play();
-    // }
+    if (this.aliasSettings.isSounds === 'true') {
+      const startGameClick = new Audio();
+      startGameClick.src = soundLinks.startGameClick;
+      startGameClick.play();
+    }
 
     this.items.push(item);
     this.populateList(this.items, this.teamsList);
@@ -163,7 +165,7 @@ export default class Commands {
     this.teamsList.innerHTML = this.items
       .map((el, i) => {
         return `
-        <li class="item${i} item"><p  class="third-child point-events-none text-small"><a>${el.text}</a></p>
+        <li class="item${i} item"><p  class="third-childd point-events-none text-small"><a>${el.text}</a></p>
           <button id="menu-button__del" class="delete-team${i} menu-button menu-button__small" data-index=${i}><p><a>${this.lang.deleteTeamButton}</a></p></button>
         </li>
       `;
@@ -179,11 +181,11 @@ export default class Commands {
     const { index } = button.dataset;
     this.items.splice(index, 1);
 
-    // if (this.aliasSettings.lang === 'en') {
-    //   const deleteTeam = new Audio();
-    //   deleteTeam.src = soundLinks.deleteTeam;
-    //   deleteTeam.play();
-    // }
+    if (this.aliasSettings.isSounds === 'true') {
+      const startGameClick = new Audio();
+      startGameClick.src = soundLinks.startGameClick;
+      startGameClick.play();
+    }
 
     localStorage.removeItem('items');
     localStorage.setItem('items', JSON.stringify(this.items));

@@ -7,11 +7,11 @@
 import cards from '../cards';
 // eslint-disable-next-line import/no-cycle
 import { mainGamePlay } from './gameContainer';
-import { teams } from './timer';
+import { teams, time } from './timer';
 import Menu from '../Menu';
 import Language from '../lang/Language';
 import { generateLoardingBeforeMenu } from './loadingBeforeMenu';
-import soundsLinks from '../sound/soundLinks';
+import soundLinks from '../sound/soundLinks';
 
 export let teamFlag = 0;
 // import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
@@ -19,12 +19,16 @@ export let teamFlag = 0;
 const arrConfirmed = [];
 const arrSkiped = [];
 let currentCardsStack;
+export let pauseFlag = false;
 
 // For words lang
 export let currentWordsLang;
 
+// For audio
+const aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
+
 // =========== LANG =============== //
-const langObject = new Language();
+// const langObject = new Language();
 // const lang = langObject.getCurrentLangObject().game; // Object "game"
 
 // =========== LANG =============== //
@@ -79,11 +83,12 @@ function clickContainerButtons(e) {
   const clickBackToMainMenu = e.target.closest('.back-to-main-menu__button');
   const clickHideFooterButton = e.target.closest('.hide-footer');
   const clickShowFooterButton = e.target.closest('.show-footer');
-
-  // if (aliasSettings.lang === 'en') {
-  //   const skipCardClick = new Audio();
-  //   skipCardClick.src = soundsLinks.skipCardClick;
-  //   skipCardClick.play();
+  const clickPauseMenu = e.target.closest('.pause-menu');
+  const clickResume = e.target.closest('.pause__btn_resume');
+  // if (aliasSettings.isSounds === 'true') {
+  //   const gameAudio = new Audio();
+  //   gameAudio.src = soundLinks.skipCardClick;
+  //   gameAudio.play();
   // }
 
   if (clickReady) {
@@ -92,22 +97,13 @@ function clickContainerButtons(e) {
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
     arrConfirmed.push(currentCardsStack[i - 1]);
     document.querySelector('.second').innerHTML = teams[teamFlag].points;
-
-    // if (aliasSettings.lang === 'en') {
-    //   const skipCardClick = new Audio();
-    //   skipCardClick.src = soundsLinks.skipCardClick;
-    //   skipCardClick.play();
-    // }
-
     rotationGameContainer();
     i += 1;
   } else if (clickSkip) {
     rotationGradient += 360;
-
     document.querySelector('.card__word').innerHTML =
       currentCardsStack[0 + i - 1][currentWordsLang];
     arrSkiped.push(currentCardsStack[i - 1]);
-
     rotationGameContainer();
     i += 1;
   } else if (clickNextRound) {
@@ -116,7 +112,6 @@ function clickContainerButtons(e) {
     } else {
       teamFlag = 0;
     }
-
     gsap.to('.team-container__team-name', { duration: 1, ease: 'power1.out', y: -500 });
     gsap.to('.round-stat-modal', { duration: 1, ease: 'power1.out', y: 1000 });
     rotationGradient = 0;
@@ -170,20 +165,25 @@ function clickContainerButtons(e) {
       arrSkiped.length = 0;
     }, 1000);
   } else if (clickHideFooterButton) {
-    gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 65 });
+    gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 85 });
     document.querySelector('.show-footer').classList.remove('hide');
     document.querySelector('.hide-footer').classList.add('hide');
   } else if (clickShowFooterButton) {
     gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 0 });
     document.querySelector('.show-footer').classList.add('hide');
     document.querySelector('.hide-footer').classList.remove('hide');
+  } else if (clickPauseMenu) {
+    document.querySelector('.pause').style.visibility = 'visible';
+    pauseFlag = true;
+  } else if (clickResume) {
+    document.querySelector('.pause').style.visibility = 'hidden';
+    pauseFlag = false;
   }
 }
 function buttonsClickHandler() {
   const buttonsContainer = document.querySelector('.main');
   const footerHandler = document.querySelector('.footer');
   buttonsContainer.addEventListener('click', clickContainerButtons);
-  // console.log(document.querySelector('#123'));
   footerHandler.addEventListener('click', clickContainerButtons);
 }
 buttonsClickHandler();
@@ -222,10 +222,14 @@ function generateSwiperFooter() {
 
   hammertime.on('swipedown', () => {
     gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 65 });
+    document.querySelector('.show-footer').classList.remove('hide');
+    document.querySelector('.hide-footer').classList.add('hide');
   });
 
   hammertime.on('swipeup', () => {
     gsap.to('.footer', { duration: 1, ease: 'power1.out', y: 0 });
+    document.querySelector('.show-footer').classList.add('hide');
+    document.querySelector('.hide-footer').classList.remove('hide');
   });
 }
 generateSwiperFooter();
