@@ -32,8 +32,14 @@ export default class Commands {
       }, 1000);
     });
     this.backMenuButton.addEventListener('click', function () {
-      const menu = new Menu();
-      menu.init();
+      gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 1000 });
+      setTimeout(() => {
+        const menu = new Menu();
+        menu.init();
+        gsap.from('.menu', { duration: 1, ease: 'power1.out', y: 1000 });
+      }, 1000);
+      // const menu = new Menu();
+      // menu.init();
     });
   }
 
