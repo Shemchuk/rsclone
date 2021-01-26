@@ -14,7 +14,7 @@ const menuHTMLTemplate = (lang) => `
 
 
 
-  <div class="settings-menu hide-menu">
+  <div class="settings-menu section-menu hide-menu">
     <h2 class="menu-title menu-font"><p><a>${lang.settingsMenuTitle}</a></p></h2>
 
     <div class="settings-menu__item set__words-number menu-font">
@@ -105,7 +105,7 @@ const menuHTMLTemplate = (lang) => `
     </div>
   </div>
 
-  <div class="tutorial-menu hide-menu menu-font">
+  <div class="tutorial-menu section-menu hide-menu menu-font">
     <h2 class="menu-title"><p><a>${lang.TutorialMenuTitle}</p></a></h2>
 
     <div class="tutorial-text">
@@ -144,7 +144,7 @@ const menuHTMLTemplate = (lang) => `
     </div>
   </div>
 
-  <div class="result-menu hide-menu">
+  <div class="result-menu section-menu hide-menu">
     <h2 class="menu-title menu-font"><p><a>${lang.resultMenuTitle}</a></p></h2>
 
     <div class="result-table-container">
