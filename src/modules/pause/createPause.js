@@ -1,5 +1,4 @@
 // import Language from '../lang/Language';
-
 export default class CreatePause {
   constructor() {
     this.main = document.querySelector('.main');
