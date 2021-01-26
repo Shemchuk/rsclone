@@ -3,18 +3,19 @@ import audioTracks from './audioTracks';
 export default class BackgroundSound {
   constructor() {
     this.backgroundSoundWrapper = document.querySelector('.background-sound-wrapper');
-    this.title = document.querySelector('.music__title');
-    this.author = document.querySelector('.music__author');
     this.previousBtn = document.querySelector('.previous');
     this.playBtn = document.querySelector('.play');
     this.forwardBtn = document.querySelector('.forward');
     this.muteBtn = document.querySelector('.mute');
+    this.volumeBtn = document.querySelector('.music-control__volume-control');
+    this.option = document.querySelector('.option');
     this.volumeInput = document.getElementById('volume');
 
     this.currentAudio = 'music';
     this.currentId = 0;
     this.audio = null;
     this.isPlaying = false;
+    this.isVolumeOptionOpen = false;
     this.isMute = false;
     this.audioValue = 0;
   }
@@ -70,6 +71,16 @@ export default class BackgroundSound {
     }
   }
 
+  displayVolume() {
+    if (this.option.style.display === 'none') {
+      this.option.style.display = 'block';
+    } else {
+      this.option.style.display = 'none';
+      // this.volumeBtn.src = '/./src/assets/icons/next.svg';
+      // this.volumeBtn.alt = 'Return';
+    }
+  }
+
   changeVolume() {
     document.getElementById(this.currentAudio).volume = this.volumeInput.value;
   }
@@ -88,8 +99,6 @@ export default class BackgroundSound {
       ? this.backgroundSoundWrapper.appendChild(this.audio)
       : '';
 
-    this.title.innerHTML = audioTracks[this.currentId].title;
-    this.author.innerHTML = audioTracks[this.currentId].author;
     // this.audio.setVolume(this.volumeInput);
 
     this.previousBtn.addEventListener('click', () => {
@@ -101,6 +110,9 @@ export default class BackgroundSound {
     });
     this.muteBtn.addEventListener('click', () => {
       this.mute();
+    });
+    this.volumeBtn.addEventListener('click', () => {
+      this.displayVolume();
     });
     this.volumeInput.addEventListener('input', () => {
       this.changeVolume();

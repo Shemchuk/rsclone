@@ -3,6 +3,7 @@ import menuHTMLTemplate from './components/menuHTMLTemplate';
 import Commands from './commands/commands';
 import CreateCommands from './commands/createCommands';
 import Language from './lang/Language';
+import soundsLinks from './sound/soundLinks';
 
 // eslint-disable-next-line no-unused-vars
 import { set as setValueToStorage, get as getValueFromStorage } from './utils/storage';
@@ -12,6 +13,7 @@ export default class Menu {
     this.tmp = CONST.TMP;
     this.langObject = new Language();
     // this.lang = this.langObject.getCurrentLangObject().mainMenu;
+    this.aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
   }
 
   init() {
@@ -40,13 +42,14 @@ export default class Menu {
   menuEventHandler(e) {
     const element = e.target.closest('.menu-button');
     console.log('event handler');
+
     if (!element) {
       return;
     }
 
-    // const player = new Audio();
-    // player.src = '/../src/assets/sounds/LAZER.wav';
-    // player.play();
+    // const menuClick = new Audio();
+    // menuClick.src = soundsLinks.startGameClick;
+    // menuClick.play();
 
     switch (element.id) {
       case 'button-start':
