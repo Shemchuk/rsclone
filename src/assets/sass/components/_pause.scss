@@ -1,0 +1,24 @@
+.pause {
+  padding: 35px;
+  width: 300px;
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.pause__title {
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.pause__content {
+  height: 250px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.pause__btn {
+border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+padding: 5px 0;
+cursor: pointer;
+}
+
