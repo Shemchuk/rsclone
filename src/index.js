@@ -19,16 +19,20 @@ import Pause from './modules/pause/pause';
 
 window.onload = () => {
   console.log('Project starts');
-  // loadingBeforeMenu();
-  // generateFooter();
+  loadingBeforeMenu();
+  generateFooter();
   // const menu = new Menu();
   // menu.init();
+
+  // const createPause = new CreatePause();
+  // createPause.init();
+  // const pause = new Pause();
+  // pause.init();
 
   // const createBackgroundSound = new CreateBackgroundSound();
   // createBackgroundSound.init();
   // const backgroundSound = new BackgroundSound();
   // backgroundSound.init();
-
 
   // eslint-disable-next-line no-unused-vars
   // const ripple = new MDCRipple(document.querySelector('.mdc-button'));
