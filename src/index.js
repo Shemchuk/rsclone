@@ -24,10 +24,10 @@ window.onload = () => {
   // const menu = new Menu();
   // menu.init();
 
-  // const createBackgroundSound = new CreateBackgroundSound();
-  // createBackgroundSound.init();
-  // const backgroundSound = new BackgroundSound();
-  // backgroundSound.init();
+  const createBackgroundSound = new CreateBackgroundSound();
+  createBackgroundSound.init();
+  const backgroundSound = new BackgroundSound();
+  backgroundSound.init();
 
 
   // eslint-disable-next-line no-unused-vars
