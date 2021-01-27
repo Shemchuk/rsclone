@@ -1,22 +1,16 @@
 import Menu from '../Menu';
 import BackgroundSound from '../backgroundSound/backgroundSound';
+import Language from '../lang/Language';
+import { generateLoardingOnlyMenu, loadingOnlyMenu } from '../game/loadingBeforeMenu';
 
 export default class Pause {
   constructor() {
     this.main = document.querySelector('.main');
     this.pause = document.querySelector('.pause');
-    this.resumeBtn = document.querySelector('.pause__btn_resume');
     this.menuBtn = document.querySelector('.pause__btn_menu');
     this.settingsBtn = document.querySelector('.pause__btn_settings');
 
     this.backgroundSound = new BackgroundSound();
-    this.menu = new Menu();
-  }
-
-  continueGame() {
-    setTimeout(() => {
-      this.pause.classList.add('hide-pause');
-    }, 1000);
   }
 
   showSettings() {
@@ -31,18 +25,14 @@ export default class Pause {
   }
 
   showMenu() {
-    // this.main.innerHTML = '';
-    setTimeout(() => {
-      this.menu.init();
-    }, 1000);
+    this.main.innerHTML = '';
+    generateLoardingOnlyMenu();
+    loadingOnlyMenu();
   }
 
   init() {
     this.backgroundSound.init();
 
-    this.resumeBtn.addEventListener('click', () => {
-      return this.continueGame();
-    });
     this.menuBtn.addEventListener('click', () => {
       return this.showMenu();
     });
