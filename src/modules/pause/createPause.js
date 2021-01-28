@@ -20,7 +20,7 @@ export default class CreatePause {
     <button class='pause__btn pause__btn_player' id='pause__btn_player'>Player</button>
     <button class='pause__btn pause__btn_resume menu-button' id='pause__btn_resume'><p><a>Resume</a></p></button>
     <button class='pause__btn pause__btn_settings menu-button' id='pause__btn_settings'><p><a>Settings</a></p></button>
-    <button class='pause__btn pause__btn_menu menu-button' id='pause__btn_menu'><p><a>Main menu</a></p></button>
+    <button class='pause__btn pause__btn_menu menu-button' id='pause__btn_menu'><p><a>Main menuenu</a></p></button>
     </div>
     </div>
     </div>
