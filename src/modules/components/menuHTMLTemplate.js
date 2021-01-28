@@ -4,6 +4,7 @@ const menuHTMLTemplate = (lang) => `
   <div class="sign-wrap">
   <div class="sign">
     <div class="main-menu">
+    <div class="player menu__player"></div>
     <button id="button-start" class="menu-button"><p><a>
     ${lang.startButton}
   </a></p></button>

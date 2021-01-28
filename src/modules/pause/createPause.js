@@ -1,4 +1,3 @@
-// import Language from '../lang/Language';
 import { generatePausePlayer } from '../backgroundSound/createBackgroundSound';
 
 export default class CreatePause {
