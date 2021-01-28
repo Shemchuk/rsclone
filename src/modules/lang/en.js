@@ -26,6 +26,12 @@ const en = {
     winnerTitle: 'Winner',
     winnerContent: 'The game lasts until one of the teams has the required number of points to win',
   },
+  pauseMenu: {
+    gamePause: 'Pause',
+    gameResume: 'Resume',
+    // toSettings: 'Settings',
+    toMainMenu: 'Menu',
+  },
   commandMenu: {
     allCommands: 'All commands',
     loadingTeams: 'Create team please',

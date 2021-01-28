@@ -1,28 +1,25 @@
-import Menu from '../Menu';
 import BackgroundSound from '../backgroundSound/backgroundSound';
-import Language from '../lang/Language';
-import { generateLoardingOnlyMenu, loadingOnlyMenu } from '../game/loadingBeforeMenu';
+import {
+  generateLoardingOnlyMenu,
+  loadingOnlyMenu,
+  // generateAndloadingOnlySettings,
+} from '../game/loadingBeforeMenu';
 
+// Закомментирована загрузка страницы настроек
 export default class Pause {
   constructor() {
     this.main = document.querySelector('.main');
     this.pause = document.querySelector('.pause');
     this.menuBtn = document.querySelector('.pause__btn_menu');
-    this.settingsBtn = document.querySelector('.pause__btn_settings');
+    // this.settingsBtn = document.querySelector('.pause__btn_settings');
 
     this.backgroundSound = new BackgroundSound();
   }
 
-  showSettings() {
-    // this.main.innerHTML = '';
-    this.menu.loadSettingsFromLocalStorage();
-    this.menu.slideAnimationMethod();
-
-    setTimeout(() => {
-      this.menu.hideMenu('main-menu');
-      this.menu.showMenu('settings-menu');
-    }, 1000);
-  }
+  // showSettings() {
+  //   this.main.innerHTML = '';
+  //   generateAndloadingOnlySettings();
+  // }
 
   showMenu() {
     this.main.innerHTML = '';
@@ -36,8 +33,8 @@ export default class Pause {
     this.menuBtn.addEventListener('click', () => {
       return this.showMenu();
     });
-    this.settingsBtn.addEventListener('click', () => {
-      return this.showSettings();
-    });
+    // this.settingsBtn.addEventListener('click', () => {
+    //   return this.showSettings();
+    // });
   }
 }
