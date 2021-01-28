@@ -60,3 +60,21 @@ export function loadingOnlyMenu() {
     gsap.from('.menu', { duration: 1, y: 1000 });
   }, 1000);
 }
+
+// Закомментирована закгрузка страницы настроек
+
+// export function generateAndloadingOnlySettings() {
+//   document.querySelector('.main').appendChild(generateLoardingOnlyMenu());
+//   gsap.from('#sign', { duration: 1, y: -1000 });
+
+//   setTimeout(() => {
+//     const menu = new Menu();
+//     menu.init();
+//     Menu.loadSettingsFromLocalStorage();
+//     Menu.slideAnimationMethod();
+
+//     Menu.hideMenu('main-menu');
+//     Menu.showMenu('settings-menu');
+//     gsap.from('.menu', { duration: 1, y: 1000 });
+//   }, 1000);
+// }

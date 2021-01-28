@@ -4,6 +4,8 @@ import Commands from './commands/commands';
 import CreateCommands from './commands/createCommands';
 import Language from './lang/Language';
 import soundLinks from './sound/soundLinks';
+import { generateMenuPlayer } from './backgroundSound/createBackgroundSound';
+import BackgroundSound from './backgroundSound/backgroundSound';
 
 // eslint-disable-next-line no-unused-vars
 import { set as setValueToStorage, get as getValueFromStorage } from './utils/storage';
@@ -31,11 +33,14 @@ export default class Menu {
 
     this.lang = this.langObject.getCurrentLangObject().mainMenu;
     main.innerHTML += menuHTMLTemplate(this.lang);
+    generateMenuPlayer();
     this.setEventHandlers();
   }
 
   setEventHandlers() {
     document.querySelector('.menu').addEventListener('click', this.menuEventHandler.bind(this));
+    const backgroundSound = new BackgroundSound();
+    backgroundSound.init();
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -47,14 +52,14 @@ export default class Menu {
       return;
     }
 
-    const startGameClick = new Audio();
+    // const startGameClick = new Audio();
 
     switch (element.id) {
       case 'button-start':
-        if (this.aliasSettings.isSounds === 'true') {
-          startGameClick.src = soundLinks.startGameClick;
-          startGameClick.play();
-        }
+        // if (this.aliasSettings.isSounds === 'true') {
+        //   startGameClick.src = soundLinks.startGameClick;
+        //   startGameClick.play();
+        // }
         console.log('start');
         Menu.showCommandMenu();
         setTimeout(() => {

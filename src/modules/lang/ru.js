@@ -27,6 +27,12 @@ const ru = {
     winnerContent:
       'Игра длится до тех пор, пока одна из команд не наберет необходимое количество для победы количество баллов',
   },
+  pauseMenu: {
+    gamePause: 'Пауза',
+    gameResume: 'Продолжить',
+    // toSettings: 'Настройки',
+    toMainMenu: 'В меню',
+  },
   commandMenu: {
     allCommands: 'Все команды',
     loadingTeams: 'Создайте команду',

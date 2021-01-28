@@ -39,9 +39,6 @@
 //     player.play()
 //   }
 
-
-
-
 // createSoundElements() {
 //     let template = '';
 //     const soundsContainer = document.createElement('div');
