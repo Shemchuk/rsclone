@@ -12,6 +12,7 @@ import Menu from '../Menu';
 import Language from '../lang/Language';
 import { generateLoardingBeforeMenu } from './loadingBeforeMenu';
 import soundLinks from '../sound/soundLinks';
+import Hotkeys from '../Hotkeys';
 
 export let teamFlag = 0;
 // import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
@@ -26,6 +27,7 @@ export let currentWordsLang;
 
 // For audio
 const aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
+const gameHotkeys = new Hotkeys();
 
 // =========== LANG =============== //
 // const langObject = new Language();
@@ -53,7 +55,9 @@ function generateCard() {
   // choseCurrentCardsLang();
   document.querySelector('.card__word').innerHTML = currentCardsStack[i][currentWordsLang];
   i++;
+  gameHotkeys.setGameHandler();
 }
+
 // Next round function
 function nextRound() {
   document.querySelector('.main').innerHTML = '';

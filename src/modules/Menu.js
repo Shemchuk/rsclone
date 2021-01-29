@@ -2,7 +2,7 @@ import menuHTMLTemplate from './components/menuHTMLTemplate';
 // import Commands from './commands/commands';
 // import CreateCommands from './commands/createCommands';
 import Language from './lang/Language';
-import soundsLinks from './sound/soundLinks';
+import soundLinks from './sound/soundLinks';
 import Hotkeys from './Hotkeys';
 import { set as setValueToStorage } from './utils/storage';
 // eslint-disable-next-line import/no-cycle
@@ -22,8 +22,8 @@ export default class Menu {
   }
 
   createMenu() {
-    // const main = document.querySelector('.loading-block');
-    const main = document.querySelector('.main');
+    const main = document.querySelector('.loading-block');
+    // const main = document.querySelector('.main');
     const menu = document.querySelector('.menu');
 
     if (menu) {

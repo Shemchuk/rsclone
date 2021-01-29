@@ -19,10 +19,10 @@ import Pause from './modules/pause/pause';
 
 window.onload = () => {
   console.log('Project starts');
-  // loadingBeforeMenu();
-  // generateFooter();
-  const menu = new Menu();
-  menu.init();
+  loadingBeforeMenu();
+  generateFooter();
+  // const menu = new Menu();
+  // menu.init();
 
   // const createBackgroundSound = new CreateBackgroundSound();
   // createBackgroundSound.init();
