@@ -9,6 +9,8 @@ export default class Hotkeys {
 
   init() {
     this.currentItem = -1;
+    const main = document.querySelectorAll('.main');
+    main.focus();
   }
 
   setMenuHandler() {

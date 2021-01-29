@@ -78,8 +78,8 @@ export default class MenuUtils {
     data.forEach((item) => {
       statistic.innerHTML += `
       <tr class="result-table__body-row">
-        <td class="result-table__body-row-cell">${item.teamName}</td>
-        <td class="result-table__body-row-cell">${item.score}</td>
+        <td class="result-table__body-row-cell"><p class="third-child point-events-none text-small"><a>${item.teamName}</a></p></td>
+        <td class="result-table__body-row-cell menu-font"><p><a>${item.score}</a></p></td>
       </tr>
       `;
     });
