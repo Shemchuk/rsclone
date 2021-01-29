@@ -96,11 +96,13 @@
   fill: #5c5c5c;
   width: 25px;
   height: 25px;
+  -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
 }
 .ico > *:hover {
   transition: 0.3s;
   fill: #2493f2;
-  cursor: pointer;
+  filter: drop-shadow( 1px 1px 1px  #2493f2);
 }
 @media (max-width: 979px) {
   .ico > * {
@@ -129,6 +131,7 @@
   bottom: 0px;
   background: transparent;
   border: 0;
+
   // background-color: red;
   // color: red;
 

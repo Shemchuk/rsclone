@@ -24,6 +24,11 @@ window.onload = () => {
   // const menu = new Menu();
   // menu.init();
 
+  // const createPause = new CreatePause();
+  // createPause.init();
+  // const pause = new Pause();
+  // pause.init();
+
   // const createBackgroundSound = new CreateBackgroundSound();
   // createBackgroundSound.init();
   // const backgroundSound = new BackgroundSound();
