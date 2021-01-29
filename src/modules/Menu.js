@@ -1,14 +1,10 @@
 import menuHTMLTemplate from './components/menuHTMLTemplate';
-// import Commands from './commands/commands';
-// import CreateCommands from './commands/createCommands';
 import Language from './lang/Language';
-import soundLinks from './sound/soundLinks';
 
 import { generateMenuPlayer } from './backgroundSound/createBackgroundSound';
 import BackgroundSound from './backgroundSound/backgroundSound';
 
-// eslint-disable-next-line no-unused-vars
-import { set as setValueToStorage, get as getValueFromStorage } from './utils/storage';
+// eslint-disable-next-line import/no-cycle
 import Hotkeys from './Hotkeys';
 import { set as setValueToStorage } from './utils/storage';
 // eslint-disable-next-line import/no-cycle
@@ -17,7 +13,6 @@ import MenuUtils from './utils/MenuUtils';
 export default class Menu {
   constructor() {
     this.langObject = new Language();
-    // this.lang = this.langObject.getCurrentLangObject().mainMenu;
     this.aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
   }
 
@@ -40,13 +35,13 @@ export default class Menu {
     main.innerHTML += menuHTMLTemplate(this.lang);
     generateMenuPlayer();
     this.setEventHandlers();
+
+    const backgroundSound = new BackgroundSound();
+    backgroundSound.init();
   }
 
   setEventHandlers() {
     document.querySelector('.menu').addEventListener('click', this.menuEventHandler.bind(this));
-
-    const backgroundSound = new BackgroundSound();
-    backgroundSound.init();
 
     document.querySelector('.main-menu').addEventListener('mouseenter', () => {
       this.hotkeys.disableActiveMenuButtons();
