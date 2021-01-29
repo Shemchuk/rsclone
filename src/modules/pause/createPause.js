@@ -16,7 +16,7 @@ export default class CreatePause {
     <div class="sign-wrap">
     <div class="sign">
     <div class="menu">
-    <h2 class='menu-title menu-font'><p><a>PAUSE</a></p></h2>
+    <h2 class='menu-title menu-font'><p><a>Pause</a></p></h2>
 
     <div class='pause__content'>
 

@@ -1,4 +1,5 @@
 import Menu from '../Menu';
+import BackgroundSound from '../backgroundSound/backgroundSound';
 
 export const generateLoardingBeforeMenu = () => {
   let template = '';
@@ -33,10 +34,21 @@ export function loadingBeforeMenu() {
         const menu = new Menu();
         menu.init();
         gsap.from('.menu', { duration: 1, y: 1000 });
+        setTimeout(() => {
+          const backgroundSound = new BackgroundSound();
+          backgroundSound.init();
+          backgroundSound.play();
+        }, 0);
       }, 500);
     }, 1500);
   }, 4000);
 }
+
+setTimeout(() => {
+  console.log('backgroundSound');
+  backgroundSound.init();
+  backgroundSound.playOnStart();
+}, 500);
 
 export const generateLoardingOnlyMenu = () => {
   let template = '';
