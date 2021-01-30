@@ -14,4 +14,22 @@ export default class Sound {
       startGameClick.play();
     }
   }
+
+  deleteTeamClick() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const deleteTeamClick = new Audio();
+      deleteTeamClick.src = soundLinks.deleteTeam;
+      this.audioValue = 0.3;
+      deleteTeamClick.play();
+    }
+  }
+
+  cardClick() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const cardClick = new Audio();
+      cardClick.src = soundLinks.cardClick;
+      this.audioValue = 0.3;
+      cardClick.play();
+    }
+  }
 }

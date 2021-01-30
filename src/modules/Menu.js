@@ -45,11 +45,21 @@ export default class Menu {
   setEventHandlers() {
     document.querySelector('.menu').addEventListener('click', this.menuEventHandler.bind(this));
 
+    document
+      .querySelectorAll('[name=sounds]')
+      .forEach((el) => el.addEventListener('click', this.toggleLang.bind(this)));
+
     document.querySelector('.main-menu').addEventListener('mouseenter', () => {
       this.hotkeys.disableActiveMenuButtons();
       this.hotkeys.init();
       console.log('on mouse enter');
     });
+  }
+
+  toggleLang(e) {
+    const el = e.target;
+    this.aliasSettings.isSounds = el.value;
+    localStorage.setItem('aliasSettings', JSON.stringify(this.aliasSettings));
   }
 
   // eslint-disable-next-line class-methods-use-this

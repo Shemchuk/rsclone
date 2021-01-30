@@ -91,7 +91,7 @@ function clickContainerButtons(e) {
   const clickResume = e.target.closest('.pause__btn_resume');
 
   if (clickReady) {
-    sound.init();
+    sound.cardClick();
     rotationGradient -= 360;
     teams[teamFlag].points += 1;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
@@ -100,7 +100,7 @@ function clickContainerButtons(e) {
     rotationGameContainer();
     i += 1;
   } else if (clickSkip) {
-    sound.init();
+    sound.cardClick();
     rotationGradient += 360;
     document.querySelector('.card__word').innerHTML =
       currentCardsStack[0 + i - 1][currentWordsLang];
@@ -108,6 +108,7 @@ function clickContainerButtons(e) {
     rotationGameContainer();
     i += 1;
   } else if (clickNextRound) {
+    sound.cardClick();
     if (teamFlag < teams.length - 1) {
       teamFlag += 1;
     } else {
@@ -147,6 +148,7 @@ function clickContainerButtons(e) {
       generateSwiper();
     }, 1000);
   } else if (clickBackToMainMenu) {
+    sound.cardClick();
     gsap.to('.finish-game-modal__title', { duration: 1, ease: 'power1.out', y: -500 });
     gsap.to('.finish-modal', { duration: 1, ease: 'power1.out', y: 500 });
     setTimeout(() => {
