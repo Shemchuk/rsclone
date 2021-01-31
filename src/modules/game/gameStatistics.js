@@ -3,6 +3,7 @@
 // import game from './gameContainer';
 import Language from '../lang/Language';
 import { currentWordsLang } from './card';
+// import Sound from '../sound/sound';
 
 const langObject = new Language();
 
@@ -28,6 +29,8 @@ const generateRoundStatisticsModal = () => {
   template += `</div>`;
   template += `</div>`;
   roundStatModal.innerHTML = template;
+  // const sound = new Sound();
+  // sound.statisticPopup();
   return roundStatModal;
 };
 

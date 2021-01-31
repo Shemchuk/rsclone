@@ -2,8 +2,8 @@ import { game } from '../game/gameContainer';
 import { addTeamNamesToTeamsArr } from '../game/timer';
 import Language from '../lang/Language';
 import Menu from '../Menu';
-import soundLinks from '../sound/soundLinks';
-// import Sound from '../sound/sound';
+import Sound from '../sound/sound';
+
 export default class Commands {
   constructor() {
     this.addTeams = document.querySelector('.add-teams');
@@ -67,6 +67,7 @@ export default class Commands {
     ];
     this.langObject = new Language();
     this.lang = this.langObject.getCurrentLangObject().commandMenu;
+    this.sound = new Sound();
   }
 
   init() {
@@ -80,23 +81,19 @@ export default class Commands {
         return;
       }
 
-      if (this.aliasSettings.isSounds === 'true') {
-        const startGameClick = new Audio();
-        startGameClick.src = soundLinks.startGameClick;
-        startGameClick.play();
-      }
+      this.sound.mainClick();
 
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 800 });
       gsap.to('#sign', { duration: 1, ease: 'power1.out', y: -500 });
 
-      setTimeout(function () {
+      setTimeout(() => {
         document.querySelector('.main').innerHTML = '';
         addTeamNamesToTeamsArr();
         game();
       }, 1000);
     });
 
-    this.backMenuButton.addEventListener('click', function () {
+    this.backMenuButton.addEventListener('click', () => {
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 1000 });
       setTimeout(() => {
         const menu = new Menu();
@@ -148,11 +145,7 @@ export default class Commands {
       return;
     }
 
-    if (this.aliasSettings.isSounds === 'true') {
-      const startGameClick = new Audio();
-      startGameClick.src = soundLinks.startGameClick;
-      startGameClick.play();
-    }
+    this.sound.mainClick();
 
     this.items.push(item);
     this.populateList(this.items, this.teamsList);
@@ -181,11 +174,7 @@ export default class Commands {
     const { index } = button.dataset;
     this.items.splice(index, 1);
 
-    if (this.aliasSettings.isSounds === 'true') {
-      const startGameClick = new Audio();
-      startGameClick.src = soundLinks.startGameClick;
-      startGameClick.play();
-    }
+    this.sound.mainClick();
 
     localStorage.removeItem('items');
     localStorage.setItem('items', JSON.stringify(this.items));

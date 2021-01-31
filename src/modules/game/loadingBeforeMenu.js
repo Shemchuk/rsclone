@@ -44,12 +44,6 @@ export function loadingBeforeMenu() {
   }, 4000);
 }
 
-setTimeout(() => {
-  console.log('backgroundSound');
-  backgroundSound.init();
-  backgroundSound.playOnStart();
-}, 500);
-
 export const generateLoardingOnlyMenu = () => {
   let template = '';
   const loardingOnlyMenu = document.createElement('div');
@@ -73,8 +67,7 @@ export function loadingOnlyMenu() {
   }, 1000);
 }
 
-// Закомментирована закгрузка страницы настроек
-
+// Закомментирована загрузка страницы настроек
 // export function generateAndloadingOnlySettings() {
 //   document.querySelector('.main').appendChild(generateLoardingOnlyMenu());
 //   gsap.from('#sign', { duration: 1, y: -1000 });

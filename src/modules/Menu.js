@@ -4,6 +4,8 @@ import Language from './lang/Language';
 import { generateMenuPlayer } from './backgroundSound/createBackgroundSound';
 import BackgroundSound from './backgroundSound/backgroundSound';
 
+import Sound from './sound/sound';
+
 // eslint-disable-next-line import/no-cycle
 import Hotkeys from './Hotkeys';
 import { set as setValueToStorage } from './utils/storage';
@@ -43,11 +45,21 @@ export default class Menu {
   setEventHandlers() {
     document.querySelector('.menu').addEventListener('click', this.menuEventHandler.bind(this));
 
+    document
+      .querySelectorAll('[name=sounds]')
+      .forEach((el) => el.addEventListener('click', this.toggleLang.bind(this)));
+
     document.querySelector('.main-menu').addEventListener('mouseenter', () => {
       this.hotkeys.disableActiveMenuButtons();
       this.hotkeys.init();
       console.log('on mouse enter');
     });
+  }
+
+  toggleLang(e) {
+    const el = e.target;
+    this.aliasSettings.isSounds = el.value;
+    localStorage.setItem('aliasSettings', JSON.stringify(this.aliasSettings));
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -59,14 +71,11 @@ export default class Menu {
       return;
     }
 
-    // const startGameClick = new Audio();
+    const sound = new Sound();
+    sound.mainClick();
 
     switch (element.id) {
       case 'button-start':
-        // if (this.aliasSettings.isSounds === 'true') {
-        //   startGameClick.src = soundLinks.startGameClick;
-        //   startGameClick.play();
-        // }
         console.log('start');
         this.hotkeys.removeMenuHandler();
         MenuUtils.pressButtonStart();
@@ -82,19 +91,11 @@ export default class Menu {
         break;
 
       case 'button-tutorial':
-        // if (this.aliasSettings.isSounds === 'true') {
-        //   startGameClick.src = soundLinks.startGameClick;
-        //   startGameClick.play();
-        // }
         console.log('tutorial');
         MenuUtils.pressButtonTutorial();
         break;
 
       case 'button-back':
-        // if (this.aliasSettings.isSounds === 'true') {
-        //   startGameClick.src = soundLinks.startGameClick;
-        //   startGameClick.play();
-        // }
         console.log('back');
         MenuUtils.slideAnimationMethod();
         setTimeout(() => {
@@ -104,10 +105,6 @@ export default class Menu {
         break;
 
       case 'tutorial__button-back':
-        // if (this.aliasSettings.isSounds === 'true') {
-        //   startGameClick.src = soundLinks.startGameClick;
-        //   startGameClick.play();
-        // }
         console.log('back');
         MenuUtils.slideAnimationMethod();
         setTimeout(() => {
@@ -117,20 +114,12 @@ export default class Menu {
         break;
 
       case 'result__button-back':
-        // if (this.aliasSettings.isSounds === 'true') {
-        //   startGameClick.src = soundLinks.startGameClick;
-        //   startGameClick.play();
-        // }
         console.log('back from result');
         MenuUtils.showMenu('main-menu');
         MenuUtils.hideMenu('result-menu');
         break;
 
       case 'button-save':
-        // if (this.aliasSettings.isSounds === 'true') {
-        //   startGameClick.src = soundLinks.startGameClick;
-        //   startGameClick.play();
-        // }
         console.log('save');
         // Menu.slideAnimationMethod();
         this.saveSettings();

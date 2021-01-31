@@ -1,8 +1,9 @@
-const soundsLinks = {
-  deleteTeam: '/./src/assets/sounds/343773__pfranzen__clicking-a-laser-pointer-once.ogg',
-  startGameClick: '/./src/assets/sounds/384698__bassmosphere__a-relay-switch-being-activated.wav',
-  settingsClick: '/./src/assets/sounds/119415__joedeshon__rocker-switch.wav',
-  skipCardClick: '/./src/assets/sounds/213148__complex-waveform__click.wav',
+const soundLinks = {
+  mainClick: './assets/sounds/384698__bassmosphere__a-relay-switch-being-activated.wav',
+  cardClick: './assets/sounds/213148__complex-waveform__click.wav',
+  nextRoundClick: './assets/sounds/370743__podsburgh__winner-metal-bell-ringing-remix.flac',
+  victoryClick: './assets/sounds/466133__humanoide9000__victory-fanfare.wav',
+  statisticPopup: './assets/sounds/kamikazerespawn.wav',
 };
 
-export default soundsLinks;
+export default soundLinks;

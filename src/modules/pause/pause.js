@@ -1,21 +1,22 @@
 import BackgroundSound from '../backgroundSound/backgroundSound';
-import {
-  generateLoardingOnlyMenu,
-  loadingOnlyMenu,
-  // generateAndloadingOnlySettings,
-} from '../game/loadingBeforeMenu';
+import { generateLoardingOnlyMenu, loadingOnlyMenu } from '../game/loadingBeforeMenu';
 
-// Закомментирована загрузка страницы настроек
+// Open settings page from pause menu
+// generateAndloadingOnlySettings,
+
 export default class Pause {
   constructor() {
+    this.backgroundSound = JSON.parse(localStorage.getItem('backgroundSound')) || [{}];
+
     this.main = document.querySelector('.main');
     this.pause = document.querySelector('.pause');
     this.menuBtn = document.querySelector('.pause__btn_menu');
+    // Open settings page from pause menu
     // this.settingsBtn = document.querySelector('.pause__btn_settings');
 
-    this.backgroundSound = new BackgroundSound();
+    this.playOnBackground = new BackgroundSound();
   }
-
+  // Open settings page from pause menu
   // showSettings() {
   //   this.main.innerHTML = '';
   //   generateAndloadingOnlySettings();
@@ -28,11 +29,12 @@ export default class Pause {
   }
 
   init() {
-    this.backgroundSound.init();
+    this.playOnBackground.init();
 
     this.menuBtn.addEventListener('click', () => {
       return this.showMenu();
     });
+    // Open settings page from pause menu
     // this.settingsBtn.addEventListener('click', () => {
     //   return this.showSettings();
     // });
