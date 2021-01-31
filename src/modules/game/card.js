@@ -8,7 +8,7 @@ import cards from '../cards';
 // eslint-disable-next-line import/no-cycle
 import { mainGamePlay } from './gameContainer';
 import { teams, time } from './timer';
-import Menu from '../Menu';
+import Men
 import Language from '../lang/Language';
 import { generateLoardingBeforeMenu } from './loadingBeforeMenu';
 import Sound from '../sound/sound';
@@ -54,7 +54,6 @@ function generateCard() {
   // choseCurrentCardsLang();
   document.querySelector('.card__word').innerHTML = currentCardsStack[i][currentWordsLang];
   i++;
-  gameHotkeys.setGameHandler();
 }
 
 // Next round function
@@ -76,7 +75,48 @@ let rotationGradient = 0;
 function rotationGameContainer() {
   gsap.to('.game-container__card', { duration: 0.9, rotationX: rotationGradient });
 }
+
 let i = 1;
+
+function clickReadyFunc() {
+  rotationGradient -= 360;
+  teams[teamFlag].points += 1;
+  document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
+  arrConfirmed.push(currentCardsStack[i - 1]);
+  document.querySelector('.second').innerHTML = teams[teamFlag].points;
+  rotationGameContainer();
+  i += 1;
+}
+
+function clickSkipFunc() {
+  rotationGradient += 360;
+  document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i - 1][currentWordsLang];
+  arrSkiped.push(currentCardsStack[i - 1]);
+  rotationGameContainer();
+  i += 1;
+}
+
+function clickNextRoundFunc() {
+  if (teamFlag < teams.length - 1) {
+    teamFlag += 1;
+  } else {
+    teamFlag = 0;
+  }
+  gsap.to('.team-container__team-name', { duration: 1, ease: 'power1.out', y: -500 });
+  gsap.to('.round-stat-modal', { duration: 1, ease: 'power1.out', y: 1000 });
+  rotationGradient = 0;
+  setTimeout(() => {
+    gameHotkeys.removeGameHandler();
+    nextRound();
+    generateSwiper();
+  }, 1000);
+}
+
+function clickPauseMenuFunc() {
+  document.querySelector('.pause').style.visibility = 'visible';
+  pauseFlag = true;
+}
+
 function clickContainerButtons(e) {
   const clickReady = e.target.closest('.game-container__button_ready');
   const clickSkip = e.target.closest('.game-container__button_skip');
@@ -90,39 +130,11 @@ function clickContainerButtons(e) {
   const clickResume = e.target.closest('.pause__btn_resume');
 
   if (clickReady) {
-    const sound = new Sound();
-    sound.cardClick();
-    rotationGradient -= 360;
-    teams[teamFlag].points += 1;
-    document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
-    arrConfirmed.push(currentCardsStack[i - 1]);
-    document.querySelector('.second').innerHTML = teams[teamFlag].points;
-    rotationGameContainer();
-    i += 1;
+    clickReadyFunc();
   } else if (clickSkip) {
-    const sound = new Sound();
-    sound.cardClick();
-    rotationGradient += 360;
-    document.querySelector('.card__word').innerHTML =
-      currentCardsStack[0 + i - 1][currentWordsLang];
-    arrSkiped.push(currentCardsStack[i - 1]);
-    rotationGameContainer();
-    i += 1;
+    clickSkipFunc();
   } else if (clickNextRound) {
-    const sound = new Sound();
-    sound.nextRoundClick();
-    if (teamFlag < teams.length - 1) {
-      teamFlag += 1;
-    } else {
-      teamFlag = 0;
-    }
-    gsap.to('.team-container__team-name', { duration: 1, ease: 'power1.out', y: -500 });
-    gsap.to('.round-stat-modal', { duration: 1, ease: 'power1.out', y: 1000 });
-    rotationGradient = 0;
-    setTimeout(() => {
-      nextRound();
-      generateSwiper();
-    }, 1000);
+    clickNextRoundFunc();
   } else if (clickCardsForAdults) {
     const sound = new Sound();
     sound.mainClick();
@@ -152,6 +164,7 @@ function clickContainerButtons(e) {
       generateSwiper();
     }, 1000);
   } else if (clickBackToMainMenu) {
+    gameHotkeys.removeGameHandler();
     const sound = new Sound();
     sound.cardClick();
     gsap.to('.finish-game-modal__title', { duration: 1, ease: 'power1.out', y: -500 });
@@ -183,8 +196,7 @@ function clickContainerButtons(e) {
     document.querySelector('.show-footer').classList.add('hide');
     document.querySelector('.hide-footer').classList.remove('hide');
   } else if (clickPauseMenu) {
-    document.querySelector('.pause').style.visibility = 'visible';
-    pauseFlag = true;
+    clickPauseMenuFunc();
   } else if (clickResume) {
     sound.mainClick();
     document.querySelector('.pause').style.visibility = 'hidden';
@@ -223,6 +235,12 @@ function generateSwiper() {
     rotationGameContainer();
     i += 1;
   });
+
+  gameHotkeys.init();
+  gameHotkeys.setGameHandler();
+  gameHotkeys.setUpGameButton(clickReadyFunc);
+  gameHotkeys.setDownGameButton(clickSkipFunc);
+  gameHotkeys.setEscGameButton(clickPauseMenuFunc);
 }
 
 function generateSwiperFooter() {

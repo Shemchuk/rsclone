@@ -9,32 +9,33 @@ export default class Hotkeys {
 
   init() {
     this.currentItem = -1;
-    const main = document.querySelectorAll('.main');
+    const main = document.querySelector('.main');
     main.focus();
   }
 
   setMenuHandler() {
     this.bindedMenuEventHandler = this.menuEventHandler.bind(this);
     document.addEventListener('keydown', this.bindedMenuEventHandler, false);
-    console.log('setMenuHandler');
+    console.log('===  setMenuHandler === ');
     console.log(this.bindedMenuEventHandler);
   }
 
   removeMenuHandler() {
     document.removeEventListener('keydown', this.bindedMenuEventHandler, false);
 
-    console.log('removeMenuHandler');
+    console.log('=== removeMenuHandler === ');
     console.log(this.bindedMenuEventHandler);
   }
 
   setGameHandler() {
     this.bindedGameEventHandler = this.gameEventHandler.bind(this);
     document.addEventListener('keydown', this.bindedGameEventHandler);
-    console.log('setGameHandler');
+    console.log('=== setGameHandler ===');
   }
 
   removeGameHandler() {
     document.removeEventListener('keydown', this.bindedGameEventHandler);
+    console.log('=== removeGameHandler === ');
   }
 
   menuEventHandler(e) {
