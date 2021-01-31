@@ -6,21 +6,12 @@ export default class Sound {
     this.aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
   }
 
-  init() {
+  mainClick() {
     if (this.aliasSettings.isSounds === 'true') {
-      const startGameClick = new Audio();
-      startGameClick.src = soundLinks.startGameClick;
+      const mainClick = new Audio();
+      mainClick.src = soundLinks.mainClick;
       this.audioValue = 0.3;
-      startGameClick.play();
-    }
-  }
-
-  deleteTeamClick() {
-    if (this.aliasSettings.isSounds === 'true') {
-      const deleteTeamClick = new Audio();
-      deleteTeamClick.src = soundLinks.deleteTeam;
-      this.audioValue = 0.3;
-      deleteTeamClick.play();
+      mainClick.play();
     }
   }
 
@@ -30,6 +21,33 @@ export default class Sound {
       cardClick.src = soundLinks.cardClick;
       this.audioValue = 0.3;
       cardClick.play();
+    }
+  }
+
+  nextRoundClick() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const nextRoundClick = new Audio();
+      nextRoundClick.src = soundLinks.nextRoundClick;
+      this.audioValue = 0.3;
+      nextRoundClick.play();
+    }
+  }
+
+  victoryClick() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const victoryClick = new Audio();
+      victoryClick.src = soundLinks.victoryClick;
+      this.audioValue = 0.3;
+      victoryClick.play();
+    }
+  }
+
+  statisticPopup() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const statisticPopup = new Audio();
+      statisticPopup.src = soundLinks.statisticPopup;
+      this.audioValue = 0.3;
+      statisticPopup.play();
     }
   }
 }

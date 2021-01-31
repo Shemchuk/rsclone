@@ -10,6 +10,7 @@ import { generateRoundStatisticsModal } from './gameStatistics';
 import Language from '../lang/Language';
 import CreatePause from '../pause/createPause';
 import Pause from '../pause/pause';
+import Sound from '../sound/sound';
 
 // Cards selection container
 export const generateCardsSeletionContainer = () => {
@@ -121,6 +122,8 @@ export const generateFinishGameModal = () => {
   template += `<span></span><span></span><span></span><span></span>${lang.finishGameModalBackToMenu}</button>`;
   template += `</div>`;
   finishGameModal.innerHTML = template;
+  const sound = new Sound();
+  sound.victoryClick();
   return finishGameModal;
 };
 export function game() {

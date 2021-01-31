@@ -27,7 +27,6 @@ export let currentWordsLang;
 
 // For hotkeys and audio
 const gameHotkeys = new Hotkeys();
-const sound = new Sound();
 
 // =========== LANG =============== //
 // const langObject = new Language();
@@ -91,6 +90,7 @@ function clickContainerButtons(e) {
   const clickResume = e.target.closest('.pause__btn_resume');
 
   if (clickReady) {
+    const sound = new Sound();
     sound.cardClick();
     rotationGradient -= 360;
     teams[teamFlag].points += 1;
@@ -100,6 +100,7 @@ function clickContainerButtons(e) {
     rotationGameContainer();
     i += 1;
   } else if (clickSkip) {
+    const sound = new Sound();
     sound.cardClick();
     rotationGradient += 360;
     document.querySelector('.card__word').innerHTML =
@@ -108,7 +109,8 @@ function clickContainerButtons(e) {
     rotationGameContainer();
     i += 1;
   } else if (clickNextRound) {
-    sound.cardClick();
+    const sound = new Sound();
+    sound.nextRoundClick();
     if (teamFlag < teams.length - 1) {
       teamFlag += 1;
     } else {
@@ -122,7 +124,8 @@ function clickContainerButtons(e) {
       generateSwiper();
     }, 1000);
   } else if (clickCardsForAdults) {
-    sound.init();
+    const sound = new Sound();
+    sound.mainClick();
     currentCardsStack = cards.forAdults;
     choseCurrentCardsLang();
     shuffleCards();
@@ -135,7 +138,8 @@ function clickContainerButtons(e) {
       generateSwiper();
     }, 1000);
   } else if (clickCardsGeneral) {
-    sound.init();
+    const sound = new Sound();
+    sound.mainClick();
     currentCardsStack = cards.main;
     choseCurrentCardsLang();
     gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -1000 });
@@ -148,6 +152,7 @@ function clickContainerButtons(e) {
       generateSwiper();
     }, 1000);
   } else if (clickBackToMainMenu) {
+    const sound = new Sound();
     sound.cardClick();
     gsap.to('.finish-game-modal__title', { duration: 1, ease: 'power1.out', y: -500 });
     gsap.to('.finish-modal', { duration: 1, ease: 'power1.out', y: 500 });
@@ -181,7 +186,7 @@ function clickContainerButtons(e) {
     document.querySelector('.pause').style.visibility = 'visible';
     pauseFlag = true;
   } else if (clickResume) {
-    sound.init();
+    sound.mainClick();
     document.querySelector('.pause').style.visibility = 'hidden';
     pauseFlag = false;
   }

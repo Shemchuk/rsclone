@@ -132,6 +132,7 @@ export default class BackgroundSound {
     this.isPlaying = false;
     this.backgroundSound.isPlaying = false;
     localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
+
     this.audio =
       document.getElementById(this.currentAudio) === null
         ? (this.audio = new Audio())

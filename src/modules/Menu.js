@@ -72,7 +72,7 @@ export default class Menu {
     }
 
     const sound = new Sound();
-    sound.init();
+    sound.mainClick();
 
     switch (element.id) {
       case 'button-start':
