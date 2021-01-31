@@ -136,10 +136,10 @@ export function mainGamePlay() {
   document.querySelector('.game-container').appendChild(generateRoundStatisticsModal());
   gsap.from('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
   gsap.from('.game-container__card', { duration: 1, ease: 'power1.out', y: 500 });
-  // const createPause = new CreatePause();
-  // createPause.init();
-  // const pause = new Pause();
-  // pause.init();
+  const createPause = new CreatePause();
+  createPause.init();
+  const pause = new Pause();
+  pause.init();
   countdown();
   generateCard();
 

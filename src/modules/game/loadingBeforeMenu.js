@@ -1,5 +1,5 @@
 import Menu from '../Menu';
-import BackgroundSound from '../backgroundSound/backgroundSound';
+import backgroundSound from '../backgroundSound/backgroundSound';
 
 export const generateLoardingBeforeMenu = () => {
   let template = '';
