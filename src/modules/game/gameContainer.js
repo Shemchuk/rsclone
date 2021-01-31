@@ -10,6 +10,7 @@ import { generateRoundStatisticsModal } from './gameStatistics';
 import Language from '../lang/Language';
 import CreatePause from '../pause/createPause';
 import Pause from '../pause/pause';
+import Sound from '../sound/sound';
 
 // Cards selection container
 export const generateCardsSeletionContainer = () => {
@@ -121,6 +122,8 @@ export const generateFinishGameModal = () => {
   template += `<span></span><span></span><span></span><span></span>${lang.finishGameModalBackToMenu}</button>`;
   template += `</div>`;
   finishGameModal.innerHTML = template;
+  const sound = new Sound();
+  sound.victoryClick();
   return finishGameModal;
 };
 export function game() {
@@ -136,10 +139,10 @@ export function mainGamePlay() {
   document.querySelector('.game-container').appendChild(generateRoundStatisticsModal());
   gsap.from('.team-container', { duration: 1, ease: 'power1.out', y: -500 });
   gsap.from('.game-container__card', { duration: 1, ease: 'power1.out', y: 500 });
-  // const createPause = new CreatePause();
-  // createPause.init();
-  // const pause = new Pause();
-  // pause.init();
+  const createPause = new CreatePause();
+  createPause.init();
+  const pause = new Pause();
+  pause.init();
   countdown();
   generateCard();
 

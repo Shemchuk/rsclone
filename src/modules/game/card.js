@@ -11,7 +11,7 @@ import { teams, time } from './timer';
 import Menu from '../Menu';
 import Language from '../lang/Language';
 import { generateLoardingBeforeMenu } from './loadingBeforeMenu';
-import soundLinks from '../sound/soundLinks';
+import Sound from '../sound/sound';
 import Hotkeys from '../Hotkeys';
 
 export let teamFlag = 0;
@@ -25,8 +25,7 @@ export let pauseFlag = false;
 // For words lang
 export let currentWordsLang;
 
-// For audio
-const aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
+// For hotkeys and audio
 const gameHotkeys = new Hotkeys();
 
 // =========== LANG =============== //
@@ -89,13 +88,10 @@ function clickContainerButtons(e) {
   const clickShowFooterButton = e.target.closest('.show-footer');
   const clickPauseMenu = e.target.closest('.pause-menu');
   const clickResume = e.target.closest('.pause__btn_resume');
-  // if (aliasSettings.isSounds === 'true') {
-  //   const gameAudio = new Audio();
-  //   gameAudio.src = soundLinks.skipCardClick;
-  //   gameAudio.play();
-  // }
 
   if (clickReady) {
+    const sound = new Sound();
+    sound.cardClick();
     rotationGradient -= 360;
     teams[teamFlag].points += 1;
     document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
@@ -104,6 +100,8 @@ function clickContainerButtons(e) {
     rotationGameContainer();
     i += 1;
   } else if (clickSkip) {
+    const sound = new Sound();
+    sound.cardClick();
     rotationGradient += 360;
     document.querySelector('.card__word').innerHTML =
       currentCardsStack[0 + i - 1][currentWordsLang];
@@ -111,6 +109,8 @@ function clickContainerButtons(e) {
     rotationGameContainer();
     i += 1;
   } else if (clickNextRound) {
+    const sound = new Sound();
+    sound.nextRoundClick();
     if (teamFlag < teams.length - 1) {
       teamFlag += 1;
     } else {
@@ -124,6 +124,8 @@ function clickContainerButtons(e) {
       generateSwiper();
     }, 1000);
   } else if (clickCardsForAdults) {
+    const sound = new Sound();
+    sound.mainClick();
     currentCardsStack = cards.forAdults;
     choseCurrentCardsLang();
     shuffleCards();
@@ -136,6 +138,8 @@ function clickContainerButtons(e) {
       generateSwiper();
     }, 1000);
   } else if (clickCardsGeneral) {
+    const sound = new Sound();
+    sound.mainClick();
     currentCardsStack = cards.main;
     choseCurrentCardsLang();
     gsap.to('.cards__for-adults', { duration: 1, ease: 'power1.out', x: -1000 });
@@ -148,6 +152,8 @@ function clickContainerButtons(e) {
       generateSwiper();
     }, 1000);
   } else if (clickBackToMainMenu) {
+    const sound = new Sound();
+    sound.cardClick();
     gsap.to('.finish-game-modal__title', { duration: 1, ease: 'power1.out', y: -500 });
     gsap.to('.finish-modal', { duration: 1, ease: 'power1.out', y: 500 });
     setTimeout(() => {
@@ -180,6 +186,7 @@ function clickContainerButtons(e) {
     document.querySelector('.pause').style.visibility = 'visible';
     pauseFlag = true;
   } else if (clickResume) {
+    sound.mainClick();
     document.querySelector('.pause').style.visibility = 'hidden';
     pauseFlag = false;
   }

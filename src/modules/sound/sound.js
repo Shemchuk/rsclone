@@ -1,75 +1,53 @@
-// import soundLinks from './soundLinks';
+import soundLinks from './soundLinks';
 
-// export default class Sound {
-//   constructor() {
-//     this.body = document.querySelector('body');
+export default class Sound {
+  constructor() {
+    this.audioValue = 0;
+    this.aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
+  }
 
-//     this.audio = null;
-//     this.soundId = 'sound';
-//     this.audioValue = 0.3;
-//     this.datasound = '';
-//   }
+  mainClick() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const mainClick = new Audio();
+      mainClick.src = soundLinks.mainClick;
+      this.audioValue = 0.3;
+      mainClick.play();
+    }
+  }
 
-//   init(e) {
-//     this.audio =
-//       document.getElementById(this.soundId[soundLinks.dataset.sound]) === null
-//         ? (this.audio = new Audio())
-//         : document.getElementById(this.soundId[soundLinks.dataset.sound]);
+  cardClick() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const cardClick = new Audio();
+      cardClick.src = soundLinks.cardClick;
+      this.audioValue = 0.3;
+      cardClick.play();
+    }
+  }
 
-//     this.audio.src = soundLinks.dataset.sound;
-//     this.audio.id = this.soundId[soundLinks.dataset.sound];
-//     this.audio.datasound = `data-${e}`;
-//     this.audio.audioValue = this.audioValue;
+  nextRoundClick() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const nextRoundClick = new Audio();
+      nextRoundClick.src = soundLinks.nextRoundClick;
+      this.audioValue = 0.3;
+      nextRoundClick.play();
+    }
+  }
 
-//     eslint-disable-next-line no-unused-expressions
-//     document.getElementById(this.currentId[soundLinks.dataset.sound]) === null
-//       ? this.body.appendChild(this.audio)
-//       : '';
+  victoryClick() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const victoryClick = new Audio();
+      victoryClick.src = soundLinks.victoryClick;
+      this.audioValue = 0.3;
+      victoryClick.play();
+    }
+  }
 
-//     this.audio.play();
-//   }
-
-//   function makeSomeNoise(){
-//     let link = sounds[this.dataset.sound]
-//     playSound(link)
-//   }
-
-//   function playSound(link) {
-//     player.src = link
-//     player.play()
-//   }
-
-// createSoundElements() {
-//     let template = '';
-//     const soundsContainer = document.createElement('div');
-//     soundsContainer.className = 'sounds-wrapper';
-//     template = `<audio id="sound-addTeam" data-sound="addTeam></audio>
-//     <audio id="sound-deleteTeam" data-sound="deleteTeam"></audio>`;
-
-//     soundsContainer.innerHTML = template;
-//     this.body.appendChild(soundsContainer);
-//     this.init();
-//   }
-
-// }
-
-// export default class Sound {
-//   constructor() {
-//     this.volume = 0.4;
-//     this.src = '';
-//     this.sounds = [
-//       '/../src/assets/sounds/119415__joedeshon__rocker-switch.wav',
-//       '/../src/assets/sounds/171521__leszek-szary__button.wav',
-//     ];
-//   }
-
-//   playSound(link) {
-//     this.src = link;
-//     this.play();
-//   }
-
-//   init() {
-//     const link = this.sounds[0];
-//     this.playSound(link);
-//   }
-// }
+  statisticPopup() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const statisticPopup = new Audio();
+      statisticPopup.src = soundLinks.statisticPopup;
+      this.audioValue = 0.3;
+      statisticPopup.play();
+    }
+  }
+}

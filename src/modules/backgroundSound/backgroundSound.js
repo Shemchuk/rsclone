@@ -2,6 +2,9 @@ import audioTracks from './audioTracks';
 
 export default class BackgroundSound {
   constructor() {
+    this.backgroundSound = JSON.parse(localStorage.getItem('backgroundSound')) || [{}];
+
+    this.body = document.querySelector('body');
     this.backgroundSoundWrapper = document.querySelector('.background-sound-wrapper');
     this.previousBtn = document.querySelector('.previous');
     this.playBtn = document.querySelector('.play');
@@ -14,6 +17,7 @@ export default class BackgroundSound {
     this.currentId = 0;
     this.audio = null;
     this.isPlaying = false;
+    this.backgroundSound = {};
     this.isVolumeOptionOpen = false;
     this.isMute = false;
     this.audioValue = 0;
@@ -21,7 +25,7 @@ export default class BackgroundSound {
 
   play() {
     // this.isPlaying = false;
-    if (this.isPlaying === false) {
+    if (this.backgroundSound.isPlaying === false) {
       document.querySelector(
         '.play'
       ).innerHTML = `<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
@@ -31,6 +35,8 @@ export default class BackgroundSound {
          c-9.498,0-17.198-7.7-17.198-17.198V105.46c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z"/>`;
       console.log(this.isPlaying);
       this.isPlaying = true;
+      this.backgroundSound.isPlaying = true;
+      localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
       console.log(this.isPlaying);
       document.getElementById(this.currentAudio).play();
     } else {
@@ -45,6 +51,8 @@ export default class BackgroundSound {
       document.getElementById(this.currentAudio).pause();
       console.log(this.isPlaying);
       this.isPlaying = false;
+      this.backgroundSound.isPlaying = false;
+      localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
       console.log(this.isPlaying);
     }
   }
@@ -69,7 +77,8 @@ export default class BackgroundSound {
        c-9.498,0-17.198-7.7-17.198-17.198V105.46c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z"/>`;
     this.changeTrack();
     this.isPlaying = true;
-
+    this.backgroundSound.isPlaying = true;
+    localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
     this.currentId = this.currentId - 1 < 0 ? audioTracks.length - 1 : this.currentId - 1;
 
     document.getElementById(this.currentAudio).play();
@@ -83,7 +92,8 @@ export default class BackgroundSound {
        c-9.498,0-17.198-7.7-17.198-17.198V105.46c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z"/>`;
     this.changeTrack();
     this.isPlaying = true;
-
+    this.backgroundSound.isPlaying = true;
+    localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
     this.currentId = this.currentId + 1 > audioTracks.length - 1 ? 0 : this.currentId + 1;
 
     document.getElementById(this.currentAudio).play();
@@ -92,6 +102,8 @@ export default class BackgroundSound {
   mute() {
     if (this.isMute) {
       this.isMute = false;
+      this.backgroundSound.isPlaying = false;
+      localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
       this.volumeInput.value = this.audioValue;
       document.getElementById(this.currentAudio).volume = this.volumeInput.value;
     } else {
@@ -118,6 +130,9 @@ export default class BackgroundSound {
 
   changeTrack() {
     this.isPlaying = false;
+    this.backgroundSound.isPlaying = false;
+    localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
+
     this.audio =
       document.getElementById(this.currentAudio) === null
         ? (this.audio = new Audio())
@@ -127,9 +142,7 @@ export default class BackgroundSound {
     this.audio.id = this.currentAudio;
 
     // eslint-disable-next-line no-unused-expressions
-    document.getElementById(this.currentAudio) === null
-      ? this.backgroundSoundWrapper.appendChild(this.audio)
-      : '';
+    document.getElementById(this.currentAudio) === null ? this.body.appendChild(this.audio) : '';
 
     // this.audio.setVolume(this.volumeInput);
   }
