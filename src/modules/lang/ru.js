@@ -49,7 +49,7 @@ const ru = {
     gameContainerReady: 'Готово',
     gameContainerSkip: 'Пропуск',
     gameContainertimeOut: 'Время вышло!',
-    finishGameModalWin: 'Победила',
+    finishGameModalWin: 'Победила ',
     finishGameModalTeam: 'команда:',
     finishGameModalBackToMenu: 'Выйти в меню',
     roundStatisticsModalConfirmed: 'Выполнено:',

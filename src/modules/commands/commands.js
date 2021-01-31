@@ -67,7 +67,7 @@ export default class Commands {
     ];
     this.langObject = new Language();
     this.lang = this.langObject.getCurrentLangObject().commandMenu;
-    this.sound = new Sound();
+    // this.sound = new Sound();
   }
 
   init() {
@@ -81,7 +81,7 @@ export default class Commands {
         return;
       }
 
-      this.sound.mainClick();
+      // this.sound.mainClick();
 
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 800 });
       gsap.to('#sign', { duration: 1, ease: 'power1.out', y: -500 });
@@ -145,7 +145,7 @@ export default class Commands {
       return;
     }
 
-    this.sound.mainClick();
+    // this.sound.mainClick();
 
     this.items.push(item);
     this.populateList(this.items, this.teamsList);
@@ -174,7 +174,7 @@ export default class Commands {
     const { index } = button.dataset;
     this.items.splice(index, 1);
 
-    this.sound.mainClick();
+    // this.sound.mainClick();
 
     localStorage.removeItem('items');
     localStorage.setItem('items', JSON.stringify(this.items));

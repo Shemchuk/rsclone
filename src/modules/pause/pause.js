@@ -10,7 +10,8 @@ export default class Pause {
 
     this.main = document.querySelector('.main');
     this.pause = document.querySelector('.pause');
-    this.menuBtn = document.querySelector('.pause__btn_menu');
+    // this.menuBtn = document.querySelector('.pause__btn_menu');
+
     // Open settings page from pause menu
     // this.settingsBtn = document.querySelector('.pause__btn_settings');
 
@@ -22,18 +23,18 @@ export default class Pause {
   //   generateAndloadingOnlySettings();
   // }
 
-  showMenu() {
-    this.main.innerHTML = '';
-    generateLoardingOnlyMenu();
-    loadingOnlyMenu();
-  }
+  // showMenu() {
+  //   this.main.innerHTML = '';
+  //   generateLoardingOnlyMenu();
+  //   loadingOnlyMenu();
+  // }
 
   init() {
     this.playOnBackground.init();
 
-    this.menuBtn.addEventListener('click', () => {
-      return this.showMenu();
-    });
+    // this.menuBtn.addEventListener('click', () => {
+    //   return this.showMenu();
+    // });
     // Open settings page from pause menu
     // this.settingsBtn.addEventListener('click', () => {
     //   return this.showSettings();

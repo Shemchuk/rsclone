@@ -46,9 +46,15 @@ function saveResultToLS(teamList) {
 
 let setaliasSettings = get('aliasSettings', defaultSettings);
 let timer;
-export let time = setaliasSettings.roundTime;
+let time = setaliasSettings.roundTime;
 let finishGamePoints = setaliasSettings.wordsCount;
 let isFirstLaunch = true;
+
+export function setNewTime() {
+  clearTimeout(timer);
+  console.log(time);
+  isFirstLaunch = true;
+}
 
 function countdown() {
   if (isFirstLaunch) {

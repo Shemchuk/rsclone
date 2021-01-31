@@ -17,14 +17,12 @@ export default class Hotkeys {
     this.bindedMenuEventHandler = this.menuEventHandler.bind(this);
     document.addEventListener('keydown', this.bindedMenuEventHandler, false);
     console.log('===  setMenuHandler === ');
-    console.log(this.bindedMenuEventHandler);
   }
 
   removeMenuHandler() {
     document.removeEventListener('keydown', this.bindedMenuEventHandler, false);
 
     console.log('=== removeMenuHandler === ');
-    console.log(this.bindedMenuEventHandler);
   }
 
   setGameHandler() {

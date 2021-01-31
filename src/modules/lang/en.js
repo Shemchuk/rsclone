@@ -48,7 +48,7 @@ const en = {
     gameContainerReady: 'Confirm',
     gameContainerSkip: 'Skip',
     gameContainertimeOut: 'Time out!',
-    finishGameModalWin: 'Victory',
+    finishGameModalWin: 'Victory ',
     finishGameModalTeam: 'team:',
     finishGameModalBackToMenu: 'Main menu',
     roundStatisticsModalConfirmed: 'Confirmed:',
