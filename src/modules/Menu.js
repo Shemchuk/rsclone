@@ -130,18 +130,26 @@ export default class Menu {
 
       case 'result__button-back':
         console.log('back from result');
-        MenuUtils.showMenu('main-menu');
-        MenuUtils.hideMenu('result-menu');
+        MenuUtils.slideAnimationMethod();
+        setTimeout(() => {
+          MenuUtils.showMenu('main-menu');
+          MenuUtils.hideMenu('result-menu');
+        }, 1000);
         break;
 
       case 'button-save':
         console.log('save');
-        // Menu.slideAnimationMethod();
-        this.saveSettings();
+        MenuUtils.slideAnimationMethod();
+        setTimeout(() => {
+          this.saveSettings();
+        }, 1000);
         break;
 
       case 'button-result':
-        MenuUtils.pressButtonResult();
+        MenuUtils.slideAnimationMethod();
+        setTimeout(() => {
+          MenuUtils.pressButtonResult();
+        }, 1000);
         break;
 
       default:
