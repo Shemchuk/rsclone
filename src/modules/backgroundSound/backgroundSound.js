@@ -16,7 +16,7 @@ export default class BackgroundSound {
     this.currentAudio = 'music';
     this.currentId = 0;
     this.audio = null;
-    this.isPlaying = false;
+    // this.isPlaying = false;
     this.backgroundSound = {};
     this.isVolumeOptionOpen = false;
     this.isMute = false;
@@ -34,7 +34,7 @@ export default class BackgroundSound {
          c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z M198.955,194.538c0,9.498-7.701,17.198-17.198,17.198
          c-9.498,0-17.198-7.7-17.198-17.198V105.46c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z"/>`;
       console.log(this.isPlaying);
-      this.isPlaying = true;
+      // this.isPlaying = true;
       this.backgroundSound.isPlaying = true;
       localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
       console.log(this.isPlaying);
@@ -50,7 +50,7 @@ export default class BackgroundSound {
 
       document.getElementById(this.currentAudio).pause();
       console.log(this.isPlaying);
-      this.isPlaying = false;
+      // this.isPlaying = false;
       this.backgroundSound.isPlaying = false;
       localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
       console.log(this.isPlaying);
@@ -76,7 +76,7 @@ export default class BackgroundSound {
        c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z M198.955,194.538c0,9.498-7.701,17.198-17.198,17.198
        c-9.498,0-17.198-7.7-17.198-17.198V105.46c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z"/>`;
     this.changeTrack();
-    this.isPlaying = true;
+    // this.isPlaying = true;
     this.backgroundSound.isPlaying = true;
     localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
     this.currentId = this.currentId - 1 < 0 ? audioTracks.length - 1 : this.currentId - 1;
@@ -91,7 +91,7 @@ export default class BackgroundSound {
        c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z M198.955,194.538c0,9.498-7.701,17.198-17.198,17.198
        c-9.498,0-17.198-7.7-17.198-17.198V105.46c0-9.498,7.7-17.198,17.198-17.198s17.198,7.7,17.198,17.198V194.538z"/>`;
     this.changeTrack();
-    this.isPlaying = true;
+    // this.isPlaying = true;
     this.backgroundSound.isPlaying = true;
     localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
     this.currentId = this.currentId + 1 > audioTracks.length - 1 ? 0 : this.currentId + 1;
@@ -129,7 +129,7 @@ export default class BackgroundSound {
   }
 
   changeTrack() {
-    this.isPlaying = false;
+    // this.isPlaying = false;
     this.backgroundSound.isPlaying = false;
     localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
 
