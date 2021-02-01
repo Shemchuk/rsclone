@@ -9,6 +9,7 @@ import { generateFinishGameModal } from './gameContainer';
 import { get, set } from '../utils/storage';
 import Language from '../lang/Language';
 import { defaultSettings } from '../Constants';
+import Sound from '../sound/sound';
 
 const langObject = new Language();
 export const teams = [];
@@ -113,6 +114,10 @@ function countdown() {
       const statistics = saveResultToLS(teams);
       console.log(statistics);
     }
+  } else if (time === 4) {
+    const sound = new Sound();
+    sound.lastTimePopup();
+    countdown();
   } else {
     timer = setTimeout(countdown, 1000);
   }

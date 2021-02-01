@@ -16,6 +16,7 @@ export default class Menu {
   constructor() {
     this.langObject = new Language();
     this.aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
+    this.backgroundSound = JSON.parse(localStorage.getItem('backgroundSound')) || [{}];
   }
 
   init() {
@@ -45,6 +46,12 @@ export default class Menu {
   setEventHandlers() {
     document.querySelector('.menu').addEventListener('click', this.menuEventHandler.bind(this));
 
+    // sound on hover
+    document
+      .querySelectorAll('button')
+      .forEach((el) => el.addEventListener('mouseenter', this.playHoverSound));
+
+    // sound toggle
     document
       .querySelectorAll('[name=sounds]')
       .forEach((el) => el.addEventListener('click', this.toggleLang.bind(this)));
@@ -60,6 +67,14 @@ export default class Menu {
     const el = e.target;
     this.aliasSettings.isSounds = el.value;
     localStorage.setItem('aliasSettings', JSON.stringify(this.aliasSettings));
+    // this.backgroundSound.isPlaying = el.value;
+    // localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  playHoverSound() {
+    const sound = new Sound();
+    sound.mainHover();
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -151,6 +166,9 @@ export default class Menu {
     setValueToStorage('aliasSettings', settings);
 
     setTimeout(this.createMenu(), 50);
+
+    const backgroundSound = new BackgroundSound();
+    backgroundSound.init();
     console.log(settings);
     console.log('Settings saved!');
   }
