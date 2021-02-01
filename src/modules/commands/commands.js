@@ -11,6 +11,7 @@ export default class Commands {
     // this.deleteTeam = document.querySelector('.delete-team');
     this.aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
     this.items = JSON.parse(localStorage.getItem('items')) || [];
+    this.button = document.querySelectorAll('button');
     this.backMenuButton = document.querySelector('.button-backmenu-menu');
     this.startGameButton = document.querySelector('.button-startgame-play');
     this.adjective = [
@@ -67,7 +68,7 @@ export default class Commands {
     ];
     this.langObject = new Language();
     this.lang = this.langObject.getCurrentLangObject().commandMenu;
-    // this.sound = new Sound();
+    this.sound = new Sound();
   }
 
   init() {
@@ -75,6 +76,8 @@ export default class Commands {
     this.populateList(this.items, this.teamsList);
     this.addTeams.addEventListener('submit', this.addItem.bind(this));
     this.teamsList.addEventListener('click', this.deleteItem.bind(this));
+
+    this.button.forEach((el) => el.addEventListener('mouseenter', this.playHoverSound));
 
     this.startGameButton.addEventListener('click', () => {
       while (this.items.length < 2) {
@@ -103,6 +106,12 @@ export default class Commands {
       // const menu = new Menu();
       // menu.init();
     });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  playHoverSound() {
+    const sound = new Sound();
+    sound.mainHover();
   }
 
   generateTeamName() {
