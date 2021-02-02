@@ -16,24 +16,19 @@ export default class Hotkeys {
   setMenuHandler() {
     this.bindedMenuEventHandler = this.menuEventHandler.bind(this);
     document.addEventListener('keydown', this.bindedMenuEventHandler, false);
-    console.log('===  setMenuHandler === ');
   }
 
   removeMenuHandler() {
     document.removeEventListener('keydown', this.bindedMenuEventHandler, false);
-
-    console.log('=== removeMenuHandler === ');
   }
 
   setGameHandler() {
     this.bindedGameEventHandler = this.gameEventHandler.bind(this);
     document.addEventListener('keydown', this.bindedGameEventHandler);
-    console.log('=== setGameHandler ===');
   }
 
   removeGameHandler() {
     document.removeEventListener('keydown', this.bindedGameEventHandler);
-    console.log('=== removeGameHandler === ');
   }
 
   menuEventHandler(e) {
@@ -56,11 +51,8 @@ export default class Hotkeys {
     };
 
     const openActiveMenu = () => {
-      console.log(`this.currentItem = ${this.currentItem}`);
-
       switch (this.currentItem) {
         case 0:
-          console.log('start');
           this.removeMenuHandler();
           MenuUtils.pressButtonStart();
           break;
@@ -70,7 +62,6 @@ export default class Hotkeys {
           break;
 
         case 2:
-          console.log('tutorial');
           MenuUtils.pressButtonTutorial();
           break;
 
@@ -93,38 +84,29 @@ export default class Hotkeys {
 
     const buttonCode = e.code;
     const mainMenu = document.querySelector('.main-menu.hide-menu');
-    console.log(buttonCode);
 
     if (e.stopPropagation) e.stopPropagation();
 
     switch (buttonCode) {
       case 'Enter':
       case 'Space':
-        // e.preventDefault();
         if (!mainMenu) openActiveMenu();
         break;
 
       case 'Escape':
-        // e.preventDefault();
         goToMainMenu();
-        console.log('Escape menu button');
         break;
 
       case 'ArrowUp':
-        // e.preventDefault();
         if (!mainMenu) {
           menuPressUpKey();
-          console.log('menuPressUpKey');
         }
         break;
 
       case 'ArrowDown':
-        // e.preventDefault();
         if (!mainMenu) {
           menuPressDownKey();
-          console.log('menuPressDownKey');
         }
-
         break;
 
       default:
@@ -160,7 +142,6 @@ export default class Hotkeys {
 
   gameEventHandler(e) {
     const buttonCode = e.code;
-    console.log(buttonCode);
 
     if (e.stopPropagation) e.stopPropagation();
 
@@ -170,20 +151,16 @@ export default class Hotkeys {
       case 'ArrowUp':
         if (typeof this.upGameButton() === 'function') {
           this.upGameButton();
-          console.log('Up game button - inside check for function');
         }
-        console.log('Up game button');
 
         break;
 
       case 'ArrowDown':
         if (typeof this.downGameButton() === 'function') this.downGameButton();
-        console.log('Up game button');
         break;
 
       case 'Escape':
         if (typeof this.escGameButton() === 'function') this.escGameButton();
-        console.log('Escape game button');
 
         break;
 

@@ -1,3 +1,5 @@
+import { gsap } from 'gsap';
+// eslint-disable-next-line import/no-cycle
 import Menu from '../Menu';
 import BackgroundSound from '../backgroundSound/backgroundSound';
 
@@ -43,20 +45,3 @@ export function loadingBeforeMenu() {
     }, 1500);
   }, 4000);
 }
-
-// Закомментирована загрузка страницы настроек
-// export function generateAndloadingOnlySettings() {
-//   document.querySelector('.main').appendChild(generateLoardingOnlyMenu());
-//   gsap.from('#sign', { duration: 1, y: -1000 });
-
-//   setTimeout(() => {
-//     const menu = new Menu();
-//     menu.init();
-//     Menu.loadSettingsFromLocalStorage();
-//     Menu.slideAnimationMethod();
-
-//     Menu.hideMenu('main-menu');
-//     Menu.showMenu('settings-menu');
-//     gsap.from('.menu', { duration: 1, y: 1000 });
-//   }, 1000);
-// }

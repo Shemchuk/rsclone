@@ -1,9 +1,8 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/no-mutable-exports */
-/* eslint-disable no-undef */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-unreachable */
-/* eslint-disable no-console */
+import { gsap } from 'gsap';
 import cards from '../cards';
 // eslint-disable-next-line import/no-cycle
 import { mainGamePlay } from './gameContainer';
@@ -15,7 +14,7 @@ import Hotkeys from '../Hotkeys';
 import Menu from '../Menu';
 
 export let teamFlag = 0;
-// import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
+
 // Cash arrays for statistics
 const arrConfirmed = [];
 const arrSkiped = [];
@@ -29,12 +28,6 @@ export let currentWordsLang;
 const gameHotkeys = new Hotkeys();
 
 // =========== LANG =============== //
-// const langObject = new Language();
-// const lang = langObject.getCurrentLangObject().game; // Object "game"
-
-// =========== LANG =============== //
-
-// const arrAnException = [];
 // Chose card words lang from langName
 function choseCurrentCardsLang() {
   const langName = Language.getCurrentLangName(); // 'en' | 'ru'
@@ -44,6 +37,7 @@ function choseCurrentCardsLang() {
     currentWordsLang = 'nameRus';
   }
 }
+
 // Generate random cards
 function shuffleCards() {
   return currentCardsStack.sort(() => Math.round(Math.random() * 100) - 50);
@@ -219,13 +213,8 @@ function clickContainerButtons(e) {
   } else if (clickMenuBtn) {
     const sound = new Sound();
     sound.cardClick();
-    // gsap.to('.finish-game-modal__title', { duration: 1, ease: 'power1.out', y: -500 });
-    // gsap.to('.finish-modal', { duration: 1, ease: 'power1.out', y: 500 });
     gameHotkeys.removeGameHandler();
-    // generateLoardingOnlyMenu();
-    // loadingOnlyMenu();
     setNewTime();
-    // console.log(time);
     pauseFlag = false;
     document.querySelector('.main').innerHTML = '';
     document.querySelector('.main').appendChild(generateLoardingBeforeMenu());
@@ -243,8 +232,6 @@ function clickContainerButtons(e) {
     teamFlag = 0;
     arrConfirmed.length = 0;
     arrSkiped.length = 0;
-    // setTimeout(() => {
-    // }, 1000);
   }
 }
 
@@ -258,8 +245,10 @@ buttonsClickHandler();
 
 // Swiper
 function generateSwiper() {
+  // eslint-disable-next-line no-undef
   const hammertime = new Hammer(document.querySelector('.game-container__card'), {
     enable: true,
+    // eslint-disable-next-line no-undef
     recognizers: [[Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]],
   });
 
@@ -289,8 +278,10 @@ function generateSwiper() {
 }
 
 function generateSwiperFooter() {
+  // eslint-disable-next-line no-undef
   const hammertime = new Hammer(document.querySelector('.footer'), {
     enable: true,
+    // eslint-disable-next-line no-undef
     recognizers: [[Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]],
   });
 
