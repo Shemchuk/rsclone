@@ -118,14 +118,14 @@ module.exports = (env, options) => {
 
       new CopyWebpackPlugin({
         patterns: [
-          //     // { from: 'src/assets/audio/shifting.wav'},
           { from: 'src/assets/sounds/', to: 'assets/sounds/' },
-          //     // { from: 'src/assets/images/svg/favicon.svg' },
-          //     // { from: 'rs_school_js.svg' },
-          //     // { from: 'src/assets/images/', to: 'assets/images/' },
-          //     // { from: 'src/assets/icons/', to: 'assets/icons/' },
-          //     // { from: 'src/assets/favicon/', to: 'assets/favicon/' },
-          //     // { from: 'src/assets/fonts/', to: 'assets/fonts/'},
+          { from: 'src/assets/favicon/', to: 'assets/favicon/' },
+          // { from: 'src/assets/audio/shifting.wav'},
+          // { from: 'src/assets/images/svg/favicon.svg' },
+          // { from: 'rs_school_js.svg' },
+          // { from: 'src/assets/images/', to: 'assets/images/' },
+          // { from: 'src/assets/icons/', to: 'assets/icons/' },
+          // { from: 'src/assets/fonts/', to: 'assets/fonts/'},
         ],
       }),
     ],
