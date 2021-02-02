@@ -3,8 +3,8 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable no-use-before-define */
 /* eslint-disable import/named */
-// const gsap;
-import { generateCard, buttonsClickHandler, teamFlag, arrConfirmed, arrSkiped } from './card';
+import { gsap } from 'gsap';
+import { generateCard, buttonsClickHandler, teamFlag } from './card';
 import countdown, { teams } from './timer';
 import { generateRoundStatisticsModal } from './gameStatistics';
 import Language from '../lang/Language';
@@ -86,6 +86,7 @@ export const generateGameContainer = () => {
   gameContainer.innerHTML = template;
   return gameContainer;
 };
+
 export const generateFinishGameModal = () => {
   document.querySelector('.main').innerHTML = '';
   const langObject = new Language();
@@ -126,6 +127,7 @@ export const generateFinishGameModal = () => {
   sound.victoryClick();
   return finishGameModal;
 };
+
 export function game() {
   document.querySelector('.main').appendChild(generateCardsSeletionContainer());
   gsap.from('.cards-container__cards2', { duration: 1, ease: 'power1.out', x: 1500 });

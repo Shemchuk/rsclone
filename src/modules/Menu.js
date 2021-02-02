@@ -59,7 +59,6 @@ export default class Menu {
     document.querySelector('.main-menu').addEventListener('mouseenter', () => {
       this.hotkeys.disableActiveMenuButtons();
       this.hotkeys.init();
-      console.log('on mouse enter');
     });
   }
 
@@ -67,8 +66,6 @@ export default class Menu {
     const el = e.target;
     this.aliasSettings.isSounds = el.value;
     localStorage.setItem('aliasSettings', JSON.stringify(this.aliasSettings));
-    // this.backgroundSound.isPlaying = el.value;
-    // localStorage.setItem('backgroundSound', JSON.stringify(this.backgroundSound));
   }
 
   // eslint-disable-next-line class-methods-use-this
@@ -80,7 +77,6 @@ export default class Menu {
   // eslint-disable-next-line class-methods-use-this
   menuEventHandler(e) {
     const element = e.target.closest('.menu-button');
-    console.log('event handler');
 
     if (!element) {
       return;
@@ -91,14 +87,8 @@ export default class Menu {
 
     switch (element.id) {
       case 'button-start':
-        console.log('start');
         this.hotkeys.removeMenuHandler();
         MenuUtils.pressButtonStart();
-
-        // document.querySelector('.command-wrapper').style.display = 'block';
-        // game();
-        // this.showMenu('command-menu');
-
         break;
 
       case 'button-settings':
@@ -106,12 +96,10 @@ export default class Menu {
         break;
 
       case 'button-tutorial':
-        console.log('tutorial');
         MenuUtils.pressButtonTutorial();
         break;
 
       case 'button-back':
-        console.log('back');
         MenuUtils.slideAnimationMethod();
         setTimeout(() => {
           MenuUtils.showMenu('main-menu');
@@ -120,7 +108,6 @@ export default class Menu {
         break;
 
       case 'tutorial__button-back':
-        console.log('back');
         MenuUtils.slideAnimationMethod();
         setTimeout(() => {
           MenuUtils.showMenu('main-menu');
@@ -129,7 +116,6 @@ export default class Menu {
         break;
 
       case 'result__button-back':
-        console.log('back from result');
         MenuUtils.slideAnimationMethod();
         setTimeout(() => {
           MenuUtils.showMenu('main-menu');
@@ -138,7 +124,6 @@ export default class Menu {
         break;
 
       case 'button-save':
-        console.log('save');
         MenuUtils.slideAnimationMethod();
         setTimeout(() => {
           this.saveSettings();
@@ -169,7 +154,5 @@ export default class Menu {
 
     const backgroundSound = new BackgroundSound();
     backgroundSound.init();
-    console.log(settings);
-    console.log('Settings saved!');
   }
 }
