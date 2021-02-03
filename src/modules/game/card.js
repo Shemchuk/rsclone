@@ -89,7 +89,7 @@ function clickSkipFunc() {
   sound.cardClick();
 
   rotationGradient += 360;
-  document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i - 1][currentWordsLang];
+  document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
   arrSkiped.push(currentCardsStack[i - 1]);
   rotationGameContainer();
   i += 1;
