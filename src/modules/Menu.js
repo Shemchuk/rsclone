@@ -36,7 +36,6 @@ export default class Menu {
     generateMenuPlayer();
     this.hotkeys = new Hotkeys();
     this.setEventHandlers();
-
     const backgroundSound = new BackgroundSound();
     backgroundSound.init();
   }
