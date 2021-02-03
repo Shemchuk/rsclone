@@ -1,7 +1,9 @@
-#### 1.0.0 (2021-02-02)
+#### 1.0.0 (2021-02-03)
 
 ##### New Features
 
+- new tutorial features (1fd64bab)
+- load audio tracks for background (30d0c6a5)
 - add favicon (04e441d0)
 - add buttons hover sound (a98a3bc7)
 - add last time sound (6ee742e8)
@@ -57,6 +59,7 @@
 
 ##### Bug Fixes
 
+- solve problem with hotkeys in main menu after saving settings (0e49f55f)
 - styles+adaptive+animations of swiming blocks (d7377120)
 - fix some bugs with starting new round (ab4d25e1)
 - change backgroundSound class append, add backgroundSound to LS (1815d93a)
