@@ -14,3 +14,16 @@ private repository for final rsscool task
 - Webpack
 - [Hammer.js](http://hammerjs.github.io/)
 - Audio API
+
+### Instruction for run application
+- clone repository to local machine
+- choose branch develop
+- install dependencies: npm install
+- run command: npm run watch
+- open index.html through live server
+- please wait for loading game
+- click settings menu item and choose preferred settings
+- read tutorial
+- press start button
+- enter commands names
+- enjoy!)
