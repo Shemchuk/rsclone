@@ -140,11 +140,11 @@ const menuHTMLTemplate = (lang) => `
       </thead>
       <tbody class="result-table__body">
         <tr class="result-table__body-row">
-          <td class="result-table__body-row-cell"><p class="third-child point-events-none text-small"><a>Team #1</a></p></td>
+          <td class="result-table__body-row-cell"><p class="third-childd point-events-none text-small"><a>Team #1</a></p></td>
           <td class="result-table__body-row-cell menu-font"><p><a>0</a></p></td>
         </tr>
         <tr class="result-table__body-row">
-          <td class="result-table__body-row-cell"><p class="third-child point-events-none text-small"><a>Team #2</a></p></td>
+        <td class="result-table__body-row-cell"><p class="third-childd point-events-none text-small"><a>Team #2</a></p></td>
           <td class="result-table__body-row-cell menu-font"><p><a>0</a></p></td>
         </tr>
       </tbody>

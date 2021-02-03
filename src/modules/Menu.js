@@ -21,13 +21,10 @@ export default class Menu {
 
   init() {
     this.createMenu();
-    this.hotkeys = new Hotkeys();
-    this.hotkeys.setMenuHandler();
   }
 
   createMenu() {
     const main = document.querySelector('.loading-block');
-    // const main = document.querySelector('.main');
     const menu = document.querySelector('.menu');
 
     if (menu) {
@@ -37,6 +34,7 @@ export default class Menu {
     this.lang = this.langObject.getCurrentLangObject().mainMenu;
     main.innerHTML += menuHTMLTemplate(this.lang);
     generateMenuPlayer();
+    this.hotkeys = new Hotkeys();
     this.setEventHandlers();
 
     const backgroundSound = new BackgroundSound();
@@ -60,6 +58,8 @@ export default class Menu {
       this.hotkeys.disableActiveMenuButtons();
       this.hotkeys.init();
     });
+
+    this.hotkeys.setMenuHandler();
   }
 
   toggleLang(e) {
@@ -150,7 +150,8 @@ export default class Menu {
     settings.isSounds = document.querySelector('input[name="sounds"]:checked').value;
     setValueToStorage('aliasSettings', settings);
 
-    setTimeout(this.createMenu(), 50);
+    this.hotkeys.removeMenuHandler();
+    this.createMenu();
 
     const backgroundSound = new BackgroundSound();
     backgroundSound.init();
