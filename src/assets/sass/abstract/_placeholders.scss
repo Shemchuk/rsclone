@@ -1,0 +1,40 @@
+%transition {
+  transition: all 0.2s ease-out;
+}
+
+%paragraph-l {
+  font: {
+    family: Arial, sans-serif;
+    style: normal;
+    weight: normal;
+    size: 1.5rem;
+  }
+  line-height: 2.4rem;
+}
+
+%paragraph-s {
+  font: {
+    family: Arial, sans-serif;
+    style: italic;
+    weight: normal;
+    size: 1.2rem;
+  }
+  line-height: 150%;
+}
+
+%button-fullscreen {
+  position: absolute;
+  color: $color-dark-s;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5rem;
+  top: 3rem;
+  right: 3rem;
+  z-index: 10;
+  &:hover {
+    cursor: pointer;
+    color: white;
+    transform: scale(1.05);
+  }
+}

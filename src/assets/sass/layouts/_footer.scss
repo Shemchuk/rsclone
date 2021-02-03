@@ -1,0 +1,148 @@
+.footer {
+  // margin-top: 10px;
+  position: fixed;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: #228dff;
+  font-family: Iceland, 'Jura', sans-serif;
+  font-size: 25px;
+}
+.footer__wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.5px;
+  font-size: 18px;
+  width: 985px;
+  height: 70px;
+  background-color: #2d2f34;
+  box-sizing: border-box;
+  border-radius: 1px;
+  border: solid 2.1px #404040;
+  font-weight: bold;
+  line-height: 24px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+@media (max-width: 979px) {
+  .footer__wrapper {
+    width: 479px;
+    height: 50px;
+  }
+  @media (max-width: 499px) {
+    .footer__wrapper {
+      width: 354px;
+      height: 50px;
+    }
+  }
+  .footer__wrapper > * {
+    font-size: 10px;
+  }
+}
+
+.footer__developers {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  height: 100;
+}
+
+.developer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.developer__links {
+  width: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+@media (max-width: 979px) {
+  .developer__links {
+    width: 60px;
+  }
+}
+
+.footer__school-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer__school-logo {
+  fill: #adadad;
+  width: 100px;
+  height: 40px;
+}
+.footer__school-logo:hover {
+  transition: 0.3s;
+  fill: #2493f2;
+}
+@media (max-width: 979px) {
+  .footer__school-logo {
+    width: 50px;
+    height: 20px;
+  }
+}
+.ico {
+  fill: #5c5c5c;
+}
+.ico > * {
+  fill: #5c5c5c;
+  width: 25px;
+  height: 25px;
+  -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+  filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
+}
+.ico > *:hover {
+  transition: 0.3s;
+  fill: #2493f2;
+  filter: drop-shadow( 1px 1px 1px  #2493f2);
+}
+@media (max-width: 979px) {
+  .ico > * {
+    fill: #5c5c5c;
+    width: 15px;
+    height: 15px;
+  }
+}
+@media (max-width: 499px) {
+  .chart__icon_full-screen {
+    visibility: hidden;
+  }
+  .chart__icons-full-screen {
+    visibility: hidden;
+  }
+}
+
+.footer__button {
+  display: flex;
+  /* justify-content: end; */
+  flex-direction: column;
+  width: 50px;
+  height: 120px;
+  position: fixed;
+  // right: 0px;
+  bottom: 0px;
+  background: transparent;
+  border: 0;
+
+  // background-color: red;
+  // color: red;
+
+  fill: #5c5c5c;
+  &:hover {
+    fill: #2493f2;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+}
+
+.hide {
+  height: 0;
+}

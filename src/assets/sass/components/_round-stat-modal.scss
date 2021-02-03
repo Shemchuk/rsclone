@@ -1,0 +1,17 @@
+.round-stat-modal{
+    font-family: "Lobster", cursive, 'Jura', sans-serif;
+    // position: absolute;
+    // width: 100%;
+    // height: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    // background-color: aqua;
+    opacity: 0.9;
+}
+.round-stat-modal__container{
+  display: flex;
+  justify-content: space-around;
+  max-height: 410px;
+    overflow: scroll;
+}

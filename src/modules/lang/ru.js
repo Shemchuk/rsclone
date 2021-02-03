@@ -1,0 +1,67 @@
+const ru = {
+  mainMenu: {
+    continueButton: 'Продолжить игру',
+    startButton: 'Начать игру',
+    settingsButton: 'Настройки',
+    tutorialButton: 'Правила игры',
+    resultButton: 'Статистика',
+    saveButton: 'Сохранить',
+    backButton: 'Назад',
+    mainMenuTitle: 'Главное меню',
+    settingsMenuTitle: 'Настройки',
+    TutorialMenuTitle: 'Правила игры',
+    resultMenuTitle: 'Статистика',
+    labelCountOfWords: 'Количество слов для победы',
+    labelRoundTime: 'Время раунда, секунд',
+    labelLanguage: 'Язык',
+    tableLabelTeam: 'Команда',
+    tableLabelScore: 'Очки',
+    labelSounds: 'Звуки',
+    essenceTitle: 'Суть игры',
+    essenceContent:
+      'Игроки деляться на группы, количество игроков в каждой группе не обязательно должно быть равным. Целью игроков является объяснение загаданного слова напарникам по команде без использования жестов и однокоренных слов',
+    pointsTitle: 'Баллы',
+    pointsContent:
+      'Каждое отгаданное слово дает команде 1 балл. Если команда не успела ответить на последнее слово - слово не засчитывается. Команда получает 0 баллов',
+    winnerTitle: 'Победитель',
+    winnerContent:
+      'Игра длится до тех пор, пока одна из команд не наберет необходимое количество для победы количество баллов',
+    hotkeysMenuTitle: 'Хоткеи',
+    hotkeysMenuContent:
+      '<span class="material-icons yellow">swap_vert</span> - навигация по меню, во время игры отвечают за "подтверждение" и "пропуск" слов соответственно.</br><span class="green">Space</span> и <span class="green">Enter</span> в меню отвечают за "ввод", во время игры отвечают за "подтверждение" слов.</br><span class="red">Esc</span> - возврат в предыдущее меню, в игре отвечает за выход в меню паузы. Также меню паузы можно вызвать кликнув на имя команды.',
+  },
+  pauseMenu: {
+    gamePause: 'Пауза',
+    gameResume: 'Продолжить',
+    toMainMenu: 'В меню',
+  },
+  commandMenu: {
+    allCommands: 'Все команды',
+    loadingTeams: 'Создайте команду',
+    teamName: 'Название команды',
+    addTeamButton: 'Добавить команду',
+    backMenuButton: 'В меню',
+    startGameButton: 'Начать игру',
+    deleteTeamButton: `&#10006`,
+  },
+  game: {
+    cardsSeletionContainerClassic: 'Классика',
+    gameContainerTime: 'Время:',
+    gameContainerPoints: 'Очки:',
+    gameContainerReady: 'Готово',
+    gameContainerSkip: 'Пропуск',
+    gameContainertimeOut: 'Время вышло!',
+    finishGameModalWin: 'Победила ',
+    finishGameModalTeam: 'команда:',
+    finishGameModalBackToMenu: 'Выйти в меню',
+    roundStatisticsModalConfirmed: 'Выполнено:',
+    roundStatisticsModalSkiped: 'Пропущено:',
+    roundStatisticsNextRound: 'Следующий раунд',
+    correctWordButton: 'Правильно',
+    incorrectWordButton: 'Далее',
+    timeLabel: 'Время:',
+    timeOutLabel: 'Время вышло!',
+  },
+};
+
+export default ru;

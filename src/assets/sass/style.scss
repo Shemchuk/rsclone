@@ -1,0 +1,34 @@
+// abstract
+@import './abstract/constants';
+@import './abstract/mixins';
+@import './abstract/placeholders';
+// base
+@import './/base/base';
+//components
+@import './components/container';
+@import './components/card';
+@import './components/commands';
+@import './components/_backgroundSound';
+@import './components/round-stat-modal';
+@import './components/pause';
+//Loading Before Menu
+@import './components/loadingBeforeMenu/loadingBeforeMenu';
+//components/cardSelection
+@import './components/cardsSelection/cards-selection-modal';
+@import './components/cardsSelection/cards-selection-title';
+@import './components/cardsSelection/_cards-selection-container__cards';
+
+//gamePlay
+@import './components/gamePlay/gamePlay-current-card';
+@import './components/gamePlay/gamePlay-buttons';
+@import './components/gamePlay/timer';
+@import './components/gamePlay/points';
+@import './components/menu';
+@import './components/gamePlay/roundStatisticsModal';
+
+//endGame
+@import './components/endGame/finalModalWindow';
+// layouts
+@import './layouts/wrapper';
+@import './layouts/footer';
+@import './layouts/main';
