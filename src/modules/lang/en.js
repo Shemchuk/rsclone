@@ -29,7 +29,6 @@ const en = {
   pauseMenu: {
     gamePause: 'Pause',
     gameResume: 'Resume',
-    // toSettings: 'Settings',
     toMainMenu: 'Menu',
   },
   commandMenu: {

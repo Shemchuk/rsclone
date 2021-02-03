@@ -30,7 +30,6 @@ const ru = {
   pauseMenu: {
     gamePause: 'Пауза',
     gameResume: 'Продолжить',
-    // toSettings: 'Настройки',
     toMainMenu: 'В меню',
   },
   commandMenu: {
