@@ -25,6 +25,9 @@ const en = {
       'Each guessed word gives the team 1 point. If the team did not manage to answer the last word - the word is not counted. The team gets 0 points',
     winnerTitle: 'Winner',
     winnerContent: 'The game lasts until one of the teams has the required number of points to win',
+    hotkeysMenuTitle: 'Hotkeys',
+    hotkeysMenuContent:
+      '<span class="material-icons yellow">swap_vert</span> - навигация по меню, во время игры отвечают за "подтверждение" и "пропуск" слов соответственно.</br><span class="green">Space</span> и <span class="green">Enter</span> в меню отвечают за "ввод", во время игры отвечают за "подтверждение" слов.</br><span class="red">Esc</span> - возврат в предыдущее меню, в игре отвечает за выход в меню паузы. Также меню паузы можно вызвать кликнув на имя команды.',
   },
   pauseMenu: {
     gamePause: 'Pause',

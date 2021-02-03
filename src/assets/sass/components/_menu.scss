@@ -337,11 +337,28 @@ $background: #222;
 .dialog-box_info {
   @include dialog-box();
   font-size: 15px;
-  // color: #228DFF;
+  font-family: Iceland, 'Jura', sans-serif;
+}
+
+.dialog-box_error {
+  @include dialog-box(red);
+  font-size: 15px;
+  font-family: Iceland, 'Jura', sans-serif;
+}
+
+.dialog-box_success {
+  @include dialog-box(#39FF14);
+  font-size: 15px;
+  font-family: Iceland, 'Jura', sans-serif;
+}
+
+.dialog-box_warning {
+  @include dialog-box(yellow);
+  font-size: 15px;
   font-family: Iceland, 'Jura', sans-serif;
 }
 @media (max-width: 550px) {
-  .dialog-box_info {
+  .dialog-box_info, .dialog-box_error, .dialog-box_warning, .dialog-box_success {
     width: 203px;
     &:before {
       background: $background;
@@ -349,4 +366,13 @@ $background: #222;
       font-size: 25px;
     }
   }
+}
+.yellow {
+  color: yellow;
+}
+.red {
+  color: red;
+}
+.green {
+  color: green;
 }

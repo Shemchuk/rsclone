@@ -120,6 +120,9 @@ const menuHTMLTemplate = (lang) => `
       <p data-title="${lang.winnerTitle}" class="dialog-box_info">
         ${lang.winnerContent}
       </p>
+      <p data-title="${lang.hotkeysMenuTitle}" class="dialog-box_info">
+        ${lang.hotkeysMenuContent}
+      </p>
     </div>
 
     <div class="tutorial__button-block">
