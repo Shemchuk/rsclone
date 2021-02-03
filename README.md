@@ -17,7 +17,7 @@ private repository for final rsscool task
 
 ### Instruction for run application
 - clone repository to local machine
-- choose branch develop
+- choose branch final-develop
 - install dependencies: npm install
 - run command: npm run watch
 - open index.html through live server
