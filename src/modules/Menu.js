@@ -38,7 +38,6 @@ export default class Menu {
     main.innerHTML += menuHTMLTemplate(this.lang);
     generateMenuPlayer();
     this.setEventHandlers();
-
     const backgroundSound = new BackgroundSound();
     backgroundSound.init();
   }
