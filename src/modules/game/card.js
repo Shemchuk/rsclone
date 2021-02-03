@@ -1,21 +1,20 @@
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/no-mutable-exports */
-/* eslint-disable no-undef */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-unreachable */
-/* eslint-disable no-console */
+import { gsap } from 'gsap';
 import cards from '../cards';
 // eslint-disable-next-line import/no-cycle
 import { mainGamePlay } from './gameContainer';
-import { teams, time } from './timer';
-import Men
+import { teams, setNewTime } from './timer';
 import Language from '../lang/Language';
 import { generateLoardingBeforeMenu } from './loadingBeforeMenu';
 import Sound from '../sound/sound';
 import Hotkeys from '../Hotkeys';
+import Menu from '../Menu';
 
 export let teamFlag = 0;
-// import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
+
 // Cash arrays for statistics
 const arrConfirmed = [];
 const arrSkiped = [];
@@ -29,12 +28,6 @@ export let currentWordsLang;
 const gameHotkeys = new Hotkeys();
 
 // =========== LANG =============== //
-// const langObject = new Language();
-// const lang = langObject.getCurrentLangObject().game; // Object "game"
-
-// =========== LANG =============== //
-
-// const arrAnException = [];
 // Chose card words lang from langName
 function choseCurrentCardsLang() {
   const langName = Language.getCurrentLangName(); // 'en' | 'ru'
@@ -44,6 +37,7 @@ function choseCurrentCardsLang() {
     currentWordsLang = 'nameRus';
   }
 }
+
 // Generate random cards
 function shuffleCards() {
   return currentCardsStack.sort(() => Math.round(Math.random() * 100) - 50);
@@ -79,6 +73,8 @@ function rotationGameContainer() {
 let i = 1;
 
 function clickReadyFunc() {
+  const sound = new Sound();
+  sound.cardClick();
   rotationGradient -= 360;
   teams[teamFlag].points += 1;
   document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i][currentWordsLang];
@@ -89,6 +85,9 @@ function clickReadyFunc() {
 }
 
 function clickSkipFunc() {
+  const sound = new Sound();
+  sound.cardClick();
+
   rotationGradient += 360;
   document.querySelector('.card__word').innerHTML = currentCardsStack[0 + i - 1][currentWordsLang];
   arrSkiped.push(currentCardsStack[i - 1]);
@@ -97,6 +96,9 @@ function clickSkipFunc() {
 }
 
 function clickNextRoundFunc() {
+  const sound = new Sound();
+  sound.nextRoundClick();
+
   if (teamFlag < teams.length - 1) {
     teamFlag += 1;
   } else {
@@ -113,8 +115,13 @@ function clickNextRoundFunc() {
 }
 
 function clickPauseMenuFunc() {
+  const sound = new Sound();
+  sound.cardClick();
+
   document.querySelector('.pause').style.visibility = 'visible';
   pauseFlag = true;
+
+  gsap.from('.pause', { duration: 1, ease: 'power1.out', y: -500 });
 }
 
 function clickContainerButtons(e) {
@@ -128,6 +135,7 @@ function clickContainerButtons(e) {
   const clickShowFooterButton = e.target.closest('.show-footer');
   const clickPauseMenu = e.target.closest('.pause-menu');
   const clickResume = e.target.closest('.pause__btn_resume');
+  const clickMenuBtn = e.target.closest('.pause__btn_menu');
 
   if (clickReady) {
     clickReadyFunc();
@@ -198,11 +206,35 @@ function clickContainerButtons(e) {
   } else if (clickPauseMenu) {
     clickPauseMenuFunc();
   } else if (clickResume) {
+    const sound = new Sound();
     sound.mainClick();
     document.querySelector('.pause').style.visibility = 'hidden';
     pauseFlag = false;
+  } else if (clickMenuBtn) {
+    const sound = new Sound();
+    sound.cardClick();
+    gameHotkeys.removeGameHandler();
+    setNewTime();
+    pauseFlag = false;
+    document.querySelector('.main').innerHTML = '';
+    document.querySelector('.main').appendChild(generateLoardingBeforeMenu());
+    document.querySelector('.loading-line').style.display = 'none';
+    document.querySelector('#ready').classList.remove('off');
+    document.querySelector('#sign').classList.remove('off');
+    const menu = new Menu();
+    menu.init();
+    gsap.from('#sign', { duration: 1, ease: 'power1.out', y: -500 });
+    gsap.from('.menu', { duration: 1, ease: 'power1.out', y: 700 });
+    shuffleCards();
+    teams.length = 0;
+    rotationGradient = 0;
+    i = 1;
+    teamFlag = 0;
+    arrConfirmed.length = 0;
+    arrSkiped.length = 0;
   }
 }
+
 function buttonsClickHandler() {
   const buttonsContainer = document.querySelector('.main');
   const footerHandler = document.querySelector('.footer');
@@ -213,8 +245,10 @@ buttonsClickHandler();
 
 // Swiper
 function generateSwiper() {
+  // eslint-disable-next-line no-undef
   const hammertime = new Hammer(document.querySelector('.game-container__card'), {
     enable: true,
+    // eslint-disable-next-line no-undef
     recognizers: [[Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]],
   });
 
@@ -244,8 +278,10 @@ function generateSwiper() {
 }
 
 function generateSwiperFooter() {
+  // eslint-disable-next-line no-undef
   const hammertime = new Hammer(document.querySelector('.footer'), {
     enable: true,
+    // eslint-disable-next-line no-undef
     recognizers: [[Hammer.Swipe, { direction: Hammer.DIRECTION_VERTICAL }]],
   });
 

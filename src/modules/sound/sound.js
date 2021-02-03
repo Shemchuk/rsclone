@@ -50,4 +50,22 @@ export default class Sound {
       statisticPopup.play();
     }
   }
+
+  lastTimePopup() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const lastTimePopup = new Audio();
+      lastTimePopup.src = soundLinks.lastTimePopup;
+      this.audioValue = 0.3;
+      lastTimePopup.play();
+    }
+  }
+
+  mainHover() {
+    if (this.aliasSettings.isSounds === 'true') {
+      const mainHover = new Audio();
+      mainHover.src = soundLinks.mainHover;
+      this.audioValue = 0.3;
+      mainHover.play();
+    }
+  }
 }

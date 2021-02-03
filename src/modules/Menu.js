@@ -16,17 +16,15 @@ export default class Menu {
   constructor() {
     this.langObject = new Language();
     this.aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
+    this.backgroundSound = JSON.parse(localStorage.getItem('backgroundSound')) || [{}];
   }
 
   init() {
     this.createMenu();
-    this.hotkeys = new Hotkeys();
-    this.hotkeys.setMenuHandler();
   }
 
   createMenu() {
     const main = document.querySelector('.loading-block');
-    // const main = document.querySelector('.main');
     const menu = document.querySelector('.menu');
 
     if (menu) {
@@ -36,8 +34,8 @@ export default class Menu {
     this.lang = this.langObject.getCurrentLangObject().mainMenu;
     main.innerHTML += menuHTMLTemplate(this.lang);
     generateMenuPlayer();
+    this.hotkeys = new Hotkeys();
     this.setEventHandlers();
-
     const backgroundSound = new BackgroundSound();
     backgroundSound.init();
   }
@@ -45,6 +43,12 @@ export default class Menu {
   setEventHandlers() {
     document.querySelector('.menu').addEventListener('click', this.menuEventHandler.bind(this));
 
+    // sound on hover
+    document
+      .querySelectorAll('button')
+      .forEach((el) => el.addEventListener('mouseenter', this.playHoverSound));
+
+    // sound toggle
     document
       .querySelectorAll('[name=sounds]')
       .forEach((el) => el.addEventListener('click', this.toggleLang.bind(this)));
@@ -52,8 +56,9 @@ export default class Menu {
     document.querySelector('.main-menu').addEventListener('mouseenter', () => {
       this.hotkeys.disableActiveMenuButtons();
       this.hotkeys.init();
-      console.log('on mouse enter');
     });
+
+    this.hotkeys.setMenuHandler();
   }
 
   toggleLang(e) {
@@ -63,9 +68,14 @@ export default class Menu {
   }
 
   // eslint-disable-next-line class-methods-use-this
+  playHoverSound() {
+    const sound = new Sound();
+    sound.mainHover();
+  }
+
+  // eslint-disable-next-line class-methods-use-this
   menuEventHandler(e) {
     const element = e.target.closest('.menu-button');
-    console.log('event handler');
 
     if (!element) {
       return;
@@ -76,14 +86,8 @@ export default class Menu {
 
     switch (element.id) {
       case 'button-start':
-        console.log('start');
         this.hotkeys.removeMenuHandler();
         MenuUtils.pressButtonStart();
-
-        // document.querySelector('.command-wrapper').style.display = 'block';
-        // game();
-        // this.showMenu('command-menu');
-
         break;
 
       case 'button-settings':
@@ -91,12 +95,10 @@ export default class Menu {
         break;
 
       case 'button-tutorial':
-        console.log('tutorial');
         MenuUtils.pressButtonTutorial();
         break;
 
       case 'button-back':
-        console.log('back');
         MenuUtils.slideAnimationMethod();
         setTimeout(() => {
           MenuUtils.showMenu('main-menu');
@@ -105,7 +107,6 @@ export default class Menu {
         break;
 
       case 'tutorial__button-back':
-        console.log('back');
         MenuUtils.slideAnimationMethod();
         setTimeout(() => {
           MenuUtils.showMenu('main-menu');
@@ -114,19 +115,25 @@ export default class Menu {
         break;
 
       case 'result__button-back':
-        console.log('back from result');
-        MenuUtils.showMenu('main-menu');
-        MenuUtils.hideMenu('result-menu');
+        MenuUtils.slideAnimationMethod();
+        setTimeout(() => {
+          MenuUtils.showMenu('main-menu');
+          MenuUtils.hideMenu('result-menu');
+        }, 1000);
         break;
 
       case 'button-save':
-        console.log('save');
-        // Menu.slideAnimationMethod();
-        this.saveSettings();
+        MenuUtils.slideAnimationMethod();
+        setTimeout(() => {
+          this.saveSettings();
+        }, 1000);
         break;
 
       case 'button-result':
-        MenuUtils.pressButtonResult();
+        MenuUtils.slideAnimationMethod();
+        setTimeout(() => {
+          MenuUtils.pressButtonResult();
+        }, 1000);
         break;
 
       default:
@@ -142,8 +149,10 @@ export default class Menu {
     settings.isSounds = document.querySelector('input[name="sounds"]:checked').value;
     setValueToStorage('aliasSettings', settings);
 
-    setTimeout(this.createMenu(), 50);
-    console.log(settings);
-    console.log('Settings saved!');
+    this.hotkeys.removeMenuHandler();
+    this.createMenu();
+
+    const backgroundSound = new BackgroundSound();
+    backgroundSound.init();
   }
 }

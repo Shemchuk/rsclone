@@ -25,11 +25,13 @@ const en = {
       'Each guessed word gives the team 1 point. If the team did not manage to answer the last word - the word is not counted. The team gets 0 points',
     winnerTitle: 'Winner',
     winnerContent: 'The game lasts until one of the teams has the required number of points to win',
+    hotkeysMenuTitle: 'Hotkeys',
+    hotkeysMenuContent:
+      '<span class="material-icons yellow">swap_vert</span> - during the game the navigation through the menu is responsible for the "confirmation" and "skipping" of words</br><span class="green">Space</span> и <span class="green">Enter</span> - in the menu are responsible for the "input", during the game are responsible for the "confirmation" of words.</br><span class="red">Esc</span> - return to the previous menu, in the game is responsible for the pause menu. The pause menu can be called by clicking on the command name.',
   },
   pauseMenu: {
     gamePause: 'Pause',
     gameResume: 'Resume',
-    // toSettings: 'Settings',
     toMainMenu: 'Menu',
   },
   commandMenu: {
@@ -48,7 +50,7 @@ const en = {
     gameContainerReady: 'Confirm',
     gameContainerSkip: 'Skip',
     gameContainertimeOut: 'Time out!',
-    finishGameModalWin: 'Victory',
+    finishGameModalWin: 'Victory ',
     finishGameModalTeam: 'team:',
     finishGameModalBackToMenu: 'Main menu',
     roundStatisticsModalConfirmed: 'Confirmed:',

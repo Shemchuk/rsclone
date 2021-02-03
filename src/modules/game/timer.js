@@ -1,14 +1,15 @@
 /* eslint-disable no-undef */
 /* eslint-disable no-implied-eval */
 /* eslint-disable import/no-cycle */
-/* eslint-disable no-console */
 /* eslint-disable prefer-const */
+import { gsap } from 'gsap';
 import { teamFlag, arrConfirmed, arrSkiped, pauseFlag } from './card';
 import { generateConfirmedStatisticsCell, generateSkipedStatisticsCell } from './gameStatistics';
 import { generateFinishGameModal } from './gameContainer';
 import { get, set } from '../utils/storage';
 import Language from '../lang/Language';
 import { defaultSettings } from '../Constants';
+import Sound from '../sound/sound';
 
 const langObject = new Language();
 export const teams = [];
@@ -46,9 +47,14 @@ function saveResultToLS(teamList) {
 
 let setaliasSettings = get('aliasSettings', defaultSettings);
 let timer;
-export let time = setaliasSettings.roundTime;
+let time = setaliasSettings.roundTime;
 let finishGamePoints = setaliasSettings.wordsCount;
 let isFirstLaunch = true;
+
+export function setNewTime() {
+  clearTimeout(timer);
+  isFirstLaunch = true;
+}
 
 function countdown() {
   if (isFirstLaunch) {
@@ -104,9 +110,12 @@ function countdown() {
         gsap.from('.finish-modal', { duration: 1, ease: 'power1.out', y: 500 });
       }, 1000);
       time = setaliasSettings.roundTime;
-      const statistics = saveResultToLS(teams);
-      console.log(statistics);
+      saveResultToLS(teams);
     }
+  } else if (time === 4) {
+    const sound = new Sound();
+    sound.lastTimePopup();
+    countdown();
   } else {
     timer = setTimeout(countdown, 1000);
   }

@@ -1,3 +1,5 @@
+/* eslint-disable import/no-cycle */
+import { gsap } from 'gsap';
 import { game } from '../game/gameContainer';
 import { addTeamNamesToTeamsArr } from '../game/timer';
 import Language from '../lang/Language';
@@ -8,9 +10,9 @@ export default class Commands {
   constructor() {
     this.addTeams = document.querySelector('.add-teams');
     this.teamsList = document.querySelector('.teams');
-    // this.deleteTeam = document.querySelector('.delete-team');
     this.aliasSettings = JSON.parse(localStorage.getItem('aliasSettings')) || [];
     this.items = JSON.parse(localStorage.getItem('items')) || [];
+    this.button = document.querySelectorAll('button');
     this.backMenuButton = document.querySelector('.button-backmenu-menu');
     this.startGameButton = document.querySelector('.button-startgame-play');
     this.adjective = [
@@ -76,12 +78,12 @@ export default class Commands {
     this.addTeams.addEventListener('submit', this.addItem.bind(this));
     this.teamsList.addEventListener('click', this.deleteItem.bind(this));
 
+    this.button.forEach((el) => el.addEventListener('mouseenter', this.playHoverSound));
+
     this.startGameButton.addEventListener('click', () => {
       while (this.items.length < 2) {
         return;
       }
-
-      this.sound.mainClick();
 
       gsap.to('.menu', { duration: 1, ease: 'power1.out', y: 800 });
       gsap.to('#sign', { duration: 1, ease: 'power1.out', y: -500 });
@@ -100,9 +102,13 @@ export default class Commands {
         menu.init();
         gsap.from('.menu', { duration: 1, ease: 'power1.out', y: 1000 });
       }, 1000);
-      // const menu = new Menu();
-      // menu.init();
     });
+  }
+
+  // eslint-disable-next-line class-methods-use-this
+  playHoverSound() {
+    const sound = new Sound();
+    sound.mainHover();
   }
 
   generateTeamName() {
@@ -145,8 +151,6 @@ export default class Commands {
       return;
     }
 
-    this.sound.mainClick();
-
     this.items.push(item);
     this.populateList(this.items, this.teamsList);
     localStorage.removeItem('items');
@@ -173,8 +177,6 @@ export default class Commands {
 
     const { index } = button.dataset;
     this.items.splice(index, 1);
-
-    this.sound.mainClick();
 
     localStorage.removeItem('items');
     localStorage.setItem('items', JSON.stringify(this.items));

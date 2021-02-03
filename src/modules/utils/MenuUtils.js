@@ -1,3 +1,4 @@
+import { gsap } from 'gsap';
 // eslint-disable-next-line import/no-cycle
 import Commands from '../commands/commands';
 import CreateCommands from '../commands/createCommands';
@@ -34,7 +35,6 @@ export default class MenuUtils {
     outputWordsNumber.value = settings.wordsCount;
     roundTime.value = settings.roundTime;
     outputRoundTime.value = settings.roundTime;
-    console.log(settings);
     if (settings.lang === 'en') {
       document.querySelector('#set-lang__en').checked = true;
     } else {
@@ -78,7 +78,7 @@ export default class MenuUtils {
     data.forEach((item) => {
       statistic.innerHTML += `
       <tr class="result-table__body-row">
-        <td class="result-table__body-row-cell"><p class="third-child point-events-none text-small"><a>${item.teamName}</a></p></td>
+        <td class="result-table__body-row-cell"><p class="third-childd point-events-none text-small"><a>${item.teamName}</a></p></td>
         <td class="result-table__body-row-cell menu-font"><p><a>${item.score}</a></p></td>
       </tr>
       `;
@@ -93,7 +93,6 @@ export default class MenuUtils {
   }
 
   static pressButtonSettings() {
-    console.log('settings');
     MenuUtils.loadSettingsFromLocalStorage();
     MenuUtils.slideAnimationMethod();
     setTimeout(() => {
@@ -112,11 +111,10 @@ export default class MenuUtils {
 
   static pressButtonResult() {
     MenuUtils.slideAnimationMethod();
-    setTimeout(function () {
+    setTimeout(() => {
       MenuUtils.showMenu('result-menu');
       MenuUtils.hideMenu('main-menu');
     }, 1000);
-    console.log('result');
 
     MenuUtils.createStatisticMenu();
     MenuUtils.showMenu('result-menu');

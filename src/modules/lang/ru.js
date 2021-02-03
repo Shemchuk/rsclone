@@ -26,11 +26,13 @@ const ru = {
     winnerTitle: 'Победитель',
     winnerContent:
       'Игра длится до тех пор, пока одна из команд не наберет необходимое количество для победы количество баллов',
+    hotkeysMenuTitle: 'Хоткеи',
+    hotkeysMenuContent:
+      '<span class="material-icons yellow">swap_vert</span> - навигация по меню, во время игры отвечают за "подтверждение" и "пропуск" слов соответственно.</br><span class="green">Space</span> и <span class="green">Enter</span> в меню отвечают за "ввод", во время игры отвечают за "подтверждение" слов.</br><span class="red">Esc</span> - возврат в предыдущее меню, в игре отвечает за выход в меню паузы. Также меню паузы можно вызвать кликнув на имя команды.',
   },
   pauseMenu: {
     gamePause: 'Пауза',
     gameResume: 'Продолжить',
-    // toSettings: 'Настройки',
     toMainMenu: 'В меню',
   },
   commandMenu: {
@@ -49,7 +51,7 @@ const ru = {
     gameContainerReady: 'Готово',
     gameContainerSkip: 'Пропуск',
     gameContainertimeOut: 'Время вышло!',
-    finishGameModalWin: 'Победила',
+    finishGameModalWin: 'Победила ',
     finishGameModalTeam: 'команда:',
     finishGameModalBackToMenu: 'Выйти в меню',
     roundStatisticsModalConfirmed: 'Выполнено:',
